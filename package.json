@@ -1,0 +1,28 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "User interface ",
+  "main": "lib/start.js",
+  "scripts": {
+    "test": "node node_modules/lab/bin/lab -a code  -r lcov -o lcov.info -r console -o stdout",
+    "start": "node lib/start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FAC-GM/app.git"
+  },
+  "author": "heron2014 simonLab",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FAC-GM/app/issues"
+  },
+  "homepage": "https://github.com/FAC-GM/app#readme",
+  "dependencies": {
+    "hapi": "^10.1.0"
+  },
+  "devDependencies": {
+    "code": "^1.5.0",
+    "lab": "^6.1.0",
+    "tape": "^4.2.0"
+  }
+}
