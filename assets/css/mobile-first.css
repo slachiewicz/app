@@ -48,7 +48,7 @@ body {
       border:0 none;
       width:160px;
     }
-.container {
+.container, .candidate_view {
   margin-bottom: 40px;
   padding: 5px;
 }
@@ -100,7 +100,7 @@ footer {
   bottom:0;
   width:100%;
 }
-  ul.nav {
+  ul.nav{
     padding: 0;
     display: table;
     width:100%;
@@ -127,3 +127,22 @@ footer {
         span {
           color: #FFD777;
         }
+
+
+ul.skills {
+    padding: 0;
+    display: table;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box
+  }
+    ul.skills li {
+      display: block;
+      padding: 2px;
+        border: 1px solid black;
+    }
+      ul.skills li span {
+        display: block;
+        
+      }
