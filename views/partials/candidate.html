@@ -1,0 +1,11 @@
+<div class="thumbnail">
+  <div class="headline">
+    <a href=""><img src="{{picture}}" alt="" /></a>
+    <a href=""><h1>{{fullname}}</h1></a><br/>
+    <p>{{current}}</p>
+    <p>{{experience.current.0.title}}</p>
+    {{#each tags}}
+      {{{tagsHelper this}}}
+    {{/each}}
+  </div>
+</div>
