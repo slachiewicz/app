@@ -1,3 +1,107 @@
-body {
-  background: red;
+/*==============================
+  #GENERAL
+================================*/
+html {
+  background-color: #fff;
+  font: 100%/1.3 'Open Sans ','Arial', sans-serif;
+  /*height: 100%;*/
+  width: 100%;
 }
+body {
+  background: #f2f2f2;
+  width: 100%;  
+}
+.search {
+  display: inline;
+}
+  .hamburger {
+    position: absolute;
+    float: left;
+    padding: 5px;
+    /*width: 40px;*/
+  }
+  .hamburger:hover {
+    cursor: pointer;
+  }
+  .fa-lg {
+    line-height: 1.3em !important;
+    color: #424A5D;
+  }
+  #search-form {
+    text-align: center;
+    padding: 5px;
+  }
+    #search-btn {
+      background: #424A5D;
+      color:white;
+      padding: 10px;
+      /*border-radius:0 10px 10px 0;*/
+      /*-moz-border-radius:0 10px 10px 0;*/
+      /*-webkit-border-radius:0 10px 10px 0;*/
+      /*-o-border-radius:0 10px 10px 0;*/
+      border:0 none;
+      font-weight:bold;
+    }
+      #search-btn .fa {
+        color: #FFD777;
+      }
+
+    #search-box {
+      /*background: #eee;*/
+      padding: 10px;
+      /*border-radius:10px 0 0 10px;*/
+      /*-moz-border-radius:10px 0 0 10px;*/
+      /*-webkit-border-radius:10px 0 0 10px;*/
+      /*-o-border-radius:10px 0 0 10px;*/
+      border:0 none;
+      width:160px;
+    }
+.container {
+  margin-bottom: 40px;
+  padding: 5px;
+}
+.thumbnail {
+  /*border: 1px solid #AEB2B7;*/
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: #fff;
+  /*border: 1px solid rgba(66, 74, 93, 0.36);*/
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+  -webkit-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+  -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
+}
+footer {
+  position:fixed;
+  left:0;
+  bottom:0;
+  width:100%;
+}
+  ul.nav {
+    padding: 0;
+    display: table;
+    width:100%;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background-color: #424A5D;
+  }
+    ul.nav li {
+      display: table-cell;
+    }
+      ul.nav a {
+        text-decoration: none;
+        display: block;
+        padding: 8px;
+        border: 1px solid #FFD777;
+        border-right: none;
+        text-align: center;
+        color: #FFD777;
+      }
+      ul.nav li:last-child {
+        border-right: 1px solid #FFD777;
+      }
+        span {
+          color: #FFD777;
+        }
