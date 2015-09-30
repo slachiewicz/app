@@ -128,21 +128,46 @@ footer {
           color: #FFD777;
         }
 
-
-ul.skills {
+/*==============================
+  #CANDIDATE VIEW
+================================*/
+.candidate_view {
+  color:#424A5D;
+}
+  .candidate_view h1 {
+    font-size: 1.4em;
+    padding: 5px 0;
+    text-decoration: underline;
+  }
+  .candidate_view h2 {
+    font-size: 1.2em;
+  }
+  .candidate_view p {
+    color: grey;
+  }
+/*ul.skills {
     padding: 0;
     display: table;
     width:100%;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box
-  }
+  }*/
     ul.skills li {
       display: block;
       padding: 2px;
-        border: 1px solid black;
+      border: 1px solid #f3f6db;
+      background-color: rgba(241, 218, 135, 0.17);
     }
       ul.skills li span {
-        display: block;
+        color: #424A5D;
+
         
       }
+
+hr {
+  border: none;
+  height: 1px;
+  background-color:#f3f6db;
+  margin-top: 10px;
+}

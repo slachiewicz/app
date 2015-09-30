@@ -1,18 +1,58 @@
 <div class="candidate_view">
   <div class="thumbnail">
     <div class="headline">
-      <a href=""><img src="{{picture}}" alt="" /></a>
-      <a href=""><h1>{{fullname}}</h1></a><br/>
-      <p>{{current}}</p>
-      <p>{{experience.current.0.title}}</p>
-      {{#each tags}}
+      <img src="{{picture}}" alt="" />
+      <h1>{{fullname}}</h1><br/>
+      <!-- <p>{{current}}</p> --><br/>
+      <p>{{location}}</p>
+      <!-- {{#each tags}}
         {{{tagsHelper this}}}
-      {{/each}}
+      {{/each}} -->
     </div>
+    <hr>
     <div class="details">
+    <h1>Expierence: </h1>
+      <h2>Current company: </h2>
+      <p>{{experience.current.0.org}}</p>
+      <h2>Position</h2>
+      <p>{{experience.current.0.title}}</p>
+      <h2>Date: </h2>
+      <p>{{experience.current.0.date}}</p>
+      <h2>Description: </h2>
+      <p>{{experience.current.0.desc}}</p>
+      <h2>Location: </h2>
+      <p>{{experience.current.0.locaion}}</p>
+      <hr>
+      <h2>Current company: </h2>
+      <p>{{experience.current.1.org}}</p>
+      <h2>Position</h2>
+      <p>{{experience.current.1.title}}</p>
+      <h2>Date: </h2>
+      <p>{{experience.current.1.date}}</p>
+      <h2>Description: </h2>
+      <p>{{experience.current.1.desc}}</p>
+      <h2>Location: </h2>
+      <p>{{experience.current.1.locaion}}</p>
+      <hr>
+      <h1>Past expierence:</h1>
+      <h2>Company: </h2>
+      <p>{{experience.past.0.org}}</p>
+      <h2>Position</h2>
+      <p>{{experience.past.0.title}}</p>
+      <h2>Date: </h2>
+      <p>{{experience.past.0.date}}</p>
+      <h2>Description: </h2>
+      <p>{{experience.past.0.desc}}</p>
+      <h2>Location: </h2>
+      <p>{{experience.past.0.locaion}}</p>
+      <hr>
       <h1>Skills: </h1>
         <ul class="skills">        
           <li><span class="">{{skills}}</span></li>
+        </ul>
+      <h1>Languages:</h1>
+        <ul class="skills">        
+          <li><span class="">{{languages}}</span></li>
         </ul>
     </div>
   </div>
