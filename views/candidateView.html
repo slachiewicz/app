@@ -3,11 +3,9 @@
     <div class="headline">
       <img src="{{picture}}" alt="" />
       <h1>{{fullname}}</h1><br/>
-      <!-- <p>{{current}}</p> --><br/>
+      <br/>
       <p>{{location}}</p>
-      <!-- {{#each tags}}
-        {{{tagsHelper this}}}
-      {{/each}} -->
+      
     </div>
     <hr>
     <div class="details">
@@ -54,8 +52,18 @@
         <ul class="skills">        
           <li><span class="">{{languages}}</span></li>
         </ul>
+      {{#each tags}}
+        {{{tagsHelper this}}}
+      {{/each}}  
+    </div>
+    <div class="action_buttons">
+      <button><span class="li_tag"></span></button>
+      <button><span class="li_data"></span></button>
+      <button><span class="li_eye"></span></button>
+      <button><span class="li_diamond"></span></button>
     </div>
   </div>
 </div>
 
 {{>footer_mobile_candidate_view}}
+

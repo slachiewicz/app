@@ -133,6 +133,7 @@ footer {
 ================================*/
 .candidate_view {
   color:#424A5D;
+  overflow-x:hidden;
 }
   .candidate_view h1 {
     font-size: 1.4em;
@@ -145,14 +146,21 @@ footer {
   .candidate_view p {
     color: grey;
   }
-/*ul.skills {
-    padding: 0;
-    display: table;
+  .details span {
+    color: #424A5D;
+  }
+  .action_buttons {
+    display:inline-block;
     width:100%;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box
-  }*/
+  }
+    button {
+      width: 24%;
+      background-color: #E39B18;
+      padding:5px;
+    }
+      button span {
+        color: #424A5D;
+      }
     ul.skills li {
       display: block;
       padding: 2px;
@@ -160,11 +168,8 @@ footer {
       background-color: rgba(241, 218, 135, 0.17);
     }
       ul.skills li span {
-        color: #424A5D;
-
-        
+        color: #424A5D;      
       }
-
 hr {
   border: none;
   height: 1px;
