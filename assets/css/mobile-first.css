@@ -52,6 +52,9 @@ body {
   margin-bottom: 40px;
   padding: 5px;
 }
+.box-wrapper {
+  display: none;
+}
 .thumbnail {
   margin-bottom: 5px;
   padding: 10px;
