@@ -46,3 +46,4 @@ table {
 button {
   -webkit-appearance: none;
 }
+* {box-sizing: border-box;}
