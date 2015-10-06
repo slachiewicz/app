@@ -1,6 +1,9 @@
 html {
   background-color: #f2f2f2;
 }
+body {
+  height: 100%;
+}
 header {
  	position: fixed;
   left: 0;
@@ -21,6 +24,9 @@ header {
 .container {
 	padding-top: 20px;
 }
+  .candidate_view {    
+    padding: 20px;
+  }
 .box-wrapper {
 	display: block;
   width: 90%;
@@ -74,25 +80,47 @@ header {
 .headline img {
 	width: 100px;
 }
-.headline h1 {
-
-}
 .headline p {
 	font-size: 1em;
 }
-#sidebar {
-	float:right;
-	width: 200px;
-	height: 100%;
-	background-color: green;
+aside {
+  display: table-cell;
+  float:right;
+  position: relative;
+  width: 20%;
 }
+  #sidebar {
+  /*width: 250px; */ 
+  /*height: 500px;*/
+  background-color: #fff;
+  /*border-left: 1px solid #f3f6db;*/
+  padding: 0 10px;
+}
+  .fa-linkedin-square {
+    color: blue;
+    font-size: 20px;
+  }
+  #sidebar i {
+    font-size: 20px;
+  }
 
-
-footer ul.nav {
+.details {
+  width: 80%;
+  border-right: 1px solid #f3f6db;
+  padding: 0 20px;
+}
+  
+/*footer ul.nav {
   display: none;
+}*/
+.action_buttons {
+  margin-top: 10px;
 }
 
 @media (max-width: 1144px) {
+  .candidate_view img {
+    width: 80px;
+  }
   .box-wrapper {
   	width: 100%;
   }
@@ -106,5 +134,5 @@ footer ul.nav {
 	}
 	.headline img {
 		width: 80px;
-	} 
+	}  
 }
