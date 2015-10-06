@@ -5,27 +5,32 @@
       <h1>{{fullname}}</h1><br/>
       <br/>
       <p>{{location}}</p>
+      {{#each tags}}
+        {{{tagsHelper this}}}
+      {{/each}} 
       
     </div>
     <hr>
-    <div class="details">
     <aside>
       <div id="sidebar">
-        <h1>Contact details</h1>
-        <!-- <h2>Current company: </h2> -->
-      <!-- <p>{{experience.current.0.org}}</p>
-      <h2>Position</h2>
-      <p>{{experience.current.0.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.current.0.date}}</p>
-       <p>{{experience.current.0.org}}</p>
-      <h2>Position</h2>
-      <p>{{experience.current.0.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.current.0.date}}</p> -->
+        <h1>SOCIAL PROFILES</h1>
+        <a href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a>
+       
       </div>
     </aside>
-    <h1>Expierence: </h1>
+    <div class="details">
+    
+    <h1>SUMMARY</h1>
+      <p>{{summary}}</p>
+    <h1>SKILLS</h1>
+      <div class="skills-box">
+        <ul>
+        {{#each skills}}
+          {{{skillsHelper this}}}
+        {{/each}}        
+        </ul>
+      </div>
+    <h1>EXPERIENCE</h1>
       <h2>Current company: </h2>
       <p>{{experience.current.0.org}}</p>
       <h2>Position</h2>
@@ -60,17 +65,12 @@
       <h2>Location: </h2>
       <p>{{experience.past.0.locaion}}</p>
       <hr>
-      <h1>Skills: </h1>
-        <ul class="skills">        
-          <li><span class="">{{skills}}</span></li>
-        </ul>
-      <h1>Languages:</h1>
+      
+      <h1>LANGUAGES</h1>
         <ul class="skills">        
           <li><span class="">{{languages}}</span></li>
         </ul>
-      {{#each tags}}
-        {{{tagsHelper this}}}
-      {{/each}}  
+       
     </div>
     <div class="action_buttons">
       <button><span class="li_tag"></span></button>
