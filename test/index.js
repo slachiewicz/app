@@ -8,8 +8,6 @@ var lab = exports.lab = Lab.script();
 var expect = Code.expect;
 var it = lab.test;
 
-
-
 it('starts server and return an instance of Hapi server', function (done) {
 
   Server.init(0, function (err, server) {

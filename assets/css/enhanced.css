@@ -110,9 +110,12 @@ aside {
   padding: 0 20px;
 }
   
-/*footer ul.nav {
-  display: none;
+/*footer .home ul.nav {
+  display: block;
 }*/
+footer ul.nav {
+  display: none;
+}
 .action_buttons {
   margin-top: 10px;
 }
