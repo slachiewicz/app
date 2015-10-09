@@ -97,7 +97,7 @@ body {
       color: #424A5D;
       padding-right: 2px;
      }
-footer {
+footer, footer.home {
   position:fixed;
   left:0;
   bottom:0;

@@ -4,8 +4,9 @@
   "description": "User interface ",
   "main": "lib/start.js",
   "scripts": {
-    "test": "node node_modules/lab/bin/lab -a code  -r lcov -o lcov.info -r console -o stdout",
-    "start": "node lib/start.js"
+    "test": "./node_modules/lab/bin/lab -c -a code -r lcov -o lcov.info -r console -o stdout && ./node_modules/lab/bin/lab -r html -o ./test/coverage.html",
+    "start": "node lib/start.js",
+    "codeclimate": "CODECLIMATE_REPO_TOKEN=2a233c5d8243d7c785eedd5a366eb834c7ebe4bbfc2de5e951585cb839fbad9a ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./lcov.info"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,8 @@
   },
   "devDependencies": {
     "code": "^1.5.0",
+    "codeclimate-test-reporter": "^0.1.1",
+    "istanbul": "^0.3.22",
     "lab": "^6.1.0",
     "tape": "^4.2.0"
   }
