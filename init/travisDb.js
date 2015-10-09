@@ -11,5 +11,8 @@ es.create({
       console.log(error);
   }
   console.log('initialize candidate with id ' + 1);
+  es.close();
 });
+
+
 
