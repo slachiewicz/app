@@ -20,7 +20,14 @@ This platform aim is to display more information about 35 000 contacts extracted
 * [Hapijs](http://hapijs.com/)
   * Main packages: env2, Handlebars, Inert, Vision
   * Testing: Lab, Code
+* Databases:
+  * [ElasticSearch](https://www.elastic.co/)
+  * [Redis](http://redis.io/)
 
 # Wireframes
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/mobile-first.png)
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/desktop-view.png)
 
 
