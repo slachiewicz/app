@@ -21,6 +21,7 @@
   "dependencies": {
     "elasticsearch": "^8.2.0",
     "env2": "^2.0.2",
+    "esta": "^4.2.0",
     "handlebars": "^4.0.3",
     "hapi": "^10.1.0",
     "hoek": "^2.16.3",
