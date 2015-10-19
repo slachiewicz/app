@@ -208,3 +208,7 @@ hr {
 aside {
   display: none;
 }
+
+.page-number {
+  color: black;
+}
