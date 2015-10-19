@@ -9,7 +9,7 @@ header {
   left: 0;
   right: 0;
   z-index: 1002;
-  background-color: #FFD777;
+  /*background-color: #FFD777;*/
 }
 
 .search {
