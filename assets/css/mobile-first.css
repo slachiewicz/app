@@ -239,6 +239,9 @@ aside {
   color: #424A5D;
   text-decoration: none;
 }
+  #prev, #next {
+    padding:none;
+  }
   .page-number {
     color: black;
   }

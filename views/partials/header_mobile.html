@@ -2,7 +2,10 @@
   <section class="search">
     <a class="hamburger" href=""><i class="fa fa-bars fa-lg"></i></a>
     <form id="search-form" action="/search" method="POST">
-        <input id="search-box" name="searchInput" size="40" type="text" placeholder="i.e Javascript London"/>
+        <input id="search-box" name="searchInput" size="40" type="text" placeholder="i.e Javascript London" value="{{query}}"/>
+        <input id="currentPage" type="hidden" name="page" value="{{page}}"/>
+        <input id="totalPages" type="hidden" name="totalPages" value="{{pages}}"/>
+        <input id="query" type="hidden" name="query" value="{{query}}"/>
         <button id="search-btn" type="submit"><i class="fa fa-search"></i></button>
     </form>
   </section>
