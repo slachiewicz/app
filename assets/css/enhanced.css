@@ -11,7 +11,9 @@ header {
   z-index: 1002;
   /*background-color: #FFD777;*/
 }
-
+a#mobile {
+  display: none;
+}
 .search {
   display: inline;
 }
@@ -101,7 +103,7 @@ aside {
     font-size: 20px;
   }
   #sidebar i {
-    font-size: 20px;
+    font-size: 25px;
   }
 
 .details {
@@ -113,9 +115,10 @@ aside {
 /*footer .home ul.nav {
   display: block;
 }*/
-footer ul.nav {
+
+/*footer ul.nav {
   display: none;
-}
+}*/
 .action_buttons {
   margin-top: 10px;
 }
