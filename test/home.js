@@ -1,4 +1,6 @@
 // var es = require('../lib/es.js');
+require('env2')('.env');
+console.log('##########################################',process.env.SEARCHBOX_URL);
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');

@@ -1,46 +1,29 @@
 (function () {
 
-  var current = document.getElementById('currentPage').value;
-  var total = document.getElementById('totalPages').value;
+  function search() {
+    var searchInput = document.getElementById('search-box').value;
+    var currentPage = document.getElementById('currentPage').value;
+    var totalPages = document.getElementById('totalPages').value;
 
+    if (searchInput === '') {
+      window.location.href = '/';
+    } else {
+      var queryString = searchInput.replace(' ', '+');
 
-  function newSearch(currentSearch, search) {
-    if (currentSearch !== search) {
-      document.getElementById('currentPage').value = 1;
+      window.location.href='/search/' + queryString + '/' + 1;
     }
-
   }
 
-
-  document.getElementById('prev').addEventListener('click', function () {
-    
-    console.log('cicked');
-    
-    if (current > 1) {
-      document.getElementById('currentPage').value = Number(current) - 1;
-    }
-    newSearch(document.getElementById('query').value, document.getElementById('searchInput').value );
-    document.getElementById('search-form').submit();
-  
+ document.getElementById('search-btn').addEventListener('click', function (e) {
+    e.preventDefault();
+    search();
   }, false);
 
-  document.getElementById('next').addEventListener('click', function () {
-    
-    console.log('cicked fghher');
-
-    if (current < total) {
-      console.log('inside');
-      document.getElementById('currentPage').value = Number(current) + 1;
+  document.getElementById('search-box').addEventListener('keypress', function (e) {
+    var key = e.which || e.keyCode;
+    if (key === 13) {
+      search();
     }
-    newSearch(document.getElementById('query').value, document.getElementById('searchInput').value );
-    document.getElementById('search-form').submit();
-
-  }, false);
-
-
-  document.getElementById('search-form').addEventListener('submit', function () { 
-    console.log('sooooooo');
-   newSearch(document.getElementById('query').value, document.getElementById('searchInput').value );
   }, false);
 
 }());
