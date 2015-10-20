@@ -1,3 +1,4 @@
+// var es = require('../lib/es.js');
 require('env2')('.env');
 var Code = require('code');
 var Lab = require('lab');
@@ -8,14 +9,15 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-describe('/candidate/{id}', function () {
+describe('/search/python/2', function () {
 
-  it('checks the route /candidate returns status code 200 when requested', function (done) {
+  it('returns specific search results', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject('/candidate/AVCAuNsCV1bOM0kncxXv' , function (res) {
+
+      server.inject('/search/python/2', function (res) {
 
         expect(res.statusCode).to.equal(200);
 
@@ -24,3 +26,4 @@ describe('/candidate/{id}', function () {
     });
   });
 });
+
