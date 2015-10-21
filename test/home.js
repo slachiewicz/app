@@ -1,6 +1,5 @@
 // var es = require('../lib/es.js');
 require('env2')('.env');
-console.log('##########################################',process.env.SEARCHBOX_URL);
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
@@ -8,7 +7,7 @@ var Server = require('../lib/index.js');
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
 var expect = Code.expect;
-var it = lab.test
+var it = lab.test;
 
 describe('/', function () {
 

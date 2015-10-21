@@ -1,3 +1,4 @@
+require('env2')('.env');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
@@ -5,7 +6,7 @@ var Server = require('../lib/index.js');
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
 var expect = Code.expect;
-var it = lab.test
+var it = lab.test;
 
 describe('/candidate/{id}', function () {
 

@@ -40,5 +40,5 @@ it('handles register plugin errors', { parallel: false }, function (done) {
 
         done();
     });
-    
+
 });
