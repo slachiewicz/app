@@ -4,7 +4,7 @@
   "description": "User interface ",
   "main": "lib/start.js",
   "scripts": {
-    "test": "./node_modules/lab/bin/lab -c -a code -r lcov -o lcov.info -r console -o stdout && ./node_modules/lab/bin/lab -r html -o ./test/coverage.html",
+    "test": "./node_modules/lab/bin/lab -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout && ./node_modules/lab/bin/lab -r html -o ./test/coverage.html ./test/runner.js",
     "start": "node lib/start.js",
     "codeclimate": "CODECLIMATE_REPO_TOKEN=2a233c5d8243d7c785eedd5a366eb834c7ebe4bbfc2de5e951585cb839fbad9a ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./lcov.info"
   },
