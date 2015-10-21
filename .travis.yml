@@ -5,5 +5,4 @@ node_js:
 services:
   - elasticsearch
 before_script:
-  - node init/travisDb.js
   - sleep 10
