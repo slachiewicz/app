@@ -20,6 +20,7 @@ describe('/search/france/2', function () {
       server.inject('/search/france/2', function (res) {
 
         expect(res.statusCode).to.equal(200);
+        server.stop(done);
 
       });
     });
@@ -35,6 +36,24 @@ describe('/search/france/0', function () {
       expect(err).to.not.exist();
 
       server.inject('/search/france/0', function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+
+      });
+    });
+  });
+});
+
+describe('/search/france/1', function () {
+
+  it('Attempt to search with a page < 1', function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject('/search/france/1', function (res) {
 
         expect(res.statusCode).to.equal(200);
         server.stop(done);
