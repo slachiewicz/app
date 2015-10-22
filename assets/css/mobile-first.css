@@ -135,11 +135,12 @@ footer, footer.home {
   #CANDIDATE VIEW
 ================================*/
 .candidate_view {
-  color:#424A5D;
+  /*color:#424A5D;*/
+  color: #626978;
   overflow-x:hidden;
 }
   .candidate_view h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     padding: 5px 0;
     text-decoration: underline;
   }
@@ -147,7 +148,7 @@ footer, footer.home {
     font-size: 1.2em;
   }
   .candidate_view p {
-    color: grey;
+    color: #6E6D6D;
   }
   .candidate_view img {
     width: 65px;
