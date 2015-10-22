@@ -8,7 +8,7 @@
     if (searchInput === '') {
       window.location.href = '/';
     } else {
-      var queryString = searchInput.replace(' ', '+');
+      var queryString = encodeURIComponent(searchInput);
 
       window.location.href='/search/' + queryString + '/' + 1;
     }
