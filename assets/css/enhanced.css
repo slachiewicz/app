@@ -84,6 +84,7 @@ a#mobile {
 }
 .headline p {
 	font-size: 1em;
+  padding: 2px;
 }
 aside {
   display: table-cell;
@@ -103,14 +104,23 @@ aside {
     font-size: 20px;
   }
   #sidebar i {
-    font-size: 25px;
+    font-size: 35px;
   }
 
 .details {
   width: 80%;
-  border-right: 1px solid #f3f6db;
+  border-right: 1px solid #BCBFA4;
   padding: 0 20px;
 }
+.pagination a , .page-number{
+  color: #424A5D;
+  text-decoration: none;
+  font-size: 22px;
+}
+  #prev, #next {
+   margin-left: 10px;
+   margin-right: 10px;
+  padding: 1px 12px 1px;
   
 /*footer .home ul.nav {
   display: block;
