@@ -7,12 +7,17 @@
 
 # What?
 
-This platform aim is to display more information about 35 000 contacts extracted from LinkedIn.
+This platform aim is to display information from ElasticSearch database.
 
-# How to run this project? 
+# How to run project? 
 
-(coming soon)
+For local access, please clone it from here, make sure you run npm install to install all the dependencies for this project.
 
+Make sure you have in your .env file with SEARCHBOX_URL variable. 
+
+Run application by typing: ```npm start```
+
+You may now visit http://localhost:8000 in your browser to view the site.
 
 # We use following technologies: 
 
