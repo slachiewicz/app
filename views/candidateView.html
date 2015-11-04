@@ -7,19 +7,19 @@
       <p>{{location}}</p>
       {{#each tags}}
         {{{tagsHelper this}}}
-      {{/each}} 
-      
+      {{/each}}
+
     </div>
     <hr>
     <aside>
       <div id="sidebar">
         <h1>SOCIAL PROFILES</h1>
         <a href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-       
+
       </div>
     </aside>
     <div class="details">
-    
+
     <h1>SUMMARY</h1>
       <p>{{summary}}</p>
     <h1>SKILLS</h1>
@@ -27,7 +27,7 @@
         <ul>
         {{#each skills}}
           {{{skillsHelper this}}}
-        {{/each}}        
+        {{/each}}
         </ul>
       </div>
     <h1>EXPERIENCE</h1>
@@ -40,7 +40,7 @@
       <h2>Description: </h2>
       <p>{{experience.current.0.desc}}</p>
       <h2>Location: </h2>
-      <p>{{experience.current.0.locaion}}</p>
+      <p>{{experience.current.0.location}}</p>
       <hr>
       <h2>Current company: </h2>
       <p>{{experience.current.1.org}}</p>
@@ -51,7 +51,7 @@
       <h2>Description: </h2>
       <p>{{experience.current.1.desc}}</p>
       <h2>Location: </h2>
-      <p>{{experience.current.1.locaion}}</p>
+      <p>{{experience.current.1.location}}</p>
       <hr>
       <h1>PAST EXPERIENCE</h1>
       <h2>Company: </h2>
@@ -63,14 +63,14 @@
       <h2>Description: </h2>
       <p>{{experience.past.0.desc}}</p>
       <h2>Location: </h2>
-      <p>{{experience.past.0.locaion}}</p>
+      <p>{{experience.past.0.location}}</p>
       <hr>
-      
+
       <h1>LANGUAGES</h1>
-        <ul class="skills">        
+        <ul class="skills">
           <li><span class="">{{languages}}</span></li>
         </ul>
-       
+
     </div>
     <!-- <div class="action_buttons">
       <button><span class="li_tag"></span></button>
@@ -82,4 +82,3 @@
 </div>
 
 {{>footer_mobile_candidate_view}}
-
