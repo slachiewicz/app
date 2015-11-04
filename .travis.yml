@@ -5,3 +5,4 @@ services:
   - elasticsearch
 before_script:
   - sleep 10
+  - curl -XPOST 'localhost:9200/gm/contacts/_bulk?pretty' --data-binary "@./test/fixtures/elasticsearch.json"
