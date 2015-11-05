@@ -27,7 +27,7 @@ describe('/', function () {
 });
 
 
-describe('/5', function () {
+describe('/1', function () {
 
   it('returns the specific page number', function (done) {
 
@@ -35,7 +35,7 @@ describe('/5', function () {
 
       expect(err).to.not.exist();
 
-      server.inject('/5', function (res) {
+      server.inject('/1', function (res) {
 
         expect(res.statusCode).to.equal(200);
 
@@ -45,15 +45,15 @@ describe('/5', function () {
   });
 });
 
-describe('/5000', function () {
+describe('/wrongparam', function () {
 
-  it('attempts to access page that does not exist', function (done) {
+  it('Attempt to access the home page with a wrong parameter', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
 
-      server.inject('/5000', function (res) {
+      server.inject('/wrongparam', function (res) {
 
         expect(res.statusCode).to.equal(200);
 
