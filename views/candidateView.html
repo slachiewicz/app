@@ -17,6 +17,12 @@
         <h1>SOCIAL PROFILES</h1>
         <a href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a>
 
+        <p>{{contacts.email}}</p>
+        <p>{{contacts.phone}}</p>
+          {{#each contacts.im}}
+            <p>{{this}}</p>
+          {{/each}}
+        <p>{{contacts.address}}</p>
       </div>
     </aside>
     <div class="details">
