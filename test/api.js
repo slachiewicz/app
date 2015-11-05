@@ -47,7 +47,6 @@ describe('api /profile', function () {
         expect(res.statusCode).to.equal(200);
 
         server.stop(done);
-        console.log('#########################################',res);
       }), 3000);
 
         // server.stop(done);
