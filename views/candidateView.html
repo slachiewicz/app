@@ -2,8 +2,9 @@
   <div class="thumbnail">
     <div class="headline">
       <img src="{{picture}}" alt="" />
-      <h1>{{fullname}}</h1><a id="mobile" href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a><br/>
-      <br/>
+      <h1><strong>{{fullname}}</strong></h1><a id="mobile" href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a><br/>
+
+      <!-- <h2>{{experience.current.0.title}}</h2> -->
       <p>{{location}}</p>
       {{#each tags}}
         {{{tagsHelper this}}}
@@ -20,9 +21,9 @@
     </aside>
     <div class="details">
 
-    <h1>SUMMARY</h1>
+    <h1><i class="fa fa-file-text-o"></i> SUMMARY</h1>
       <p>{{summary}}</p>
-    <h1>SKILLS</h1>
+    <h1><i class="fa fa-trophy"></i> SKILLS</h1>
       <div class="skills-box">
         <ul>
         {{#each skills}}
@@ -30,49 +31,23 @@
         {{/each}}
         </ul>
       </div>
-    <h1>EXPERIENCE</h1>
-      <h2>Current company: </h2>
-      <p>{{experience.current.0.org}}</p>
-      <h2>Position:</h2>
-      <p>{{experience.current.0.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.current.0.date}}</p>
-      <h2>Description: </h2>
-      <p>{{experience.current.0.desc}}</p>
-      <h2>Location: </h2>
-      <p>{{experience.current.0.location}}</p>
+    <h1><i class="fa fa-cubes"></i> CURRENT EXPERIENCE</h1>
+      {{#each experience.current}}
+        {{{experienceHelper this}}}
+      {{/each}}
       <hr>
-      <h2>Current company: </h2>
-      <p>{{experience.current.1.org}}</p>
-      <h2>Position</h2>
-      <p>{{experience.current.1.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.current.1.date}}</p>
-      <h2>Description: </h2>
-      <p>{{experience.current.1.desc}}</p>
-      <h2>Location: </h2>
-      <p>{{experience.current.1.location}}</p>
-      <hr>
-      <h1>PAST EXPERIENCE</h1>
-      <h2>Company: </h2>
-      <p>{{experience.past.0.org}}</p>
-      <h2>Position</h2>
-      <p>{{experience.past.0.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.past.0.date}}</p>
-      <h2>Description: </h2>
-      <p>{{experience.past.0.desc}}</p>
-      <h2>Location: </h2>
-      <p>{{experience.past.0.location}}</p>
+      <h1><i class="fa fa-cubes"></i> PAST EXPERIENCE</h1>
+      {{#each experience.past}}
+        {{{experienceHelper this}}}
+      {{/each}}
       <hr>
 
-      <h1>LANGUAGES</h1>
-        <ul class="skills">
+      <h1><i class="fa fa-globe"></i> LANGUAGES</h1>
+        <ul class="lang"> 
           {{#each languages}}
-          <li><span class="">{{this.lang}} {{this.fluency}}</span></li>
+            {{{languageHelper this}}}
           {{/each}}
         </ul>
-
     </div>
     <!-- <div class="action_buttons">
       <button><span class="li_tag"></span></button>
