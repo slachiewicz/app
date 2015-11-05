@@ -2,8 +2,9 @@
   <div class="thumbnail">
     <div class="headline">
       <img src="{{picture}}" alt="" />
-      <h1>{{fullname}}</h1><a id="mobile" href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a><br/>
-      <br/>
+      <h1><strong>{{fullname}}</strong></h1><a id="mobile" href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a><br/>
+      
+      <!-- <h2>{{experience.current.0.title}}</h2> -->
       <p>{{location}}</p>
       {{#each tags}}
         {{{tagsHelper this}}}
@@ -20,9 +21,9 @@
     </aside>
     <div class="details">
 
-    <h1>SUMMARY</h1>
+    <h1><i class="fa fa-file-text-o"></i> SUMMARY</h1>
       <p>{{summary}}</p>
-    <h1>SKILLS</h1>
+    <h1><i class="fa fa-trophy"></i> SKILLS</h1>
       <div class="skills-box">
         <ul>
         {{#each skills}}
@@ -30,22 +31,25 @@
         {{/each}}
         </ul>
       </div>
-    <h1>CURRENT EXPERIENCE</h1>
+    <h1><i class="fa fa-cubes"></i> CURRENT EXPERIENCE</h1>
       {{#each experience.current}}
-        {{{experienceHelper this true }}}
+        {{{experienceHelper this}}}
       {{/each}}
       <hr>
-      <h1>PAST EXPERIENCE</h1>
+      <h1><i class="fa fa-cubes"></i> PAST EXPERIENCE</h1>
       {{#each experience.past}}
-        {{{experienceHelper this false}}}
+        {{{experienceHelper this}}}
       {{/each}}
       <hr>
 
-      <h1>LANGUAGES</h1>
-        <ul class="skills">
-          <li><span class="">{{languages}}</span></li>
-        </ul>
-
+      <h1><i class="fa fa-globe"></i> LANGUAGES</h1>
+        <ul class="lang">
+         
+          {{#each languages}}
+            {{{languageHelper this}}}
+          {{/each}}
+          </ul>
+        
     </div>
     <!-- <div class="action_buttons">
       <button><span class="li_tag"></span></button>

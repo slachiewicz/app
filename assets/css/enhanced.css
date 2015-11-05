@@ -80,11 +80,24 @@ a#mobile {
 	margin: 5px auto;
 }
 .headline img {
-	width: 100px;
+	width: 120px;
+
+}
+.headline h1 {
+  text-decoration: none;
+  font-size: 1.2em;
+  color: rgba(0, 0, 0, 0.84);
+}
+.headline h2 {
+/*  padding-top: 5px;*/
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.73);
 }
 .headline p {
 	font-size: 1em;
   padding: 2px;
+  color: grey;
+  font-size: 1em;
 }
 aside {
   display: table-cell;
@@ -112,6 +125,7 @@ aside {
   border-right: 1px solid #BCBFA4;
   padding: 0 20px;
 }
+ 
 .pagination a , .page-number{
   color: #424A5D;
   text-decoration: none;
