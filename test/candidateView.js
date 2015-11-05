@@ -15,7 +15,7 @@ describe('/candidate/{id}', function () {
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject('/candidate/AVCJ7hbBV1bOM0knczjS' , function (res) {
+      server.inject('/candidate/1' , function (res) {
 
         expect(res.statusCode).to.equal(200);
 
