@@ -68,7 +68,9 @@
 
       <h1>LANGUAGES</h1>
         <ul class="skills">
-          <li><span class="">{{languages}}</span></li>
+          {{#each languages}}
+          <li><span class="">{{this.lang}} {{this.fluency}}</span></li>
+          {{/each}}
         </ul>
 
     </div>
