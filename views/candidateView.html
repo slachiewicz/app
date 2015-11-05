@@ -30,40 +30,15 @@
         {{/each}}
         </ul>
       </div>
-    <h1>EXPERIENCE</h1>
-      <h2>Current company: </h2>
-      <p>{{experience.current.0.org}}</p>
-      <h2>Position:</h2>
-      <p>{{experience.current.0.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.current.0.date}}</p>
-      <h2>Description: </h2>
-      <p>{{experience.current.0.desc}}</p>
-      <h2>Location: </h2>
-      <p>{{experience.current.0.location}}</p>
-      <hr>
-      <h2>Current company: </h2>
-      <p>{{experience.current.1.org}}</p>
-      <h2>Position</h2>
-      <p>{{experience.current.1.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.current.1.date}}</p>
-      <h2>Description: </h2>
-      <p>{{experience.current.1.desc}}</p>
-      <h2>Location: </h2>
-      <p>{{experience.current.1.location}}</p>
+    <h1>CURRENT EXPERIENCE</h1>
+      {{#each experience.current}}
+        {{{experienceHelper this true }}}
+      {{/each}}
       <hr>
       <h1>PAST EXPERIENCE</h1>
-      <h2>Company: </h2>
-      <p>{{experience.past.0.org}}</p>
-      <h2>Position</h2>
-      <p>{{experience.past.0.title}}</p>
-      <h2>Date: </h2>
-      <p>{{experience.past.0.date}}</p>
-      <h2>Description: </h2>
-      <p>{{experience.past.0.desc}}</p>
-      <h2>Location: </h2>
-      <p>{{experience.past.0.location}}</p>
+      {{#each experience.past}}
+        {{{experienceHelper this false}}}
+      {{/each}}
       <hr>
 
       <h1>LANGUAGES</h1>
