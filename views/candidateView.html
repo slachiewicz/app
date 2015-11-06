@@ -2,27 +2,36 @@
   <div class="thumbnail">
     <div class="headline">
       <img src="{{picture}}" alt="" />
-      <h1><strong>{{fullname}}</strong></h1><a id="mobile" href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a><br/>
+      <h1><strong>{{fullname}}</strong></h1>
 
       <!-- <h2>{{experience.current.0.title}}</h2> -->
       <p>{{location}}</p>
       {{#each tags}}
         {{{tagsHelper this}}}
       {{/each}}
+      
+       <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
+        <p class="mobile"><span>Email: </span>{{contacts.email}}</p>
+        <p class="mobile"><span>Phone: </span>{{contacts.phone}}</p>
+          {{#each contacts.im}}
+            <p class="mobile"><span>IM: </span>{{this}}</p>
+          {{/each}}
+        <p class="mobile"><span>Address: </span>{{contacts.address}}</p>
+
 
     </div>
     <hr>
     <aside>
       <div id="sidebar">
-        <h1>SOCIAL PROFILES</h1>
-        <a href="{{url}}" target="_blank"><i class="fa fa-linkedin-square"></i></a>
-
-        <p>{{contacts.email}}</p>
-        <p>{{contacts.phone}}</p>
+        <h1><i class="fa fa-user"></i> CONTACT</h1>
+        
+        <p><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
+        <p><span>Email: </span>{{contacts.email}}</p>
+        <p><span>Phone: </span>{{contacts.phone}}</p>
           {{#each contacts.im}}
-            <p>{{this}}</p>
+            <p><span>IM: </span>{{this}}</p>
           {{/each}}
-        <p>{{contacts.address}}</p>
+        <p><span>Address: </span>{{contacts.address}}</p>
       </div>
     </aside>
     <div class="details">
