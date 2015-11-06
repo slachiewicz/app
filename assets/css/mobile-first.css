@@ -120,10 +120,12 @@ a#mobile {
       color: rgb(68, 65, 65);
       font-size: 0.8em;
      }
+   
      .headline span {
-      float: right;
-      color: #424A5D;
-      padding-right: 2px;
+      float: left;
+      color: grey;
+      /*color: #424A5D;
+      padding-right: 2px;*/
      }
 footer, footer.home {
   position:fixed;
@@ -210,7 +212,7 @@ footer, footer.home {
   .details h1 {
     padding: 20px 0 20px;
   }
-    .details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe {
+    .details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-user {
       font-size: 25px;
       padding-left: 0;
       padding-right: 20px;
