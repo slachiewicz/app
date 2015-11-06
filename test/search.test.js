@@ -9,7 +9,7 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-describe('/search/spain/1', function () {
+describe('/search/manuel/1', function () {
 
   it('returns specific search results', function (done) {
 
@@ -17,7 +17,22 @@ describe('/search/spain/1', function () {
 
       expect(err).to.not.exist();
 
-      server.inject('/search/spain/1', function (res) {
+      server.inject('/search/manuel/1', function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+
+      });
+    });
+  });
+
+  it('returns specific search results', function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject('/search/manuel/15', function (res) {
 
         expect(res.statusCode).to.equal(200);
         server.stop(done);
