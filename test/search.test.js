@@ -78,7 +78,6 @@ describe('/search endpoint', function () {
   it('returns specific search results', function (done) {
       var nubersPerPage = process.env.RESULTS_PER_PAGE;
       process.env.RESULTS_PER_PAGE = 1;
-      console.log(process.env.RESULTS_PER_PAGE);
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
