@@ -8,9 +8,9 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-describe('/candidate/{id}', function () {
+describe('Return the first candidate: /candidate/1', function () {
 
-  it('checks the route /candidate returns status code 200 when requested', function (done) {
+  it('checks status code 200 of /candidate/1', function (done) {
 
     Server.init(0, function (err, server) {
 
