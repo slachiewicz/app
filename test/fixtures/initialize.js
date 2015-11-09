@@ -28,6 +28,7 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
                 };
               client.indices.create({index: 'gmcontact'}, function (res, err) {
                   client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
+                      console.log('### Err ###:', err);
                       client.bulk({
                           body: require('./fixture-js.json')
                       }, function (err, response) {
