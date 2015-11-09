@@ -27,12 +27,30 @@ contact data stored in an ElasticSearch database.
 
 ### Run the App *Locally*
 
+Clone the Git repository from GitHub:
+
+```sh
+git clone git@github.com:FAC-GM/app.git && cd app
+```
+
+### ElasticSearch (*our primary database*)
+
 You will need to have ***ElasticSearch*** running on your local
 machine for this to work.  
 If you are on Linux/Mac and ***don't want*** to install the Java Runtime
 *because* [***Java*** *is* ***insecure***](https://goo.gl/cqEhN4)  
 we *recommend* you use [***Vagrant***](https://github.com/dwyl/learn-vagrant)
 to run ElasticSearch in a Virtual Machine.  
+
+We have included a `Vagrantfile` with the *bare minimum* you need to
+get ElasticSearch up and running. Provided you already have
+Vagrant and VirtualBox installed on your machine, you can boot the ES VM
+with:
+
+```sh
+vagrant up
+```
+
 
 ### `.env` file
 
