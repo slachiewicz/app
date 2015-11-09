@@ -42,10 +42,14 @@ client.indices.exists({index: 'gmcontact'}, function (err, res) {
 
     } else {
         //create
+        client.indices.create({index: 'gmcontact'}, function (res, err) {
+            client.indices.putMapping({index:"gmcontact", type:"contacts", body:params}, function (err,resp) {
         client.bulk({
             body: require('./fixture-js.json')
         }, function (err, response) {
             console.log('The index gmcontact is ready to use');
         });
+    });
+});
     }
 });
