@@ -31,13 +31,14 @@ header {
   z-index: 1002;
   background-color: #424A5D;
 }
+
 a#mobile {
   float: right;
 }
+
   a#mobile i {
     font-size: 20px;
   }
-
 /*Hamburder might be used in later iterations*/
   .hamburger {
     position: absolute;
@@ -45,9 +46,11 @@ a#mobile {
     padding: 5px;
     /*width: 40px;*/
   }
+
   .hamburger:hover {
     cursor: pointer;
   }
+
   .fa-lg {
     line-height: 1.3em !important;
     /*color: #424A5D;*/
@@ -61,12 +64,13 @@ a#mobile {
 .search {
   display: inline;
 }
+
   #search-form {
     text-align: center;
     padding: 5px;
   }
+
     #search-btn {
-     /* background: #424A5D;*/
       background-color: #E4AD28;
       color:white;
       padding: 10px 0px;
@@ -75,7 +79,6 @@ a#mobile {
       width: 50px;
     }
       #search-btn .fa {
-    /*    color: #FFD777;*/
         color:#424A5D;
       }
 
@@ -138,13 +141,16 @@ select.choose_state {
   margin-bottom:40px;
   padding: 5px;
 }
+
   .candidate_view {
     margin-top: 50px; 
   }
+
 .box-wrapper {
   /*display: none;*/
   margin-top:50px;
 }
+
 .thumbnail {
   margin-bottom: 5px;
   padding: 10px;
@@ -155,10 +161,12 @@ select.choose_state {
   -webkit-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
   -moz-box-shadow: 1px 1px 5px rgba(51, 51, 51, 0.5);
 }
+
   .headline {
     position: relative;
     overflow: hidden;
   }
+
     .headline img {
       width: 70px;
       height: 70px;
@@ -187,6 +195,7 @@ footer, footer.home {
   bottom:0;
   width:100%;
 }
+
   ul.nav{
     padding: 0;
     display: table;
@@ -196,9 +205,11 @@ footer, footer.home {
     -webkit-box-sizing: border-box;
     background-color: #424A5D;
   }
+
     ul.nav li {
       display: table-cell;
     }
+
       ul.nav a {
         text-decoration: none;
         display: block;
@@ -208,9 +219,11 @@ footer, footer.home {
         text-align: center;
         color: #FFD777;
       }
+
       ul.nav li:last-child {
         border-right: 1px solid #FFD777;
       }
+
         span {
           color: #FFD777;
         }
@@ -221,35 +234,44 @@ footer, footer.home {
 .candidate_view {
   overflow-x:hidden;
 }
+
   .candidate_view h1 {
     font-size: 1.1em;
     padding: 5px 0;
     color:rgb(52, 52, 80);
   }
+
   .candidate_view h2 {
     font-size: 1em;
     color: #181824;
   }
+
   .candidate_view p {
     color: #353131;
     padding: 10px 10px;
   }
+
   .candidate_view img {
     width: 65px;
   }
+
   .details {
     width: 100%;
   }
+
   .details h1 {
     clear:left;
   }
+
   .skills-box {
     position: relative;
     padding: 10px;
   }
+
   .lang {
     padding: 10px;
   }
+
   .each-lang {
    /* background-color: #B6C4F3;
     color: #fff;
@@ -260,14 +282,17 @@ footer, footer.home {
     ul.lang li span.each-lang {
       color: #111317; 
     }
+
   .details h1 {
     padding: 20px 0 20px;
   }
+
     .details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-user {
       font-size: 25px;
       padding-left: 0;
       padding-right: 20px;
     }
+
   .details p {
     color: #434649;
   }
@@ -300,18 +325,21 @@ footer, footer.home {
     display:inline-block;
     width:100%;
   }*/
+
+  /*This button rule might be used in next iteration*/
     button {
       width: 24%;
       background-color: rgba(227, 155, 24, 0.81);
       padding:5px;
       border: none;
     }
+
       button span {
         color: #424A5D;
       }
+      
       button:hover {
-        background-color: rgba(227, 155, 24, 1);
-        
+        background-color: rgba(227, 155, 24, 1);       
       }
       
     ul.lang li {

@@ -1,12 +1,15 @@
 a#mobile {
   display: none;
 }
+
   #search-btn {
       width: 100px;
   }
+
   #search-box {
       width: auto;
   }
+
   #filter {
     padding: 9px 15px;
   }
@@ -16,12 +19,13 @@ a#mobile {
 .container {
 	padding-top: 20px;
 }
+
   .candidate_view {    
     padding: 20px;
     margin: 50px 0;
   }
 
-/*This section might be used in thrid iteration*/
+/*This section might be used in third iteration*/
 .box-wrapper {
 	display: block;
   width: 90%;
@@ -29,11 +33,13 @@ a#mobile {
   /*padding: 0 15px 15px 15px;*/
   text-align: center;
 }
+
 	.box0, .box1{
     /*width: 18%;*/
     display: inline-block;
     padding: 0 50px;
 	}
+
 	.box1 {
     /*padding: 15px;*/
     padding-top:15px;
@@ -41,13 +47,16 @@ a#mobile {
     color: #989898;
     border-bottom: 1px solid #989898;
 	}
+
 		.box1 span {
     	font-size: 50px;
     	color: #989898;
 		}
+
 		.box1 h3 {
 			padding-bottom:5px;
 		}
+
 	.box0:hover .box1 {
     border-bottom: 1px solid #ffffff;
 	}
@@ -105,10 +114,12 @@ aside {
   position: relative;
   width: 25%;
 }
+
   #sidebar {
   background-color: #fff;
   padding: 0 10px;
 }
+
   #sidebar > p {
     font-size: 14px;
   }
@@ -143,6 +154,7 @@ aside {
   .candidate_view img {
     width: 80px;
   }
+
   .box-wrapper {
   	width: 100%;
   }
@@ -153,7 +165,9 @@ aside {
 	.list-wrapper {
 		width:80%;
 	}
+
 	.headline img {
 		width: 80px;
-	}  
+	}
+    
 }
