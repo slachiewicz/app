@@ -17,7 +17,7 @@ describe('/search endpoint', function () {
 
         expect(err).to.not.exist();
 
-        server.inject('/search/javascript/wrongpage', function (res) {
+        server.inject('/search/all/javascript/wrongpage', function (res) {
 
           expect(res.statusCode).to.equal(404);
           server.stop(done);
@@ -32,7 +32,7 @@ describe('/search endpoint', function () {
 
         expect(err).to.not.exist();
 
-        server.inject('/search/javascript/-42', function (res) {
+        server.inject('/search/all/javascript/-42', function (res) {
 
           expect(res.statusCode).to.equal(302);
           expect(res.headers.location).to.equal('/');
@@ -42,13 +42,14 @@ describe('/search endpoint', function () {
       });
     });
 
+
     it('Attemps to search with page number too big', function (done) {
 
       Server.init(0, function (err, server) {
 
         expect(err).to.not.exist();
 
-        server.inject('/search/javascript/5000', function (res) {
+        server.inject('/search/all/javascript/5000', function (res) {
 
           expect(res.statusCode).to.equal(302);
           expect(res.headers.location).to.equal('/');
@@ -65,7 +66,7 @@ describe('/search endpoint', function () {
 
       expect(err).to.not.exist();
 
-      server.inject('/search/javascript/1', function (res) {
+      server.inject('/search/all/javascript/1', function (res) {
 
         expect(res.statusCode).to.equal(200);
         process.env.RESULTS_PER_PAGE = nubersPerPage;
@@ -75,6 +76,77 @@ describe('/search endpoint', function () {
     });
   });
 
+  it('returns specific search results for skills', function (done) {
+      var nubersPerPage = process.env.RESULTS_PER_PAGE;
+      process.env.RESULTS_PER_PAGE = 1;
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject('/search/skill/javascript/1', function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        process.env.RESULTS_PER_PAGE = nubersPerPage;
+        server.stop(done);
+
+      });
+    });
+  });
+
+
+    it('returns specific search results for names', function (done) {
+        var nubersPerPage = process.env.RESULTS_PER_PAGE;
+        process.env.RESULTS_PER_PAGE = 1;
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+
+        server.inject('/search/name/dolores/1', function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          process.env.RESULTS_PER_PAGE = nubersPerPage;
+          server.stop(done);
+
+        });
+      });
+    });
+
+    it('returns empty result', function (done) {
+        var nubersPerPage = process.env.RESULTS_PER_PAGE;
+        process.env.RESULTS_PER_PAGE = 1;
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+
+        server.inject('/search/name/thisisawrongname/1', function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          process.env.RESULTS_PER_PAGE = nubersPerPage;
+          server.stop(done);
+
+        });
+      });
+    });
+
+    it('returns empty result', function (done) {
+        var nubersPerPage = process.env.RESULTS_PER_PAGE;
+        process.env.RESULTS_PER_PAGE = 1;
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+
+        server.inject('/search/all/javascript/1', function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          process.env.RESULTS_PER_PAGE = nubersPerPage;
+          server.stop(done);
+
+        });
+      });
+    });
+
+
+
   it('returns specific search results', function (done) {
       var nubersPerPage = process.env.RESULTS_PER_PAGE;
       process.env.RESULTS_PER_PAGE = 1;
@@ -82,7 +154,7 @@ describe('/search endpoint', function () {
 
       expect(err).to.not.exist();
 
-      server.inject('/search/javascript/2', function (res) {
+      server.inject('/search/all/javascript/2', function (res) {
 
         expect(res.statusCode).to.equal(200);
         process.env.RESULTS_PER_PAGE = nubersPerPage;
@@ -99,7 +171,7 @@ describe('/search endpoint', function () {
 
       expect(err).to.not.exist();
 
-      server.inject('/search/javascript/1', function (res) {
+      server.inject('/search/all/javascript/1', function (res) {
 
         expect(res.statusCode).to.equal(200);
         process.env.RESULTS_PER_PAGE = nubersPerPage;
