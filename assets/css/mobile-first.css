@@ -92,7 +92,6 @@ a#mobile {
       padding: 9px;
       border: none;
       background-color: white;
-     -webkit-appearance: none;
     }
 
 /*.dblarrow {
@@ -337,7 +336,7 @@ footer, footer.home {
       button span {
         color: #424A5D;
       }
-      
+
       button:hover {
         background-color: rgba(227, 155, 24, 1);       
       }
@@ -384,6 +383,12 @@ aside {
   .page-number {
     color: black;
   }
+
+@media (max-width: 768px) {
+  #filter {
+    -webkit-appearance: none;
+    }
+}
 
 @media (max-width: 320px) {
   #search-box {
