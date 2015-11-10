@@ -1,8 +1,10 @@
 language: node_js
 node_js:
-  - 0.10
-  - 0.12
+  - 4.2
 services:
   - elasticsearch
 before_script:
   - sleep 10
+  - curl -XPOST 'localhost:9200/_bulk?pretty' --data-binary "@./test/fixtures/fixture.json"
+after_script:
+    - curl -XDELETE 'localhost:9200/fixture'

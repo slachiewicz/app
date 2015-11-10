@@ -8,14 +8,14 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-describe('/candidate/{id}', function () {
+describe('Return the first candidate: /candidate/1', function () {
 
-  it('checks the route /candidate returns status code 200 when requested', function (done) {
+  it('checks status code 200 of /candidate/1', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject('/candidate/AVCJ7hbBV1bOM0knczjS' , function (res) {
+      server.inject('/candidate/1' , function (res) {
 
         expect(res.statusCode).to.equal(200);
 
