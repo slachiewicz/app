@@ -4,8 +4,8 @@
     var searchInput = document.getElementById('search-box').value;
     var currentPage = document.getElementById('currentPage').value;
     var totalPages = document.getElementById('totalPages').value;
-    var filter = document.getElementById('filter').value;
-    console.log(filter);
+    //var filter = document.getElementById('filter').value;
+   var filter = 'all';    
 
     if (searchInput === '') {
       window.location.href = '/';
