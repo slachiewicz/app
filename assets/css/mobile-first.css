@@ -8,14 +8,14 @@ html {
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
-  
+
 }
 body {
   background: #f2f2f2;
   text-decoration: none;
   position: relative;
-  max-width: 100%;  
-  overflow-x:hidden; 
+  max-width: 100%;
+  overflow-x:hidden;
   -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
       box-sizing: border-box;
@@ -100,8 +100,8 @@ a#mobile {
 }
 
 .dblarrow b {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-bottom: 5px solid black;
@@ -110,8 +110,8 @@ a#mobile {
 }
 
 .dblarrow i {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid black;
@@ -129,20 +129,23 @@ select.choose_state {
     outline: none;
     margin-right: 15px;
     font-size: 1.4em;
-    padding-right: 20px; 
+    padding-right: 20px;
     display: inline-block;
 }*/
 /*==============================
   END SEARCH BAR
 ================================*/
+.container {
+  margin-top:50px;
+}
 
-.container, .candidate_view {  
+.container, .candidate_view {
   margin-bottom:40px;
   padding: 5px;
 }
 
   .candidate_view {
-    margin-top: 50px; 
+    margin-top: 50px;
   }
 
 .box-wrapper {
@@ -175,14 +178,14 @@ select.choose_state {
     }
 
      .headline h1{
-      color: rgba(0, 0, 0, 0.84);     
+      color: rgba(0, 0, 0, 0.84);
      }
 
      .headline p {
       color: rgb(68, 65, 65);
       font-size: 0.8em;
      }
-   
+
      .headline span {
       float: left;
       color: grey;
@@ -279,7 +282,7 @@ footer, footer.home {
     border-radius:5px;*/
   }
     ul.lang li span.each-lang {
-      color: #111317; 
+      color: #111317;
     }
 
   .details h1 {
@@ -338,15 +341,15 @@ footer, footer.home {
       }
 
       button:hover {
-        background-color: rgba(227, 155, 24, 1);       
+        background-color: rgba(227, 155, 24, 1);
       }
-      
+
     ul.lang li {
       display: block;
       padding: 2px;
     }
       ul.lang li span {
-        color: #424A5D;      
+        color: #424A5D;
       }
 hr {
   border: none;
