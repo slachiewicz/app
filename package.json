@@ -1,6 +1,6 @@
 {
   "name": "gmapp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "User interface ",
   "main": "lib/start.js",
   "scripts": {
