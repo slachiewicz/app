@@ -3,6 +3,11 @@ node_js:
   - 4.2
 services:
   - elasticsearch
+  - redis-server
+before_install:
+  - pip install --user codecov
+after_success:
+  - codecov --file lcov.info --disable search
 before_script:
   - sleep 10
   - curl -XPOST 'localhost:9200/_bulk?pretty' --data-binary "@./test/fixtures/fixture.json"
