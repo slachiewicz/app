@@ -60,7 +60,7 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
       server.inject(options, function (res) {
 
         //redirect to the home page: /
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(302);
         server.stop(done);
       });
     });
