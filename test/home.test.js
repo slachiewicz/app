@@ -52,7 +52,7 @@ describe('/', function () {
   it('Attempt to access restricted content with WRONG Token', function (done) {
 
     var token =  "wrongeyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmaXN0bmFtZSI6IkFsZXgiLCJpbWFnZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS8tWGRVSXFkTWtDV0EvQUFBQUFBQUFBQUkvQUFBQUFBQUFBQUEvNDI1MnJzY2J2NU0vcGhvdG8uanBnP3N6PTUwIiwiaWQiOiIxMDA3NjAxNTIyNTQ3NzkwNjE1OTQiLCJhZ2VudCI6InNob3QiLCJpYXQiOjE0NDc4NTA0NjN9.zcimChNyt0xjig1gtcRjk3neyXBaB3TP5KD-B1Tcxy8"  //JWT.sign({ id: 123, "name": "Charlie" }, secret);
-    
+
     var options = {
       method: "GET",
       url: "/",
@@ -83,7 +83,8 @@ describe('/', function () {
     var options = {
       method: "GET",
       url: "/",
-      headers: { cookie: "token=" + token }
+      headers: { cookie: "token=" + token },
+      credentials: { id: 12, "name": "Simon", valid: true}
     };
 
      Server.init(0, function (err, server) {
@@ -93,11 +94,11 @@ describe('/', function () {
         server.inject(options, function(res) {
           expect(res.statusCode).to.equal(200);
           server.stop(done);
-          
-        });    
+
+        });
       });
     });
-  });   
+  });
 });
 
 describe('/', function () {
@@ -118,10 +119,10 @@ describe('/', function () {
         server.inject(options, function(res) {
           expect(res.statusCode).to.equal(302);
           server.stop(done);
-        });    
+        });
       });
     });
-  });   
+  });
 });
 
 //id not defined in Redis
@@ -137,15 +138,15 @@ describe('/', function () {
     };
 
      Server.init(0, function (err, server) {
-     
+
       server.inject(options, function(res) {
         expect(res.statusCode).to.equal(302);
         server.stop(done);
         //get the current redis connection and close it
-        
-      });        
+
+      });
     });
-  });   
+  });
 });
 
 
@@ -174,7 +175,7 @@ describe('/1', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           process.env.RESULTS_PER_PAGE = nubersPerPage;
-          server.stop(done);         
+          server.stop(done);
         });
       });
     });
@@ -295,7 +296,7 @@ describe('try to access a wrong route: /wrongparam', function () {
 
           expect(res.statusCode).to.equal(404);
           server.stop(done);
-         
+
         });
       });
     });
