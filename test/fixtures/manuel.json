@@ -1,6 +1,6 @@
 { "url": "https://uk.linkedin.com/in/fakeprofile2",
     "connections": 142,
-    "connectedWith": ["The User"],
+    "connectedTo": ["The User"],
     "fullname": "Manuel",
     "location": "Barcelona, Spain",
     "current": "Fawlty Hotel",

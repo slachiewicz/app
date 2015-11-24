@@ -1,5 +1,4 @@
 module.exports = function(name) {
 
-  return name.match(/\b(\w)/g).join('');  
-
+  return name.split(' ').map(n => n[0]).join(''); 
 };
