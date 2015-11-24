@@ -129,6 +129,12 @@ a#mobile {
       color: grey;
      }
 
+     .headline ul li span.initials {
+      border: 1px solid rgba(0, 0, 0, 0.57);
+      margin-right: 2px;
+      padding: 1px;
+     }
+
 footer, footer.home {
   position:fixed;
   left:0;

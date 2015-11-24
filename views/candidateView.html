@@ -9,6 +9,12 @@
         {{{tagsHelper this}}}
       {{/each}}
 
+       {{#each connectedWith}}
+        <ul>
+          <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
+        </ul> 
+      {{/each}}
+
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
         <p class="mobile"><span>Email: </span>{{contacts.email}}</p>
         <p class="mobile"><span>Phone: </span>{{contacts.phone}}</p>
@@ -22,7 +28,6 @@
     <aside>
       <div id="sidebar">
         <h1><i class="fa fa-user"></i> CONTACT</h1>
-
         <p><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
         <p><span>Email: </span>{{contacts.email}}</p>
         <p><span>Phone: </span>{{contacts.phone}}</p>
