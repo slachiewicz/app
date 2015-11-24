@@ -30,7 +30,7 @@ a#mobile {
 }
 
 .headline img {
-	width: 120px;
+	width: 140px;
 }
   .headline h1 {
     text-decoration: none;
@@ -48,6 +48,9 @@ a#mobile {
     color: grey;
     font-size: 1em;
   }
+  .headline ul li span.initials {
+    margin: 8px 8px 0 0;
+   }
 
   .headline p.mobile {
     display: none

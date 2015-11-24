@@ -130,9 +130,11 @@ a#mobile {
      }
 
      .headline ul li span.initials {
-      border: 1px solid rgba(0, 0, 0, 0.57);
-      margin-right: 2px;
-      padding: 1px;
+      margin: 4px 4px 0 0;
+      padding: 3px 6px;
+      color: #F7F9FF;
+      background-color: #424A5D;
+      letter-spacing: 1px;
      }
 
 footer, footer.home {
