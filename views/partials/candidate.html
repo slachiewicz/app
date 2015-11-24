@@ -4,7 +4,14 @@
     <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
     <a href="/candidate/{{id}}"><h1>{{fullname}}</h1></a><br/>
     <p>{{current}}</p>
-    <p>{{location}}</p>
+    <p>{{location}}</p> 
+
+    {{#each connectedTo}}
+    <ul>
+      <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
+    </ul> 
+    {{/each}}
+
   </div>
 </div>
 </div>
