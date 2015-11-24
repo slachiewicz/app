@@ -12,13 +12,13 @@ var it = lab.test;
 
 describe('api /profile', function () {
 
-  it('updates profile', function (done) {
+  it('updates profile david', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
 
-      var profile = require('./fixtures/david-dupont.json');
+      var profile = require('./fixtures/david-dupont-update.json');
 
       var options = {
         method: 'POST',
@@ -47,19 +47,58 @@ describe('api /profile', function () {
           var $ = cheerio.load(res.payload);
 
           expect($('.fullname').text()).to.equal("David Dupont");
-
           server.stop(done);
-          
+
           }), 3000);
 
         });
-
-        // server.stop(done);
-
       });
-
     });
+  });
 
+
+  it('updates profile manuel same 1st degree contact', function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/manuel.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+    };
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+
+        var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        var optionsCandidate = {
+          method: "GET",
+          url: "/candidate/" + res.payload,
+          headers: { cookie: "token=" + token }
+        };
+
+        var redisClient = require('redis-connection')();
+        redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+          setTimeout(server.inject(optionsCandidate , function (res) {
+
+          expect(res.statusCode).to.equal(200);
+
+          var $ = cheerio.load(res.payload);
+
+          expect($('.fullname').text()).to.equal("Manuel");
+          server.stop(done);
+
+          }), 3000);
+
+        });
+      });
+    });
   });
 
     it('create profile Maria', function (done) {
@@ -98,7 +137,7 @@ describe('api /profile', function () {
           expect($('.fullname').text()).to.equal("Maria Dolores");
 
           server.stop(done);
-          
+
           }), 3000);
 
         });
@@ -106,5 +145,4 @@ describe('api /profile', function () {
 
     });
   });
-
 });
