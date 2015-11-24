@@ -31,5 +31,18 @@
     "languages":[{"lang": "Spanish", "fluency" : "Native"}, {"lang": "English", "fluency" : "Native or bilingual proficiency" },{"lang" : "French", "fluency" : "Elementary proficiency" }],
     "experience":{
         "current": [{"title": "Manager","org": "Fawlty Hotel","date": "September 2010 – Present (5 years 2 months)","desc": "I'm working as a manager","location": "United Kingdom"}],
+        "past":[{  "title": "Waiter","org": "Anotther Hotel","date": "October 2000 – October 2001 (1 year)","desc": "I was a waiter","location": "Spain"}]}},
+{ "index" : { "_index" : "gmcontact", "_type" : "contacts", "_id" : "3" } },
+{ "url": "https://uk.linkedin.com/in/fakeprofile3",
+    "connections": 142,
+    "fullname": "Oba",
+    "location": "Barcelona, Spain",
+    "current": "Fawlty Hotel",
+    "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
+    "summary": "This is the summary of the second profile",
+    "skills":[{ "level": 10, "skill": "Service" },{ "level": 9, "skill": "Sobriety" },{ "level": 29, "skill": "Smart" },{ "level": 42, "skill": "javascript" }],
+    "languages":[{"lang": "Spanish", "fluency" : "Native"}, {"lang": "English", "fluency" : "Native or bilingual proficiency" },{"lang" : "French", "fluency" : "Elementary proficiency" }],
+    "experience":{
+        "current": [{"title": "Manager","org": "Fawlty Hotel","date": "September 2010 – Present (5 years 2 months)","desc": "I'm working as a manager","location": "United Kingdom"}],
         "past":[{  "title": "Waiter","org": "Anotther Hotel","date": "October 2000 – October 2001 (1 year)","desc": "I was a waiter","location": "Spain"}]}}
 ]
