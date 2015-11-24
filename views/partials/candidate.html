@@ -1,18 +1,15 @@
 <div class="list-wrapper">
-<div class="star">
-  {{listFavourite}}
-  {{#if favourite}}
-    FAVOURITE!
-  {{/if}}
-</div>
 <div class="thumbnail">
   <div class="headline">
     <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
     <a href="/candidate/{{id}}"><h1>{{fullname}}</h1></a><br/>
+    {{#if favourite}}
+      <i class="fa fa-star"></i>
+    {{/if}}
     <p>{{current}}</p>
     <p>{{location}}</p>
 
-    {{#each connectedWith}}
+    {{#each connectedTo}}
     <ul>
       <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
     </ul>

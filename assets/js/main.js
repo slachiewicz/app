@@ -27,4 +27,21 @@
     }
   }, false);
 
+  var favouriteBtn = document.getElementById('favourite');
+  favouriteBtn.addEventListener('click', function (){
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '/favourite');
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.setRequestHeader('Cookie', document.cookie);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log(xhr.responseText);
+        //  sendResponse({status: 200});
+      }
+    };
+    xhr.send(JSON.stringify({id: '123'}));
+    console.log('had to favourite!!');
+
+  })
+
 }());

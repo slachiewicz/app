@@ -129,12 +129,13 @@ a#mobile {
       color: grey;
      }
 
-     .headline ul li span.initials {
+     .headline .initials {
       margin: 4px 4px 0 0;
       padding: 3px 6px;
-      color: #F7F9FF;
+      color: #fff;
       background-color: #424A5D;
       letter-spacing: 1px;
+      font-size: 0.6em;
      }
 
 footer, footer.home {

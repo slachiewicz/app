@@ -9,11 +9,19 @@
         {{{tagsHelper this}}}
       {{/each}}
 
-       {{#each connectedWith}}
+       {{#each connectedTo}}
         <ul>
           <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
-        </ul> 
+        </ul>
       {{/each}}
+
+      <!-- Add favorite icon -->
+      {{#if favourite}}
+        <i class="fa fa-star"></i>
+      {{else}}
+        <button type="button" id='favourite'>add to my favourite</button>
+      {{/if}}
+
 
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
         <p class="mobile"><span>Email: </span>{{contacts.email}}</p>

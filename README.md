@@ -5,8 +5,6 @@
 [![Dependency Status](https://david-dm.org/FAC-GM/app.svg)](https://david-dm.org/FAC-GM/app)
 [![codecov.io](https://codecov.io/github/FAC-GM/app/coverage.svg?branch=master)](https://codecov.io/github/FAC-GM/app?branch=master)
 
-## Why?
-
 ## What?
 
 This application allows people to search through
@@ -24,6 +22,12 @@ contact data stored in an ElasticSearch database.
   * [ElasticSearch](https://www.elastic.co/)
   * [Redis](http://redis.io/)
 
+
+## Functionality
+
+* visual indicator of whom on the team is connected to specific candidates
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/initials.png)
 
 ### Run the App *Locally*
 
