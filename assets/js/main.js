@@ -33,7 +33,6 @@
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/favourite');
     xhr.setRequestHeader('Content-Type', 'application/json');
-    // xhr.setRequestHeader('Cookie', document.cookie);
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
         if (xhr.responseText === '200') {
@@ -42,13 +41,12 @@
           state.className = 'fa fa-star';
         }
         console.log(xhr.responseText);
-        //  sendResponse({status: 200});
       }
     };
 
     xhr.send(JSON.stringify({id: document.getElementById('profileId').value }));
     console.log('had to favourite!!');
 
-  })
+  }, false);
 
 }());
