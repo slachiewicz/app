@@ -56,6 +56,9 @@ a#mobile {
   .headline p.mobile {
     display: none
   }
+  #favouriteForm button {
+    font-size: 1.5em;
+  }
 
 aside {
   display: table-cell;

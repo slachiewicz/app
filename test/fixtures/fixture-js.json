@@ -5,6 +5,7 @@
     "connectedTo": ["Simon Lab"],
      "fullname": "Bob Dupont",
      "location": "London, United Kingdom",
+     "favourite": ["12"],
      "current": "The best company ever",
      "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
      "contacts": {
@@ -37,7 +38,7 @@
     "connections": 142,
     "fullname": "Oba",
     "location": "Barcelona, Spain",
-    "favourite": ["116545865561373677696"],
+    "favourite": ["116545865561373677696", "12", "107742241036619667702"],
     "current": "Fawlty Hotel",
     "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
     "summary": "This is the summary of the second profile",

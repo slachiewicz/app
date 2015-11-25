@@ -9,25 +9,6 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-//change the results per page to have at least 2 pages
-
-// describe('/', function () {
-
-//   it('returns the home page', function (done) {
-
-//     Server.init(0, function (err, server) {
-
-//       expect(err).to.not.exist();
-
-//       server.inject('/', function (res) {
-
-//         expect(res.statusCode).to.equal(200);
-
-//         server.stop(done);
-//       });
-//     });
-//   });
-// });
 
 describe('/', function () {
 
@@ -84,7 +65,7 @@ describe('/', function () {
       method: "GET",
       url: "/",
       headers: { cookie: "token=" + token },
-      credentials: { id: 12, "name": "Simon", valid: true}
+      credentials: { id: "12", "name": "Simon", valid: true}
     };
 
      Server.init(0, function (err, server) {
@@ -303,5 +284,4 @@ describe('try to access a wrong route: /wrongparam', function () {
   });
 });
 
-//restore env
-// process.env.RESULTS_PER_PAGE = resultsPerPage;
+

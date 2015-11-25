@@ -37,7 +37,7 @@ describe('Return the first candidate: /candidate/1', function () {
       method: "GET",
       url: "/candidate/1",
       headers: { cookie: "token=" + token },
-      credentials: { id: 12, "name": "Simon", valid: true}
+      credentials: { id: "12", "name": "Simon", valid: true}
     };
 
     Server.init(0, function (err, server) {

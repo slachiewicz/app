@@ -27,19 +27,26 @@
     }
   }, false);
 
-  var favouriteBtn = document.getElementById('favourite');
-  favouriteBtn.addEventListener('click', function (){
+  var favouriteForm = document.getElementById('favouriteForm');
+  favouriteForm.addEventListener('submit', function (e){
+    e.preventDefault();
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/favourite');
     xhr.setRequestHeader('Content-Type', 'application/json');
     // xhr.setRequestHeader('Cookie', document.cookie);
     xhr.onreadystatechange = function () {
       if (xhr.readyState == 4 && xhr.status == 200) {
+        if (xhr.responseText === '200') {
+          favouriteForm.setAttribute("action", "");      
+          var state = document.getElementById('starState');
+          state.className = 'fa fa-star';
+        }
         console.log(xhr.responseText);
         //  sendResponse({status: 200});
       }
     };
-    xhr.send(JSON.stringify({id: '123'}));
+
+    xhr.send(JSON.stringify({id: document.getElementById('profileId').value }));
     console.log('had to favourite!!');
 
   })
