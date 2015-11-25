@@ -75,6 +75,10 @@ a#mobile {
       background-color: white;
     }
 
+    #my-favourite {
+      color: white;
+    }
+
 /*==============================
   END SEARCH BAR
 ================================*/
@@ -287,8 +291,8 @@ footer, footer.home {
       }
 
 /*==============================
- Skills 
-================================*/     
+ Skills
+================================*/
 
   .each {
     float: left;
@@ -299,8 +303,8 @@ footer, footer.home {
     border-radius:5px;
   }
 /*==============================
- End Skills 
-================================*/ 
+ End Skills
+================================*/
     .details span {
       color: #313848;
     }
@@ -353,7 +357,7 @@ aside {
   .container-login > h1 {
     font-size: 25px;
   }
-  
+
 /*==============================
  End Login page
 ================================*/
