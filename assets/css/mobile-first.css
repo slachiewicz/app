@@ -32,13 +32,6 @@ header {
   background-color: #424A5D;
 }
 
-/*a#mobile {
-  float: right;
-}*/
-/*
-  a#mobile i {
-    font-size: 20px;
-  }*/
 /*==============================
   SEARCH BAR
 ================================*/
@@ -76,9 +69,9 @@ header {
     }
 
      .my-favourite {
-      color: white;
       float:right;
       margin: 8px 5px 10px;
+      font-size: 1.5em;
     }
 
 /*==============================
@@ -150,6 +143,8 @@ header {
         float: right;
 
      }
+
+
      .favourite-form button {
       background-color: transparent;
       font-size: 1em;
