@@ -5,16 +5,16 @@
     <!-- Add favorite icon -->
       {{#if favourite}}
       <!-- form for unfavourite -->
-        <form id="favouriteForm" method="POST" action="">
+        <form class="favourite-form" method="POST" action="">
         <input type="hidden" id="profileId" name="id" value="{{id}}"/>
         <input type="hidden" name="javascriptDisabled" value='true'/>
-          <button type="submit"><i id="starState" class="fa fa-star"></i></button>        
+          <button type="submit"><i id="star-state" class="fa fa-star"></i></button>        
         </form>
       {{else}}  
-        <form id="favouriteForm" method="POST" action="/favourite">
+        <form class="favourite-form" method="POST" action="/favourite">
         <input type="hidden" id="profileId" name="id" value="{{id}}"/>
         <input type="hidden" name="javascriptDisabled" value='true'/>
-          <button type="submit"><i id="starState" class="fa fa-star unchecked"></i></button>        
+          <button type="submit"><i id="star-state" class="fa fa-star unchecked"></i></button>        
         </form>
         
       {{/if}}
@@ -89,3 +89,5 @@
 </div>
 
 {{>footer_mobile_candidate_view}}
+
+<script src="/assets/js/candidate_view.js"></script>

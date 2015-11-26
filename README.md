@@ -29,6 +29,21 @@ contact data stored in an ElasticSearch database.
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/initials.png)
 
+* favourite candidate profiles 
+
+Users can favourite profile by going into the candidate profile view and by clicking the grey star in the top right corner.
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/star2.png)
+
+Users can quickly see which profiles have been saved into the favourite list.
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/star.png)
+
+Users can also navigate to the favourite list page by clicking the link in the top right corner.
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/favourite1.png)
+
+
 ### Run the App *Locally*
 
 Clone the Git repository from GitHub:

@@ -15,7 +15,7 @@
     }
   }
 
- document.getElementById('search-btn').addEventListener('click', function (e) {
+ document.getElementsByClassName('search-btn')[0].addEventListener('click', function (e) {
     e.preventDefault();
     search();
   }, false);
@@ -25,28 +25,6 @@
     if (key === 13) {
       search();
     }
-  }, false);
-
-  var favouriteForm = document.getElementById('favouriteForm');
-  favouriteForm.addEventListener('submit', function (e){
-    e.preventDefault();
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/favourite');
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        if (xhr.responseText === '200') {
-          favouriteForm.setAttribute("action", "");      
-          var state = document.getElementById('starState');
-          state.className = 'fa fa-star';
-        }
-        console.log(xhr.responseText);
-      }
-    };
-
-    xhr.send(JSON.stringify({id: document.getElementById('profileId').value }));
-    console.log('had to favourite!!');
-
   }, false);
 
 }());

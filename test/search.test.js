@@ -200,7 +200,7 @@ describe('/search/all/javascript/1', function () {
 
       server.inject('/search/all/javascript/1', function (res) {
 
-        expect(res.statusCode).to.equal(302);
+        expect(res.statusCode).to.equal(401);
 
         server.stop(done);
       });

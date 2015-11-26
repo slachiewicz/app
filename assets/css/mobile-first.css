@@ -32,13 +32,13 @@ header {
   background-color: #424A5D;
 }
 
-a#mobile {
+/*a#mobile {
   float: right;
-}
-
+}*/
+/*
   a#mobile i {
     font-size: 20px;
-  }
+  }*/
 /*==============================
   SEARCH BAR
 ================================*/
@@ -46,12 +46,12 @@ a#mobile {
   display: inline;
 }
 
-  #search-form {
+  .search-form {
     text-align: center;
     padding: 5px;
   }
 
-    #search-btn {
+    .search-btn {
       background-color: #E4AD28;
       color:white;
       padding: 10px 0px;
@@ -59,7 +59,7 @@ a#mobile {
       font-weight:bold;
       width: 50px;
     }
-      #search-btn .fa {
+      .search-btn .fa {
         color:#424A5D;
       }
 
@@ -75,7 +75,7 @@ a#mobile {
       background-color: white;
     }
 
-     #my-favourite {
+     .my-favourite {
       color: white;
       float:right;
       margin: 8px 5px 10px;
@@ -150,7 +150,7 @@ a#mobile {
         float: right;
 
      }
-     #favouriteForm button {
+     .favourite-form button {
       background-color: transparent;
       font-size: 1em;
       border: none;

@@ -18,7 +18,7 @@ describe('Attempt to return the first candidate: /candidate/1 without authorizat
       expect(err).to.not.exist();
       server.inject('/candidate/1' , function (res) {
 
-        expect(res.statusCode).to.equal(302);
+        expect(res.statusCode).to.equal(401);
 
         server.stop(done);
       });
