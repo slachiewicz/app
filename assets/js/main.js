@@ -27,4 +27,22 @@
     }
   }, false);
 
+  //highlight
+  var keywords = document.getElementsByClassName('keywords')[0].value;
+  var checkHighlight = document.getElementsByClassName('check-highlight');
+  var matcher = new RegExp(keywords.split(' ').join('|'), 'gi');
+
+  var options = {
+    startTag :"<b class='highlight'>", // could be a hyperlink
+    endTag   :"</b>" // or you could use <i> instead of <b> ... want it? ask!
+  }
+
+  function wrapper (match) {
+    return options.startTag + match + options.endTag;
+  }
+
+  for(var i = 0; i < checkHighlight.length; i++) {
+    checkHighlight[i].innerHTML = checkHighlight[i].innerText.replace(matcher, wrapper);
+  }
+
 }());

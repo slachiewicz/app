@@ -5,10 +5,10 @@
       <i class="fa fa-star"></i>
     {{/if}}
     <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
-    <a href="/candidate/{{id}}"><h1>{{fullname}}</h1></a><br/>
-    
-    <p>{{current}}</p>
-    <p>{{location}}</p>
+    <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a><br/>
+
+    <p class='check-highlight'>{{current}}</p>
+    <p class='check-highlight'>{{location}}</p>
 
     {{#each connectedTo}}
     <ul>
