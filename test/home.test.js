@@ -20,7 +20,7 @@ describe('/', function () {
 
       server.inject('/', function (res) {
 
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(302);
 
         server.stop(done);
       });
@@ -46,7 +46,7 @@ describe('/', function () {
 
       server.inject(options, function(res) {
 
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(302);
 
         server.stop(done);
 
@@ -98,7 +98,7 @@ describe('/', function () {
 
       redisClient.set(123, JSON.stringify({ id: 123, "name": "Charlie", valid: false}), function (err, res) {
         server.inject(options, function(res) {
-          expect(res.statusCode).to.equal(401);
+          expect(res.statusCode).to.equal(302);
           server.stop(done);
         });
       });
@@ -121,7 +121,7 @@ describe('/', function () {
      Server.init(0, function (err, server) {
 
       server.inject(options, function(res) {
-        expect(res.statusCode).to.equal(401);
+        expect(res.statusCode).to.equal(302);
         server.stop(done);
         //get the current redis connection and close it
 
@@ -283,5 +283,3 @@ describe('try to access a wrong route: /wrongparam', function () {
     });
   });
 });
-
-
