@@ -15,7 +15,7 @@
     }
   }
 
- document.getElementById('search-btn').addEventListener('click', function (e) {
+ document.getElementsByClassName('search-btn')[0].addEventListener('click', function (e) {
     e.preventDefault();
     search();
   }, false);

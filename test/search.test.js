@@ -23,7 +23,7 @@ describe('/search endpoint', function () {
 
         expect(err).to.not.exist();
 
-        
+
           server.inject({url: '/search/all/javascript/wrongpage', headers: { cookie: "token=" + token }}, function (res) {
 
             expect(res.statusCode).to.equal(404);

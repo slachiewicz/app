@@ -1,8 +1,8 @@
-a#mobile {
+/*a#mobile {
   display: none;
-}
+}*/
 
-  #search-btn {
+  .search-btn {
       width: 100px;
   }
 
@@ -55,6 +55,9 @@ a#mobile {
 
   .headline p.mobile {
     display: none
+  }
+  .favourite-form button {
+    font-size: 1.5em;
   }
 
 aside {

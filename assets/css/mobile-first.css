@@ -32,13 +32,6 @@ header {
   background-color: #424A5D;
 }
 
-a#mobile {
-  float: right;
-}
-
-  a#mobile i {
-    font-size: 20px;
-  }
 /*==============================
   SEARCH BAR
 ================================*/
@@ -46,12 +39,12 @@ a#mobile {
   display: inline;
 }
 
-  #search-form {
+  .search-form {
     text-align: center;
     padding: 5px;
   }
 
-    #search-btn {
+    .search-btn {
       background-color: #E4AD28;
       color:white;
       padding: 10px 0px;
@@ -59,7 +52,7 @@ a#mobile {
       font-weight:bold;
       width: 50px;
     }
-      #search-btn .fa {
+      .search-btn .fa {
         color:#424A5D;
       }
 
@@ -73,6 +66,12 @@ a#mobile {
       padding: 9px;
       border: none;
       background-color: white;
+    }
+
+     .my-favourite {
+      float:right;
+      margin: 8px 5px 10px;
+      font-size: 1.5em;
     }
 
 /*==============================
@@ -136,6 +135,29 @@ a#mobile {
       background-color: #424A5D;
       letter-spacing: 1px;
       font-size: 0.6em;
+     }
+
+     i.fa-star {
+        color: #E4AD28;
+        border: none;
+        float: right;
+
+     }
+
+
+     .favourite-form button {
+      background-color: transparent;
+      font-size: 1em;
+      border: none;
+      cursor: pointer;
+      float:right;
+      outline: none;
+     }
+     #star {
+      float: right;
+     }
+     i.fa.fa-star.unchecked {
+      color: grey;
      }
 
 footer, footer.home {
@@ -266,8 +288,8 @@ footer, footer.home {
       }
 
 /*==============================
- Skills 
-================================*/     
+ Skills
+================================*/
 
   .each {
     float: left;
@@ -278,8 +300,8 @@ footer, footer.home {
     border-radius:5px;
   }
 /*==============================
- End Skills 
-================================*/ 
+ End Skills
+================================*/
     .details span {
       color: #313848;
     }
@@ -332,7 +354,7 @@ aside {
   .container-login > h1 {
     font-size: 25px;
   }
-  
+
 /*==============================
  End Login page
 ================================*/

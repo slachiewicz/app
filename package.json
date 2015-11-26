@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/FAC-GM/app#readme",
   "dependencies": {
-    "elasticsearch": "^9.0.0",
+    "elasticsearch": "^10.0.0",
     "env2": "^2.0.4",
     "esta": "^4.2.0",
     "handlebars": "^4.0.4",

@@ -2,6 +2,23 @@
 <div class="candidate_view">
   <div class="thumbnail">
     <div class="headline">
+    <!-- Add favorite icon -->
+      {{#if favourite}}
+      <!-- form for unfavourite -->
+        <form class="favourite-form" method="POST" action="">
+        <input type="hidden" id="profileId" name="id" value="{{id}}"/>
+        <input type="hidden" name="javascriptDisabled" value='true'/>
+          <button type="submit"><i id="star-state" class="fa fa-star"></i></button>        
+        </form>
+      {{else}}  
+        <form class="favourite-form" method="POST" action="/favourite">
+        <input type="hidden" id="profileId" name="id" value="{{id}}"/>
+        <input type="hidden" name="javascriptDisabled" value='true'/>
+          <button type="submit"><i id="star-state" class="fa fa-star unchecked"></i></button>        
+        </form>
+        
+      {{/if}}
+
       <img src="{{picture}}" alt="" />
       <h1 class="fullname"><strong>{{fullname}}</strong></h1>
       <p>{{location}}</p>
@@ -12,7 +29,7 @@
        {{#each connectedTo}}
         <ul>
           <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
-        </ul> 
+        </ul>
       {{/each}}
 
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
@@ -72,3 +89,5 @@
 </div>
 
 {{>footer_mobile_candidate_view}}
+
+<script src="/assets/js/candidate_view.js"></script>
