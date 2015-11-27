@@ -12,7 +12,7 @@ var it = lab.test;
 
 describe('/search endpoint', function () {
 
-  var token =  JWT.sign({ id: "12", "name": "Simon", valid: true}, process.env.JWT_SECRET);
+  var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
   var redisClient = require('redis-connection')();
   redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}));
@@ -89,8 +89,8 @@ describe('/search endpoint', function () {
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-
-      server.inject({url: '/search/all/dupont/1', headers: { cookie: "token=" + token }}, function (res) {
+      var tokenSimon =  JWT.sign({ id: '12', "name": "Simon", valid: true}, process.env.JWT_SECRET);
+      server.inject({url: '/search/all/dupont/1', headers: { cookie: "token=" + tokenSimon }}, function (res) {
         expect(res.statusCode).to.equal(200);
         process.env.RESULTS_PER_PAGE = nubersPerPage;
         server.stop(done);
