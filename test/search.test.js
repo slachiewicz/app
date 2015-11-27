@@ -83,6 +83,22 @@ describe('/search endpoint', function () {
     });
   });
 
+  it('returns specific search results for dupont which is one of my favourite', function (done) {
+      var nubersPerPage = process.env.RESULTS_PER_PAGE;
+      process.env.RESULTS_PER_PAGE = 1;
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      var tokenSimon =  JWT.sign({ id: '12', "name": "Simon", valid: true}, process.env.JWT_SECRET);
+      server.inject({url: '/search/all/dupont/1', headers: { cookie: "token=" + tokenSimon }}, function (res) {
+        expect(res.statusCode).to.equal(200);
+        process.env.RESULTS_PER_PAGE = nubersPerPage;
+        server.stop(done);
+
+      });
+    });
+  });
+
   it('returns specific search results for skills', function (done) {
       var nubersPerPage = process.env.RESULTS_PER_PAGE;
       process.env.RESULTS_PER_PAGE = 1;
