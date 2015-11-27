@@ -91,7 +91,6 @@ describe('/search endpoint', function () {
       expect(err).to.not.exist();
 
       server.inject({url: '/search/all/dupont/1', headers: { cookie: "token=" + token }}, function (res) {
-        console.log(res.payload);
         expect(res.statusCode).to.equal(200);
         process.env.RESULTS_PER_PAGE = nubersPerPage;
         server.stop(done);
