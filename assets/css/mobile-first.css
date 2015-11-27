@@ -32,6 +32,11 @@ header {
   background-color: #424A5D;
 }
 
+.highlight {
+    background-color: rgba(228, 173, 40, 0.45);
+    padding:2px 5px;
+  }
+
 /*==============================
   SEARCH BAR
 ================================*/
@@ -357,9 +362,6 @@ aside {
     font-size: 25px;
   }
 
-  .highlight {
-    color: red;
-  }
 /*==============================
  End Login page
 ================================*/

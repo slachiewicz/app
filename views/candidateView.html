@@ -20,12 +20,9 @@
       {{/if}}
 
       <img src="{{picture}}" alt="" />
-      <h1 class="fullname"><strong>{{fullname}}</strong></h1>
-      <p>{{location}}</p>
-      {{#each tags}}
-        {{{tagsHelper this}}}
-      {{/each}}
-
+      <h1 class="fullname"><strong class="check-highlight">{{fullname}}</strong></h1>
+      <p class="check-highlight">{{location}}</p>
+    
        {{#each connectedTo}}
         <ul>
           <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
@@ -33,12 +30,12 @@
       {{/each}}
 
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
-        <p class="mobile"><span>Email: </span>{{contacts.email}}</p>
-        <p class="mobile"><span>Phone: </span>{{contacts.phone}}</p>
+        <p class="mobile"><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
+        <p class="mobile"><span>Phone: </span><span class="check-highlight">{{contacts.phone}}</span></p>
           {{#each contacts.im}}
-            <p class="mobile"><span>IM: </span>{{this}}</p>
+            <p class="mobile"><span>IM: </span><span class="check-highlight">{{this}}</span></p>
           {{/each}}
-        <p class="mobile"><span>Address: </span>{{contacts.address}}</p>
+        <p class="mobile"><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>
 
     </div>
     <hr>
@@ -46,12 +43,12 @@
       <div id="sidebar">
         <h1><i class="fa fa-user"></i> CONTACT</h1>
         <p><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
-        <p><span>Email: </span>{{contacts.email}}</p>
-        <p><span>Phone: </span>{{contacts.phone}}</p>
+        <p><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
+        <p><span>Phone: </span><span class="check-highlight">{{contacts.phone}}</span></p>
           {{#each contacts.im}}
             <p><span>IM: </span>{{this}}</p>
           {{/each}}
-        <p><span>Address: </span>{{contacts.address}}</p>
+        <p><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>
       </div>
     </aside>
     <div class="details">
@@ -84,7 +81,7 @@
           {{/each}}
         </ul>
     </div>
-
+    <input type="hidden" class="keywords" value="{{keywords}}">
   </div>
 </div>
 

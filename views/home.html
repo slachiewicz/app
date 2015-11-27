@@ -1,7 +1,7 @@
 {{>search_bar}}
 <section class="container">
 	{{#each candidates}}
-	  {{>candidate}}
+	  {{>candidate keywords=../keywords}}
 	{{/each}}
 <input type="hidden" class="keywords" value="{{keywords}}">
 {{>pagination}}
