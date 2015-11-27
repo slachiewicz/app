@@ -43,6 +43,16 @@ Users can also navigate to the favourite list page by clicking the link in the t
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/favourite1.png)
 
+* highlight search keywords on the home page and on the candidate profile page
+
+Home page view: 
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/keywords.png)
+
+Candidate profile view:
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/candidateProfile.png)
+
 
 ### Run the App *Locally*
 

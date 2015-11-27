@@ -54,3 +54,31 @@ describe('Return the first candidate: /candidate/1', function () {
     });
   });
 });
+
+describe('Return the first candidate: /candidate/1/London and highlight London' , function () {
+
+  it('checks status code 200 of /candidate/1/London and highlight London', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "GET",
+      url: "/candidate/1/London",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true}
+    };
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options, function(res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(200);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});

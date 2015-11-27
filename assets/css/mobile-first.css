@@ -32,6 +32,11 @@ header {
   background-color: #424A5D;
 }
 
+.highlight {
+    background-color: rgba(228, 173, 40, 0.45);
+    padding:2px 5px;
+  }
+
 /*==============================
   SEARCH BAR
 ================================*/
@@ -73,6 +78,8 @@ header {
       margin: 8px 5px 10px;
       font-size: 1.5em;
     }
+
+
 
 /*==============================
   END SEARCH BAR

@@ -4,11 +4,16 @@
     {{#if favourite}}
       <i class="fa fa-star"></i>
     {{/if}}
+    {{#if keywords}}
+    <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><img src="{{picture}}" alt="" /></a>
+    <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><h1 class='check-highlight'>{{fullname}}</h1></a><br/>
+    {{else}}
     <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
-    <a href="/candidate/{{id}}"><h1>{{fullname}}</h1></a><br/>
-    
-    <p>{{current}}</p>
-    <p>{{location}}</p>
+    <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a><br/>
+    {{/if}}
+
+    <p class='check-highlight'>{{current}}</p>
+    <p class='check-highlight'>{{location}}</p>
 
     {{#each connectedTo}}
     <ul>
