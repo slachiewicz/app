@@ -43,7 +43,7 @@
     }
 
     for(var i = 0; i < checkHighlight.length; i++) {
-      checkHighlight[i].innerHTML = checkHighlight[i].innerText.replace(matcher, wrapper);
+      checkHighlight[i].innerHTML = checkHighlight[i].textContent.replace(matcher, wrapper);
     }
 
   }
