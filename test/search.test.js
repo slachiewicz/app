@@ -4,7 +4,7 @@ var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
 var JWT = require('jsonwebtoken');
-
+var cheerio = require('cheerio');
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
 var expect = Code.expect;
@@ -128,6 +128,59 @@ describe('/search endpoint', function () {
 
           expect(res.statusCode).to.equal(200);
           process.env.RESULTS_PER_PAGE = nubersPerPage;
+          server.stop(done);
+
+        });
+      });
+    });
+
+    it('returns specific search results for names and trim the keywords naame', function (done) {
+        var nubersPerPage = process.env.RESULTS_PER_PAGE;
+        process.env.RESULTS_PER_PAGE = 1;
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+        var name = "dolores        ";
+        var queryString = encodeURIComponent(name);
+        server.inject({url: '/search/name/' + queryString + '/1', headers: { cookie: "token=" + token }}, function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          expect($('.keywords').val()).to.equal("dolores"); //not dolores with spaces
+          process.env.RESULTS_PER_PAGE = nubersPerPage;
+          server.stop(done);
+
+        });
+      });
+    });
+
+    it('returns specific search and trim the keywords and delete the space between keywords', function (done) {
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+        var name = "maria              dolores        ";
+        var queryString = encodeURIComponent(name);
+        server.inject({url: '/search/all/ ' + queryString + '/1', headers: { cookie: "token=" + token }}, function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          expect($('.keywords').val()).to.equal("maria dolores"); //not dolores with spaces
+          server.stop(done);
+
+        });
+      });
+    });
+
+    it('returns specific candidate and the summary must have the class check-highlight', function (done) {
+        var nubersPerPage = process.env.RESULTS_PER_PAGE;
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+        server.inject({url: '/candidate/4/summary', headers: { cookie: "token=" + token }}, function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          expect($('.check-highlight')[9].children[0].data).to.equal("This is the summary of the 4 profile");
           server.stop(done);
 
         });
