@@ -8,21 +8,21 @@
         <form class="favourite-form" method="POST" action="">
         <input type="hidden" id="profileId" name="id" value="{{id}}"/>
         <input type="hidden" name="javascriptDisabled" value='true'/>
-          <button type="submit"><i id="star-state" class="fa fa-star"></i></button>        
+          <button type="submit"><i id="star-state" class="fa fa-star"></i></button>
         </form>
-      {{else}}  
+      {{else}}
         <form class="favourite-form" method="POST" action="/favourite">
         <input type="hidden" id="profileId" name="id" value="{{id}}"/>
         <input type="hidden" name="javascriptDisabled" value='true'/>
-          <button type="submit"><i id="star-state" class="fa fa-star unchecked"></i></button>        
+          <button type="submit"><i id="star-state" class="fa fa-star unchecked"></i></button>
         </form>
-        
+
       {{/if}}
 
       <img src="{{picture}}" alt="" />
       <h1 class="fullname"><strong class="check-highlight">{{fullname}}</strong></h1>
       <p class="check-highlight">{{location}}</p>
-    
+
        {{#each connectedTo}}
         <ul>
           <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
@@ -59,25 +59,25 @@
       <div class="skills-box">
         <ul>
         {{#each skills}}
-          {{{skillsHelper this}}}
+          {{skillsHelper this}}
         {{/each}}
         </ul>
       </div>
     <h1><i class="fa fa-cubes"></i> CURRENT EXPERIENCE</h1>
       {{#each experience.current}}
-        {{{experienceHelper this}}}
+        {{experienceHelper this}}
       {{/each}}
       <hr>
       <h1><i class="fa fa-cubes"></i> PAST EXPERIENCE</h1>
       {{#each experience.past}}
-        {{{experienceHelper this}}}
+        {{experienceHelper this}}
       {{/each}}
       <hr>
 
       <h1><i class="fa fa-globe"></i> LANGUAGES</h1>
         <ul class="lang">
           {{#each languages}}
-            {{{languageHelper this}}}
+            {{languageHelper this}}
           {{/each}}
         </ul>
     </div>
