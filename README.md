@@ -53,6 +53,11 @@ Candidate profile view:
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/candidateProfile.png)
 
+* visual an email indicator on the home page 
+
+Users can quickly see which candidates has an email addresss
+
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/email.png)
 
 ### Run the App *Locally*
 
