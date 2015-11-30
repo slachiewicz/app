@@ -154,7 +154,7 @@ describe('/search endpoint', function () {
       });
     });
 
-    it('returns specific candidate and the summury must have the class check-highlight', function (done) {
+    it('returns specific candidate and the summary must have the class check-highlight', function (done) {
         var nubersPerPage = process.env.RESULTS_PER_PAGE;
       Server.init(0, function (err, server) {
 
@@ -163,7 +163,7 @@ describe('/search endpoint', function () {
 
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          expect($('.check-highlight')[8].children[0].data).to.equal("This is the summary of the 4 profile");
+          expect($('.check-highlight')[9].children[0].data).to.equal("This is the summary of the 4 profile");
           server.stop(done);
 
         });
