@@ -79,6 +79,11 @@ header {
       font-size: 1.5em;
     }
 
+    .fa-at {
+      float: right;
+      color: #424A5D;
+    }
+
 
 
 /*==============================
@@ -148,7 +153,6 @@ header {
         color: #E4AD28;
         border: none;
         float: right;
-
      }
 
 
@@ -160,9 +164,7 @@ header {
       float:right;
       outline: none;
      }
-     #star {
-      float: right;
-     }
+    
      i.fa.fa-star.unchecked {
       color: grey;
      }
