@@ -15,9 +15,9 @@
     <p class='check-highlight'>{{current}}</p>
     <p class='check-highlight'>{{location}}</p>
 
-    {{#each initials}}
+    {{#each connectedTo}}
       <ul>
-        <li><span class='initials'>{{this}}</span></li>
+        <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
       </ul>
     {{/each}}
 
