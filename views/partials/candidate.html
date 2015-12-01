@@ -16,11 +16,11 @@
     <p class='check-highlight'>{{location}}</p>
 
     {{#each connectedTo}}
-    <ul>
-      <li><span class='initials'>{{initialsConnectedUsersHelper this}}</span></li>
-    </ul>
+      <ul>
+        <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
+      </ul>
     {{/each}}
-  
+
     {{#if email}}
     <i class="fa fa-at"></i>
     {{/if}}

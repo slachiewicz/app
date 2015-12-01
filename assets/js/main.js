@@ -1,5 +1,9 @@
 (function () {
 
+  var filterFunc = function(k) {
+    return k !== '';
+  }
+
   function search() {
     var searchInput = document.getElementById('search-box').value;
     var currentPage = document.getElementById('currentPage').value;
@@ -9,7 +13,8 @@
     if (searchInput === '') {
       window.location.href = '/';
     } else {
-      var queryString = searchInput.split(' ').filter(k => k !== '').join(' ');
+
+      var queryString = searchInput.split(' ').filter(filterFunc).join(' ');
       queryString = encodeURIComponent(queryString);
 
       window.location.href='/search/' + filter + '/' + queryString + '/' + 1;
@@ -32,7 +37,7 @@
   var keywords = document.getElementsByClassName('keywords')[0].value;
   if (keywords.length > 0) {
     var checkHighlight = document.getElementsByClassName('check-highlight');
-    var matcher = new RegExp(keywords.split(' ').filter( k => k !== '').join('|'), 'gi');
+    var matcher = new RegExp(keywords.split(' ').filter(filterFunc).join('|'), 'gi');
 
     var options = {
       startTag :"<b class='highlight'>", // could be a hyperlink
