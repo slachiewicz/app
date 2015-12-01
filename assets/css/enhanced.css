@@ -100,6 +100,17 @@ aside {
   .delete-profile-confirmation {
     display: none;
   }
+
+  .delete-profile, .delete-profile-confirmation button{
+    padding: 5px 10px;
+    background-color: #424A5D;
+    color: #FFD777;
+    border:0 none;
+  }
+
+  .delete-profile:hover , .delete-profile-confirmation button:hover{
+     cursor: pointer;
+  }
 /*==============================
  Login page
 ================================*/
