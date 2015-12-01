@@ -96,11 +96,15 @@ aside {
   #prev, #next {
     padding: 1px 12px 1px;
   }
+
+  .delete-profile-confirmation {
+    display: none;
+  }
 /*==============================
  Login page
 ================================*/
 .container-login {
-  margin-top: 20%;  
+  margin-top: 20%;
   width: 450px;
 }
   .container-login > h1 {

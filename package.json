@@ -8,6 +8,7 @@
     "test": "node test/fixtures/initialize.js && ./node_modules/lab/bin/lab ./test/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
     "coverage": "./node_modules/lab/bin/lab -r html -o ./test/coverage.html",
     "start": "node lib/start.js",
+    "dev":"./node_modules/.bin/nodemon lib/start.js",
     "codeclimate": "CODECLIMATE_REPO_TOKEN=2a233c5d8243d7c785eedd5a366eb834c7ebe4bbfc2de5e951585cb839fbad9a ./node_modules/codeclimate-test-reporter/bin/codeclimate.js < ./lcov.info"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "istanbul": "^0.4.0",
     "lab": "^7.2.0",
     "nock": "^3.1.0",
+    "nodemon": "^1.8.1",
     "tape": "^4.2.2"
   }
 }
