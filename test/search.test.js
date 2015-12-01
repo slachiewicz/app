@@ -142,12 +142,29 @@ describe('/search endpoint', function () {
         expect(err).to.not.exist();
         var name = "dolores        ";
         var queryString = encodeURIComponent(name);
-        server.inject({url: '/search/'+ queryString + '/dolores/1', headers: { cookie: "token=" + token }}, function (res) {
+        server.inject({url: '/search/name/' + queryString + '/1', headers: { cookie: "token=" + token }}, function (res) {
 
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
           expect($('.keywords').val()).to.equal("dolores"); //not dolores with spaces
           process.env.RESULTS_PER_PAGE = nubersPerPage;
+          server.stop(done);
+
+        });
+      });
+    });
+
+    it('returns specific search and trim the keywords and delete the space between keywords', function (done) {
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+        var name = "maria              dolores        ";
+        var queryString = encodeURIComponent(name);
+        server.inject({url: '/search/all/ ' + queryString + '/1', headers: { cookie: "token=" + token }}, function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          expect($('.keywords').val()).to.equal("maria dolores"); //not dolores with spaces
           server.stop(done);
 
         });
