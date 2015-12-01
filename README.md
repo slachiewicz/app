@@ -1,4 +1,4 @@
-# User interface for GM
+# GM Contact Management
 
 [![Build Status](https://travis-ci.org/FAC-GM/app.svg?branch=master)](https://travis-ci.org/FAC-GM/app)
 [![Code Climate](https://codeclimate.com/github/FAC-GM/app/badges/gpa.svg)](https://codeclimate.com/github/FAC-GM/app)
@@ -7,13 +7,14 @@
 
 ## What?
 
-This application allows people to search through
-contact data stored in an ElasticSearch database.
+This application allows specified members of a team to search through
+contacts stored in an ElasticSearch database.
 
 # How?
 
-## We use following technologies:
+### We use following technologies:
 
+* HTML5, CSS3, Javascript 
 * [Nodejs](https://nodejs.org/en/)
 * [Hapijs](http://hapijs.com/)
   * Main packages: env2, Handlebars, Inert, Vision
@@ -24,43 +25,7 @@ contact data stored in an ElasticSearch database.
 
 #### Database structure with example [here](https://github.com/FAC-GM/app/blob/master/DATA.md)
 
-## Functionality
-
-* visual indicator of whom on the team is connected to specific candidates
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/initials.png)
-
-* favourite candidate profiles 
-
-Users can favourite profile by going into the candidate profile view and by clicking the grey star in the top right corner.
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/star2.png)
-
-Users can quickly see which profiles have been saved into the favourite list.
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/star.png)
-
-Users can also navigate to the favourite list page by clicking the link in the top right corner.
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/favourite1.png)
-
-* highlight search keywords on the home page and on the candidate profile page
-
-Home page view: 
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/keywords.png)
-
-Candidate profile view:
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/candidateProfile.png)
-
-* visual an email indicator on the home page 
-
-Users can quickly see which candidates has an email addresss
-
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/email.png)
-
-### Run the App *Locally*
+## Running the App *Locally*
 
 Clone the Git repository from GitHub:
 
@@ -93,15 +58,23 @@ you will also need to have a `.env` file in the root of your project
 with the following variables:
 
 ```sh
-# SEARCHBOX_URL=http://paas:password@eu-west-1.searchly.com # ask Simon for this
+# SEARCHBOX_URL=http://paas:password@eu-west-1.searchly.com # # Ask dev team for this
 SEARCHBOX_URL=http://localhost:9200
 PORT=8000
 ES_INDEX=gmcontact
 ES_TYPE=contacts
 RESULTS_PER_PAGE=10
+JWT_SECRET= # Ask dev team for this
+BASE_URL=http://localhost:8000
+# Variable with authorised emails
+#Gm app
+GOOGLE_CLIENT_ID= # Ask dev team for this
+GOOGLE_CLIENT_SECRET= # Ask dev team for this
+
 ```
 Ask a member of the dev team for the `SEARCHBOX_URL` variable if you
-want to access the *hosted* ElasticSearch Database.
+want to access the *hosted* ElasticSearch Database.    
+There are a number of other variables missing from example above which are available to the dev team.
 
 ### Install *node.js* dependencies
 
@@ -123,9 +96,50 @@ npm start
 
 Now visit http://localhost:8000 in your browser to view the site.
 
+### Allowing new team members access to the app
+Ask the **dev team** to update the variable that restricts access.
 
-# Wireframes
 
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/mobile-first.png)
+## Functionality
 
-![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/desktop-view.png)
+A running list of the of the functionality in the app as it becomes available.
+
++ [Login via Google](https://github.com/dwyl/hapi-auth-github), access restricted to specific team members
+
++ Initials of who on the team a contact is connected to are displayed
+ _(in the example below, David Dupont is connected to our current dev team - Simon L and Anita C)_
+
+![Initials-of-who-contact-is-connected-to](https://github.com/FAC-GM/app/blob/master/wireframes/initials.png)
+
+* 'Favourite' contact profiles by clicking the grey star in the corner of the profile page
+
+![favouriting-a-contact-functionality](https://github.com/FAC-GM/app/blob/master/wireframes/star2.png)
+
++ Quickly visualise who has been favourited in the search results (denoted by a yellow star) and see a full list by clicking on the yellow star in the top right hand corner of the app
+
+![how-favourites-appear-in-search-results](https://github.com/FAC-GM/app/blob/master/wireframes/favourite1.png)
+
++ Search keywords are highlighted in the search results and profile pages to facilitate quick scanning of the information
+
+![search-keyword-highlighted-in-search](https://github.com/FAC-GM/app/blob/master/wireframes/keywords.png)
+
+![search-keyword-highlighted-in-profile](https://github.com/FAC-GM/app/blob/master/wireframes/candidateProfile.png)
+
++ Symbol in search results to quickly identify if an email address is available for contact
+
+![email-indicator-screenshot](https://github.com/FAC-GM/app/blob/master/wireframes/email-indicator-screenshot.png)
+
+## Working with this repo
+Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
+
+We use labels to manage these. The most interesting ones are:
++ `feature idea` - added to features that are just in idea form for now rather than _definitely_ required
++ `priority...` - labels starting with 'priority' denote the priority of the task from 1 to 5, with 1 being the highest
++ `T...` - labels starting with 'T' denote time estimates for the task; these are added **by the dev team only**, e.g. `T1d` will require one day to complete
+  + `m` = minutes
+  + `h` = hours
+  + `d` = days
++ `in progress` - denotes which tasks are currently being worked on
++ `help wanted` - used mostly internally by the dev team when outside help is required to move an issue forward
++ `technical` - used **by the dev team** to denote technical tasks
+
