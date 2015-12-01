@@ -30,7 +30,7 @@ contact data stored in an ElasticSearch database.
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/initials.png)
 
-* favourite candidate profiles 
+* favourite candidate profiles
 
 Users can favourite profile by going into the candidate profile view and by clicking the grey star in the top right corner.
 
@@ -46,7 +46,7 @@ Users can also navigate to the favourite list page by clicking the link in the t
 
 * highlight search keywords on the home page and on the candidate profile page
 
-Home page view: 
+Home page view:
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/keywords.png)
 
@@ -54,12 +54,15 @@ Candidate profile view:
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/candidateProfile.png)
 
-* visual an email indicator on the home page 
+* visual an email indicator on the home page
 
-Users can quickly see which candidates has an email addresss
+Users can quickly see which candidates has an email address
 
 ![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/email.png)
 
+* delete profile
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/delete.png)
+![Wireframes](https://github.com/FAC-GM/app/blob/master/wireframes/confirmationDelete.png)
 ### Run the App *Locally*
 
 Clone the Git repository from GitHub:
