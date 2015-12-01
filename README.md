@@ -23,6 +23,7 @@ contacts stored in an ElasticSearch database.
   * [ElasticSearch](https://www.elastic.co/)
   * [Redis](http://redis.io/)
 
+#### Database structure with example [here](https://github.com/FAC-GM/app/blob/master/DATA.md)
 
 ## Running the App *Locally*
 
