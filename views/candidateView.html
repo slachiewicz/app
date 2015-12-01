@@ -59,25 +59,25 @@
       <div class="skills-box">
         <ul>
         {{#each skills}}
-          {{{skillsHelper this}}}
+          {{skillsHelper this}}
         {{/each}}
         </ul>
       </div>
     <h1><i class="fa fa-cubes"></i> CURRENT EXPERIENCE</h1>
       {{#each experience.current}}
-        {{{experienceHelper this}}}
+        {{experienceHelper this}}
       {{/each}}
       <hr>
       <h1><i class="fa fa-cubes"></i> PAST EXPERIENCE</h1>
       {{#each experience.past}}
-        {{{experienceHelper this}}}
+        {{experienceHelper this}}
       {{/each}}
       <hr>
 
       <h1><i class="fa fa-globe"></i> LANGUAGES</h1>
         <ul class="lang">
           {{#each languages}}
-            {{{languageHelper this}}}
+            {{languageHelper this}}
           {{/each}}
         </ul>
     </div>

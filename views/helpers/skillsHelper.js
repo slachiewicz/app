@@ -1,8 +1,13 @@
+var Handlebars = require('handlebars');
 module.exports = function (skill) {
-    if(skill.level === 0) {
+    skill.skill = Handlebars.Utils.escapeExpression(skill.skill);
+    skill.level = Handlebars.Utils.escapeExpression(skill.level);
+    var result = "";
+    if(parseInt(skill.level) === 0) {
 
-        return "<li><span class='each'><span class='check-highlight'>" + skill.skill + "</span></span></li>";
+        result = "<li><span class='each'><span class='check-highlight'>" + skill.skill + "</span></span></li>";
     } else {
-        return "<li><span class='each'><span class='check-highlight'>" + skill.level + " - " + skill.skill + "</span></span></li>";
+        result = "<li><span class='each'><span class='check-highlight'>" + skill.level + " - " + skill.skill + "</span></span></li>";
     }
+    return new Handlebars.SafeString(result);
 };
