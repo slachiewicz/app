@@ -129,4 +129,17 @@ A running list of the of the functionality in the app as it becomes available.
 
 ![email-indicator-screenshot](https://github.com/FAC-GM/app/blob/master/wireframes/email-indicator-screenshot.png)
 
+## Working with this repo
+Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
+
+We use labels to manage these. The most interesting ones are:
++ `feature idea` - added to features that are just in idea form for now rather than _definitely_ required
++ `priority...` - labels starting with 'priority' denote the priority of the task from 1 to 5, with 1 being the highest
++ `T...` - labels starting with 'T' denote time estimates for the task; these are added **by the dev team only**, e.g. `T1d` will require one day to complete
+  + `m` = minutes
+  + `h` = hours
+  + `d` = days
++ `in progress` - denotes which tasks are currently being worked on
++ `help wanted` - used mostly internally by the dev team when outside help is required to move an issue forward
++ `technical` - used **by the dev team** to denote technical tasks
 
