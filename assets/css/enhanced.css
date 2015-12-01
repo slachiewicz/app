@@ -96,11 +96,26 @@ aside {
   #prev, #next {
     padding: 1px 12px 1px;
   }
+
+  .delete-profile-confirmation {
+    display: none;
+  }
+
+  .delete-profile, .delete-profile-confirmation button{
+    padding: 5px 10px;
+    background-color: #424A5D;
+    color: #FFD777;
+    border:0 none;
+  }
+
+  .delete-profile:hover , .delete-profile-confirmation button:hover{
+     cursor: pointer;
+  }
 /*==============================
  Login page
 ================================*/
 .container-login {
-  margin-top: 20%;  
+  margin-top: 20%;
   width: 450px;
 }
   .container-login > h1 {

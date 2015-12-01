@@ -49,6 +49,19 @@
             <p><span>IM: </span>{{this}}</p>
           {{/each}}
         <p><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>
+
+        <button type="button" name="delete-profile" class="delete-profile">Delete</button>
+        <div class="">
+          <form action="/delete" method="post" class="delete-profile-confirmation">
+            <p>
+              Do you really want to delete this profile?
+            </p>
+            <button type="submit">Yes, delete it!</button>
+            <input type="hidden" name="id" value="{{id}}">
+            <button type="button" class='cancel-delete-profile'>No, keep it!</button>
+          </form>
+        </div>
+
       </div>
     </aside>
     <div class="details">

@@ -14,7 +14,7 @@ contacts stored in an ElasticSearch database.
 
 ### We use following technologies:
 
-* HTML5, CSS3, Javascript 
+* HTML5, CSS3, Javascript
 * [Nodejs](https://nodejs.org/en/)
 * [Hapijs](http://hapijs.com/)
   * Main packages: env2, Handlebars, Inert, Vision
@@ -26,6 +26,7 @@ contacts stored in an ElasticSearch database.
 #### Database structure with example [here](https://github.com/FAC-GM/app/blob/master/DATA.md)
 
 ## Running the App *Locally*
+
 
 Clone the Git repository from GitHub:
 
@@ -73,7 +74,7 @@ GOOGLE_CLIENT_SECRET= # Ask dev team for this
 
 ```
 Ask a member of the dev team for the `SEARCHBOX_URL` variable if you
-want to access the *hosted* ElasticSearch Database.    
+want to access the *hosted* ElasticSearch Database.
 There are a number of other variables missing from example above which are available to the dev team.
 
 ### Install *node.js* dependencies
@@ -142,4 +143,3 @@ We use labels to manage these. The most interesting ones are:
 + `in progress` - denotes which tasks are currently being worked on
 + `help wanted` - used mostly internally by the dev team when outside help is required to move an issue forward
 + `technical` - used **by the dev team** to denote technical tasks
-
