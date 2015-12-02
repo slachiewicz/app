@@ -192,6 +192,28 @@ describe('api /profile', function () {
     });
   });
 
+  it("Create tom's profile which doesn't have a url", function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/tom.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+
+    });
+  });
+
     it('create profile Maria', function (done) {
 
     Server.init(0, function (err, server) {
