@@ -148,6 +148,50 @@ describe('api /profile', function () {
     });
   });
 
+  it("create a profile which doesn't have the property connectedTo", function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/sam.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        setTimeout(function (){server.stop(done)},2000);
+      });
+
+    });
+  });
+
+  it("Update sam's profile with a connectedTo value", function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/sam-with-connectedTo.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+
+    });
+  });
+
     it('create profile Maria', function (done) {
 
     Server.init(0, function (err, server) {
