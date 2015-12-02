@@ -17,7 +17,9 @@
 
     {{#each connectedTo}}
       <ul>
-        <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
+        {{#if this}}
+          <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
+        {{/if}}
       </ul>
     {{/each}}
 
