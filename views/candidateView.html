@@ -23,10 +23,12 @@
       <h1 class="fullname"><strong class="check-highlight">{{fullname}}</strong></h1>
       <p class="check-highlight">{{location}}</p>
 
-       {{#each initials}}
-        <ul>
-          <li><span class='initials'>{{this}}</span></li>
-        </ul>
+      {{#each connectedTo}}
+      <ul>
+        {{#if this}}
+          <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
+        {{/if}}
+      </ul>
       {{/each}}
 
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
