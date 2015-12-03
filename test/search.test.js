@@ -83,6 +83,21 @@ describe('/search endpoint', function () {
     });
   });
 
+  it("search for the keyword 'Bordeaux' and returns only one value and avoid the empty profile", function (done) {
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      var name = "Bordeaux";
+      var queryString = encodeURIComponent(name);
+      server.inject({url: '/search/all/ ' + queryString + '/1', headers: { cookie: "token=" + token }}, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        expect($('.list-wrapper').length).to.equal(1); //not dolores with spaces
+        server.stop(done);
+      });
+    });
+  });
   it('returns specific search results for dupont which is one of my favourite', function (done) {
       var nubersPerPage = process.env.RESULTS_PER_PAGE;
       process.env.RESULTS_PER_PAGE = 1;
@@ -258,6 +273,8 @@ describe('/search endpoint', function () {
   });
 
 });
+
+
 
 describe('/search/all/javascript/1', function () {
 
