@@ -1,4 +1,5 @@
 require('env2')('.env');
+var es = require('../lib/es.js');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
@@ -214,7 +215,7 @@ describe('api /profile', function () {
 
     });
   });
-
+  var idTom;
   it("Create tom's profile which doesn't have a url", function (done) {
 
     Server.init(0, function (err, server) {
@@ -231,11 +232,24 @@ describe('api /profile', function () {
 
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(200);
+        idTom = res.payload;
         server.stop(done);
       });
 
     });
   });
+
+  it("Check that tom has a timestamp", function (done) {
+    es.get({
+      index: process.env.ES_INDEX,
+      type: process.env.ES_TYPE,
+      id: idTom
+    }, function (error, response) {
+      expect(parseInt(response._source.date, 10)).to.be.above(1449506430320);
+      done();
+    });
+  });
+
 
     it('create profile Maria', function (done) {
 
