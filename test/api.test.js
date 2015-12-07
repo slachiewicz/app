@@ -192,6 +192,29 @@ describe('api /profile', function () {
     });
   });
 
+  it("Attempt to update Nick profile without being directly connected (no connectedTo value)", function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/nick.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        expect(res.payload).to.equal('401');
+        server.stop(done);
+      });
+
+    });
+  });
+
   it("Create tom's profile which doesn't have a url", function (done) {
 
     Server.init(0, function (err, server) {
