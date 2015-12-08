@@ -11,6 +11,7 @@ var expect = Code.expect;
 var it = lab.test;
 
 
+
 describe('delete a user', function () {
   var idProfile;
   it('add a duplicate profile', function (done) {
@@ -32,7 +33,6 @@ describe('delete a user', function () {
 
 
   it('search for "Manuel", expect duplicate profiles', function (done) {
-
     var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
     var name = 'manuel';
     var queryString = encodeURIComponent(name);
@@ -46,8 +46,8 @@ describe('delete a user', function () {
          expect(res.statusCode).to.equal(200);
          var $ = cheerio.load(res.payload);
          var duplicates = $('.list-wrapper');
-         expect(parseInt(duplicates.length)).to.be.equal(2);
          idProfile = $('.headline')[0].children[1].attribs.href.split('/')[2];
+         expect(parseInt(duplicates.length)).to.be.equal(2);
          server.stop(done);
        });
      })
