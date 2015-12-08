@@ -26,6 +26,28 @@ describe('Attempt to return the first candidate: /candidate/1 without authorizat
   });
 });
 
+describe('Attempt to return a candidate with a wrong id: /candidate/wrongid', function () {
+
+  it('checks status code 404 of /candidate/wrongid', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "GET",
+      url: "/candidate/wrongid",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true}
+    };
+
+    Server.init(0, function (err, server) {
+      server.inject(options, function(res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(404);
+        server.stop(done);
+      });
+    });
+  });
+});
 
 describe('Return the first candidate: /candidate/1', function () {
 
