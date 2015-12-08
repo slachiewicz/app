@@ -353,19 +353,40 @@ aside {
 /*==============================
  Login page
 ================================*/
-.container-login {
+.container-login , .container-error-page{
   margin: 35% auto 0;
   width: 300px;
   background-color: transparent;
   text-align: center;
   font-size: 20px;
 }
-  .container-login > h1 {
+  .container-login > h1, .container-error-page > h2{
     font-size: 25px;
   }
 
 /*==============================
  End Login page
+================================*/
+
+/*==============================
+ Error page
+================================*/
+.container-error-page > a button {
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
+}
+
+.container-error-page > a button:hover {
+  cursor: pointer;
+  background-color: #FFD777;
+  color: #424A5D;
+}
+
+
+/*==============================
+ End Error page
 ================================*/
 
 @media (max-width: 768px) {
