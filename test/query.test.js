@@ -29,14 +29,34 @@ describe('/query', function () {
   });
 });
 
-describe('return a search results, when user is authenticated', function () {
+describe('return a search results, when user is authenticated: Search for Nick and return 1 result', function () {
   it('returns specific search results', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject({url: '/query/1?job=javascript&fullname=Anita&location=London', headers: { cookie: "token=" + token }}, function (res) {
+      server.inject({url: '/query/1?job=&fullname=Nick&location=', headers: { cookie: "token=" + token }}, function (res) {
         expect(res.statusCode).to.equal(200);
+        //we should only have one result
+        var $ = cheerio.load(res.payload);
+        expect($('.list-wrapper').length).to.equal(1);
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Silly search: return 0 results', function () {
+  it('doesn\'t return any results for a silly search', function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      server.inject({url: '/query/1?job=kungfumaster&fullname=chuck&location=heaven', headers: { cookie: "token=" + token }}, function (res) {
+        expect(res.statusCode).to.equal(200);
+        //we should only have one result
+        var $ = cheerio.load(res.payload);
+        expect($('.list-wrapper').length).to.equal(0);
         server.stop(done);
       });
     });
@@ -45,7 +65,7 @@ describe('return a search results, when user is authenticated', function () {
 
 describe('return a search results, when user is authenticated and with no precise page number', function () {
   it('returns specific search results', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -59,7 +79,7 @@ describe('return a search results, when user is authenticated and with no precis
 
 describe('attempt to access a search page with wrong page parameter and return 404', function () {
   it('returns 404', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -73,7 +93,7 @@ describe('attempt to access a search page with wrong page parameter and return 4
 
 describe('attempt to access a search page with page number < 1', function () {
   it('redirect to home page', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -87,7 +107,7 @@ describe('attempt to access a search page with page number < 1', function () {
 
 describe('search with empty job, empty fullname', function () {
   it('returns search results', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -101,7 +121,7 @@ describe('search with empty job, empty fullname', function () {
 
 describe('search with job, fullname and empty location', function () {
   it('returns search results', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -116,7 +136,7 @@ describe('search with job, fullname and empty location', function () {
 
 describe('attempt to search with empty job, empty fullname and empty location and redirect to home page', function () {
   it('redirect  to home page', function (done) {
-            
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -132,7 +152,7 @@ describe('search for candidate who is in my favourite list', function () {
 
   it('returns search results', function (done) {
     var tokenSimon =  JWT.sign({ id: '12', "name": "Simon", valid: true}, process.env.JWT_SECRET);
-       
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -148,7 +168,7 @@ describe('search for candidate who is NOT in my favourite list', function () {
 
   it('returns search results', function (done) {
     var tokenSimon =  JWT.sign({ id: '12', "name": "Simon", valid: true}, process.env.JWT_SECRET);
-       
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -163,7 +183,7 @@ describe('search for candidate who is NOT in my favourite list', function () {
 describe('search for candidate who doesn\'t have fullname' , function () {
 
   it('returns search results', function (done) {
-     
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
@@ -178,7 +198,7 @@ describe('search for candidate who doesn\'t have fullname' , function () {
 describe('attempt to access search page when a number page is too big' , function () {
 
   it('redirect to home page', function (done) {
-     
+
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
