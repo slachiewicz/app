@@ -130,9 +130,9 @@ A running list of the of the functionality in the app as it becomes available.
 
 ![email-indicator-screenshot](https://github.com/FAC-GM/app/blob/master/wireframes/email-indicator-screenshot.png)
 
-+ Searching query in following fields such as: job, fullname and location 
++ Searching query in following fields such as: job, fullname, location and skills 
 
-![query](wireframes/query.png)
+![query](wireframes/search_skills.png)
 
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
