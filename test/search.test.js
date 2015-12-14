@@ -209,7 +209,7 @@ describe('/search endpoint', function () {
 
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          expect($('.check-highlight')[9].children[0].data).to.equal("This is the summary of the 4 profile");
+          expect($('.check-highlight')[10].children[0].data).to.equal("This is the summary of the 4 profile");
           server.stop(done);
 
         });
