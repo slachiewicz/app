@@ -49,10 +49,14 @@ header {
     padding: 5px;
   }
 
+  .search-form input {
+    padding: 5px 0;
+  }
+
     .search-btn {
       background-color: #E4AD28;
       color:white;
-      padding: 10px 0px;
+      padding: 6px 0px;
       border:0 none;
       font-weight:bold;
       width: 50px;
