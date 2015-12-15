@@ -5,20 +5,23 @@ module.exports = function (note) {
   note.company = Handlebars.Utils.escapeExpression(note.company);
 
   var results = "<p>" + "<strong>" + note.createdAt + " " + note.author + " " + "</strong>";
-  if (note.status !== undefined && note.notes !== '' && note.company !== '') {
-    if (note.status === "submitted") {
+
+  if(note.status !== undefined) {
+    if(note.status === "submitted") {
       results += note.status + " to ";
     } else {
       results += note.status + " at ";
     }
+  } else {
+    results += "- no status "
+  }
 
-    results += note.company + "<br>" + note.notes + "</p>";
+  if(note.company !== '') {
+    results += note.company + " ";
+  }else {
+    results += "- no company ";
   }
-  if (note.status === undefined && note.notes !== '' && note.company !== '') {
-    results += "(no status)" + " " + note.company + "<br>" + note.notes + "</p>";  
-  }
-  if (note.status === undefined && note.notes !== '' && note.company === '') {
-    results += "(no status, no company)" + "<br>" + note.notes + "</p>";  
-  }
+
+  results += "<br>" + note.notes + "</p>";
   return new Handlebars.SafeString(results);
 };
