@@ -8,7 +8,6 @@ var params = {
       "contacts": {
         "properties": {
           "skills": {
-            "type": "nested",
             "properties": {
               "skill":    { "type": "string"  },
               "level":    { "type": "short"    }
