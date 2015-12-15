@@ -24,4 +24,5 @@ module.exports = function (note) {
 
   results += "<br>" + note.notes + "</p>";
   return new Handlebars.SafeString(results);
+
 };
