@@ -247,3 +247,225 @@ describe('submit the note when authenticated with status submitted, company is d
   });
 });
 
+describe('submit the note when authenticated with status submitted, company and notes are defined', function () {
+
+  it('save the note and redirects to the candidate page', function (done) {
+
+    var notes = {
+      status: 'submitted',
+      company: 'Brains',
+      notes: 'notes'
+    };
+
+    var options = {
+      method: "POST",
+      url: "/notes/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: notes 
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('submit the note when authenticated with status \'interview\', company , notes are defined', function () {
+
+  it('save the note and redirects to the candidate page', function (done) {
+
+    var notes = {
+      status: 'interview',
+      company: 'Brains',
+      notes: 'notes'
+    };
+
+    var options = {
+      method: "POST",
+      url: "/notes/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: notes 
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('submit the note when authenticated with status empty, company and notes are defined', function () {
+
+  it('save the note and redirects to the candidate page', function (done) {
+
+    var notes = {
+      status: '',
+      company: 'Brains',
+      notes: 'notes'
+    };
+
+    var options = {
+      method: "POST",
+      url: "/notes/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: notes 
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('submit the note when authenticated with status not defined, company is not defined and note is defiend', function () {
+
+  it('save the note and redirects to the candidate page', function (done) {
+
+    var notes = {
+      status: '',
+      company: '',
+      notes: 'notes'
+    };
+
+    var options = {
+      method: "POST",
+      url: "/notes/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: notes 
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+
+
+describe('submit the note when authenticated with status \'interview\', company and note are empty', function () {
+
+  it('save the note and redirects to the candidate page', function (done) {
+
+    var notes = {
+      status: 'interview',
+      company: '',
+      notes: ''
+    };
+
+    var options = {
+      method: "POST",
+      url: "/notes/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: notes 
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('submit the note when authenticated with status interview, company is empty and note is defiend', function () {
+
+  it('save the note and redirects to the candidate page', function (done) {
+
+    var notes = {
+      status: 'interview',
+      company: '',
+      notes: 'notes'
+    };
+
+    var options = {
+      method: "POST",
+      url: "/notes/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: notes 
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+
+
+describe(' ', function () {
+
+  it('', function (done) {
+
+    var options = {
+      method: "GET",
+      url: "/candidate/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true}   
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        
+       
+        // expect($('.notes-item').length).to.equal(1);
+
+        server.stop(done);
+      });
+    });
+  });
+});
