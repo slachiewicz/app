@@ -110,30 +110,31 @@ A running list of the of the functionality in the app as it becomes available.
 + Initials of who on the team a contact is connected to are displayed
  _(in the example below, David Dupont is connected to our current dev team - Simon L and Anita C)_
 
-![Initials-of-who-contact-is-connected-to](https://github.com/FAC-GM/app/blob/master/wireframes/initials.png)
+![Initials-of-who-contact-is-connected-to](wireframes/initials.png)
 
 * 'Favourite' contact profiles by clicking the grey star in the corner of the profile page
 
-![favouriting-a-contact-functionality](https://github.com/FAC-GM/app/blob/master/wireframes/star2.png)
+![favouriting-a-contact-functionality](wireframes/star2.png)
 
 + Quickly visualise who has been favourited in the search results (denoted by a yellow star) and see a full list by clicking on the yellow star in the top right hand corner of the app
 
-![how-favourites-appear-in-search-results](https://github.com/FAC-GM/app/blob/master/wireframes/favourite1.png)
+![how-favourites-appear-in-search-results](wireframes/favourite1.png)
 
 + Search keywords are highlighted in the search results and profile pages to facilitate quick scanning of the information
 
-![search-keyword-highlighted-in-search](https://github.com/FAC-GM/app/blob/master/wireframes/keywords.png)
+![search-keyword-highlighted-in-search](wireframes/keywords.png)
 
-![search-keyword-highlighted-in-profile](https://github.com/FAC-GM/app/blob/master/wireframes/candidateProfile.png)
+![search-keyword-highlighted-in-profile](wireframes/candidateProfile.png)
 
 + Symbol in search results to quickly identify if an email address is available for contact
 
-![email-indicator-screenshot](https://github.com/FAC-GM/app/blob/master/wireframes/email-indicator-screenshot.png)
+![email-indicator-screenshot](wireframes/email-indicator-screenshot.png)
 
-+ Searching query in following fields such as: job, fullname, location and skills 
++ Searching query in following fields such as: job, fullname, location and skills
 
-![query](wireframes/search_skills.png)
+You can search for multiple skills if you separate the each skill with a comma:
 
+![query-skills](wireframes/search_skills_multiple.png)
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
 
