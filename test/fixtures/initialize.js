@@ -9,8 +9,8 @@ var params = {
         "properties": {
           "skills": {
             "properties": {
-              "skill":    { "type": "string"  },
-              "level":    { "type": "short"    }
+              "skill":    { "type": "string" },
+              "level":    { "type": "short"  }
             }
           }
         }
