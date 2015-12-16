@@ -369,7 +369,7 @@ describe('submit the note when authenticated with status not defined, company is
 
         expect(res.statusCode).to.equal(302);
 
-        server.stop(done);
+        setTimeout(function(){server.stop(done)}, 2000);
       });
     });
   });
@@ -403,7 +403,7 @@ describe('submit the note when authenticated with status \'interview\', company 
 
         expect(res.statusCode).to.equal(302);
 
-        server.stop(done);
+        setTimeout(function(){server.stop(done)}, 2000);
       });
     });
   });
@@ -435,7 +435,7 @@ describe('submit the note when authenticated with status interview, company is e
 
         expect(res.statusCode).to.equal(302);
 
-        server.stop(done);
+        setTimeout(function(){server.stop(done)}, 2000);
       });
     });
   });
