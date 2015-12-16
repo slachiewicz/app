@@ -115,11 +115,12 @@ aside {
  Notes
 ================================*/
 .notes-wrapper {
-  background-color: rgba(128, 128, 128, 0.29);
+  /*background-color: rgba(128, 128, 128, 0.17);*/
   padding: 10px;
 }
 
 .notes-box {
+  margin-top: 20px;
   background-color: #FFF;
 }
 
@@ -231,9 +232,9 @@ select{
     width: 80px;
   }
   
- .notes textarea {
+/* .notes textarea {
     width: 150px;
-  }
+  }*/
 
 	.list-wrapper {
 		width:80%;

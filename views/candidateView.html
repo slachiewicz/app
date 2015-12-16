@@ -65,9 +65,9 @@
           </form>
         </div>
         <br>
-
+        <br>
+      <h1><i class="fa fa-pencil"></i> NOTES</h1>
       <div class="notes-wrapper">
-
         <form action="/notes/{{id}}" method="POST">
           <ul class="notes">
             <li>
@@ -90,7 +90,6 @@
           </ul>
         </form>
         <br>
-        <p><strong>NOTES</strong></p>
         <div class="notes notes-box">         
           {{#each notes}}
             <div class="notes-item">{{notesHelper this}}</div>
