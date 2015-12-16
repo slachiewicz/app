@@ -50,7 +50,7 @@ describe('submit the note when authenticated', function () {
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -75,7 +75,7 @@ describe('test that class notes-item exist and there is 1 note ', function () {
       method: "GET",
       url: "/candidate/1",
       headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true}   
+      credentials: { id: "12", "name": "Simon", valid: true}
     };
 
     Server.init(0, function (err, server) {
@@ -85,7 +85,7 @@ describe('test that class notes-item exist and there is 1 note ', function () {
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
-       
+
         expect($('.notes-item').length).to.equal(1);
 
         server.stop(done);
@@ -109,7 +109,7 @@ describe('attempt to submit the empty notes when authenticated', function () {
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -141,7 +141,7 @@ describe('submit the note when authenticated with status undefines, company and 
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -164,7 +164,7 @@ describe('test that class notes-item exist and there are 2 notes ', function () 
       method: "GET",
       url: "/candidate/1",
       headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true}   
+      credentials: { id: "12", "name": "Simon", valid: true}
     };
 
     Server.init(0, function (err, server) {
@@ -174,7 +174,7 @@ describe('test that class notes-item exist and there are 2 notes ', function () 
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
-       
+
         expect($('.notes-item').length).to.equal(2);
 
         server.stop(done);
@@ -198,7 +198,7 @@ describe('submit the note when authenticated with status submitted, notes are de
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -230,7 +230,7 @@ describe('submit the note when authenticated with status submitted, company is d
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -262,7 +262,7 @@ describe('submit the note when authenticated with status submitted, company and 
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -294,7 +294,7 @@ describe('submit the note when authenticated with status \'interview\', company 
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -326,7 +326,7 @@ describe('submit the note when authenticated with status empty, company and note
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -358,7 +358,7 @@ describe('submit the note when authenticated with status not defined, company is
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -392,7 +392,7 @@ describe('submit the note when authenticated with status \'interview\', company 
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -424,7 +424,7 @@ describe('submit the note when authenticated with status interview, company is e
       url: "/notes/1",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: notes 
+      payload: notes
     };
 
     Server.init(0, function (err, server) {
@@ -443,27 +443,60 @@ describe('submit the note when authenticated with status interview, company is e
 
 
 
-describe(' ', function () {
 
-  it('', function (done) {
+describe('update the profile with the id 1', function () {
 
-    var options = {
-      method: "GET",
-      url: "/candidate/1",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true}   
-    };
+  it('updates profile david', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
 
-      server.inject(options, function (res) {
-        expect(res.statusCode).to.equal(200);
-        
-       
-        // expect($('.notes-item').length).to.equal(1);
+      var profile = require('./fixtures/david-dupont.json');
 
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+    };
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+
+        var tokenSimon =  JWT.sign({ id: '13', "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        var optionsCandidate = {
+          method: "GET",
+          url: "/candidate/" + res.payload,
+          headers: { cookie: "token=" + tokenSimon }
+        };
+          server.inject(optionsCandidate , function (res) {
+            expect(res.statusCode).to.equal(200);
+            setTimeout(function(){server.stop(done)}, 2000);
+          });
+      });
+    });
+  });
+});
+
+describe('The list of notes should not be empty after a profile update', function () {
+
+  it('checks status code 200 of /candidate/1', function (done) {
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "GET",
+      url: "/candidate/1",
+      headers: { cookie: "token=" + token },
+    };
+
+    Server.init(0, function (err, server) {
+      server.inject(options, function(res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        expect($('.notes-item strong').length).to.be.above(1);
         server.stop(done);
       });
     });
