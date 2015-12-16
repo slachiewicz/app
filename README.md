@@ -135,6 +135,11 @@ A running list of the of the functionality in the app as it becomes available.
 You can search for multiple skills if you separate the each skill with a comma:
 
 ![query-skills](wireframes/search_skills_multiple.png)
+
++ Adding notes to a profile: status, company and note.
+
+![query-skills](wireframes/note.png)
+
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
 

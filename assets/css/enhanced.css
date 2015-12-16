@@ -63,7 +63,7 @@ aside {
   display: table-cell;
   float:right;
   position: relative;
-  width: 25%;
+  width: 35%;
 }
 
   #sidebar {
@@ -85,7 +85,7 @@ aside {
   }
 
 .details {
-  width: 75%;
+  width: 65%;
   border-right: 1px solid #BCBFA4;
   padding: 0 20px;
 }
@@ -111,6 +111,84 @@ aside {
   .delete-profile:hover , .delete-profile-confirmation button:hover{
      cursor: pointer;
   }
+/*==============================
+ Notes
+================================*/
+.notes-wrapper {
+  background-color: rgba(128, 128, 128, 0.29);
+  padding: 10px;
+}
+
+.notes-box {
+  background-color: #FFF;
+}
+
+.notes {
+  max-width: 400px;
+}
+.notes li {
+  padding: 0;
+  display: block;
+  list-style: none;
+  margin: 10px 0 0 0;
+}
+
+.notes input[type=text],
+textarea,
+select{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  border:1px solid #BEBEBE;
+  background-color: #fff;
+  padding: 7px;
+  margin:0px;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none; 
+}
+.notes input[type=text]:focus,
+.notes textarea:focus,
+.notes select:focus{
+  -moz-box-shadow: 0 0 8px #97A3BF;
+  -webkit-box-shadow: 0 0 8px #97A3BF;
+  box-shadow: 0 0 8px #97A3BF;
+  border: 1px solid #97A3BF;
+}
+.notes .field-divided{
+  width: 49%;
+}
+
+.notes .field-long{
+  width: 100%;
+}
+
+.notes .field-textarea{
+  height: 100px;
+}
+
+.notes input[type=submit]{
+  float: right;
+  background: #424A5D;
+  padding: 5px 10px;
+  border: none;
+  color: #FFD777;
+}
+
+.notes input[type=submit]:hover{
+  background: #FFD777;
+  color: #424A5D;
+  box-shadow:none;
+  -moz-box-shadow:none;
+  -webkit-box-shadow:none;
+}
+
+/*==============================
+ End Notes
+================================*/
+
 /*==============================
  Login page
 ================================*/
@@ -146,8 +224,15 @@ aside {
 ================================*/
 
 @media (max-width: 1144px) {
+  .notes .field-divided{
+    width: 100%;
+}
   .candidate_view img {
     width: 80px;
+  }
+  
+ .notes textarea {
+    width: 150px;
   }
 
 	.list-wrapper {

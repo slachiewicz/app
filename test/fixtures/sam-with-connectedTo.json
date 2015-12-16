@@ -2,6 +2,7 @@
     "id": 51,
     "connections": 142,
     "connectedTo": ["Bob Boby"],
+    "notes": [],
     "fullname": "Sam",
     "location": "Porto",
     "current": "relax",
