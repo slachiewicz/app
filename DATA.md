@@ -23,14 +23,15 @@
 "skills": [{"level": number, "skill": string}],
 "languages":[{"lang": string, "fluency": string}],
 "experience": {
-    "current": [{"title": string, "org": string, "date" : string, "desc": string, "location": string}]
+    "current": [{"title": string, "org": string, "date" : string, "desc": string, "location": string}],
+    "past": [{"title": string, "org": string, "date" : string, "desc": string, "location": string}]
   },
-""
+ "notes": [{createdAt: string, author: string, notes: string, status: string, company: string}]
 }
 
 ```
 
-### Example: 
+### Example:
 
 ```
 { "url": "https://uk.linkedin.com/in/fakeprofile1",
