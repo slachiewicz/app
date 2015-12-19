@@ -4,18 +4,18 @@ var client = new ElasticSearch.Client({
   log: 'debug'
 });
 
-var params = {
-      "contacts": {
-        "properties": {
-          "skills": {
-            "properties": {
-              "skill":    { "type": "string" },
-              "level":    { "type": "short"  }
+  var params = {
+        "contacts": {
+          "properties": {
+            "skills": {
+              "properties": {
+                "skill":    { "type": "string" },
+                "level":    { "type": "short"  }
+              }
             }
           }
         }
-      }
-  };
+    };
 
 client.indices.exists({index: 'gmcontact'}, function (err, res) {
 
