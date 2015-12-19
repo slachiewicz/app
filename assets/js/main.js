@@ -8,7 +8,9 @@
   var keywords = document.getElementsByClassName('keywords')[0].value;
   if (keywords.length > 0) {
     var checkHighlight = document.getElementsByClassName('check-highlight');
-    var matcher = new RegExp(keywords.split(' ').filter(filterFunc).join('|'), 'gi');
+    var regex = keywords.split(' ').filter(filterFunc).join('|');
+    regex = regex.replace(/[-[\]{}()*+?.,\\^$]/g, "\\$&");
+    var matcher = new RegExp(regex, 'gi');
 
     var options = {
       startTag :"<b class='highlight'>", // could be a hyperlink
