@@ -482,7 +482,7 @@ describe('update the profile with the id 1', function () {
 
 describe('The list of notes should not be empty after a profile update', function () {
 
-  it('checks status code 200 of /candidate/1', function (done) {
+  it('checks status code 200 of /candidate/1 and right format of the date', function (done) {
     var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
     var options = {
@@ -495,10 +495,14 @@ describe('The list of notes should not be empty after a profile update', functio
       server.inject(options, function(res) {
         expect(err).to.not.exist();
         expect(res.statusCode).to.equal(200);
+        var currentDate = new Date(); 
+        var today = currentDate.getDate() + '-' + ("0" + (currentDate.getMonth() + 1)).slice(-2) + '-' + currentDate.getFullYear();
         var $ = cheerio.load(res.payload);
+        expect(($('.notes-item strong')[0].children[0].data).indexOf(today)).to.be.above(-1);
         expect($('.notes-item strong').length).to.be.above(1);
         server.stop(done);
       });
     });
   });
 });
+
