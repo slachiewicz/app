@@ -42,6 +42,11 @@ header {
   background-color: #424A5D;
   padding: 2px 5px;
 }
+
+.st-profile {
+  margin: 5px 0 0 0;
+  
+}
 /*==============================
   SEARCH BAR
 ================================*/

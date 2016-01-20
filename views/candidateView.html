@@ -31,6 +31,11 @@
         {{/if}}
       </ul>
       {{/each}}
+      <br/>
+      <br/>
+      {{#if status}}
+        <span class='status st-profile'>{{status}}</span>
+      {{/if}}
 
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
         <p class="mobile"><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
@@ -39,6 +44,8 @@
             <p class="mobile"><span>IM: </span><span class="check-highlight">{{this}}</span></p>
           {{/each}}
         <p class="mobile"><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>
+
+        
 
     </div>
     <hr>
