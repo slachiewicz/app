@@ -140,6 +140,10 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![query-skills](wireframes/note.png)
 
++ Status display on main page.
+
+![display-status](wireframes/status.png)
+
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
 
