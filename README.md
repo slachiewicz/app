@@ -130,7 +130,9 @@ A running list of the of the functionality in the app as it becomes available.
 
 ![email-indicator-screenshot](wireframes/email-indicator-screenshot.png)
 
-+ Searching query in following fields such as: job, fullname, location and skills
++ Searching query in following fields such as: job, fullname, location, company and skills
+
+![query-search-field](wireframes/search.png)
 
 You can search for multiple skills if you separate the each skill with a comma:
 
