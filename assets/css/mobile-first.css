@@ -37,6 +37,11 @@ header {
     padding:2px 5px;
   }
 
+.status {
+  color: #fff !important;
+  background-color: #424A5D;
+  padding: 2px 5px;
+}
 /*==============================
   SEARCH BAR
 ================================*/

@@ -6,14 +6,21 @@
     {{/if}}
     {{#if keywords}}
     <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><img src="{{picture}}" alt="" /></a>
-    <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><h1 class='check-highlight'>{{fullname}}</h1></a><br/>
+    <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
+    {{#if status}}
+      <span class='status'>{{status}}</span><br/>
+    {{/if}}
     {{else}}
     <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
-    <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a><br/>
+    <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
+    {{#if status}}
+      <span class='status'>{{status}}</span><br/>
+    {{/if}}
     {{/if}}
     <p class='check-highlight'>{{headline}}</p>
     <p class='check-highlight'>{{current}}</p>
     <p class='check-highlight'>{{location}}</p>
+    
 
     {{#each connectedTo}}
       <ul>
