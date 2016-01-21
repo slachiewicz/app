@@ -41,11 +41,19 @@ header {
   color: #fff !important;
   background-color: #424A5D;
   padding: 2px 5px;
+  margin-top: 10px;
 }
 
 .st-profile {
-  margin: 5px 0 0 0;
-  
+  margin: 5px 0 0 0;  
+}
+
+.headline p:first-of-type {
+  margin-top: 15px;
+}
+
+.candidate_view .headline p:first-of-type {
+  margin-top: 0px;
 }
 /*==============================
   SEARCH BAR
