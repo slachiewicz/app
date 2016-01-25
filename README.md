@@ -162,3 +162,8 @@ We use labels to manage these. The most interesting ones are:
 + `in progress` - denotes which tasks are currently being worked on
 + `help wanted` - used mostly internally by the dev team when outside help is required to move an issue forward
 + `technical` - used **by the dev team** to denote technical tasks
+
+## Google Analytics
+
+Google Analytics is enabled for all pages of the App.
+If you want access to the stats, please ask a member of the dev team.
