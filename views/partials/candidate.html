@@ -20,7 +20,7 @@
     <p class='check-highlight'>{{headline}}</p>
     <p class='check-highlight'>{{current}}</p>
     <p class='check-highlight'>{{location}}</p>
-    
+
 
     {{#each connectedTo}}
       <ul>
@@ -30,6 +30,11 @@
       </ul>
     {{/each}}
 
+    {{#if percentageMatch}}
+    <p>
+      {{percentageMatch}} %
+    </p>
+    {{/if}}
     {{#if email}}
     <i class="fa fa-at"></i>
     {{/if}}
