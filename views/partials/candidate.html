@@ -14,12 +14,17 @@
     {{#if percentageMatch}}
     <div class="pie">{{percentageMatch}}%</div>
     {{/if}}
-    
+  
+    {{#each listSkills}}
+    <ul class="skills-inline">
+      <li>{{this.skill}} |{{this.level}}</li>
+    </ul>
+    {{/each}}
+
     {{else}}
     <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
     <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
 
-   
 
     {{#if status}}
       <span class='status'>{{status}}</span><br/>
