@@ -148,6 +148,15 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![display-status-candidate-view](wireframes/candidate-view-status.png)
 
++ Display pie-chart to indicate match-score for search results
+
+- 100% match is shown as below:
+
+![100](wireframes/100.png)
+
+- 50% match is shown as below:
+
+![50](wireframes/50.png)
 
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).

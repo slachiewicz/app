@@ -412,6 +412,36 @@ aside {
  End Error page
 ================================*/
 
+
+/*==============================
+ Pie chart with SVG
+================================*/
+
+.pie {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  transform: rotate(-90deg);
+  position: absolute;
+  right:0;
+  top:0;
+}
+
+svg {
+  background: #424A5D;
+  border-radius: 50%;
+}
+
+circle {
+  fill: #424A5D;
+  stroke: #E4AD28;
+  stroke-width: 32;
+}
+
+/*==============================
+ End Pie chart
+================================*/
+
 @media (max-width: 768px) {
   #filter {
     -webkit-appearance: none;
