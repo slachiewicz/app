@@ -1,5 +1,11 @@
 {{>search_bar}}
 <section class="container">
+  <div class="title-wrapper">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"><span class="curly-left">{</span>M<span class="curly-right">}</span></div>
+    <!-- <div class="box box4">{star}</div> -->
+  </div>
 	{{#each candidates}}
 	  {{>candidate keywords=../keywords}}
 	{{/each}}
