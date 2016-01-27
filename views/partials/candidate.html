@@ -43,6 +43,12 @@
         <i class="fa fa-at"></i>
         {{/if}}
 
+        {{#each listSkills}}
+        <ul class="skills-inline">
+          <li>{{this.skill}} |{{this.level}}</li>
+        </ul>
+        {{/each}}
+
       </div>
     </div>
   </div>
