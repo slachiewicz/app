@@ -1,63 +1,70 @@
-  .search-btn {
-      width: 100px;
-  }
+.search-btn {
+  width: 100px;
+}
 
-    #search-box {
-        width: auto;
-    }
+#search-box {
+  width: auto;
+}
 
-    #filter {
-      padding: 9px 15px;
-    }
+#filter {
+  padding: 9px 15px;
+}
 
 .container {
 	padding-top: 20px;
 }
 
-  .candidate_view {
-    padding: 20px;
-    margin: 50px 0;
-  }
-
-
-.list-wrapper {
-	width:60%;
-	margin: 5px auto;
+.candidate_view {
+  padding: 20px;
+  margin: 50px 0;
 }
 
+.list-wrapper, .title-wrapper {
+	width: 95%;
+	margin: 5px auto;
+  height: 90%;
+}
+
+.title-wrapper {
+  text-align: center;
+}
 .headline img {
 	width: 140px;
 }
-  .headline h1 {
-    text-decoration: none;
-    font-size: 1.2em;
-  }
 
-  .headline h2 {
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.73);
-  }
+.headline h1 {
+  text-decoration: none;
+  font-size: 1.2em;
+}
 
-  .headline p {
-  	font-size: 1em;
-    padding: 2px;
-    color: grey;
-    font-size: 1em;
-  }
-  .headline .initials {
-    margin: 8px 8px 0 0;
-    font-size: 0.9em;
-   }
+.headline h2 {
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.73);
+}
 
-  .headline p.mobile {
-    display: none
-  }
-  .favourite-form button {
-    font-size: 1.5em;
-  }
-   .fa-at {
-    padding-top: 20px;
-   }
+.headline p {
+	font-size: 1em;
+  padding: 2px;
+  color: grey;
+  font-size: 1em;
+}
+
+.headline .initials {
+  margin: 8px 8px 0 0;
+  font-size: 0.9em;
+}
+
+.headline p.mobile {
+  display: none
+}
+
+.favourite-form button {
+  font-size: 1.5em;
+}
+
+ .fa-at {
+  padding-top: 20px;
+ }
 
 aside {
   display: table-cell;
@@ -66,23 +73,23 @@ aside {
   width: 35%;
 }
 
-  #sidebar {
+#sidebar {
   background-color: #fff;
   padding: 0 10px;
 }
 
-  #sidebar > p {
-    font-size: 14px;
-  }
+#sidebar > p {
+  font-size: 14px;
+}
 
-  #sidebar  > p > span {
-    font-size: 12px;
-    color: grey;
-  }
+#sidebar  > p > span {
+  font-size: 12px;
+  color: grey;
+}
 
-  #sidebar i {
-    font-size: 35px;
-  }
+#sidebar i {
+  font-size: 35px;
+}
 
 .details {
   width: 65%;
@@ -93,24 +100,27 @@ aside {
 .pagination a , .page-number{
   font-size: 22px;
 }
-  #prev, #next {
-    padding: 1px 12px 1px;
-  }
+#prev, #next {
+  padding: 1px 12px 1px;
+}
 
-  .delete-profile-confirmation {
-    display: none;
-  }
+.delete-profile-confirmation {
+  display: none;
+}
 
-  .delete-profile, .delete-profile-confirmation button{
-    padding: 5px 10px;
-    background-color: #424A5D;
-    color: #FFD777;
-    border:0 none;
-  }
+.delete-profile, .delete-profile-confirmation button{
+  padding: 5px 10px;
+  background-color: #424A5D;
+  color: #FFD777;
+  border:0 none;
+}
 
-  .delete-profile:hover , .delete-profile-confirmation button:hover{
-     cursor: pointer;
-  }
+.delete-profile:hover , .delete-profile-confirmation button:hover{
+   cursor: pointer;
+}
+
+
+
 /*==============================
  Notes
 ================================*/
@@ -197,9 +207,9 @@ select{
   margin-top: 20%;
   width: 450px;
 }
-  .container-login > h1 {
-    font-size: 40px;
-  }
+.container-login > h1 {
+  font-size: 40px;
+}
 /*==============================
  End Login page
 ================================*/
@@ -212,19 +222,34 @@ select{
   width: 600px;
   overflow-y: hidden;
 }
-  .container-error-page > h2 {
-    font-size: 30px;
-  }
-  .container-error-page > a button {
-    font-size: 16px;
 
-  }
+.container-error-page > h2 {
+  font-size: 30px;
+}
+
+.container-error-page > a button {
+  font-size: 16px;
+}
 
 /*==============================
  End 404 page
 ================================*/
+@media (max-width: 1440px) {
+  .pie {
+    margin: -100px 0px 0px 110px;
+  }
+
+}
+
+@media (max-width: 1225px) {
+  .pie {
+    margin-left: 90px;
+  }
+
+}
 
 @media (max-width: 1144px) {
+
   .notes .field-divided{
     width: 100%;
 }
