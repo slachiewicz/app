@@ -234,13 +234,12 @@ select{
 /*==============================
  End 404 page
 ================================*/
-@media (max-width: 1330px) {
+@media (max-width: 1440px) {
   .pie {
-    margin: -90px 0px 0px 100px;
+    margin: -100px 0px 0px 110px;
   }
 
 }
-
 
 @media (max-width: 1225px) {
   .pie {
