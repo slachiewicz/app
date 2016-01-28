@@ -176,6 +176,8 @@ header {
   background-color: #424A5D;
   letter-spacing: 1px;
   font-size: 0.6em;
+  float: right;
+   
 }
 
 i.fa-star {
@@ -183,7 +185,6 @@ i.fa-star {
   border: none;
   float: right;
 }
-
 
 .favourite-form button {
   background-color: transparent;
@@ -315,6 +316,21 @@ span {
 
 ul.skills-inline {
   display: inline-block;
+  padding: 1px 7px;
+  margin-top: 5px;
+  border-radius: 5px;
+  background-color: rgba(66, 74, 93, 0.85);  
+}
+ul.skills-inline li {
+  color: #fff;
+}
+
+.skill-level {
+  background-color: #FFF;
+  padding: 1px 5px;
+  margin-right: 10px;
+  border-radius: 8px;
+  color: #424A5D !important;
 }
 /*==============================
   End skills inline

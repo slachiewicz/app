@@ -7,7 +7,7 @@ var expect = Code.expect;
 var it = lab.test;
 
 
-describe('existnace of the object in array with the same skill', function () {
+describe('existance of the object in array with the same skill', function () {
 
   it('return true if obj with the same skill is in arr', function (done) {
 
@@ -32,7 +32,7 @@ describe('existnace of the object in array with the same skill', function () {
   });
 });
 
-describe('existnace of the object in array with the same skill', function () {
+describe('existance of the object in array with the same skill', function () {
 
   it('return false if obj with the same skill is not in arr', function (done) {
 
