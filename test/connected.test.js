@@ -4,7 +4,6 @@ var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
 var JWT = require('jsonwebtoken');
-var cheerio = require('cheerio');
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
 var expect = Code.expect;
@@ -35,8 +34,8 @@ describe('redirect to a connected results, when user is authenticated', function
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject({url: '/connected/Anita%20Czapla', headers: { cookie: "token=" + token }}, function (res) {
-        expect(res.statusCode).to.equal(302);
+      server.inject({url: '/connected/Simon%20Lab', headers: { cookie: "token=" + token }}, function (res) {
+        expect(res.statusCode).to.equal(200);
       
         server.stop(done);
       });
@@ -122,3 +121,21 @@ describe('return multiple results' , function () {
     });
   });
 });
+
+describe('attempt to access search page when a page is big number' , function () {
+
+  it('redirect to the home page', function (done) {
+    var numbersPerPage = process.env.RESULTS_PER_PAGE;
+    process.env.RESULTS_PER_PAGE = 1;
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      server.inject({url: '/connected/Simon%20Lab/200', headers: { cookie: "token=" + token }}, function (res) {
+        expect(res.statusCode).to.equal(302);
+        process.env.RESULTS_PER_PAGE = numbersPerPage;
+        server.stop(done);
+      });
+    });
+  });
+})
