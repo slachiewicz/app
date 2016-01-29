@@ -154,6 +154,17 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![match-score](wireframes/match-score.png)
 
++ Display all connection to each user when clicking on initials 
+
+- by clicking on initials (top right corner) as shown under:
+
+![initials](wireframes/initials-right.png)
+
+- list of user connections
+
+![all-connections](wireframes/all-connectionst.png)
+
+
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
 
