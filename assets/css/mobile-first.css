@@ -327,9 +327,10 @@ ul.skills-inline li {
 .skill-level {
   background-color: #FFF;
   margin-right: 10px;
-  color: #b2c462!important;
+  color: #606C2B!important;
   width: 30px;
   text-align: center;
+  font-weight: 600;
 }
 /*==============================
   End skills inline
