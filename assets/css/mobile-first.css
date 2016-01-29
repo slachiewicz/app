@@ -316,10 +316,9 @@ span {
 
 ul.skills-inline {
   display: inline-block;
-  padding: 1px 7px;
+  padding: 2px 7px 2px 2px;
   margin-top: 5px;
-  border-radius: 5px;
-  background-color: rgba(66, 74, 93, 0.85);  
+  background-color: rgba(19, 125, 42, 0.9);  
 }
 ul.skills-inline li {
   color: #fff;
@@ -327,10 +326,10 @@ ul.skills-inline li {
 
 .skill-level {
   background-color: #FFF;
-  padding: 1px 5px;
   margin-right: 10px;
-  border-radius: 8px;
-  color: #424A5D !important;
+  color: rgba(9, 101, 29, 0.9)!important;
+  width: 30px;
+  text-align: center;
 }
 /*==============================
   End skills inline
