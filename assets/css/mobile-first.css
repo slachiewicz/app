@@ -184,6 +184,7 @@ i.fa-star {
   color: #E4AD28;
   border: none;
   float: right;
+  margin-top: 10px;
 }
 
 .favourite-form button {

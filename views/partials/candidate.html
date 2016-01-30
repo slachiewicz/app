@@ -20,7 +20,7 @@
         {{#each connectedTo}}
           <ul>
             {{#if this}}
-              <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
+              <li><a href="/connected/{{encodeKeywordsHelper this}}"><span class='initials'>{{initials_of_connected_users this}}</span></a></li>
             {{/if}}
           </ul>
         {{/each}}
@@ -33,6 +33,14 @@
         {{else}}
         <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
         <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
+        
+        {{#each connectedTo}}
+          <ul>
+            {{#if this}}
+              <li><a href="/connected/{{encodeKeywordsHelper this}}"><span class='initials'>{{initials_of_connected_users this}}</span></a></li>
+            {{/if}}
+          </ul>
+        {{/each}} 
 
         {{#each connectedTo}}
           <ul>
