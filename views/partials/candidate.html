@@ -8,7 +8,7 @@
     <div class="candidate-box">
 
       <div class="headline">
-        
+
 
         {{#if favourite}}
           <i class="fa fa-star"></i>
@@ -16,48 +16,56 @@
         {{#if keywords}}
         <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><img src="{{picture}}" alt="" /></a>
         <a href="/candidate/{{id}}/{{encodeKeywordsHelper keywords}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
-        
+
         {{#each connectedTo}}
           <ul>
             {{#if this}}
               <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
             {{/if}}
           </ul>
-        {{/each}} 
+        {{/each}}
 
 
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
         {{/if}}
-        
+
         {{else}}
         <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
         <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
 
+        {{#each connectedTo}}
+          <ul>
+            {{#if this}}
+              <li><span class='initials'>{{initials_of_connected_users this}}</span></li>
+            {{/if}}
+          </ul>
+        {{/each}}
+        
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
         {{/if}}
         {{/if}}
-          
+
         <p class='check-highlight'>{{headline}}</p>
         <p class='check-highlight'>{{current}}</p>
         <p class='check-highlight'>{{location}}</p>
-       
+
         {{#if email}}
         <i class="fa fa-at"></i>
         {{/if}}
 
-        {{#each listSkills}}        
+        {{#each listSkills}}
         <ul class="skills-inline">
           {{#if this.level}}
             <li class="searched-skills"><span class="skill-level">{{this.level}} </span> {{this.skill}}</li>
           {{else}}
             <li>{{this.skill}}</li>
           {{/if}}
-        </ul>               
+        </ul>
         {{/each}}
-        
-       
+
+
 
 
       </div>
