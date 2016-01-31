@@ -7,7 +7,8 @@ var JWT = require('jsonwebtoken');
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
 var expect = Code.expect;
-var it = lab.test
+var it = lab.test;
+var cheerio = require('cheerio');
 var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
 describe('/connected/Anita%20Czapla', function () {
@@ -36,7 +37,7 @@ describe('redirect to a connected results, when user is authenticated', function
       expect(err).to.not.exist();
       server.inject({url: '/connected/Simon%20Lab', headers: { cookie: "token=" + token }}, function (res) {
         expect(res.statusCode).to.equal(200);
-      
+
         server.stop(done);
       });
     });
@@ -81,6 +82,9 @@ describe('search for Simon Lab connections', function () {
       expect(err).to.not.exist();
       server.inject({url: '/connected/Simon%20Lab/1', headers: { cookie: "token=" + tokenSimon }}, function (res) {
         expect(res.statusCode).to.equal(200);
+        var $ = cheerio.load(res.payload);
+        var idProfile = $('.headline a')[0].attribs.href.split('candidate/')[1];
+        expect(idProfile.length).to.be.above(0);
         server.stop(done);
       });
     });
