@@ -1,30 +1,38 @@
 <div class="container">
   <div class="header-user-name">
-    <h1>{{contacts.fullname}}</h1>
-    <p>TARGET: 20K</p>
+ 
+    <h1>{{user}}</h1>
+ 
   </div>
+  <br/>
+ 
+<p>Submitted: {{submitted.length}} </p>
+<p>Phone Screen: {{phone_screen.length}}</p>
+<p>Inteview: {{interview.length}} </p>
+<p>Placement: {{placement.length}} </p>
 
-  <div class="summary-status">
-    <div class="dash-status">
-      <p>12</p>
-      <h1>Submitted</h1>      
-    </div>
-    <div class="dash-status">
-      <p>12</p>
-      <h1>Phone Screen</h1>
-    </div>
-    <div class="dash-status">
-      <p>12</p>
-      <h1>Interview</h1>
-    </div>
-    <div class="dash-status">
-      <p>12</p>
-      <h1>Placement</h1>
-    </div>
-  </div>
+<br/>
 
-  <div class="candidate-status">
-    <div class="status-title"></div>
-    <div class="candidates-pic"></div>
-  </div>
+
+{{#each submitted}}
+  <h1>{{fullname}} | {{currentStatus}}</h1>
+{{/each}}
+
+
+{{#each phone_screen}}
+  <h1>{{fullname}} | {{currentStatus}}</h1>
+{{/each}}
+
+
+{{#each interview}}
+  <h1>{{fullname}} | {{currentStatus}}</h1>
+{{/each}}
+
+
+
+{{#each placement}}
+  <h1>{{fullname}} | {{currentStatus}}</h1>
+{{/each}}
+
+
 </div>
