@@ -507,6 +507,95 @@ circle {
   stroke-width: 32;
 }
 
+
+/*==============================
+ Dashborad
+================================*/
+
+.dash-container {
+  background-color: #202022;
+  height: 100vh;
+}
+.dash-user {
+  display: -webkit-inline-flex;
+  display: flex;
+  -webkit-flex-direction: row;     
+  flex-direction: row;
+  width: 100%;
+  color: #efefef;
+  padding-top: 15px;
+}
+
+.user-name {            
+  flex: 1 100%;      
+  text-align: center;
+}        
+
+.summary {
+  width: 100%; 
+  align-self: center;        
+  display: flex;     
+  align-items: center;          
+  justify-content: center;
+  margin: 20px 0 50px 0;
+  color: #efefef;
+  justify-content:center;
+} 
+
+.summary .box {
+  border: 3px solid #f2c050;          
+  flex: 0 0 15%;
+  text-align: center;
+  padding:10px;    
+} 
+
+.summary .box:nth-child(1), .summary .box:nth-child(2), .summary .box:nth-child(3){
+  border-right: none;
+}       
+
+.wrapper-list {            
+  display: flex;
+  flex-flow: row wrap;
+  background-color: inherit;
+  width: 100%;
+  align-items: center;
+}
+
+.submitted-list, .phone-screen-list, .interview-list, .placement-list {                   
+  display: inline-flex;   
+  flex-flow: row wrap;        
+  flex: 2 1 80%;
+  margin: 10px 0;
+  color: #efefef;
+  border-bottom: 1px solid rgba(242, 192, 80, 0.28);
+  justify-content:flex-start;
+}
+
+.submitted-list .contact, .phone-screen-list .contact, .interview-list .contact, .placement-list .contact {            
+  text-align: center;
+  margin-left: 20px;
+}
+
+.contact > a > img {
+  text-decoration: none;
+  width: 120px;
+  border-radius: 50%;
+}
+
+.contact p > a {
+  padding: 5px;
+  color: #efefef;
+}
+.aside-submitted, .aside-phone-screen, .aside-interview, .aside-placement {                                 
+  flex: 0 0 20%;
+  text-align: center;
+  color: #efefef;
+}
+
+/*==============================
+ End Dashboard
+================================*/
+
 /*==============================
  End Pie chart
 ================================*/
