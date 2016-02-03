@@ -162,7 +162,11 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 - list of user connections
 
-![all-connections](wireframes/all-connectionst.png)
+![all-connections](wireframes/all-connections.png)
+
++ Dashboard for user's candidate's statuses 
+
+![dashboard](wireframes/dash-final.png)
 
 
 ## Working with this repo
