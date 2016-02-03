@@ -380,7 +380,7 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-user, #sidebar > h1 > i.fa-pencil {
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-bell, #sidebar > h1 > i.fa-pencil {
   font-size: 25px;
   padding-left: 0;
   padding-right: 20px;
