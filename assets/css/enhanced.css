@@ -16,7 +16,6 @@
 
 .candidate_view {
   padding: 20px;
-  margin: 50px 0;
 }
 
 .list-wrapper, .title-wrapper {
@@ -28,6 +27,7 @@
 .title-wrapper {
   text-align: center;
 }
+
 .headline img {
 	width: 140px;
 }
@@ -75,7 +75,6 @@ aside {
 }
 
 #sidebar {
-  background-color: #fff;
   padding: 0 10px;
 }
 
@@ -235,6 +234,15 @@ select{
 /*==============================
  End 404 page
 ================================*/
+@media (min-width: 1440px) {
+
+  .search-form input {
+    width: 200px;
+  }
+
+
+}
+
 @media (max-width: 1440px) {
   .pie {
     margin: -100px 0px 0px 110px;

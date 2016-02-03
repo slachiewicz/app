@@ -67,9 +67,13 @@ header {
   padding: 5px;
 }
 
+.search-form form {
+  margin-top: 5px;
+}
+
 .search-form input {
   padding: 5px 0;
-  width: 200px;
+  width: 180px;
 }
 
 .search-form > a > i.fa-star, .search-form > a > i.fa-user {
@@ -106,6 +110,13 @@ header {
   font-size: 1.5em;
 }
 
+.home-link {
+  float: left;
+  margin: 8px 5px 10px;
+  font-size: 1.5em;
+  color: #E4AD28;
+}
+
 .fa-at {
   float: right;
   color: #424A5D;
@@ -126,13 +137,14 @@ header {
   color: #90D2CC;
 }
 
-.container, .candidate_view {
+.container{
   margin-bottom:40px;
   padding: 5px;
 }
 
 .candidate_view {
   margin-top: 50px;
+  background-color: #fff;
 }
 
 .candidate-box {
@@ -279,7 +291,6 @@ span {
 ================================*/
 .candidate_view {
   overflow-x:hidden;
-  background-color: #fff;
 }
 
   .candidate_view h1 {
@@ -369,7 +380,7 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-user, #sidebar > h1 > i.fa-pencil {
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil {
   font-size: 25px;
   padding-left: 0;
   padding-right: 20px;
@@ -511,7 +522,6 @@ circle {
   stroke-width: 32;
 }
 
-
 /*==============================
  Dashborad
 ================================*/
@@ -535,7 +545,22 @@ circle {
 .user-name {            
   flex: 1 100%;      
   text-align: center;
-}        
+  justify-content: center;
+} 
+
+.home-button {
+  justify-content: flex-start;
+}
+
+.home-button > a > i.fa-home {
+  color: #E4AD28;
+  font-size: 1.5em;
+  padding-left: 10px;
+}
+
+.user-pic {
+  justify-content: flex-end;
+}    
 
 .user-name h1 {
   font-weight: 600;

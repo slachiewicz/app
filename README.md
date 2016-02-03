@@ -168,6 +168,10 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![dashboard](wireframes/dash-final.png)
 
++ Home button at the top of each page
+
+![home](wireframes/home-button.png)
+
 
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
