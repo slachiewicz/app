@@ -256,32 +256,60 @@ span {
 }
 
 /*==============================
- New design - home view
+ Home view
 ================================*/
-
-
-.box {
-  display: inline-block;
+.title-wrapper, .list-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;   
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
-.box1 {
+
+.aside{ 
+  flex: 1 auto;
   width: 10%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-.box2 {
-  width: 70%;
-}
-.box3 {
-/*  width: 20%;*/
-  font-size: 25px;
-  font-weight: bold;
-  color: #424A5D; 
-}
-/*.box4 {
-  width: 14%;
-}*/
-
-.list-wrapper .box {
   
+.main{ 
+  flex: 3 40%; 
 }
+
+.aside-1 {
+  order: 1; 
+}
+
+.main{ 
+  order: 2;
+}
+
+.aside-2 { 
+  order: 3; 
+}
+
+.title-wrapper .aside-1 {
+  padding-left: 62px;
+}
+
+.title-wrapper .aside-2 {
+  font-size: 1.5em;
+  color: #424A5D;
+}
+
+#send-email {
+  position: fixed;
+  top: 60px;
+  transform: translate(50%);
+  left: 50%;
+}
+
+
 /*==============================
  End new design
 ================================*/
@@ -293,38 +321,38 @@ span {
   overflow-x:hidden;
 }
 
-  .candidate_view h1 {
-    font-size: 1.1em;
-    padding: 5px 0;
-    color:rgb(52, 52, 80);
-  }
+.candidate_view h1 {
+  font-size: 1.1em;
+  padding: 5px 0;
+  color:rgb(52, 52, 80);
+}
 
-  .candidate_view h2 {
-    font-size: 1em;
-    color: #181824;
-  }
+.candidate_view h2 {
+  font-size: 1em;
+  color: #181824;
+}
 
-  .candidate_view p {
-    color: #353131;
-    padding: 10px 10px;
-  }
+.candidate_view p {
+  color: #353131;
+  padding: 10px 10px;
+}
 
-  .candidate_view img {
-    width: 65px;
-  }
+.candidate_view img {
+  width: 65px;
+}
 
-  .details {
-    width: 100%;
-  }
+.details {
+  width: 100%;
+}
 
-  .details h1 {
-    clear:left;
-  }
+.details h1 {
+  clear:left;
+}
 
-  .skills-box {
-    position: relative;
-    padding: 10px;
-  }
+.skills-box {
+  position: relative;
+  padding: 10px;
+}
 
 /*==============================
   Skills inline
@@ -505,10 +533,7 @@ aside {
 .pie {
   width: 50px;
   height: 50px;
-  display: inline-block;
   transform: rotate(-90deg);
-  position: absolute;
-  margin: -80px 0 0 150px;
 }
 
 svg {
