@@ -86,7 +86,7 @@ describe('test that class notes-item exist and there is 1 note ', function () {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
 
-        expect($('.notes-item').length).to.equal(1);
+        expect($('.notes-item').length).to.equal(2);
 
         server.stop(done);
       });
@@ -175,7 +175,7 @@ describe('test that class notes-item exist and there are 2 notes ', function () 
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
 
-        expect($('.notes-item').length).to.equal(2);
+        expect($('.notes-item').length).to.equal(3);
 
         server.stop(done);
       });

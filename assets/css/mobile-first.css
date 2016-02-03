@@ -72,6 +72,10 @@ header {
   width: 200px;
 }
 
+.search-form > a > i.fa-star, .search-form > a > i.fa-user {
+  margin-top: 0px !important;
+}
+
 .search-btn {
   background-color: #E4AD28;
   color:white;
@@ -96,7 +100,7 @@ header {
   background-color: white;
 }
 
-.my-favourite {
+.my-favourite, .dash-link {
   float:right;
   margin: 8px 5px 10px;
   font-size: 1.5em;
@@ -180,7 +184,7 @@ header {
    
 }
 
-i.fa-star {
+i.fa-star, i.fa-user {
   color: #E4AD28;
   border: none;
   float: right;
@@ -513,16 +517,18 @@ circle {
 ================================*/
 
 .dash-container {
-  background-color: #202022;
+  background-color: #f2f2f2;
   height: 100vh;
 }
 .dash-user {
+  display: -ms-flexbox;
+  display: inline-flex; 
   display: -webkit-inline-flex;
-  display: flex;
   -webkit-flex-direction: row;     
   flex-direction: row;
   width: 100%;
-  color: #efefef;
+  /*color: #efefef;*/
+  color: #202022;
   padding-top: 15px;
 }
 
@@ -531,6 +537,10 @@ circle {
   text-align: center;
 }        
 
+.user-name h1 {
+  font-weight: 600;
+}
+
 .summary {
   width: 100%; 
   align-self: center;        
@@ -538,16 +548,20 @@ circle {
   align-items: center;          
   justify-content: center;
   margin: 20px 0 50px 0;
-  color: #efefef;
+  color: #202022;
   justify-content:center;
 } 
 
 .summary .box {
-  border: 3px solid #f2c050;          
+  border: 3px solid #9DAD59;          
   flex: 0 0 15%;
   text-align: center;
   padding:10px;    
 } 
+
+.summary .box p {
+  font-weight: 600;
+}
 
 .summary .box:nth-child(1), .summary .box:nth-child(2), .summary .box:nth-child(3){
   border-right: none;
@@ -566,9 +580,11 @@ circle {
   flex-flow: row wrap;        
   flex: 2 1 80%;
   margin: 10px 0;
-  color: #efefef;
-  border-bottom: 1px solid rgba(242, 192, 80, 0.28);
+  color: #202022;
+  /*0.28 opacity for border-bottom*/
+  border-bottom: 1px solid #9DAD59;
   justify-content:flex-start;
+  height: 150px;
 }
 
 .submitted-list .contact, .phone-screen-list .contact, .interview-list .contact, .placement-list .contact {            
@@ -584,12 +600,13 @@ circle {
 
 .contact p > a {
   padding: 5px;
-  color: #efefef;
+  color: #202022;
 }
 .aside-submitted, .aside-phone-screen, .aside-interview, .aside-placement {                                 
   flex: 0 0 20%;
   text-align: center;
-  color: #efefef;
+  color: #202022;
+  font-weight: bold;
 }
 
 /*==============================
