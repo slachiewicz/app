@@ -55,4 +55,14 @@
     pie.appendChild(svg);
   });
 
+   //select all checkboxes
+  var selectAll = document.getElementById('select-all');
+
+  selectAll.addEventListener('click', function () {
+    var checkboxes = document.getElementsByName('email');
+    for (var i = 0; i < checkboxes.length; i++) {
+      checkboxes[i].checked = this.checked;
+    }
+  }, false);
+
 }());

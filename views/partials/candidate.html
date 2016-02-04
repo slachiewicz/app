@@ -63,7 +63,9 @@
   </article>
   
   <aside class="aside aside-1">
-    <input type="checkbox">
+  {{#if email}}
+    <input type="checkbox" name="email" value="{{this.email}}">
+  {{/if}}
   </aside>
 
   <aside class="aside aside-2">

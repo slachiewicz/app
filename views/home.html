@@ -4,18 +4,17 @@
   <div class="title-wrapper">
     <article class="main"></article>
     <aside class="aside aside-1">
-      <input type="checkbox">Select all
+      <input type="checkbox" id="select-all">Select all
     </aside>
     <aside class="aside aside-2">
       <span class="curly-left">{</span>M<span class="curly-right">}</span>
     </aside>
   </div>
   </div>
-  <form action="" method=""> 
+  <form action="/email" method="POST"> 
 	{{#each candidates}}
 	  {{>candidate keywords=../keywords}}
 	{{/each}}
-
   <button id="send-email" type="submit">SEND EMAIL</button>
   </form>
   <input type="hidden" class="keywords" value="{{keywords}}">
