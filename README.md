@@ -71,11 +71,13 @@ BASE_URL=http://localhost:8000
 #Gm app
 GOOGLE_CLIENT_ID= # Ask dev team for this
 GOOGLE_CLIENT_SECRET= # Ask dev team for this
-
+MAP_ID_USER= # Ask dev team for this
 ```
 Ask a member of the dev team for the `SEARCHBOX_URL` variable if you
 want to access the *hosted* ElasticSearch Database.
 There are a number of other variables missing from example above which are available to the dev team.
+
+The MAP_ID_USER environment variable is used to map the id from the user to their first name. We are using the ids to know who creates notes and who is the "owner" of a candidate. However the application shouldn't display the id of the user but the first name and it's where MAP_ID_USER is useful. see the discussion on Github for more details: [issue 215](https://github.com/FAC-GM/app/issues/215) and [issue 238](https://github.com/FAC-GM/app/issues/238)
 
 ### Install *node.js* dependencies
 
@@ -154,7 +156,7 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![match-score](wireframes/match-score.png)
 
-+ Display all connection to each user when clicking on initials 
++ Display all connection to each user when clicking on initials
 
 - by clicking on initials (top right corner) as shown under:
 
@@ -164,7 +166,7 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![all-connections](wireframes/all-connections.png)
 
-+ Dashboard for user's candidate's statuses 
++ Dashboard for user's candidate's statuses
 
 ![dashboard](wireframes/dash-final.png)
 
