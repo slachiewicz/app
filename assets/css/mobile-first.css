@@ -305,8 +305,8 @@ span {
 #send-email {
   position: fixed;
   top: 60px;
-  transform: translate(50%);
-  left: 50%;
+  transform: translate(40%);
+  left: 40%;
 }
 
 
@@ -664,8 +664,60 @@ circle {
 ================================*/
 
 /*==============================
- End Pie chart
+ Email
 ================================*/
+
+.email-wrapper {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;   
+  font-weight: bold;
+  text-align: center;
+}
+
+.email-wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+.email-wrapper .email-main {
+  text-align: left;
+}
+
+.email-wrapper .email-aside-1 {
+}
+
+.email-wrapper .email-aside-2 {
+}
+
+.email-wrapper .email-aside { 
+  flex: 1 15%; 
+}
+
+.email-wrapper .email-main { 
+  flex: 3 auto; 
+}
+
+.email-wrapper .email-aside-1 { 
+  order: 1;
+}
+
+.email-wrapper .email-main { 
+  order: 2; 
+}
+
+.email-wrapper .email-aside-2 {
+  order: 3; 
+}
+
+
+/*==============================
+ End Email
+================================*/
+
 
 @media (max-width: 768px) {
   #filter {

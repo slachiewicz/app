@@ -1,5 +1,18 @@
-<h1>Email</h1>
+{{>search_bar}}
 
-{{#each emails}}
-  <p>{{this}}</p>
-{{/each}}
+<div class="email-wrapper">
+   
+  <article class="email-main">
+    <img src="{{userProfile.image}}" alt="{{userProfile.firstname}}" />
+    <p>{{userProfile.firstname}}</p>
+    <ul>
+      {{emailsHelper emails}}
+    </ul>
+  </article>
+
+  <aside class="email-aside email-aside-1"></aside>
+  <aside class="email-aside email-aside-2"></aside>
+
+</div>
+
+
