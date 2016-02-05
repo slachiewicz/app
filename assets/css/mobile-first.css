@@ -599,7 +599,6 @@ circle {
   justify-content: center;
   margin: 20px 0 50px 0;
   color: #202022;
-  justify-content:center;
 } 
 
 .summary .box {
@@ -673,18 +672,94 @@ circle {
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
-  display: flex;   
-  font-weight: bold;
-  text-align: center;
+  display: flex;
 }
 
 .email-wrapper > * {
-  padding: 10px;
+  padding: 30px;
   flex: 1 100%;
 }
 
 .email-wrapper .email-main {
   text-align: left;
+}
+
+.email-main > div, .email-main form, .email-main form > div > ul {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.email-main > div {
+  align-items: center;
+}
+
+.email-main > div > img {
+  padding: 0 20px 0 0 ;
+}
+
+.email-main form > div > ul {
+  flex-wrap: wrap;
+}
+
+.email-main form {
+  margin-top: 10px;
+}
+
+.email-main form > div > ul > * {
+  border: 1px solid rgba(242, 192, 80, 0.55);
+  padding: 5px;
+  background-color: #fff;
+  margin-left: 1px;
+  color: #4E4C4A;
+}
+
+.email-main form > div, .email-main input, .email-main textarea {
+  width: 100%;
+  font-family: inherit;
+}
+
+.email-main input[type=text],
+.email-main textarea, .email-main button {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.email-main ::-webkit-input-placeholder {
+  color: rgba(128, 128, 128, 0.63);
+}
+
+.email-main ::-moz-placeholder {
+  color: rgba(128, 128, 128, 0.63);
+} /* firefox 19+ */
+
+.email-main :-ms-input-placeholder {
+  color: rgba(128, 128, 128, 0.63);
+} /* ie */
+
+.email-main input:-moz-placeholder { 
+  color: rgba(128, 128, 128, 0.63);
+}
+
+.email-main input[type="text"]:focus, .email-main textarea:focus, .email-main select:focus {
+  -moz-box-shadow: 0 0 2px rgba(242, 192, 80, 0.55);
+  -webkit-box-shadow: 0 0 2px rgba(242, 192, 80, 0.55);
+  box-shadow: 0 0 2px rgba(242, 192, 80, 0.55);
+  border: 1px solid rgba(242, 192, 80, 0.55);
+}
+
+.email-main button {
+  width: 20%;
+  background-color: #f2c050;
+  color: #fff;
+  border: 1px solid #f2c050;
+}
+
+.email-main button:hover {
+  background-color: #efefef;
+  color: #f2c050;
+  border: 1px solid #f2c050;
 }
 
 .email-wrapper .email-aside-1 {
@@ -694,7 +769,7 @@ circle {
 }
 
 .email-wrapper .email-aside { 
-  flex: 1 15%; 
+  flex: 1 30%; 
 }
 
 .email-wrapper .email-main { 

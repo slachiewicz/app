@@ -145,7 +145,7 @@ aside {
 }
 
 .notes input[type=text],
-textarea,
+.notes textarea,
 select{
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -160,9 +160,9 @@ select{
   -o-transition: all 0.30s ease-in-out;
   outline: none; 
 }
-.notes input[type=text]:focus,
-.notes textarea:focus,
-.notes select:focus{
+input[type=text]:focus,
+textarea:focus,
+select:focus{
   -moz-box-shadow: 0 0 8px #97A3BF;
   -webkit-box-shadow: 0 0 8px #97A3BF;
   box-shadow: 0 0 8px #97A3BF;
@@ -244,6 +244,11 @@ select{
 }
 
 @media (max-width: 1440px) {
+
+  .email-wrapper .email-aside { 
+    flex: 1 15%; 
+  }
+  
   .pie {
     margin: -100px 0px 0px 110px;
   }

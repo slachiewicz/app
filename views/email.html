@@ -3,18 +3,21 @@
 <div class="email-wrapper">
    
   <article class="email-main">
-    <img src="{{userProfile.image}}" alt="{{userProfile.firstname}}" />
-    <p>{{userProfile.firstname}}</p>
+    <div>
+      <img src="{{userProfile.image}}" alt="{{userProfile.firstname}}" />
+      <p>{{userProfile.firstname}}</p>
+    </div>
     <form action="/sendemail" method="POST">
-      <ul>
-        {{emailsHelper emails}}
-      </ul>
-      <input type="text" name="email-subject" placeholder="Subject"/><br/>
-      <textarea name="message" class="email-textarea" placeholder="Your message"></textarea>
+      <div>
+        <ul>
+          {{emailsHelper emails}}
+        </ul>
+        <input type="text" name="email-subject" placeholder="Subject"/><br/>
+        <textarea name="message" placeholder="Message" cols="10" rows="10"></textarea>
 
-      <button type="submit">Send</button>
+        <button type="submit">Send</button>
+      </div>
     </form>
-    
   </article>
 
   <aside class="email-aside email-aside-1"></aside>
