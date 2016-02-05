@@ -5,9 +5,16 @@
   <article class="email-main">
     <img src="{{userProfile.image}}" alt="{{userProfile.firstname}}" />
     <p>{{userProfile.firstname}}</p>
-    <ul>
-      {{emailsHelper emails}}
-    </ul>
+    <form action="/sendemail" method="POST">
+      <ul>
+        {{emailsHelper emails}}
+      </ul>
+      <input type="text" name="email-subject" placeholder="Subject"/><br/>
+      <textarea name="message" class="email-textarea" placeholder="Your message"></textarea>
+
+      <button type="submit">Send</button>
+    </form>
+    
   </article>
 
   <aside class="email-aside email-aside-1"></aside>

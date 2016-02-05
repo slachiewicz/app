@@ -3,7 +3,7 @@ module.exports = function (emails) {
 
   var result = ""; 
   emails.forEach(function (email) {
-    result += "<li>" + email + "</li>"; 
+    result += "<li>" + email + "</li><input name='email-address' type='hidden' value='" + email + "'>"; 
      
   });
 
