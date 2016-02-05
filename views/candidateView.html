@@ -43,15 +43,19 @@
           {{#each contacts.im}}
             <p class="mobile"><span>IM: </span><span class="check-highlight">{{this}}</span></p>
           {{/each}}
-        <p class="mobile"><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>
-
-        
+        <p class="mobile"><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>       
 
     </div>
     <hr>
     <aside>
-      <div id="sidebar">
+      <div id="sidebar">      
         <h1><i class="fa fa-envelope"></i> CONTACT</h1>
+      {{#if contacts.email}}
+        <form action="/email" method="POST">          
+          <input type="hidden" name="email" value="{{contacts.email}}">
+          <button type="submit">SEND EMAIL</button>
+        </form>
+      {{/if}}
         <p><span>Linkedin: </span><a class="check-highlight" href="{{url}}" target="_blank">{{url}}</a></p>
         <p><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
         <p><span>Phone: </span><span class="check-highlight">{{contacts.phone}}</span></p>
