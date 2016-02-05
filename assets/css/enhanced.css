@@ -245,10 +245,6 @@ select:focus{
 
 @media (max-width: 1440px) {
 
-  .email-wrapper .email-aside { 
-    flex: 1 15%; 
-  }
-  
   .pie {
     margin: -100px 0px 0px 110px;
   }

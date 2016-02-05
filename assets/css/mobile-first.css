@@ -682,6 +682,7 @@ circle {
 
 .email-wrapper .email-main {
   text-align: left;
+  width: 60%;
 }
 
 .email-main > div, .email-main form, .email-main form > div > ul {
@@ -769,7 +770,7 @@ circle {
 }
 
 .email-wrapper .email-aside { 
-  flex: 1 30%; 
+  flex: 1 20%; 
 }
 
 .email-wrapper .email-main { 
