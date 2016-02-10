@@ -615,6 +615,7 @@ circle {
   text-align: center;
   margin-left: 20px;
   max-width: 120px;
+  padding-bottom: 0.8em;
 }
 
 .contact > a > img {
