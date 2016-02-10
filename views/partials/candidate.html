@@ -64,7 +64,8 @@
   
   <aside class="aside aside-1">
   {{#if email}}
-    <input type="checkbox" name="email" value="{{this.email}}">
+    <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}"}'>
+   
   {{/if}}
   </aside>
 
