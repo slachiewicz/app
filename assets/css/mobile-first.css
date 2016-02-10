@@ -528,7 +528,6 @@ circle {
 
 .dash-container {
   background-color: #f2f2f2;
-  height: 100vh;
 }
 .dash-user {
   display: -ms-flexbox;
@@ -609,12 +608,13 @@ circle {
   /*0.28 opacity for border-bottom*/
   border-bottom: 1px solid #9DAD59;
   justify-content:flex-start;
-  height: 150px;
+  min-height: 150px;
 }
 
 .submitted-list .contact, .phone-screen-list .contact, .interview-list .contact, .placement-list .contact {            
   text-align: center;
   margin-left: 20px;
+  max-width: 120px;
 }
 
 .contact > a > img {
