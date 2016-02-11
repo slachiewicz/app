@@ -274,9 +274,9 @@ span.close > i.fa-times {
 
 @media (max-width: 1440px) {
 
-  .pie {
+  /*.pie {
     margin: -100px 0px 0px 110px;
-  }
+  }*/
 
   .curly-left {
     margin-left: 74px;

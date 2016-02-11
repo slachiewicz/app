@@ -47,7 +47,7 @@ describe('access dashboard, when user is authenticated', function () {
 describe('access dashboard of Simon with his candidates', function () {
 
   it('return the dashboard with candidates with submitted status', function (done) {
-    var tokenSimon =  JWT.sign({ id: '12', "name": "Simon", valid: true, "firstname": "Simon"}, process.env.JWT_SECRET);
+    var tokenSimon =  JWT.sign({ id: "12", "name": "Simon", valid: true, "firstname": "Simon"}, process.env.JWT_SECRET);
 
     Server.init(0, function (err, server) {
 
@@ -55,7 +55,9 @@ describe('access dashboard of Simon with his candidates', function () {
       server.inject({url: '/dashboard', headers: { cookie: "token=" + tokenSimon }}, function (res) {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
+        console.log($)
         var profile = $('.submitted-list .contact');
+        console.log('-----', profile);
         expect(profile.length).to.be.above(0);
         server.stop(done);
 
@@ -67,7 +69,7 @@ describe('access dashboard of Simon with his candidates', function () {
 describe('access dashboard of Simon with his candidates', function () {
 
   it('return the dashboard with candidates with interview status', function (done) {
-    var tokenSimon =  JWT.sign({ id: '12', "name": "Simon", valid: true, "firstname": "Simon"}, process.env.JWT_SECRET);
+    var tokenSimon =  JWT.sign({ id: 12, "name": "Simon", valid: true, "firstname": "Simon"}, process.env.JWT_SECRET);
 
     Server.init(0, function (err, server) {
 
