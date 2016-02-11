@@ -10,7 +10,7 @@ var expect = Code.expect;
 var it = lab.test;
 var cheerio = require('cheerio');
 
-var token =  JWT.sign({ id: 12, "name": "Simon", valid: true, "firstname": "Simon"}, process.env.JWT_SECRET);
+var token =  JWT.sign({ id: '12', "name": "Simon", valid: true, "firstname": "Simon"}, process.env.JWT_SECRET);
 
 describe('Attempt to access dashboard without authorization', function () {
 
