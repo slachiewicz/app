@@ -278,6 +278,10 @@ span.close > i.fa-times {
     margin: -100px 0px 0px 110px;
   }
 
+  .curly-left {
+    margin-left: 74px;
+  }
+
 }
 
 @media (max-width: 1225px) {

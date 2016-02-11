@@ -304,9 +304,13 @@ span {
 
 #send-email {
   position: fixed;
-  top: 60px;
-  transform: translate(40%);
-  left: 40%;
+  bottom: 10px;
+  /*transform: translate(40%);*/
+  left: 5%;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
 }
 
 
