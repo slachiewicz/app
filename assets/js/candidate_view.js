@@ -39,20 +39,23 @@
     }, false);
 
     //display email message
-    var displayEmail = document.getElementById('display-email');
-    var hiddenField = document.getElementById('hiddenEmail');
-    var close = document.getElementsByClassName('close')[0];
+    var displayEmail = document.querySelectorAll('.display-email');
+    var close = document.querySelectorAll('.close');
 
-    displayEmail.addEventListener('click', function (e) {
+    for (var i = 0; i < displayEmail.length; i++) {
+     displayEmail[i].addEventListener('click', function (e) {    
       e.preventDefault();
-      hiddenEmail.style.display = 'block';
-      close.style.display = 'block';
-    }, false);
-
-    close.addEventListener('click', function (e) {
-      e.preventDefault();
-      hiddenEmail.style.display = 'none';
-      close.style.display = 'none';
-    }, false);
-
+      this.nextElementSibling.nextElementSibling.style.display = 'block';
+      this.nextElementSibling.style.display = 'block';
+      }, false);
+    }
+    
+    for (var i = 0; i < close.length; i++) {
+      close[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        this.nextElementSibling.style.display = 'none';
+        this.style.display = 'none';
+      }, false);
+    }
+    
 })();

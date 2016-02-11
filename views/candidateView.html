@@ -108,15 +108,16 @@
           {{/each}}   
         </div>
         <br>
+        </div>
         <h1><i class="fa fa-comments"></i> EMAILS</h1>
         <div class="emails-box">
           <ul>  
           {{#each emails}}
             <li>
-              <p>{{sentAt}} | {{senderName}}</p>
-              <p id="display-email"><strong>{{subject}}</strong></p>
+              <p><strong>Date:</strong> {{sentAt}} | <strong>From:</strong> {{senderName}}</p>
+              <p class="display-email"><strong>Subject:</strong> {{subject}}</p>
               <span class="close"><i class="fa fa-times"></i></span>
-              <p id="hiddenEmail">{{message}}</p>
+              <p class="hidden-email">{{message}}</p>
             </li>
              <hr> 
           {{/each}}
