@@ -201,6 +201,32 @@ select:focus{
 ================================*/
 
 /*==============================
+ Email section
+================================*/
+#display-email, .close {
+  cursor: pointer;
+}
+
+#hiddenEmail {
+  display: none;
+}
+
+.close {
+  display: none;
+  float: right;
+  margin-top: -20px;
+  color: #424A5D;
+}
+
+span.close > i.fa-times {
+  font-size: 22px !important;
+}
+
+/*==============================
+ End Email section
+================================*/
+
+/*==============================
  Login page
 ================================*/
 .container-login {

@@ -38,6 +38,21 @@
       deleteProfile.style.display = 'block';
     }, false);
 
+    //display email message
+    var displayEmail = document.getElementById('display-email');
+    var hiddenField = document.getElementById('hiddenEmail');
+    var close = document.getElementsByClassName('close')[0];
 
+    displayEmail.addEventListener('click', function (e) {
+      e.preventDefault();
+      hiddenEmail.style.display = 'block';
+      close.style.display = 'block';
+    }, false);
+
+    close.addEventListener('click', function (e) {
+      e.preventDefault();
+      hiddenEmail.style.display = 'none';
+      close.style.display = 'none';
+    }, false);
 
 })();

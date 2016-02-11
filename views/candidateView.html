@@ -107,6 +107,21 @@
              <hr> 
           {{/each}}   
         </div>
+        <br>
+        <h1><i class="fa fa-comments"></i> EMAILS</h1>
+        <div class="emails-box">
+          <ul>  
+          {{#each emails}}
+            <li>
+              <p>{{sentAt}} | {{senderName}}</p>
+              <p id="display-email"><strong>{{subject}}</strong></p>
+              <span class="close"><i class="fa fa-times"></i></span>
+              <p id="hiddenEmail">{{message}}</p>
+            </li>
+             <hr> 
+          {{/each}}
+          </ul>
+        </div>
     </div>
     </aside>
     <div class="details">
