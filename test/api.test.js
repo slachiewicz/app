@@ -94,7 +94,6 @@ describe('api /profile', function () {
 
             expect($('.fullname').text()).to.equal("David Dupont");
             //the yellow star should be display
-            console.log($('#star-state').attr('class'));
             expect($('#star-state').attr('class')).to.equal('fa fa-star');
             server.stop(done);
 
