@@ -55,9 +55,7 @@ describe('access dashboard of Simon with his candidates', function () {
       server.inject({url: '/dashboard', headers: { cookie: "token=" + tokenSimon }}, function (res) {
         expect(res.statusCode).to.equal(200);
         var $ = cheerio.load(res.payload);
-        console.log($)
-        var profile = $('.submitted-list .contact');
-        console.log('-----', profile);
+        var profile = $('.submitted-list .contact');       
         expect(profile.length).to.be.above(0);
         server.stop(done);
 
