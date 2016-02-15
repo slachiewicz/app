@@ -36,12 +36,91 @@ describe('Attempt to access email page without authorization', function () {
 
 describe('Access the email when authenticated', function () {
 
-  it('redirects to the email page', function (done) {
+  it('render the email page', function (done) {
 
-    var emails = [{
-      email: 'fakecontact1@gmail.com',
-      id: '1'
-    }];
+    var emails = {email: '{"email":"fakecontact1@gmail.com","id":"1"}'};
+
+    var options = {
+      method: "POST",
+      url: "/email",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true, "firstname": "Simon", image: {url:'/urlImage'}},
+      payload: emails
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Access the email when authenticated', function () {
+
+  it('render the email page', function (done) {
+
+    var emails = {email: ['{"email":"fakecontact1@gmail.com","id":"1"}']};
+
+    var options = {
+      method: "POST",
+      url: "/email",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true, "firstname": "Simon", image: {url:'/urlImage'}},
+      payload: emails
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+})
+
+describe('Access /sendmail with invalid JWT Cookie', function () {
+
+  it('Auth blocked by bad Cookie JWT and redirect to login page', function (done) {
+
+    var token = JWT.sign({ id: 321, "name": "Charlie" }, process.env.JWT_SECRET);
+
+    var options = {
+      method: "POST",
+      url: "/sendemail",
+      headers: { cookie: "token=" + token },
+      payload: {
+        "to" : "contact.nelsonic@gmail.com",
+        "message" : "this will not get sent...",
+        "subject" : "Mock Test "
+      }
+  };
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      server.inject(options, function (res) {
+
+        //redirection 
+        expect(res.statusCode).to.equal(302);
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Trying to redirect to /email page without submitting emails', function () {
+
+  it('redirects to the home page', function (done) {
+
+    var emails = undefined;
 
     var options = {
       method: "POST",
@@ -57,6 +136,28 @@ describe('Access the email when authenticated', function () {
 
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(302);
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Attempt to access /sendemail page without authorization', function () {
+
+  it('checks status code to be 302 redirection', function (done) {
+
+    var options = {
+      method: "POST",
+      url: "/sendemail"
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      server.inject(options , function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
         server.stop(done);
       });
     });

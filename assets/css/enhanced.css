@@ -76,6 +76,7 @@ aside {
 
 #sidebar {
   padding: 0 10px;
+  border-left: 1px solid #BCBFA4;
 }
 
 #sidebar > p {
@@ -93,7 +94,6 @@ aside {
 
 .details {
   width: 65%;
-  border-right: 1px solid #BCBFA4;
   padding: 0 20px;
 }
 
@@ -114,12 +114,6 @@ aside {
   color: #FFD777;
   border:0 none;
 }
-
-.delete-profile:hover , .delete-profile-confirmation button:hover{
-   cursor: pointer;
-}
-
-
 
 /*==============================
  Notes

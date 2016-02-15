@@ -42,7 +42,7 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
 
   // see: http://git.io/v4nTR for google plus api url
   // https://www.googleapis.com/plus/v1/people/{userId}
-    var sample_profile = fs.readFileSync(__dirname + '/fixtures/sample-auth-profile.json');
+    var sample_profile = require(__dirname + '/fixtures/sample-auth-profile.json');
 
     nock('https://www.googleapis.com')
       .get('/plus/v1/people/me')
@@ -105,3 +105,4 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
     });
   });
 });
+
