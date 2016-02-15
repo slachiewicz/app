@@ -28,7 +28,7 @@
     "esta": "^4.2.0",
     "googleapis": "^2.1.7",
     "handlebars": "^4.0.4",
-    "hapi": "^12.1.0",
+    "hapi": "^13.0.0",
     "hapi-auth-google": "^1.0.6",
     "hapi-auth-jwt2": "^5.2.0",
     "hoek": "^3.0.1",
