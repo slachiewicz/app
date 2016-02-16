@@ -306,11 +306,11 @@ span {
   position: fixed;
   bottom: 10px;
   /*transform: translate(40%);*/
-  left: 5%;
+  left: 2%;
   background-color: #424A5D;
   color: #FFD777;
   border: none;
-  padding: 5px 10px;
+  padding: 8px 15px;
 }
 
 #send-email:hover, .send-email-form > button:hover, .delete-profile-confirmation button:hover, 

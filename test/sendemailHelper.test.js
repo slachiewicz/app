@@ -12,6 +12,8 @@ var fs = require('fs');
 // var REAL_TOKEN = require(__dirname + '/fixtures/sample-auth-token-anita.json');
 var PROFILE = require(__dirname + '/fixtures/sample-auth-credentials.json');
 
+console.log(process.env.REAL_TOKEN);
+
 var date = new Date().toUTCString();
 
 describe('Attempt to sendEmail with the expired token', function () {
@@ -20,7 +22,7 @@ describe('Attempt to sendEmail with the expired token', function () {
 
     var email = 'dolores.maria9810@gmail.com';
     
-    var tokens = PROFILE.tokens;
+    var tokens = PROFILE;
 
     var options = {
       name: 'anita',
@@ -37,29 +39,29 @@ describe('Attempt to sendEmail with the expired token', function () {
 });
 
 
-describe('Attempt to sendEmail with the right token', function () {
+// describe('Attempt to sendEmail with the right token', function () {
 
-  it('succesfully send email with real token', function (done) {
+//   it('succesfully send email with real token', function (done) {
 
-    var email = 'dolores.maria9810@gmail.com';
+//     var email = 'dolores.maria9810@gmail.com';
     
-    var tokens = JSON.parse(process.env.REAL_TOKEN);
-    console.log('tokens', tokens.refresh_token);
-    console.log(typeof tokens);
+//     var profile = JSON.parse(process.env.REAL_TOKEN);
+//     console.log('-------', profile);
+//     console.log(typeof profile);
 
-    var options = {
-      name: 'anita',
-      senderEmail: 'czaplaanita@gmail.com',
-      subject: 'Do You Read Me? > ' + date,
-      message: 'Hi there'      
-    }
+//     var options = {
+//       name: 'anita',
+//       senderEmail: 'czaplaanita@gmail.com',
+//       subject: 'Do You Read Me? > ' + date,
+//       message: 'Hi there'      
+//     }
 
-    sendEmail(email, options, tokens, function (err, response) {
-      console.log('ERR',err);
-      console.log('RS',response);
-      expect(response.labelIds[0]).to.equal('SENT');
-      expect(err).to.equal(null);
-      done();
-    });
-  });
-});
+//     sendEmail(email, options, profile.tokens, function (err, response) {
+//       console.log('ERR',err);
+//       console.log('RS',response);
+//       expect(response.labelIds[0]).to.equal('SENT');
+//       expect(err).to.equal(null);
+//       done();
+//     });
+//   });
+// });
