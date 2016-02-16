@@ -1,14 +1,8 @@
 <div class="list-wrapper">
 
-  <div class="box box1">
-   <!--  <input type="checkbox"> -->
-  </div>
-
-  <div class="box box2">
+  <article class="main">
     <div class="candidate-box">
-
       <div class="headline">
-
 
         {{#if favourite}}
           <i class="fa fa-star"></i>
@@ -24,7 +18,6 @@
             {{/if}}
           </ul>
         {{/each}}
-
 
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
@@ -65,21 +58,21 @@
         </ul>
         {{/each}}
 
-
-
-
       </div>
     </div>
-  </div>
+  </article>
+  
+  <aside class="aside aside-1">
+  {{#if email}}
+    <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}"}'>
+   
+  {{/if}}
+  </aside>
 
-  <div class="box box3">
-    {{#if percentageMatch}}
+  <aside class="aside aside-2">
+     {{#if percentageMatch}}
     <div class="pie">{{percentageMatch}}%</div>
     {{/if}}
-  </div>
-
-  <!-- <div class="box box4">
-    star
-  </div> -->
+  </aside>
 
 </div>

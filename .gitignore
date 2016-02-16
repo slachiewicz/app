@@ -20,3 +20,5 @@ lcov.info
 .env
 *~
 .vagrant
+test/fixtures/sample-auth-token-anita.json
+

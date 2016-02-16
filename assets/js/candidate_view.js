@@ -38,6 +38,24 @@
       deleteProfile.style.display = 'block';
     }, false);
 
+    //display email message
+    var displayEmail = document.querySelectorAll('.display-email');
+    var close = document.querySelectorAll('.close');
 
-
+    for (var i = 0; i < displayEmail.length; i++) {
+     displayEmail[i].addEventListener('click', function (e) {    
+      e.preventDefault();
+      this.nextElementSibling.nextElementSibling.style.display = 'block';
+      this.nextElementSibling.style.display = 'block';
+      }, false);
+    }
+    
+    for (var i = 0; i < close.length; i++) {
+      close[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        this.nextElementSibling.style.display = 'none';
+        this.style.display = 'none';
+      }, false);
+    }
+    
 })();

@@ -1,0 +1,28 @@
+{{>search_bar}}
+
+<div class="email-wrapper">
+   
+  <article class="email-main">
+    <div>
+      <img src="{{userProfile.image}}" alt="{{userProfile.firstname}}" />
+      <p>{{userProfile.firstname}}</p>
+    </div>
+    <form action="/sendemail" method="POST">
+      <div>
+        <ul>
+          {{emailsHelper emails}}
+        </ul>
+        <input type="text" name="subject" placeholder="Subject"/><br/>
+        <textarea name="message" placeholder="Message" cols="10" rows="10"></textarea>
+
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </article>
+
+  <aside class="email-aside email-aside-1"></aside>
+  <aside class="email-aside email-aside-2"></aside>
+
+</div>
+
+

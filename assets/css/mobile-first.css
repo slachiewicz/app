@@ -256,32 +256,76 @@ span {
 }
 
 /*==============================
- New design - home view
+ Home view
 ================================*/
-
-
-.box {
-  display: inline-block;
+.title-wrapper, .list-wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;   
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
 }
-.box1 {
+
+.aside{ 
+  flex: 1 auto;
   width: 10%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 }
-.box2 {
-  width: 70%;
-}
-.box3 {
-/*  width: 20%;*/
-  font-size: 25px;
-  font-weight: bold;
-  color: #424A5D; 
-}
-/*.box4 {
-  width: 14%;
-}*/
-
-.list-wrapper .box {
   
+.main{ 
+  flex: 3 40%; 
 }
+
+.aside-1 {
+  order: 1; 
+}
+
+.main{ 
+  order: 2;
+}
+
+.aside-2 { 
+  order: 3; 
+}
+
+.title-wrapper .aside-1 {
+  padding-left: 62px;
+}
+
+.title-wrapper .aside-2 {
+  font-size: 1.5em;
+  color: #424A5D;
+}
+
+#send-email {
+  position: fixed;
+  bottom: 10px;
+  /*transform: translate(40%);*/
+  left: 2%;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 8px 15px;
+}
+
+#send-email:hover, .send-email-form > button:hover, .delete-profile-confirmation button:hover, 
+.delete-profile:hover {
+  background-color: #FFD777;
+  color: #424A5D;
+  cursor: pointer;
+}
+
+input[type='checkbox'] {
+  -webkit-transform: scale(1.2, 1.2);
+  transform:scale(1.2, 1.2);
+}
+
+
 /*==============================
  End new design
 ================================*/
@@ -293,38 +337,38 @@ span {
   overflow-x:hidden;
 }
 
-  .candidate_view h1 {
-    font-size: 1.1em;
-    padding: 5px 0;
-    color:rgb(52, 52, 80);
-  }
+.candidate_view h1 {
+  font-size: 1.1em;
+  padding: 5px 0;
+  color:rgb(52, 52, 80);
+}
 
-  .candidate_view h2 {
-    font-size: 1em;
-    color: #181824;
-  }
+.candidate_view h2 {
+  font-size: 1em;
+  color: #181824;
+}
 
-  .candidate_view p {
-    color: #353131;
-    padding: 10px 10px;
-  }
+.candidate_view p {
+  color: #353131;
+  padding: 10px 10px;
+}
 
-  .candidate_view img {
-    width: 65px;
-  }
+.candidate_view img {
+  width: 65px;
+}
 
-  .details {
-    width: 100%;
-  }
+.details {
+  width: 100%;
+}
 
-  .details h1 {
-    clear:left;
-  }
+.details h1 {
+  clear:left;
+}
 
-  .skills-box {
-    position: relative;
-    padding: 10px;
-  }
+.skills-box {
+  position: relative;
+  padding: 10px;
+}
 
 /*==============================
   Skills inline
@@ -380,7 +424,7 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil {
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil, #sidebar > h1 > i.fa-comments {
   font-size: 25px;
   padding-left: 0;
   padding-right: 20px;
@@ -505,10 +549,7 @@ aside {
 .pie {
   width: 50px;
   height: 50px;
-  display: inline-block;
   transform: rotate(-90deg);
-  position: absolute;
-  margin: -80px 0 0 150px;
 }
 
 svg {
@@ -573,7 +614,6 @@ circle {
   justify-content: center;
   margin: 20px 0 50px 0;
   color: #202022;
-  justify-content:center;
 } 
 
 .summary .box {
@@ -640,8 +680,145 @@ circle {
 ================================*/
 
 /*==============================
- End Pie chart
+ Email
 ================================*/
+.send-email-form > button{
+  float: right;
+  margin-top: -35px;
+  background-color: #424A5D;
+  color: #FFD777;
+  border: none;
+  padding: 5px 10px;
+}
+
+.email-wrapper {
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.email-wrapper > * {
+  padding: 30px;
+  flex: 1 100%;
+}
+
+.email-wrapper .email-main {
+  text-align: left;
+  width: 60%;
+}
+
+.email-main > div, .email-main form, .email-main form > div > ul {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.email-main > div {
+  align-items: center;
+}
+
+.email-main > div > img {
+  padding: 0 20px 0 0 ;
+}
+
+.email-main form > div > ul {
+  flex-wrap: wrap;
+}
+
+.email-main form {
+  margin-top: 10px;
+}
+
+.email-main form > div > ul > * {
+  border: 1px solid rgba(242, 192, 80, 0.55);
+  padding: 5px;
+  background-color: #fff;
+  margin-left: 1px;
+  color: #4E4C4A;
+}
+
+.email-main form > div, .email-main input, .email-main textarea {
+  width: 100%;
+  font-family: inherit;
+}
+
+.email-main input[type=text],
+.email-main textarea, .email-main button {
+  border: 1px solid #efefef;
+  background-color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.email-main ::-webkit-input-placeholder {
+  color: rgba(128, 128, 128, 0.63);
+}
+
+.email-main ::-moz-placeholder {
+  color: rgba(128, 128, 128, 0.63);
+} /* firefox 19+ */
+
+.email-main :-ms-input-placeholder {
+  color: rgba(128, 128, 128, 0.63);
+} /* ie */
+
+.email-main input:-moz-placeholder { 
+  color: rgba(128, 128, 128, 0.63);
+}
+
+.email-main input[type="text"]:focus, .email-main textarea:focus, .email-main select:focus {
+  -moz-box-shadow: 0 0 2px rgba(242, 192, 80, 0.55);
+  -webkit-box-shadow: 0 0 2px rgba(242, 192, 80, 0.55);
+  box-shadow: 0 0 2px rgba(242, 192, 80, 0.55);
+  border: 1px solid rgba(242, 192, 80, 0.55);
+}
+
+.email-main button {
+  width: 20%;
+  background-color: #f2c050;
+  color: #fff;
+  border: 1px solid #f2c050;
+}
+
+.email-main button:hover {
+  background-color: #efefef;
+  color: #f2c050;
+  border: 1px solid #f2c050;
+}
+
+.email-wrapper .email-aside-1 {
+}
+
+.email-wrapper .email-aside-2 {
+}
+
+.email-wrapper .email-aside { 
+  flex: 1 20%; 
+}
+
+.email-wrapper .email-main { 
+  flex: 3 auto; 
+}
+
+.email-wrapper .email-aside-1 { 
+  order: 1;
+}
+
+.email-wrapper .email-main { 
+  order: 2; 
+}
+
+.email-wrapper .email-aside-2 {
+  order: 3; 
+}
+
+
+/*==============================
+ End Email
+================================*/
+
 
 @media (max-width: 768px) {
   #filter {
