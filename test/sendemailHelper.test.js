@@ -44,6 +44,8 @@ describe('Attempt to sendEmail with the right token', function () {
     var email = 'dolores.maria9810@gmail.com';
     
     var tokens = JSON.parse(process.env.REAL_TOKEN);
+    console.log('tokens', tokens);
+    console.log(typeof tokens);
 
     var options = {
       name: 'anita',
