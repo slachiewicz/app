@@ -1,20 +1,26 @@
 var Handlebars = require('handlebars');
+var miliToDays = require('./convertToDaysHelper.js');
+
 module.exports = function (sentEmailObj) {
-
-  var result = ""; 
-  
-  //get the timestamp for 30days before
-  var thirtyDays = new Date().getTime() - (30 * 24 * 60 * 60 * 1000);
-
+ 
+  console.log(sentEmailObj);
   if (sentEmailObj.timestamp !== undefined) {
-     if (thirtyDays < sentEmailObj.timestamp) {
-      result += "<h3 class='email-indicator'>" + sentEmailObj.sentAt + '</h3>';
-     } else {
-        result += "<h3>" + sentEmailObj.sentAt + '</h3>';
-     }
+    var difference = new Date().getTime() - sentEmailObj.timestamp;
+    var days = miliToDays(difference);
+
+    if (days < 30) {
+      return new Handlebars.SafeString("<i class='fa fa-paper-plane last-email-30'></i>");
+    }
+
+    if (days < 90) {
+
+      return new Handlebars.SafeString("<i class='fa fa-paper-plane last-email-90'></i>");
+    }
+
+    return new Handlebars.SafeString("<i class='fa fa-paper-plane last-email-regular'></i>");
+
   } else {
-    result += "<h3>" + sentEmailObj.sentAt + '</h3>';
+    return new Handlebars.SafeString("<i class='fa fa-paper-plane last-email-regular'></i>");
   }
 
-  return new Handlebars.SafeString(result);
 };

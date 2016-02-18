@@ -117,9 +117,22 @@ header {
   color: #E4AD28;
 }
 
-.fa-at {
+.fa-paper-plane {
   float: right;
   color: #424A5D;
+  font-size: 1.3em !important;
+}
+
+.last-email-30 {
+  color: red;
+}
+
+.last-email-90 {
+  color: #FFBF00;
+}
+
+.last-email-regular {
+  color: green;
 }
 
 /*==============================
@@ -255,7 +268,8 @@ span {
   color: #FFD777;
 }
 
-.email-indicator {
+/*.headline h3*/
+.headline h3.email-indicator {
   color: red;
 }
 

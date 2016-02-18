@@ -12,7 +12,7 @@ var fs = require('fs');
 // var REAL_TOKEN = require(__dirname + '/fixtures/sample-auth-token-anita.json');
 var PROFILE = require(__dirname + '/fixtures/sample-auth-credentials.json');
 
-console.log(process.env.REAL_TOKEN);
+// console.log(process.env.REAL_TOKEN);
 
 var date = new Date().toUTCString();
 
