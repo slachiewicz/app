@@ -57,7 +57,10 @@
           {{/if}}
         </ul>
         {{/each}}
-
+        
+        {{#if emails}}
+          {{emailIndicatorHelper lastEmail}}
+        {{/if}}
       </div>
     </div>
   </article>
