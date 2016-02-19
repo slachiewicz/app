@@ -55,17 +55,17 @@ describe('Pass the last email object with timestamp which is more than 3 months 
   });
 });
 
-// describe('Pass the last email object with undefined timestamp and text', function () {
+describe('Pass the last email object with undefined timestamp and text', function () {
 
-//   it('return the icon with the color green and text ', function (done) {
+  it('return the icon with the color green and text ', function (done) {
 
-//     var sentEmailObj = {sentAt: '14-02-2016', timestamp: undefined};
-//     var result = emailIndicator(sentEmailObj, true);
+    var sentEmailObj = {sentAt: '14-02-2016', timestamp: undefined};
+    var result = emailIndicator(sentEmailObj, true);
 
-//     expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'></i>Not contacted");
-//     done();
-//   });
-// });
+    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'><span class='last-email-regular'> Sent after 3 months</span></i>");
+    done();
+  });
+});
 
 describe('Pass the last email object with timestamp which is less than 1 month', function () {
 
@@ -74,7 +74,7 @@ describe('Pass the last email object with timestamp which is less than 1 month',
     var sentEmailObj = {sentAt: '14-02-2016', timestamp: new Date().getTime()};
     var result = emailIndicator(sentEmailObj, true);
 
-    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-30'></i>Sent within a month");
+    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-30'><span class='last-email-30'> Sent within a month</span></i>");
     done();
   });
 });
@@ -87,7 +87,19 @@ describe('Pass the last email object with timestamp which is less than 3 months 
     var sentEmailObj = {sentAt: '14-02-2016', timestamp: new Date().getTime() - (60 *24 *60 *60 *1000)};
     var result = emailIndicator(sentEmailObj, true);
 
-    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-90'></i>Sent within 3 months");
+    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-90'><span class='last-email-90'> Sent within 3 months</span></i>");
+    done();
+  });
+});
+
+describe('Pass the last email object with timestamp which is more than 3 months ', function () {
+
+  it('return the icon with the color green ', function (done) {
+
+    var sentEmailObj = {sentAt: '14-02-2016', timestamp: new Date().getTime() - (100 *24 *60 *60 *1000)};
+    var result = emailIndicator(sentEmailObj, true);
+
+    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'><span class='last-email-regular'> Sent after 3 months</span></i>");
     done();
   });
 });

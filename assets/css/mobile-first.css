@@ -123,16 +123,23 @@ header {
   font-size: 1.3em !important;
 }
 
-.last-email-30 {
-  color: red;
+
+.last-email-30, span.last-email-30 {
+  color: rgba(255, 0, 0, 0.8) !important;
 }
 
-.last-email-90 {
-  color: #FFBF00;
+.last-email-90, span.last-email-90 {
+  color: #FFBF00 !important;
 }
 
-.last-email-regular {
-  color: green;
+.last-email-regular, span.last-email-regular {
+  color: green !important;
+}
+
+.fa-paper-plane > span {
+  float: right !important;
+  padding-left: 5px;
+  font-size: 0.8em;
 }
 
 /*==============================
