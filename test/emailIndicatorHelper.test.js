@@ -62,7 +62,7 @@ describe('Pass the last email object with undefined timestamp and text', functio
     var sentEmailObj = {sentAt: '14-02-2016', timestamp: undefined};
     var result = emailIndicator(sentEmailObj, true);
 
-    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'><span class='last-email-regular'> Emailed after 3 months</span></i>");
+    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'><span class='last-email-regular'> Emailed over 3 months ago</span></i>");
     done();
   });
 });
@@ -99,7 +99,7 @@ describe('Pass the last email object with timestamp which is more than 3 months 
     var sentEmailObj = {sentAt: '14-02-2016', timestamp: new Date().getTime() - (100 *24 *60 *60 *1000)};
     var result = emailIndicator(sentEmailObj, true);
 
-    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'><span class='last-email-regular'> Emailed after 3 months</span></i>");
+    expect(result.string).to.equal("<i class='fa fa-paper-plane last-email-regular'><span class='last-email-regular'> Emailed over 3 months ago</span></i>");
     done();
   });
 });

@@ -25,7 +25,7 @@ module.exports = function (sentEmailObj, displayText, emails) {
     }
       result = "<i class='fa fa-paper-plane last-email-regular'>";
       if (displayText) {
-        result += "<span class='last-email-regular'> Emailed after 3 months</span>";
+        result += "<span class='last-email-regular'> Emailed over 3 months ago</span>";
       }
       result += "</i>";
     return new Handlebars.SafeString(result);
@@ -33,7 +33,7 @@ module.exports = function (sentEmailObj, displayText, emails) {
   } else {
       result = "<i class='fa fa-paper-plane last-email-regular'>";
       if (displayText) {
-        result += "<span class='last-email-regular'> Emailed after 3 months</span>";
+        result += "<span class='last-email-regular'> Emailed over 3 months ago</span>";
       }
       result += "</i>";
     return new Handlebars.SafeString(result);
