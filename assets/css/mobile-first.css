@@ -330,12 +330,12 @@ span {
 #send-email {
   position: fixed;
   bottom: 10px;
-  /*transform: translate(40%);*/
   left: 2%;
   background-color: #424A5D;
   color: #FFD777;
   border: none;
   padding: 8px 15px;
+  z-index: 2;
 }
 
 #send-email:hover, .send-email-form > button:hover, .delete-profile-confirmation button:hover, 
@@ -802,15 +802,16 @@ circle {
 
 .email-main button {
   width: 20%;
-  background-color: #f2c050;
-  color: #fff;
-  border: 1px solid #f2c050;
+  background-color: #FFD777;
+  color: #424A5D;
+  cursor: pointer;
+  /*border: 1px solid #f2c050;*/
 }
 
 .email-main button:hover {
-  background-color: #efefef;
-  color: #f2c050;
-  border: 1px solid #f2c050;
+  background-color: #424A5D;
+  color: #FFD777;
+/*  border: 1px solid #f2c050;*/
 }
 
 .email-wrapper .email-aside-1 {
