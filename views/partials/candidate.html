@@ -22,22 +22,36 @@
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
         {{/if}}
+        {{clientProfile}}
+        {{current}}
+        {{#if clientProfile}}
+          <p>
+            Clietn Candidate
+          </p>
+        {{/if}}
 
         {{else}}
         <a href="/candidate/{{id}}"><img src="{{picture}}" alt="" /></a>
         <a href="/candidate/{{id}}"><h1 class='check-highlight'>{{fullname}}</h1></a>
-        
+
         {{#each connectedTo}}
           <ul>
             {{#if this}}
               <li><a href="/connected/{{encodeKeywordsHelper this}}"><span class='initials'>{{initials_of_connected_users this}}</span></a></li>
             {{/if}}
           </ul>
-        {{/each}} 
-        
+        {{/each}}
+
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
         {{/if}}
+
+        {{#if clientProfile}}
+          <p>
+            Clietn Candidate
+          </p>
+        {{/if}}
+
         {{/if}}
 
         <p class='check-highlight'>{{headline}}</p>
@@ -61,11 +75,11 @@
       </div>
     </div>
   </article>
-  
+
   <aside class="aside aside-1">
   {{#if email}}
     <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}"}'>
-   
+
   {{/if}}
   </aside>
 
