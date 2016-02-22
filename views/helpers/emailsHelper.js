@@ -5,7 +5,7 @@ module.exports = function (emails) {
   emails.forEach(function (obj) {
     result += "<li>" + obj.email + "</li><input name='to' type='hidden' value='" + obj.email + "'>"; 
     result += "<input name='candidateID' type='hidden' value='" + obj.id + "'>";
-    result += "<input name='candidateFN' type='hidden' value='" + obj.firstName + "'>";
+    result += "<input name='candidateFN' type='hidden' value='" + obj.fn + "'>";
      
   });
 
