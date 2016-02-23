@@ -105,4 +105,3 @@ describe('Mock /googleauth?code=oauth2codehere', function () {
     });
   });
 });
-
