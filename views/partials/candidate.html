@@ -20,11 +20,11 @@
         {{/each}}
 
         {{#if clientProfile}}
-          <span class='status'>Client Profile</span><br/>
+          <p><span class='status-client'>Client Employee</span></p>
         {{/if}}
 
         {{#if status}}
-          <span class='status'>{{status}}</span><br/>
+          <p><span class='status'>{{status}}</span></p>
         {{/if}}
 
         {{else}}
@@ -40,18 +40,13 @@
         {{/each}}
 
         {{#if status}}
-          <span class='status'>{{status}}</span><br/>
+          <p><span class='status'>{{status}}</span></p>
         {{/if}}
 
         {{#if clientProfile}}
-          <span class='status'>Client Profile</span><br/>
+          <p><span class='status-client'>Client Employee</span></p>
         {{/if}}
 
-        {{#if clientProfile}}
-          <p>
-            Clietn Candidate
-          </p>
-        {{/if}}
 
         {{/if}}
 

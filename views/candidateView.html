@@ -24,6 +24,10 @@
       <h2 class="headline"><strong class="check-highlight">{{headline}}</strong></h2>
       <p class="check-highlight">{{location}}</p>
 
+      {{#if clientProfile}}
+        <span class='status-client'>Client Employee</span><br/>
+      {{/if}}
+
       {{#each connectedTo}}
       <ul>
         {{#if this}}
