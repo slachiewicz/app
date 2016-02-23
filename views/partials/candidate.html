@@ -19,15 +19,12 @@
           </ul>
         {{/each}}
 
+        {{#if clientProfile}}
+          <span class='status'>Client Profile</span><br/>
+        {{/if}}
+
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
-        {{/if}}
-        {{clientProfile}}
-        {{current}}
-        {{#if clientProfile}}
-          <p>
-            Clietn Candidate
-          </p>
         {{/if}}
 
         {{else}}
@@ -44,6 +41,10 @@
 
         {{#if status}}
           <span class='status'>{{status}}</span><br/>
+        {{/if}}
+
+        {{#if clientProfile}}
+          <span class='status'>Client Profile</span><br/>
         {{/if}}
 
         {{#if clientProfile}}
@@ -78,8 +79,9 @@
 
   <aside class="aside aside-1">
   {{#if email}}
-    <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}"}'>
-
+    {{#unless clientProfile}}
+      <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}"}'>
+    {{/unless}}
   {{/if}}
   </aside>
 

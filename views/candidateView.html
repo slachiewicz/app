@@ -43,15 +43,15 @@
           {{#each contacts.im}}
             <p class="mobile"><span>IM: </span><span class="check-highlight">{{this}}</span></p>
           {{/each}}
-        <p class="mobile"><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>       
+        <p class="mobile"><span>Address: </span><span class="check-highlight">{{contacts.address}}</span></p>
 
     </div>
     <hr>
     <aside>
-      <div id="sidebar">      
+      <div id="sidebar">
         <h1><i class="fa fa-envelope"></i> CONTACT</h1>
       {{#if contacts.email}}
-        <form class="send-email-form" action="/email" method="POST">          
+        <form class="send-email-form" action="/email" method="POST">
           <input type="hidden" name="email" value='{"email": "{{contacts.email}}", "id":"{{id}}"}'>
           <button type="submit">SEND EMAIL</button>
         </form>
@@ -84,14 +84,14 @@
             <li>
               <select name="status" class="field-divided">
                 <option disabled selected value="">Status</option>
-                <option value="submitted">Submitted to</option>        
+                <option value="submitted">Submitted to</option>
                 <option value="phone-screen">Phone screen at</option>
                 <option value="interview">Interview at</option>
-                <option value="placement">Placement at</option>   
+                <option value="placement">Placement at</option>
               </select>
               <input type="text" name="company" class="field-divided" placeholder="Company" />
             </li>
-         
+
             <li>
               <textarea name="notes" class="field-long field-textarea" placeholder="Further notes"></textarea>
             </li>
@@ -101,17 +101,17 @@
           </ul>
         </form>
         <br>
-        <div class="notes notes-box">         
+        <div class="notes notes-box">
           {{#each notes}}
             <div class="notes-item">{{notesHelper this}}</div>
-             <hr> 
-          {{/each}}   
+             <hr>
+          {{/each}}
         </div>
         <br>
         </div>
         <h1><i class="fa fa-comments"></i> EMAILS</h1>
         <div class="emails-box">
-          <ul>  
+          <ul>
           {{#each emails}}
             <li>
               <p><strong>Date:</strong> {{sentAt}}  <strong>From:</strong> {{senderName}}</p>
@@ -119,7 +119,7 @@
               <span class="close"><i class="fa fa-times"></i></span>
               <p class="hidden-email">{{message}}</p>
             </li>
-             <hr> 
+             <hr>
           {{/each}}
           </ul>
         </div>
