@@ -41,6 +41,10 @@
         <span class='status st-profile'>{{status}}</span>
       {{/if}}
 
+      {{#if emails}}
+        {{emailIndicatorHelper lastEmail true}}
+      {{/if}}
+
        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
         <p class="mobile"><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
         <p class="mobile"><span>Phone: </span><span class="check-highlight">{{contacts.phone}}</span></p>

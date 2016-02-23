@@ -54,8 +54,8 @@
         <p class='check-highlight'>{{current}}</p>
         <p class='check-highlight'>{{location}}</p>
 
-        {{#if email}}
-        <i class="fa fa-at"></i>
+        {{#if emails}}
+          {{emailIndicatorHelper lastEmail false}}
         {{/if}}
 
         {{#each listSkills}}
@@ -67,7 +67,7 @@
           {{/if}}
         </ul>
         {{/each}}
-
+               
       </div>
     </div>
   </article>
