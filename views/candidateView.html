@@ -52,7 +52,7 @@
         <h1><i class="fa fa-envelope"></i> CONTACT</h1>
       {{#if contacts.email}}
         <form class="send-email-form" action="/email" method="POST">          
-          <input type="hidden" name="email" value='{"email": "{{contacts.email}}", "id":"{{id}}"}'>
+          <input type="hidden" name="email" value='{"email": "{{contacts.email}}", "id":"{{id}}", "fn":"{{firstName}}"}'>
           <button type="submit">SEND EMAIL</button>
         </form>
       {{/if}}
