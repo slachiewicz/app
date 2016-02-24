@@ -174,6 +174,11 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![home](wireframes/home-button.png)
 
++ Sending emails through the application 
+
+- send emails to multiple candidates by clicking on relevant checkboxes
+- send email to candidate from candidate view page 
+
 + Email indicator on home page and candidate detailed view page
 
 - if an email has been sent within a month, we display red 'sent icon' with text: Emailed within a month
@@ -183,9 +188,11 @@ You can search for multiple skills if you separate the each skill with a comma:
 ![email-home](wireframes/email-indicator-home.png) 
 ![email-detailed](wireframes/email-email-detailed.png) 
 
-+ Personal signatures match to all the users to the email 
++ Personal signatures match to all the users are included in the email 
 
 ![email-dash-signature](wireframes/email-dash.png)
+
++ Dynamically populating candidates first names and text ```Hi {name}``` when sending an email in a message area
 
 
 ## Working with this repo
