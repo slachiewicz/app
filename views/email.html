@@ -1,7 +1,7 @@
 {{>search_bar}}
 
 <div class="email-wrapper">
-   
+
   <article class="email-main">
     <div>
       <img src="{{userProfile.image}}" alt="{{userProfile.firstname}}" />
@@ -14,7 +14,7 @@
         </ul>
         <input type="text" name="subject" placeholder="Subject"/><br/>
         <textarea name="message" placeholder="Message" cols="10" rows="10"></textarea>
-
+        <input type="hidden" name="pathUrl" value="{{pathUrl}}">
         <button type="submit">Send</button>
       </div>
     </form>
@@ -24,5 +24,3 @@
   <aside class="email-aside email-aside-2"></aside>
 
 </div>
-
-
