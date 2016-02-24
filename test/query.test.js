@@ -40,6 +40,7 @@ describe('return a search results, when user is authenticated: Search for Nick a
         //we should only have one result
         var $ = cheerio.load(res.payload);
         expect($('.list-wrapper').length).to.equal(1);
+        expect($('.pathUrl')['0'].attribs.value).to.equal("/query/1?job=&fullname=Nick&location=&current=&skills=");
         server.stop(done);
       });
     });
