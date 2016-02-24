@@ -849,7 +849,10 @@ circle {
   order: 3; 
 }
 
-
+.signature {
+  background-color: #fff;
+  margin-top: 10px;
+}
 /*==============================
  End Email
 ================================*/
