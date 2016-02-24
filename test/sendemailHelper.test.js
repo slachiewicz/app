@@ -18,7 +18,7 @@ describe('Attempt to sendEmail with the expired token', function () {
 
   it('return error code 400', function (done) {
 
-    var email = 'dolores.maria9810@gmail.com';
+    var obj = {email: 'dolores.maria9810@gmail.com', id: '6767', firstName: 'maria'};
 
     var tokens = PROFILE;
 
@@ -35,7 +35,7 @@ describe('Attempt to sendEmail with the expired token', function () {
     user.mobile = '1111';
     user.linkedin = 'li/anita';
 
-    sendEmail(email, options, tokens, user, function (err, response) {
+    sendEmail(obj, options, tokens, user, function (err, response) {
       expect(err['code']).to.equal(400);
       done();
     });
