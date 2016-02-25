@@ -856,7 +856,37 @@ circle {
 /*==============================
  End Email
 ================================*/
+/*==============================
+Analytics
+================================*/
 
+.analytics-header {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  background-color: rgba(177, 183, 185, 0.62);
+  color: #202022;
+  font-weight: bold;
+}
+
+.analytics-data {
+  display: flex;
+}
+
+.analytics-data-cell {
+  flex: 1;
+}
+
+.cell {
+  display: table-cell;
+  height: 3rem;
+  vertical-align: middle;
+}
+
+
+/*==============================
+ End Analytics
+================================*/
 
 @media (max-width: 768px) {
   #filter {

@@ -140,5 +140,19 @@
     },
     "names": {"fullname": "Simon"},
     "linkedin": "in/liUrl"
-  }
+  },
+   { "index" : { "_index" : "gmcontact", "_type" : "analytics", "_id" : "13" } },
+    {"idUser":"45", 
+      "userName": "Anita",
+      "queryUrl": "/location=London",
+      "timestamp": "7878787878",
+      "query": {
+        "headline":"developer",
+        "fullname": "Maria",
+        "current": "Kayak",
+        "location": "London",
+        "skills": ["java", "css"]
+      },
+      "nbResults": 23
+    }
   ]
