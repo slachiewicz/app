@@ -18,18 +18,24 @@ describe('Attempt to sendEmail with the expired token', function () {
 
   it('return error code 400', function (done) {
 
-    var email = 'dolores.maria9810@gmail.com';
-    
+    var obj = {email: 'dolores.maria9810@gmail.com', id: '6767', firstName: 'maria'};
+
     var tokens = PROFILE;
 
     var options = {
       name: 'anita',
       senderEmail: 'czaplaanita@gmail.com',
       subject: 'Do You Read Me? > ' + date,
-      message: 'Hi there'      
+      message: 'Hi there'
     }
+    var user = {};
+    user.fn = 'Anita';
+    user.role = 'Developer';
+    user.office = '000';
+    user.mobile = '1111';
+    user.linkedin = 'li/anita';
 
-    sendEmail(email, options, tokens, function (err, response) {
+    sendEmail(obj, options, tokens, user, function (err, response) {
       expect(err['code']).to.equal(400);
       done();
     });
@@ -42,7 +48,7 @@ describe('Attempt to sendEmail with the expired token', function () {
 //   it('succesfully send email with real token', function (done) {
 
 //     var email = 'dolores.maria9810@gmail.com';
-    
+
 //     var profile = JSON.parse(process.env.REAL_TOKEN);
 //     console.log('-------', profile);
 //     console.log(typeof profile);
@@ -51,7 +57,7 @@ describe('Attempt to sendEmail with the expired token', function () {
 //       name: 'anita',
 //       senderEmail: 'czaplaanita@gmail.com',
 //       subject: 'Do You Read Me? > ' + date,
-//       message: 'Hi there'      
+//       message: 'Hi there'
 //     }
 
 //     sendEmail(email, options, profile.tokens, function (err, response) {

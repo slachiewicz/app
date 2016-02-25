@@ -7,15 +7,19 @@ var expect = Code.expect;
 var it = lab.test;
 
 
-describe('Genereate an object with candidate email and id', function () {
+describe('Genereate an object with candidate email id and firstname', function () {
 
   it('return the array of two candidate objects', function (done) {
 
       var emails = ['email1@gmail.com', 'email2@gmail.com'];
       var ids = ['12', '22'];
-       
-      var arr = arrCandidateObj(emails, ids);
+      var firstnames = ['Anita', 'Simon'];
+
+      var arr = arrCandidateObj(emails, ids, firstnames);
       expect(arr.length).to.equal(2);
+      expect(arr[0].email).to.equal('email1@gmail.com');
+      expect(arr[0].id).to.equal('12');
+      expect(arr[0].firstName).to.equal('Anita');
       done();
   });
 });
