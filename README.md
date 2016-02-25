@@ -174,6 +174,38 @@ You can search for multiple skills if you separate the each skill with a comma:
 
 ![home](wireframes/home-button.png)
 
++ Sending emails through the application 
+
+  - send emails to multiple candidates by clicking on relevant checkboxes
+  - send email to candidate from candidate view page 
+
++ Email indicator on home page and candidate detailed view page (this feature replaces the basic email indicator)
+
+  - if an email has been sent within a month, we display red 'sent icon' with text: Emailed within a month
+
+  ![email-indicator-red](wireframes/email_within_month.png) 
+
+  - if an email has been sent within 3 months time, we display amber'sent icon' with text: Emailed in less than 3 months
+
+  ![email-indicator-amber](wireframes/email_within_3months.png)
+
+  - if email has been sent more than 3 months ago: we display green 'sent icon' with text: Emailed over 3 months ago
+
+  ![email-indicator-green](wireframes/email_over_3months.png)
+
++ Personal signatures match to all the users are included in the email 
+
+  ![email-dash-signature](wireframes/email-dash.png)
+
++ Dynamically populating candidates first names and text ```Hi {name}``` when sending an email in a message area
+
++ Blacklist feature
+
+  - if the candidate is the client employee, we display following indicator:
+
+  ![client-employee-indicator](wireframes/kayak.png)
+
+  - disabled email checkbox for client employee and candidate with status prevents accidently sending email
 
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
