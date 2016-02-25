@@ -1,13 +1,33 @@
-<h1>Analytics</h1>
-
-<h1>Recent Analytics</h1>
+<div class="analytics-header">
+  <div class="cell name">Searched by </div>
+  <div class="cell headline">Job Title</div>
+  <div class="cell fullname">Fullname</div>
+  <div class="cell location">Location</div>
+  <div class="cell current">Current Job Title</div>
+  <div class="cell skills">Skills</div>
+</div>
+<br/>
 
 {{#each results}}
-<p>{{this.queryUrl}}</p>
-<p>{{this.query.fullname}}</p>
-<p>{{this.query.location}}</p>
-<p>{{this.query.headline}}</p>
-<p>{{this.query.current}}</p>
-<p>{{this.query.skills}}</p>
-<hr>
+<div class="analytics-data">
+  <div class="analytics-data-cell">
+    {{this.userName}}
+  </div>
+   <div class="analytics-data-cell">
+    {{this.query.headline}}
+  </div>
+  <div class="analytics-data-cell">
+    {{this.query.fullname}}
+  </div>
+  <div class="analytics-data-cell">
+    {{this.query.location}}
+  </div>
+  <div class="analytics-data-cell">
+     {{this.query.current}}
+  </div>
+  <div class="analytics-data-cell">
+     {{this.query.skills}}
+  </div>
+</div>
+<hr/>
 {{/each}}
