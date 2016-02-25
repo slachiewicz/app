@@ -36,6 +36,11 @@ header {
   background-color: rgba(228, 173, 40, 0.45);
   padding:2px 5px;
 }
+.status-client {
+  color: #fff !important;
+  background-color: #ef7b6b;
+  padding: 2px 5px;
+}
 
 .status {
   color: #fff !important;
@@ -48,8 +53,12 @@ header {
   margin: 5px 0 0 0;  
 }
 
-.headline p:first-of-type {
+/*.headline p:first-of-type {
   margin-top: 15px;
+}*/
+
+.headline p {
+  margin-top: 5px;
 }
 
 .candidate_view .headline p:first-of-type {
@@ -201,7 +210,7 @@ header {
 }
 
 .headline span {
-  float: left;
+  /*float: left;*/
   color: grey;
 }
 

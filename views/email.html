@@ -13,7 +13,7 @@
           {{emailsHelper emails}}
         </ul>
         <input type="text" name="subject" placeholder="Subject"/><br/>
-        <textarea name="message" placeholder="Message" cols="10" rows="10"></textarea>
+        <textarea name="message" placeholder="Message" cols="10" rows="10">Hi {name},</textarea>
         <input hidden name="fn" value="{{user.names.fullname}}">
         <input hidden name="role" value="{{user.role}}">
         <input hidden name="office" value="{{user.phones.office}}">
@@ -22,6 +22,7 @@
         <div class="signature">
           {{{signature}}}
         </div>
+        <input type="hidden" name="pathUrl" value="{{pathUrl}}">
         <button type="submit">Send</button>
       </div>
     </form>

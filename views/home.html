@@ -9,10 +9,11 @@
       <span class="curly-left">{</span>M<span class="curly-right">}</span>
     </aside>
   </div>
-  <form action="/email" method="POST"> 
+  <form action="/email" method="POST">
 	{{#each candidates}}
 	  {{>candidate keywords=../keywords}}
 	{{/each}}
+  <input type="hidden" class="pathUrl" name="pathUrl" value="{{pathUrl}}">
   <button id="send-email" type="submit">SEND EMAIL</button>
   </form>
   <input type="hidden" class="keywords" value="{{keywords}}">
