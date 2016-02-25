@@ -1,0 +1,13 @@
+<h1>Analytics</h1>
+
+<h1>Recent Analytics</h1>
+
+{{#each results}}
+<p>{{this.queryUrl}}</p>
+<p>{{this.query.fullname}}</p>
+<p>{{this.query.location}}</p>
+<p>{{this.query.headline}}</p>
+<p>{{this.query.current}}</p>
+<p>{{this.query.skills}}</p>
+<hr>
+{{/each}}
