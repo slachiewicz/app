@@ -1,0 +1,75 @@
+<h1>Create a job</h1>
+
+<form action="/jobs/create" method="POST">
+
+  <p><label for="title">Title:</label></p>
+  <p><input type="text" name="title"></p>
+
+  <p><label for="description">Description:</label></p>
+  <p><textarea type="text" name="description"></textarea></p>
+
+  <p><label for="startDate">Start date:</label></p>
+  <p><input type="date" name="startDate"></p>
+
+  <p><label for="dateEnd">End date:</label></p>
+  <p><input type="date" name="dateEnd"></p>
+
+  <p><label for="dateAdded">Date added:</label></p>
+  <p><input type="date" name="dateAdded"></p>
+
+  <p><label for="skillList">Skill List:</label></p>
+  <p><input type="text" name="skillList"></p>
+
+  <p><label for="city">City:</label></p>
+  <p><input type="text" name="city"></p>
+
+  <p><label for="countryId">Country:</label></p>
+  <p><input type="number" name="countryId"></p>
+
+  <p><label for="customText1">CustomText1:</label></p>
+  <p><input type="text" name="customText1"></p>
+
+  <p><label fir="customText2" >CustomText2:</label></p>
+  <p><input type="text" name="customText2"></p>
+
+  <p><label for="customText3">customText3:</label></p>
+  <p><input type="text" name="customText3"></p>
+
+  <p><label for="customText5">customText5:</label></p>
+  <p><input type="text" name="customText5"></p>
+  <br/>
+  <p><label for="customText6">customText6/Image:</label></p>
+  <p><input type="file" name="customText6" accept="image/*"></p>
+  <br/>
+  <p><label for="customText8">customText8/Image:</label></p>
+  <p><input type="file" name="customText8" accept="image/*"></p>
+  <br/>
+  <p><label for="customText11">customText11/Image:</label></p>
+  <p><input type="file" name="customText11" accept="image/*"></p>
+  <br/>
+
+  <p><label for="customText7">customText7</label></p>
+  <p><input type="text" name="customText7"></p>
+
+  <p><label for="customTextBlock1">customTextBlock1</label></p>
+  <p><input type="text" name="customTextBlock1"></p>
+
+  <p><label for="customTextBlock2">customTextBlock2</label></p>
+  <p><input type="text" name="customTextBlock2"></p>
+
+  <p><label for="salary">Salary</label></p>
+  <p><input type="number" name="salary"></p>
+
+  <p><label for="payRate">payRate</label></p>
+  <p><input type="number" name="payRate"></p>
+
+  <p><label for="customText12">Currency</label></p>
+  <p><input type="text" name="customText12"></p>
+
+  <!-- owner not done, businessSector, categories -->
+
+  <p><label for="employmentType">employmentType</label></p>
+  <p><input type="text" name="employmentType"></p>
+  <br/>
+  <button type="submit">Submit</button>
+</form>
