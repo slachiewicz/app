@@ -1,75 +1,136 @@
-<h1>Create a job</h1>
+<h1>Add vacancy</h1>
 
 <form action="/jobs/create" method="POST">
 
-  <p><label for="title">Title:</label></p>
+  <p><label for="title">Job Title:</label></p>
   <p><input type="text" name="title"></p>
 
-  <p><label for="description">Description:</label></p>
-  <p><textarea type="text" name="description"></textarea></p>
+  <p><label for="employmentType">Employment Type</label></p>
+  <select name="employmentType">
+    <option value="Permanent">Permanent</option>
+    <option value="Contract">Contract</option>
+    <option value="Temporary">Temporary</option>
+    <option value="Temp to Perm">Temp to Perm</option>
+    <option value="Fixed Contract">Fixed Contract</option> 
+  </select>
+  <br/>
+
+  <p><label>Owner</label></p>
+  <select name="owner">
+    <option value="3">Alex Hemsley</option>
+    <option value="2">Nick Waller</option>
+    <option value="525">Henry Hoyer Miller</option>
+    <option value="1812">Nathan Gray</option>
+    <option value="2276">Ciaran Hickey</option>
+    <option value="3470">Luke Cervino</option>
+  </select>
+
+  <p><label for="customText1">Seniority:</label></p>
+  <select name="customText1">  
+    <option value="junior">Junior</option>
+    <option value="mid-level">Mid-level</option>
+    <option value="senior">Senior</option>
+    <option value="director">Director</option>
+  </select> 
+
+  <p><label for="customText2">Region:</label></p>
+  <select name="customText2">  
+    <option value="UK & Ireland">UK & Ireland</option>
+    <option value="Scandinavia">Scandinavia</option>
+    <option value="Eastern Europe">Eastern Europe</option>
+    <option value="Western Europe">Western Europe</option>
+    <option value="Southern Europe">Southern Europe</option>
+    <option value="Asia Pacific">Asia Pacific</option>
+    <option value="North America">North America</option>
+    <option value="South America">South America</option>
+    <option value="Central America">Central America</option>
+    <option value="Africa">Africa</option>
+    <option value="Middle East">Middle East</option>
+    <option value="North Africa">North Africa</option>
+    <option value="Sub Saharan Africa">Sub Saharan Africa</option>
+  </select> 
+
+  <p><label for="customText3">Job Sub Title:</label></p>
+  <p><input type="text" name="customText3"></p>
+
+  <p><label for="customTextBlock1">Job Intro:</label></p>
+  <p><input type="text" name="customTextBlock1"></p>
+
+  <p><label for="customText5">Image Text 1:</label></p>
+  <p><input type="text" name="customText5"></p>
+  <br/>
+  <p><label for="customText6">Image 1: </label></p>
+  <p><input type="text" name="customText6"></p>
+
+  <p><label for="customText7">Image Text 2:</label></p>
+  <p><input type="text" name="customText7"></p>
+
+  <p><label for="customText8">Image 2:</label></p>
+  <p><input type="text" name="customText8"></p>
+  
+  <p><label for="customTextBlock2">Image Text 3:</label></p>
+  <p><input type="text" name="customTextBlock2"></p>
+
+  <p><label for="customText11">Image 3:</label></p>
+  <p><input type="text" name="customText11"></p>
 
   <p><label for="startDate">Start date:</label></p>
   <p><input type="date" name="startDate"></p>
 
-  <p><label for="dateEnd">End date:</label></p>
+  <p><label for="dateEnd">Scheduled End Date:</label></p>
   <p><input type="date" name="dateEnd"></p>
-
-  <p><label for="dateAdded">Date added:</label></p>
-  <p><input type="date" name="dateAdded"></p>
-
-  <p><label for="skillList">Skill List:</label></p>
-  <p><input type="text" name="skillList"></p>
-
-  <p><label for="city">City:</label></p>
-  <p><input type="text" name="city"></p>
-
-  <p><label for="countryId">Country:</label></p>
-  <p><input type="number" name="countryId"></p>
-
-  <p><label for="customText1">CustomText1:</label></p>
-  <p><input type="text" name="customText1"></p>
-
-  <p><label fir="customText2" >CustomText2:</label></p>
-  <p><input type="text" name="customText2"></p>
-
-  <p><label for="customText3">customText3:</label></p>
-  <p><input type="text" name="customText3"></p>
-
-  <p><label for="customText5">customText5:</label></p>
-  <p><input type="text" name="customText5"></p>
-  <br/>
-  <p><label for="customText6">customText6/Image:</label></p>
-  <p><input type="file" name="customText6" accept="image/*"></p>
-  <br/>
-  <p><label for="customText8">customText8/Image:</label></p>
-  <p><input type="file" name="customText8" accept="image/*"></p>
-  <br/>
-  <p><label for="customText11">customText11/Image:</label></p>
-  <p><input type="file" name="customText11" accept="image/*"></p>
-  <br/>
-
-  <p><label for="customText7">customText7</label></p>
-  <p><input type="text" name="customText7"></p>
-
-  <p><label for="customTextBlock1">customTextBlock1</label></p>
-  <p><input type="text" name="customTextBlock1"></p>
-
-  <p><label for="customTextBlock2">customTextBlock2</label></p>
-  <p><input type="text" name="customTextBlock2"></p>
-
-  <p><label for="salary">Salary</label></p>
+  
+  <p><label for="salary">Minimum Salary:</label></p>
   <p><input type="number" name="salary"></p>
 
-  <p><label for="payRate">payRate</label></p>
+  <p><label for="payRate">Pay Rate:</label></p>
   <p><input type="number" name="payRate"></p>
 
-  <p><label for="customText12">Currency</label></p>
-  <p><input type="text" name="customText12"></p>
+  <p><label for="customText12">Currency:</label></p>
+  <select name="customText12">
+    <option value="GBP">GBP</option>
+    <option value="EUR">EUR</option>
+    <option value="USD">USD</option>
+  </select>
 
-  <!-- owner not done, businessSector, categories -->
+  <p>Skills / Experience: </p>
 
-  <p><label for="employmentType">employmentType</label></p>
-  <p><input type="text" name="employmentType"></p>
-  <br/>
+  <p><label for="categories">Category:</label></p>
+  <select name="categories" multiple>
+    <option value="958406">Android Development</option>
+    <option value="1210106">Backend Development</option>
+  </select>
+  
+  <!-- Create custom ids for skills -->
+  <p><label for="skillList"> Required Skills:</label></p>
+  <select name="skillList" multiple>
+    <option value="1">Adobe</option>
+    <option value="2">Android SDK</option>
+  </select>
+
+  <p><label for="businessSectors">Business Sector:</label></p>
+  <select name="businessSectors" multiple>
+    <option value="1029442">Big data</option>
+    <option value="990007">eCommerce</option>
+    <option value="1040725">FinTech</option>
+    <option value="990011">Gaming</option>
+    <option value="1005519">Mobile</option>
+    <option value="995583">Startup</option>
+  </select>
+
+  <p>Job Description</p>
+  <p><label for="description">Job Description:</label></p>
+  <p><textarea type="text" name="description"></textarea></p>
+
+  <p>Job Location</p>
+    <p><label for="city">City:</label></p>
+    <p><input type="text" name="city"></p>
+
+  <p><label for="countryId">Country:</label></p>
+  <select name="countryId">
+    <option value="1">United States</option>
+  </select>
+  <br>
+  <!-- Create date added in a backend -->
   <button type="submit">Submit</button>
 </form>
