@@ -1,5 +1,8 @@
 {{>search_bar}}
 <section class="container">
+  <div class="anchorBottom">
+    <a name='anchorTop' href="#anchorBottom"><i class="fa fa-arrow-down"></i></a>
+  </div>
   <div class="title-wrapper">
     <article class="main"></article>
     <aside class="aside aside-1">
@@ -17,5 +20,8 @@
   <button id="send-email" type="submit">SEND EMAIL</button>
   </form>
   <input type="hidden" class="keywords" value="{{keywords}}">
+  <div class='anchorTop'>
+    <a name='anchorBottom' href="#anchorTop"><i class="fa fa-arrow-up"></i></a>
+  </div>
   {{>pagination}}
 </section>
