@@ -207,11 +207,6 @@ You can search for multiple skills if you separate the each skill with a comma:
 
   - disabled email checkbox for client employee and candidate with status prevents accidently sending email
 
-+ Navigation to the top and the bottom of the page
-
-  ![client-employee-indicator](wireframes/goDown.png)
-  
-  ![client-employee-indicator](wireframes/goUp.png)
 
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
