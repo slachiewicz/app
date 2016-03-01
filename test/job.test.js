@@ -65,7 +65,7 @@ describe('/jobs/create get', function () {
       expect(err).to.not.exist();
       var options = {
         method: "GET",
-        url: "/jobs/create",
+        url: "/jobs/create"
       };
 
 
@@ -88,7 +88,7 @@ describe('/jobs/create post', function () {
       expect(err).to.not.exist();
       var options = {
         method: "POST",
-        url: "/jobs/create",
+        url: "/jobs/create"
       };
 
 
