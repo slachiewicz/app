@@ -1,4 +1,5 @@
 require('env2')('.env');
+var es = require('../lib/es.js');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
@@ -22,8 +23,15 @@ describe('/candidates/create candidate', function () {
       };
 
       server.inject(options, function (res) {
-        expect(res.statusCode).to.equal(200);
-        server.stop(done);
+        es.get({
+          index: process.env.ES_INDEX,
+          type: process.env.ES_TYPE_TOAD,
+          id: res.payload
+        }, function (err, response) {
+          expect(res.statusCode).to.equal(200);
+          expect(response._source.payload.name).to.equal('Bob');
+          server.stop(done);
+        })      
       });
     });
   });
