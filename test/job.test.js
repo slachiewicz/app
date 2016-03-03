@@ -86,7 +86,24 @@ describe('/jobs/create post', function () {
     Server.init(0, function (err, server) {
 
       var payloadObj = {
-        title: 'Node.js Developer'
+        title: 'Node.js Developer',
+        employmentType: 'Permanent',
+        owner: 'Mario Bros',
+        customText1: 'Junior',     
+        customText2: '',
+        customText3: '',
+        customTextBlock1: '',
+        customText5: '',
+        customText6: '',
+        customText7: '',
+        customText8: '',
+        customTextBlock2: '',
+        customText11: '',
+        startDate: '',
+        dateEnd: '',
+        salary: '',
+        payRate: '',
+        customText12: ''
       }
 
       expect(err).to.not.exist();
@@ -98,9 +115,10 @@ describe('/jobs/create post', function () {
 
       server.inject(options, function (res) {
         var payload = JSON.parse(res.payload);
-        console.log(payload);
         expect(res.statusCode).to.equal(200);
         expect(payload.title).to.equal('Node.js Developer');
+        expect(payload.employmentType).to.equal('Permanent');
+        expect(payload.owner).to.equal('Mario Bros');
         server.stop(done);
       });
     });
