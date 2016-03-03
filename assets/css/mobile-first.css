@@ -894,18 +894,43 @@ Analytics
 /*==============================
 Vacancy
 ================================*/
+.vacancy-wrapper {
+  /*background-color: red;*/
+}
 
-#create-vacancy > input[type=text],#create-vacancy > select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
+.vacancy-wrapper form > div {
+  background-color: transparent;
+  margin: 0 auto;
+  width: 60%;
+  justify-content: center;
+}
+
+.vacancy-wrapper form div > p {
+  display: flex;
+}
+
+.vacancy-wrapper form input, .vacancy-wrapper form select {
+  width: 80%;
+}
+
+.vacancy-wrapper form label {
+  width: 10em;
+  margin: 0.5em;
+  text-align: right;
+}
+
+#create-vacancy input[type=text],
+#create-vacancy select,
+#create-vacancy input[type=number],
+#create-vacancy input[type=date] {
+  padding: 6px 8px;
+  margin: 4px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
-
-#create-vacancy > input[type=submit] {
+/*
+#create-vacancy input[type=submit] {
   width: 100%;
   background-color: #4CAF50;
   color: white;
@@ -916,9 +941,9 @@ Vacancy
   cursor: pointer;
 }
 
-#create-vacancy > input[type=submit]:hover {
+#create-vacancy input[type=submit]:hover {
   background-color: #45a049;
-}
+}*/
 
 /*==============================
  End Vacancy

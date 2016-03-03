@@ -85,15 +85,22 @@ describe('/jobs/create post', function () {
 
     Server.init(0, function (err, server) {
 
+      var payloadObj = {
+        title: 'Node.js Developer'
+      }
+
       expect(err).to.not.exist();
       var options = {
         method: "POST",
-        url: "/jobs/create"
+        url: "/jobs/create",
+        payload: payloadObj
       };
 
-
       server.inject(options, function (res) {
+        var payload = JSON.parse(res.payload);
+        console.log(payload);
         expect(res.statusCode).to.equal(200);
+        expect(payload.title).to.equal('Node.js Developer');
         server.stop(done);
       });
     });
