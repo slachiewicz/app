@@ -1,15 +1,15 @@
-
 <div class="vacancy-wrapper">
   <form id="create-vacancy" action="/jobs/create" method="POST">
     <div>
       <p>
         <label for="title">Job Title:</label>
-        <input type="text" name="title">
+        <input type="text" name="title" required>
       </p>
 
       <p>
         <label for="employmentType">Employment Type:</label>
-        <select name="employmentType">
+        <select name="employmentType" required>
+          <option value=""></option>
           <option value="Permanent">Permanent</option>
           <option value="Contract">Contract</option>
           <option value="Temporary">Temporary</option>
@@ -20,7 +20,7 @@
       
       <p>
         <label>Owner:</label>
-        <select name="owner">
+        <select name="owner" required>
         {{#each owners}}
            <option value="{{this.id}}">{{this.name}}</option>
         {{/each}}
@@ -29,7 +29,7 @@
     
       <p>
         <label for="customText1">Seniority:</label>
-        <select name="customText1">  
+        <select name="customText1" required>  
           <option value="Junior">Junior</option>
           <option value="Mid-level">Mid-level</option>
           <option value="Senior">Senior</option>
@@ -39,7 +39,7 @@
    
       <p>
         <label for="customText2">Region:</label>
-        <select name="customText2">  
+        <select name="customText2" required>  
           <option value="UK & Ireland">UK & Ireland</option>
           <option value="Scandinavia">Scandinavia</option>
           <option value="Eastern Europe">Eastern Europe</option>
@@ -58,7 +58,7 @@
    
       <p>
         <label for="customText3">Job Sub Title:</label>
-        <input type="text" name="customText3">
+        <input type="text" name="customText3" required>
       </p>
 
       <p>
@@ -118,7 +118,7 @@
 
       <p>
         <label for="customText12">Currency:</label>
-        <select name="customText12">
+        <select name="customText12" required>
           <option value="GBP">GBP</option>
           <option value="EUR">EUR</option>
           <option value="USD">USD</option>
@@ -164,7 +164,7 @@
 
       <p>
         <label for="description">Job Description:</label>
-        <textarea type="text" name="description"></textarea>
+        <textarea type="text" name="description" required></textarea>
       </p>
 
       <p>Job Location</p>
@@ -182,8 +182,7 @@
         {{/each}}
         </select>
       </p>
-      <br>  
-      <!-- Create date added in a backend--> 
+       
       <p>
         <button type="submit">Submit</button>
       </p>
