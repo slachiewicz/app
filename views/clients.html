@@ -1,5 +1,8 @@
 <h1>List of clients</h1>
+<a href="/client/create">Create a client</a>
 
-{{#each clients}}
-<p>{{this.companyNames}}</p>
-{{/each}}
+<ul>
+  {{#each clients}}
+  <li><a href="/client/{{this.id}}">{{this.name}}</a></li>
+  {{/each}}
+</ul>
