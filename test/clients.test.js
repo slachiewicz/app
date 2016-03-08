@@ -211,7 +211,7 @@ describe('save/update a client: /client/0 with authorization', function () {
       url: "/client/3",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {name: 'Dwyl-updated', id: 3}
+      payload: {name: 'New-One', id: 3}
     };
 
 
