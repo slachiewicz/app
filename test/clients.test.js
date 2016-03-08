@@ -51,7 +51,7 @@ describe('Attempt to get /client/list with authorization', function () {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
           var clients = $('li');       
-          expect(clients.length).to.equal(2);
+          expect(clients.length).to.equal(3);
           server.stop(done);
         });
       });
@@ -208,10 +208,10 @@ describe('save/update a client: /client/0 with authorization', function () {
 
     var options = {
       method: "POST",
-      url: "/client/0",
+      url: "/client/3",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {name: 'Dwyl-updated', id: 0}
+      payload: {name: 'Dwyl-updated', id: 3}
     };
 
 

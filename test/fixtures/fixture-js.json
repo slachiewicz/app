@@ -132,6 +132,8 @@
   {"companyNames":["FAC"]},
   { "index" : { "_index" : "gmcontact", "_type" : "clients", "_id" : "1" } },
   {"companyNames":["DWYL"]},
+  { "index" : { "_index" : "gmcontact", "_type" : "clients", "_id" : "3" } },
+  {"companyNames":["Anything"]},
   { "index" : { "_index" : "gmcontact", "_type" : "users", "_id" : "12" } },
   { "role": "Developer",
     "phones": {
