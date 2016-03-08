@@ -14,6 +14,7 @@ describe('Get the list of clients', function () {
   it('returns the list of clients', function (done) {
     getClientsList(function(error, list) {
 
+      console.log('list', list);
       expect(list.length).to.equal(3);
       expect(list[0]).to.equal('FAC');
       expect(list[1]).to.equal('DWYL');
