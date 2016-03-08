@@ -146,3 +146,86 @@ describe('Attempt to return a client with a wrong id: /client/wrongid', function
     });
   });
 });
+
+describe('Attempt to save/update a client: /client/0 without authorization', function () {
+
+  it('checks status code 302 of /client/0', function (done) {
+
+     var options = {
+      method: "POST",
+      url: "/client/0"
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      server.inject(options , function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Attempt to save/update a client: /client/0 with authorization', function () {
+
+  it('redirect to specific client page after trying to submit with empty input', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "POST",
+      url: "/client/0",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {name: '', id: 0}
+    };
+
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options , function (res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(302);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});
+
+
+describe('save/update a client: /client/0 with authorization', function () {
+
+  it('redirect to client/list after updating client', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
+
+    var options = {
+      method: "POST",
+      url: "/client/0",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {name: 'Dwyl-updated', id: 0}
+    };
+
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options , function (res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(302);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});

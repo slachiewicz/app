@@ -1,4 +1,8 @@
 <h1>Client view</h1>
 
-<h1>{{client.id}}</h1>
-<h1>{{client.name}}</h1>
+<form action="/client/{{client.id}}" method="POST">
+  <input type="hidden" name="id" value="{{client.id}}">
+  <input type="text" name="name" value="{{client.name}}">
+
+  <button type="submit">Update/Save</button>
+</form>
