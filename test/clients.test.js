@@ -12,12 +12,12 @@ var cheerio = require('cheerio');
 
 describe('Attempt to return the list of clients without authorization', function () {
 
-  it('checks status code 302 of /client/list', function (done) {
+  it('checks status code 302 of /clients/list', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject('/client/list' , function (res) {
+      server.inject('/clients/list' , function (res) {
 
         expect(res.statusCode).to.equal(302);
 
@@ -28,7 +28,7 @@ describe('Attempt to return the list of clients without authorization', function
 });
 
 
-describe('Attempt to get /client/list with authorization', function () {
+describe('Attempt to get /clients/list with authorization', function () {
 
   it('return list of clients with status code 200 and return number of clients', function (done) {
 
@@ -39,7 +39,7 @@ describe('Attempt to get /client/list with authorization', function () {
       expect(err).to.not.exist();
       var options = {
         method: "GET",
-        url: "/client/list",
+        url: "/clients/list",
         headers: { cookie: "token=" + token },
         credentials: { id: "12", "name": "Simon", valid: true}
       };
@@ -59,7 +59,7 @@ describe('Attempt to get /client/list with authorization', function () {
   });
 });
 
-describe('/client/create', function () {
+describe('/clients/create', function () {
 
   it('return create a client page', function (done) {
 
@@ -68,7 +68,7 @@ describe('/client/create', function () {
       expect(err).to.not.exist();
       var options = {
         method: "GET",
-        url: "/client/create"
+        url: "/clients/create"
       };
 
       server.inject(options, function (res) {
@@ -79,14 +79,14 @@ describe('/client/create', function () {
   });
 });
 
-describe('Attempt to return the first client: /client/0 without authorization', function () {
+describe('Attempt to return the first client: /clients/0 without authorization', function () {
 
-  it('checks status code 302 of /client/0', function (done) {
+  it('checks status code 302 of /clients/0', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject('/client/0' , function (res) {
+      server.inject('/clients/0' , function (res) {
 
         expect(res.statusCode).to.equal(302);
 
@@ -96,15 +96,15 @@ describe('Attempt to return the first client: /client/0 without authorization', 
   });
 });
 
-describe('Return the first client: /client/0', function () {
+describe('Return the first client: /clients/0', function () {
 
-  it('checks status code 200 of /client/0', function (done) {
+  it('checks status code 200 of /clients/0', function (done) {
 
     var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
     var options = {
       method: "GET",
-      url: "/client/0",
+      url: "/clients/0",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true}
     };
@@ -124,15 +124,15 @@ describe('Return the first client: /client/0', function () {
   });
 });
 
-describe('Attempt to return a client with a wrong id: /client/wrongid', function () {
+describe('Attempt to return a client with a wrong id: /clients/wrongid', function () {
 
-  it('checks status code 404 of /client/wrongid', function (done) {
+  it('checks status code 404 of /clients/wrongid', function (done) {
 
     var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
     var options = {
       method: "GET",
-      url: "/client/wrongid",
+      url: "/clients/wrongid",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true}
     };
@@ -147,13 +147,13 @@ describe('Attempt to return a client with a wrong id: /client/wrongid', function
   });
 });
 
-describe('Attempt to save/update a client: /client/0 without authorization', function () {
+describe('Attempt to save/update a client: /clients/0 without authorization', function () {
 
-  it('checks status code 302 of /client/0', function (done) {
+  it('checks status code 302 of /clients/0', function (done) {
 
      var options = {
       method: "POST",
-      url: "/client/0"
+      url: "/clients/0"
     };
 
     Server.init(0, function (err, server) {
@@ -169,7 +169,7 @@ describe('Attempt to save/update a client: /client/0 without authorization', fun
   });
 });
 
-describe('Attempt to save/update a client: /client/0 with authorization', function () {
+describe('Attempt to save/update a client: /clients/0 with authorization', function () {
 
   it('redirect to specific client page after trying to submit with empty input', function (done) {
 
@@ -177,7 +177,7 @@ describe('Attempt to save/update a client: /client/0 with authorization', functi
 
     var options = {
       method: "POST",
-      url: "/client/0",
+      url: "/clients/0",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {name: '', id: 0}
@@ -199,8 +199,7 @@ describe('Attempt to save/update a client: /client/0 with authorization', functi
   });
 });
 
-
-describe('save/update a client: /client/0 with authorization', function () {
+describe('save/update a client: /clients/0 with authorization', function () {
 
   it('redirect to client/list after updating client', function (done) {
 
@@ -208,10 +207,92 @@ describe('save/update a client: /client/0 with authorization', function () {
 
     var options = {
       method: "POST",
-      url: "/client/3",
+      url: "/clients/3",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {name: 'New-One', id: 3}
+    };
+
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options , function (res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(302);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});
+
+describe('Attempt to create a client: /clients/create without authorization', function () {
+
+  it('checks status code 302 of /clients/create', function (done) {
+
+     var options = {
+      method: "POST",
+      url: "/clients/create"
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      server.inject(options , function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('Attempt to create a client: /clients/create with authorization', function () {
+
+  it('redirects to client create form page after trying to submit an empty input', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "POST",
+      url: "/clients/create",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {companyName: ''}
+    };
+
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options , function (res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(302);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});
+
+describe('create a client: /clients/create with authorization', function () {
+
+  it('redirect to client/list after creating client', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
+
+    var options = {
+      method: "POST",
+      url: "/clients/create",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {companyName: 'WWW'}
     };
 
 
