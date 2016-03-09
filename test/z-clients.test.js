@@ -310,3 +310,54 @@ describe('create a client: /clients/create with authorization', function () {
     });
   });
 });
+
+describe('Attempt to delete a client: /clients/delete/3 without authorization', function () {
+
+  it('checks status code 302 for redirection', function (done) {
+
+     var options = {
+      method: "POST",
+      url: "/clients/delete/3"
+    };
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+      server.inject(options , function (res) {
+
+        expect(res.statusCode).to.equal(302);
+
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('delete a client: /clients/delete/3 with authorization', function () {
+
+  it('redirect to client/list after deleting a client', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
+
+    var options = {
+      method: "POST",
+      url: "/clients/delete/3",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true}
+    };
+
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options , function (res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(302);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});

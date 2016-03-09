@@ -15,7 +15,7 @@ describe('Get the list of clients', function () {
     getClientsList(function(error, list) {
 
       console.log('list', list);
-      expect(list.length).to.equal(4);
+      expect(list.length).to.equal(3);
       expect(list.indexOf('FAC')).to.be.above(-1);
       expect(list.indexOf('DWYL')).to.be.above(-1);
       done();

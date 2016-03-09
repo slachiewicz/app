@@ -5,4 +5,10 @@
   <input type="text" name="name" value="{{client.name}}">
 
   <button type="submit">Update/Save</button>
+  
+</form>
+
+<form action="/clients/delete/{{client.id}}" method="POST">
+
+  <button type="submit">Delete</button>
 </form>
