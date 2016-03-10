@@ -26,6 +26,15 @@
         {{/each}}
         </select>
       </p>
+
+      <p>
+        <label>Client name:</label>
+        <select name="client" required>
+        {{#each clients}}
+           <option value="{{this.id}}">{{this.name}}</option>
+        {{/each}}
+        </select>
+      </p>
     
       <p>
         <label for="customText1">Seniority:</label>
@@ -98,12 +107,12 @@
 
       <p>
         <label for="startDate">Start date:</label>
-        <input type="date" name="startDate">
+        <input type="date" name="startDate" placeholder="DD-MM-YYYY">
       </p>
 
       <p>
         <label for="dateEnd">Scheduled End Date:</label>
-        <input type="date" name="dateEnd">
+        <input type="date" name="dateEnd" placeholder="DD-MM-YYYY">
       </p>
       
       <p>
