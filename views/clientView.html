@@ -1,14 +1,28 @@
 <h1>Client view</h1>
 
-<form action="/client/{{client.id}}" method="POST">
+<form action="/clients/save" method="POST">
   <input type="hidden" name="id" value="{{client.id}}">
+  <input type="hidden" name="createdAt" value="{{client.createdAt}}">
   <input type="text" name="name" value="{{client.name}}">
-
-  <button type="submit">Update/Save</button>
+  <input type="text" name="possibleNames" value="{{client.possibleNames}}">
   
-</form>
+  <label>Account Manager:</label>
+  <select name="accountManager">
+  {{#each owners}}
+    <option value="{{this.id}}">{{this.name}}</option>
+  {{/each}}
+  </select>
 
-<form action="/clients/delete/{{client.id}}" method="POST">
+  <input type="text" name="terms" value="{{client.terms}}">
+  <input type="text" name="contactName" value="{{client.contactName}}">
+  <input type="text" name="contactEmail" value="{{client.contactEmail}}">
+  <input type="text" name="contactPhone" value="{{client.contactPhone}}">
 
-  <button type="submit">Delete</button>
+  {{#if client.active}}
+    <input type="checkbox" name="active" checked> Active <br/>
+  {{else}}
+    <input type="checkbox" name="active"> Active <br/>
+  {{/if}}
+
+  <button type="submit">Save</button>
 </form>

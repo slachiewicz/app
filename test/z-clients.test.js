@@ -27,7 +27,6 @@ describe('Attempt to return the list of clients without authorization', function
   });
 });
 
-
 describe('Attempt to get /clients/list with authorization', function () {
 
   it('return list of clients with status code 200 and return number of clients', function (done) {
@@ -50,8 +49,8 @@ describe('Attempt to get /clients/list with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var clients = $('li');       
-          expect(clients.length).to.equal(3);
+          var clients = $('ul');       
+          expect(clients.length).to.equal(2);
           server.stop(done);
         });
       });
@@ -59,16 +58,19 @@ describe('Attempt to get /clients/list with authorization', function () {
   });
 });
 
-describe('/clients/create', function () {
+describe('access /clients/create with authorization', function () {
 
   it('return create a client page', function (done) {
 
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
       var options = {
         method: "GET",
-        url: "/clients/create"
+        url: "/clients/create",
+        headers: { cookie: "token=" + token },
+        credentials: { id: "12", "name": "Simon", valid: true}
       };
 
       server.inject(options, function (res) {
@@ -79,14 +81,14 @@ describe('/clients/create', function () {
   });
 });
 
-describe('Attempt to return the first client: /clients/0 without authorization', function () {
+describe('Attempt to to access: /clients/create without authorization', function () {
 
-  it('checks status code 302 of /clients/0', function (done) {
+  it('checks status code 302', function (done) {
 
     Server.init(0, function (err, server) {
 
       expect(err).to.not.exist();
-      server.inject('/clients/0' , function (res) {
+      server.inject('/clients/create' , function (res) {
 
         expect(res.statusCode).to.equal(302);
 
@@ -111,36 +113,9 @@ describe('Return the first client: /clients/0', function () {
 
     Server.init(0, function (err, server) {
 
-      var redisClient = require('redis-connection')();
-
-      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
-        server.inject(options, function(res) {
-          expect(err).to.not.exist();
-          expect(res.statusCode).to.equal(200);
-          server.stop(done);
-        });
-      });
-    });
-  });
-});
-
-describe('Attempt to return a client with a wrong id: /clients/wrongid', function () {
-
-  it('checks status code 404 of /clients/wrongid', function (done) {
-
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-
-    var options = {
-      method: "GET",
-      url: "/clients/wrongid",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true}
-    };
-
-    Server.init(0, function (err, server) {
       server.inject(options, function(res) {
         expect(err).to.not.exist();
-        expect(res.statusCode).to.equal(404);
+        expect(res.statusCode).to.equal(200);
         server.stop(done);
       });
     });
@@ -152,7 +127,7 @@ describe('Attempt to save/update a client: /clients/0 without authorization', fu
   it('checks status code 302 of /clients/0', function (done) {
 
      var options = {
-      method: "POST",
+      method: "GET",
       url: "/clients/0"
     };
 
@@ -169,73 +144,83 @@ describe('Attempt to save/update a client: /clients/0 without authorization', fu
   });
 });
 
-describe('Attempt to save/update a client: /clients/0 with authorization', function () {
+describe('save/update a client: /clients/save with authorization', function () {
 
-  it('redirect to specific client page after trying to submit with empty input', function (done) {
-
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-
-    var options = {
-      method: "POST",
-      url: "/clients/0",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {name: '', id: 0}
-    };
-
-
-    Server.init(0, function (err, server) {
-
-      var redisClient = require('redis-connection')();
-
-      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
-        server.inject(options , function (res) {
-          expect(err).to.not.exist();
-          expect(res.statusCode).to.equal(302);
-          server.stop(done);
-        });
-      });
-    });
-  });
-});
-
-describe('save/update a client: /clients/0 with authorization', function () {
-
-  it('redirect to client/list after updating client', function (done) {
+  it('redirect to clients/list after updating client', function (done) {
 
     var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
 
     var options = {
       method: "POST",
-      url: "/clients/3",
+      url: "/clients/save",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {name: 'New-One', id: 3}
+      payload: { 
+        name: 'FAC',
+        possibleNames: 'Founders And Coders, Founders & Coders',
+        accountManager: 2,
+        terms: 18,
+        contactName: 'Bob',
+        contactEmail: 'bob@gmail.com',
+        contactPhone: '000001',
+        createdAt: '1457704721910',
+        active: 'off',
+        id: '0' 
+      }
     };
-
 
     Server.init(0, function (err, server) {
 
-      var redisClient = require('redis-connection')();
-
-      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
-        server.inject(options , function (res) {
-          expect(err).to.not.exist();
-          expect(res.statusCode).to.equal(302);
-          server.stop(done);
-        });
-      });
+      server.inject(options , function (res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(302);
+        server.stop(done);
+      });     
     });
   });
 });
 
-describe('Attempt to create a client: /clients/create without authorization', function () {
+describe('create a client: /clients/save with authorization', function () {
 
-  it('checks status code 302 of /clients/create', function (done) {
+  it('redirect to clients/list after creating client', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
+
+    var options = {
+      method: "POST",
+      url: "/clients/save",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: { 
+        name: 'FAC',
+        possibleNames: 'Founders And Coders, Founders & Coders',
+        accountManager: 2,
+        terms: 18,
+        contactName: 'Bob',
+        contactEmail: 'bob@gmail.com',
+        contactPhone: '000001',
+        active: 'on'
+      }
+    };
+
+    Server.init(0, function (err, server) {
+
+      server.inject(options , function (res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(302);
+        server.stop(done);
+      });     
+    });
+  });
+});
+
+describe('Attempt to update a client: /clients/save without authorization', function () {
+
+  it('checks status code 302 of /clients/save', function (done) {
 
      var options = {
       method: "POST",
-      url: "/clients/create"
+      url: "/clients/save"
     };
 
     Server.init(0, function (err, server) {
@@ -246,117 +231,6 @@ describe('Attempt to create a client: /clients/create without authorization', fu
         expect(res.statusCode).to.equal(302);
 
         server.stop(done);
-      });
-    });
-  });
-});
-
-describe('Attempt to create a client: /clients/create with authorization', function () {
-
-  it('redirects to client create form page after trying to submit an empty input', function (done) {
-
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
-
-    var options = {
-      method: "POST",
-      url: "/clients/create",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {companyName: ''}
-    };
-
-
-    Server.init(0, function (err, server) {
-
-      var redisClient = require('redis-connection')();
-
-      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
-        server.inject(options , function (res) {
-          expect(err).to.not.exist();
-          expect(res.statusCode).to.equal(302);
-          server.stop(done);
-        });
-      });
-    });
-  });
-});
-
-describe('create a client: /clients/create with authorization', function () {
-
-  it('redirect to client/list after creating client', function (done) {
-
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
-
-    var options = {
-      method: "POST",
-      url: "/clients/create",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true},
-      payload: {companyName: 'WWW'}
-    };
-
-
-    Server.init(0, function (err, server) {
-
-      var redisClient = require('redis-connection')();
-
-      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
-        server.inject(options , function (res) {
-          expect(err).to.not.exist();
-          expect(res.statusCode).to.equal(302);
-          server.stop(done);
-        });
-      });
-    });
-  });
-});
-
-describe('Attempt to delete a client: /clients/delete/3 without authorization', function () {
-
-  it('checks status code 302 for redirection', function (done) {
-
-     var options = {
-      method: "POST",
-      url: "/clients/delete/3"
-    };
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-      server.inject(options , function (res) {
-
-        expect(res.statusCode).to.equal(302);
-
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('delete a client: /clients/delete/3 with authorization', function () {
-
-  it('redirect to client/list after deleting a client', function (done) {
-
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
-
-    var options = {
-      method: "POST",
-      url: "/clients/delete/3",
-      headers: { cookie: "token=" + token },
-      credentials: { id: "12", "name": "Simon", valid: true}
-    };
-
-
-    Server.init(0, function (err, server) {
-
-      var redisClient = require('redis-connection')();
-
-      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
-        server.inject(options , function (res) {
-          expect(err).to.not.exist();
-          expect(res.statusCode).to.equal(302);
-          server.stop(done);
-        });
       });
     });
   });

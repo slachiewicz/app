@@ -1,8 +1,21 @@
 <h1>List of clients</h1>
 <a href="/clients/create">Create a client</a>
 
-<ul>
-  {{#each clients}}
-  <li><a href="/clients/{{this.id}}">{{this.name}}</a></li>
-  {{/each}}
-</ul>
+
+{{#each clients}}
+  <a href="/clients/{{this.id}}">
+    <ul> 
+      <li>{{this.name}}</li>
+      <li>{{this.possibleNames}}</li>
+      <li>{{this.terms}}</li>
+      <li>{{this.accountManagerName}}</li>
+      <li>{{this.startFrom}}</li>
+
+      <li>{{this.contactName}}</li>
+      <li>{{this.contactEmail}}</li>
+      <li>{{this.contactPhone}}</li>
+      <li>{{this.active}}</li>
+    </ul>
+  </a>
+  <hr/>
+{{/each}}
