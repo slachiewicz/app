@@ -157,12 +157,20 @@
       <hr>
 
       <h1><i class="fa fa-globe"></i> LANGUAGES</h1>
-        <ul class="lang">
-          {{#each languages}}
-            {{languageHelper this}}
-          {{/each}}
-        </ul>
+      <ul class="lang">
+        {{#each languages}}
+          {{languageHelper this}}
+        {{/each}}
+      </ul>
+      <hr>
+
+      <h1><i class="fa fa-file"></i> JOB APPLICATIONS</h1>
+      {{#each jobApplications}}
+        {{> application}}
+      {{/each}}
+      <hr>
     </div>
+
     <input type="hidden" class="keywords" value="{{keywords}}">
   </div>
 </div>
