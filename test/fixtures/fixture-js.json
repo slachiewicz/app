@@ -128,10 +128,10 @@
       "experience":{
           "current": [{"title": "Manager","org": "Fawlty Hotel","date": "September 2010 – Present (5 years 2 months)","desc": "I'm working as a manager","location": "United Kingdom"}],
           "past":[{  "title": "Waiter","org": "Anotther Hotel","date": "October 2000 – October 2001 (1 year)","desc": "I was a waiter","location": "Spain"}]}},
-  { "index" : { "_index" : "gmcontact", "_type" : "clients", "_id" : "0" } },
-  {"name":"FAC", "possibleNames": ["Founders And Coders", "Founders & Coders"], "accountManager": 2, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "createdAt": 1457704721910,"active": true},
-  { "index" : { "_index" : "gmcontact", "_type" : "clients", "_id" : "1" } },
-  {"name":"DWYL", "possibleNames": ["Do WYL"], "accountManager": 0, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001","createdAt": 1457704721910, "active": true},
+  { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "0" } },
+  {"name":"FAC", "possibleNames": ["Founders And Coders"], "accountManager": 0, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
+  { "index" : { "_index" : "gmcontact", "_type" : "clients-companies", "_id" : "1" } },
+  {"name":"DWYL", "possibleNames": ["Do WYL"], "accountManager": 0, "terms": 18, "contactName": "Bob", "contactEmail": "bob@gmail.com", "contactPhone": "000001", "active": true},
   { "index" : { "_index" : "gmcontact", "_type" : "users", "_id" : "12" } },
   { "role": "Developer",
     "phones": {
