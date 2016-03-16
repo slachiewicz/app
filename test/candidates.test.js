@@ -19,19 +19,37 @@ describe('/candidates/create candidate', function () {
       var options = {
         method: "POST",
         url: "/candidates/create",
-        payload: {name: "Bob"}
-      };
+        payload: {
+          firstName: "Borislav",
+          lastName: "Shekerov",
+          email: "boris@example.com",
+          phone: "1111111111",
+          jobID: 1,
+          linkedInURL: "https://uk.linkedin.com/in/borislav-shekerov-a7800990",
+          comments: "Testing",
+          skillset: "Marketing",
+          name: "Borislav Shekerov",
+          source: "Company Website"
+      }
+    };
 
       server.inject(options, function (res) {
-        es.get({
+        console.log('res', res);
+
+        setTimeout(function () {
+          es.get({
           index: process.env.ES_INDEX,
           type: process.env.ES_TYPE_TOAD,
           id: res.payload
         }, function (err, response) {
+          console.log('----',response)
           expect(res.statusCode).to.equal(200);
-          expect(response._source.payload.name).to.equal('Bob');
+          expect(response._source.payload.name).to.equal('Borislav Shekerov');
           server.stop(done);
-        })      
+        });
+        }, 2000);
+        
+
       });
     });
   });

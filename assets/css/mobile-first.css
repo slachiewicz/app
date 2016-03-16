@@ -461,7 +461,7 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil, #sidebar > h1 > i.fa-comments {
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe,i.fa-file, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil, #sidebar > h1 > i.fa-comments {
   font-size: 25px;
   padding-left: 0;
   padding-right: 20px;
