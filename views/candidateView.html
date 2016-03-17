@@ -45,7 +45,10 @@
         {{emailIndicatorHelper lastEmail true}}
       {{/if}}
 
-       <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
+        {{#if cvDocumentLink}}
+          <p class="mobile"><span>CV: </span><a href="{{cvDocumentLink}}" target="_blank">Preview/Download the CV</a></p>
+        {{/if}}
+        <p class="mobile"><span>Linkedin: </span><a href="{{url}}" target="_blank">{{url}}</a></p>
         <p class="mobile"><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
         <p class="mobile"><span>Phone: </span><span class="check-highlight">{{contacts.phone}}</span></p>
           {{#each contacts.im}}
@@ -64,6 +67,9 @@
           <button type="submit">SEND EMAIL</button>
         </form>
       {{/if}}
+        {{#if cvDocumentLink}}
+          <p><span>CV: </span><a href="{{cvDocumentLink}}" target="_blank">Preview/Download the CV</a></p>
+        {{/if}}
         <p><span>Linkedin: </span><a class="check-highlight" href="{{url}}" target="_blank">{{url}}</a></p>
         <p><span>Email: </span><span class="check-highlight">{{contacts.email}}</span></p>
         <p><span>Phone: </span><span class="check-highlight">{{contacts.phone}}</span></p>
@@ -157,12 +163,20 @@
       <hr>
 
       <h1><i class="fa fa-globe"></i> LANGUAGES</h1>
-        <ul class="lang">
-          {{#each languages}}
-            {{languageHelper this}}
-          {{/each}}
-        </ul>
+      <ul class="lang">
+        {{#each languages}}
+          {{languageHelper this}}
+        {{/each}}
+      </ul>
+      <hr>
+
+      <h1><i class="fa fa-file"></i> JOB APPLICATIONS</h1>
+      {{#each jobApplications}}
+        {{>application}}
+      {{/each}}
+      <hr>
     </div>
+
     <input type="hidden" class="keywords" value="{{keywords}}">
   </div>
 </div>
