@@ -207,6 +207,16 @@ You can search for multiple skills if you separate the each skill with a comma:
 
   - disabled email checkbox for client employee and candidate with status prevents accidently sending email
 
++ Merging candidates coming from the website
+
+  - following image on teh home page indicates the new candidate coming from the website
+
+  ![website-candidate](wireframes/website-candidate.png)
+
+  - jobs applied by the relevant candidate
+
+  ![job-aplication](job-aplication.png)
+
 
 ## Working with this repo
 Our [product backlog is our list of issues](https://github.com/FAC-GM/app/issues).
