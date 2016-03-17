@@ -9,7 +9,7 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-describe('/cv/create cv', function () {
+describe('/cv/create cv with a pdf extension', function () {
 
   it('Create a cv', function (done) {
 
@@ -37,6 +37,84 @@ describe('/cv/create cv', function () {
           type: "document"
         }
       };
+
+      server.inject(options, function (res) {
+
+        expect(res.payload).to.equal('theIdOfTheFile');
+        //clear nock
+        server.stop(done);
+      });
+    });
+  });
+});
+
+describe('/cv/create cv without an extension file', function () {
+
+  it('Create a cv', function (done) {
+
+    //mock the upload of the file
+    var nock = require('nock');
+    nock('https://www.googleapis.com')
+      .post('/upload/drive/v3/files?uploadType=multipart')
+      .reply(200, {id: 'theIdOfTheFile'});
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var options = {
+        method: "POST",
+        url: "/cv/create",
+        payload: {
+          candidate: {
+            id: "1"
+          },
+          fileContent: "base64 content",
+          fileType: "SAMPLE",
+          name: "cv",
+          contentType: "application\/octet-stream",
+          description: "CV",
+          type: "document"
+        }
+      };
+      server.inject(options, function (res) {
+
+        expect(res.payload).to.equal('theIdOfTheFile');
+        //clear nock
+        server.stop(done);
+      });
+    });
+  });
+});
+
+
+describe('/cv/create cv with a weird extension', function () {
+
+    it('Create a cv', function (done) {
+
+      //mock the upload of the file
+      var nock = require('nock');
+      nock('https://www.googleapis.com')
+        .post('/upload/drive/v3/files?uploadType=multipart')
+        .reply(200, {id: 'theIdOfTheFile'});
+      Server.init(0, function (err, server) {
+
+        expect(err).to.not.exist();
+
+        var options = {
+          method: "POST",
+          url: "/cv/create",
+          payload: {
+            candidate: {
+              id: "1"
+            },
+            fileContent: "base64 content",
+            fileType: "SAMPLE",
+            name: "cv.weird",
+            contentType: "application\/octet-stream",
+            description: "CV",
+            type: "document"
+          }
+        };
 
       server.inject(options, function (res) {
 
