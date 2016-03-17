@@ -222,7 +222,6 @@ header {
   letter-spacing: 1px;
   font-size: 0.6em;
   float: right;
-
 }
 
 i.fa-star, i.fa-user, i.fa-suitcase {
@@ -730,6 +729,10 @@ circle {
   padding-bottom: 5px;
 }
 
+.create-right {
+  float: right;
+}
+
 .client-left {
   float: left;
 }
@@ -746,6 +749,18 @@ circle {
 #client-create:hover {
   background-color: #E4AD28;
   color: #424A5D;
+}
+
+.create-left > *,.create-right > *{
+  width: 100%;
+}
+
+.create-left {
+  width: 50%;
+}
+
+.create-right {
+  width: 50%;
 }
 
 
