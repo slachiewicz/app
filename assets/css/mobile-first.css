@@ -85,7 +85,7 @@ header {
   width: 180px;
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user {
+.search-form > a > i.fa-star, .search-form > a > i.fa-user,.search-form > a > i.fa-suitcase {
   margin-top: 0px !important;
 }
 
@@ -210,8 +210,8 @@ header {
 }
 
 .headline span {
-  /*float: left;*/
-  color: grey;
+  /*color: grey;*/
+  color: #575454;
 }
 
 .headline .initials {
@@ -225,7 +225,7 @@ header {
 
 }
 
-i.fa-star, i.fa-user {
+i.fa-star, i.fa-user, i.fa-suitcase {
   color: #E4AD28;
   border: none;
   float: right;
@@ -714,6 +714,43 @@ circle {
 
 /*==============================
  End Dashboard
+================================*/
+
+/*==============================
+ Client
+================================*/
+
+
+.client-right {
+  float: right;
+  margin-right: 5%;
+}
+
+.client-right h4 {
+  padding-bottom: 5px;
+}
+
+.client-left {
+  float: left;
+}
+
+#client-create {
+  background-color: #424A5D;
+  padding: 10px;
+  color: #E4AD28; 
+  position: fixed;
+  left: 5%;
+  top: 10px;
+}
+
+#client-create:hover {
+  background-color: #E4AD28;
+  color: #424A5D;
+}
+
+
+/*==============================
+ End Client
 ================================*/
 
 /*==============================
