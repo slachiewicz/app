@@ -1,35 +1,35 @@
-<div class="list-wrapper client-wrapper">
 
-<form action="/clients/save" method="POST">
+
+  <p>{{client.id}}</p>
+  <p>{{client.createdAt}}</p>
+  <p>{{client.name}}</p>
+  <p>{{client.possibleNames}}</p>
   
-  <div class="create-left">
-    <input type="hidden" name="id" value="{{client.id}}">
-    <input type="hidden" name="createdAt" value="{{client.createdAt}}">
-    <input type="text" name="name" value="{{client.name}}">
-    <input type="text" name="possibleNames" value="{{client.possibleNames}}">
-    
-    <label>Account Manager:</label>
-    <select name="accountManager">
-    {{#each owners}}
-      <option value="{{this.id}}">{{this.name}}</option>
-    {{/each}}
-    </select>
+  <p>Account Manager</p>
+  
+  {{#each owners}}
+    <p>{{this.name}}</p>
+  {{/each}}
 
-    <input type="text" name="terms" value="{{client.terms}}">
-  </div>
 
-  <div class="create-right">
-    <input type="text" name="contactName" value="{{client.contactName}}">
-    <input type="text" name="contactEmail" value="{{client.contactEmail}}">
-    <input type="text" name="contactPhone" value="{{client.contactPhone}}">
-  </div>
+  <p>{{client.terms}}</p>
 
-  {{#if client.active}}
-    <input type="checkbox" name="active" checked> Active <br/>
-  {{else}}
-    <input type="checkbox" name="active"> Active <br/>
-  {{/if}}
 
-  <button type="submit">Save</button>
-</form>
-</div>
+
+  <p>{{client.contactName}}</p>
+  <p>{{client.contactEmail}}</p>
+  <p>{{client.contactPhone}}</p>
+
+
+{{#if client.active}}
+  <p>Active </p>
+{{else}}
+  <p>Inactive </p>
+{{/if}}
+
+{{#each client.jobs}}
+  <a href="/jobs/{{id}}">{{title}}</a>
+{{/each}}
+
+<br/>
+<a href="/clients/edit/{{client.id}}">Edit</a>
