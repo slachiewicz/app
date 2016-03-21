@@ -1,201 +1,207 @@
-<div class="vacancy-wrapper">
-  <form id="create-vacancy" action="/jobs/create" method="POST">
-    <div>
-      <p>
-        <label for="title">Job Title:</label>
-        <input type="text" name="title" required>
-      </p>
+{{>navigation}}
 
-      <p>
-        <label for="employmentType">Employment Type:</label>
-        <select name="employmentType" required>
-          <option value=""></option>
-          <option value="Permanent">Permanent</option>
-          <option value="Contract">Contract</option>
-          <option value="Temporary">Temporary</option>
-          <option value="Temp to Perm">Temp to Perm</option>
-          <option value="Fixed Contract">Fixed Contract</option> 
-      </select>
-      </p>
+<div class="clients-job-wrapper">
+
+  <div class="vacancy-wrapper">
+    <form id="create-vacancy" action="/jobs/create" method="POST">
+      <div>
+        <p>
+          <label for="title">Job Title:</label>
+          <input type="text" name="title" required>
+        </p>
+
+        <p>
+          <label for="employmentType">Employment Type:</label>
+          <select name="employmentType" required>
+            <option value=""></option>
+            <option value="Permanent">Permanent</option>
+            <option value="Contract">Contract</option>
+            <option value="Temporary">Temporary</option>
+            <option value="Temp to Perm">Temp to Perm</option>
+            <option value="Fixed Contract">Fixed Contract</option> 
+        </select>
+        </p>
+        
+        <p>
+          <label>Owner:</label>
+          <select name="owner" required>
+          {{#each owners}}
+             <option value="{{this.id}}">{{this.name}}</option>
+          {{/each}}
+          </select>
+        </p>
+
+        <p>
+          <label>Client name:</label>
+          <select name="client" required>
+          {{#each clients}}
+             <option value="{{this.id}}">{{this.name}}</option>
+          {{/each}}
+          </select>
+        </p>
       
-      <p>
-        <label>Owner:</label>
-        <select name="owner" required>
-        {{#each owners}}
-           <option value="{{this.id}}">{{this.name}}</option>
-        {{/each}}
-        </select>
-      </p>
+        <p>
+          <label for="customText1">Seniority:</label>
+          <select name="customText1" required>  
+            <option value="Junior">Junior</option>
+            <option value="Mid-level">Mid-level</option>
+            <option value="Senior">Senior</option>
+            <option value="Director">Director</option>
+          </select>
+        </p> 
+     
+        <p>
+          <label for="customText2">Region:</label>
+          <select name="customText2" required>  
+            <option value="UK & Ireland">UK & Ireland</option>
+            <option value="Scandinavia">Scandinavia</option>
+            <option value="Eastern Europe">Eastern Europe</option>
+            <option value="Western Europe">Western Europe</option>
+            <option value="Southern Europe">Southern Europe</option>
+            <option value="Asia Pacific">Asia Pacific</option>
+            <option value="North America">North America</option>
+            <option value="South America">South America</option>
+            <option value="Central America">Central America</option>
+            <option value="Africa">Africa</option>
+            <option value="Middle East">Middle East</option>
+            <option value="North Africa">North Africa</option>
+            <option value="Sub Saharan Africa">Sub Saharan Africa</option>
+          </select>
+        </p>
+     
+        <p>
+          <label for="customText3">Job Sub Title:</label>
+          <input type="text" name="customText3" required>
+        </p>
 
-      <p>
-        <label>Client name:</label>
-        <select name="client" required>
-        {{#each clients}}
-           <option value="{{this.id}}">{{this.name}}</option>
-        {{/each}}
-        </select>
-      </p>
-    
-      <p>
-        <label for="customText1">Seniority:</label>
-        <select name="customText1" required>  
-          <option value="Junior">Junior</option>
-          <option value="Mid-level">Mid-level</option>
-          <option value="Senior">Senior</option>
-          <option value="Director">Director</option>
-        </select>
-      </p> 
-   
-      <p>
-        <label for="customText2">Region:</label>
-        <select name="customText2" required>  
-          <option value="UK & Ireland">UK & Ireland</option>
-          <option value="Scandinavia">Scandinavia</option>
-          <option value="Eastern Europe">Eastern Europe</option>
-          <option value="Western Europe">Western Europe</option>
-          <option value="Southern Europe">Southern Europe</option>
-          <option value="Asia Pacific">Asia Pacific</option>
-          <option value="North America">North America</option>
-          <option value="South America">South America</option>
-          <option value="Central America">Central America</option>
-          <option value="Africa">Africa</option>
-          <option value="Middle East">Middle East</option>
-          <option value="North Africa">North Africa</option>
-          <option value="Sub Saharan Africa">Sub Saharan Africa</option>
-        </select>
-      </p>
-   
-      <p>
-        <label for="customText3">Job Sub Title:</label>
-        <input type="text" name="customText3" required>
-      </p>
+        <p>
+          <label for="customTextBlock1">Job Intro:</label>
+          <input type="text" name="customTextBlock1">
+        </p>
 
-      <p>
-        <label for="customTextBlock1">Job Intro:</label>
-        <input type="text" name="customTextBlock1">
-      </p>
+        <p>
+          <label for="customText5">Image Text 1:</label>
+          <input type="text" name="customText5">
+        </p>
+        
+        <p>
+          <label for="customText6">Image 1: </label>
+          <input type="text" name="customText6">
+        </p>
 
-      <p>
-        <label for="customText5">Image Text 1:</label>
-        <input type="text" name="customText5">
-      </p>
-      
-      <p>
-        <label for="customText6">Image 1: </label>
-        <input type="text" name="customText6">
-      </p>
+        <p>
+          <label for="customText7">Image Text 2:</label>
+          <input type="text" name="customText7">
+        </p>
 
-      <p>
-        <label for="customText7">Image Text 2:</label>
-        <input type="text" name="customText7">
-      </p>
+        <p>
+          <label for="customText8">Image 2:</label>
+          <input type="text" name="customText8">
+        </p>
+        
+        <p>
+          <label for="customTextBlock2">Image Text 3:</label>
+          <input type="text" name="customTextBlock2">
+        </p>
 
-      <p>
-        <label for="customText8">Image 2:</label>
-        <input type="text" name="customText8">
-      </p>
-      
-      <p>
-        <label for="customTextBlock2">Image Text 3:</label>
-        <input type="text" name="customTextBlock2">
-      </p>
+        <p>
+          <label for="customText11">Image 3:</label>
+          <input type="text" name="customText11">
+        </p>
 
-      <p>
-        <label for="customText11">Image 3:</label>
-        <input type="text" name="customText11">
-      </p>
+        <p>
+          <label for="startDate">Start date:</label>
+          <input type="date" name="startDate" placeholder="DD-MM-YYYY">
+        </p>
 
-      <p>
-        <label for="startDate">Start date:</label>
-        <input type="date" name="startDate" placeholder="DD-MM-YYYY">
-      </p>
+        <p>
+          <label for="dateEnd">Scheduled End Date:</label>
+          <input type="date" name="dateEnd" placeholder="DD-MM-YYYY">
+        </p>
+        
+        <p>
+          <label for="salary">Minimum Salary:</label>
+          <input type="number" name="salary">
+        </p>
 
-      <p>
-        <label for="dateEnd">Scheduled End Date:</label>
-        <input type="date" name="dateEnd" placeholder="DD-MM-YYYY">
-      </p>
-      
-      <p>
-        <label for="salary">Minimum Salary:</label>
-        <input type="number" name="salary">
-      </p>
+        <p>
+          <label for="payRate">Pay Rate:</label>
+          <input type="number" name="payRate">
+        </p>
 
-      <p>
-        <label for="payRate">Pay Rate:</label>
-        <input type="number" name="payRate">
-      </p>
+        <p>
+          <label for="customText12">Currency:</label>
+          <select name="customText12" required>
+            <option value="GBP">GBP</option>
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+          </select>
+        </p>
 
-      <p>
-        <label for="customText12">Currency:</label>
-        <select name="customText12" required>
-          <option value="GBP">GBP</option>
-          <option value="EUR">EUR</option>
-          <option value="USD">USD</option>
-        </select>
-      </p>
+        <p>Skills / Experience: </p>
 
-      <p>Skills / Experience: </p>
+        <p>
+          <label for="categories">Category:</label>
+          <select name="categories" multiple>
+            <option value="958406">Android Development</option>
+            <option value="1210106">Backend Development</option>
+            <option value="1034734">Client Services</option>
+            <option value="1046586">Development</option>
+            <option value="1210105">Frontend Development</option>
+            <option value="958407">iOS Development</option>
+            <option value="1034735">Management</option>
+            <option value="1046587">Marketing</option>
+            <option value="1209450">Sales</option>
+            <option value="1209449">Testing</option>
+            <option value="1034733">UX & Design</option>
+          </select>
+        </p>
+        <!-- Create custom ids for skills -->
+        <p>
+          <label for="skillList"> Required Skills:</label>
+            <select name="skillList" multiple>
+            {{listSkillsHelper}}
+           </select>
+        </p>
 
-      <p>
-        <label for="categories">Category:</label>
-        <select name="categories" multiple>
-          <option value="958406">Android Development</option>
-          <option value="1210106">Backend Development</option>
-          <option value="1034734">Client Services</option>
-          <option value="1046586">Development</option>
-          <option value="1210105">Frontend Development</option>
-          <option value="958407">iOS Development</option>
-          <option value="1034735">Management</option>
-          <option value="1046587">Marketing</option>
-          <option value="1209450">Sales</option>
-          <option value="1209449">Testing</option>
-          <option value="1034733">UX & Design</option>
-        </select>
-      </p>
-      <!-- Create custom ids for skills -->
-      <p>
-        <label for="skillList"> Required Skills:</label>
-          <select name="skillList" multiple>
-          {{listSkillsHelper}}
-         </select>
-      </p>
+        <p>
+          <label for="businessSectors">Business Sector:</label>
+          <select name="businessSectors" multiple>
+          {{#each sectors}}
+            <option value="{{this.id}}">{{this.name}}</option>
+          {{/each}}
+          </select>
+        </p>
 
-      <p>
-        <label for="businessSectors">Business Sector:</label>
-        <select name="businessSectors" multiple>
-        {{#each sectors}}
-          <option value="{{this.id}}">{{this.name}}</option>
-        {{/each}}
-        </select>
-      </p>
+        <p>Job Description</p>
 
-      <p>Job Description</p>
+        <p>
+          <label for="description">Job Description:</label>
+          <textarea type="text" name="description" required></textarea>
+        </p>
 
-      <p>
-        <label for="description">Job Description:</label>
-        <textarea type="text" name="description" required></textarea>
-      </p>
+        <p>Job Location</p>
 
-      <p>Job Location</p>
+        <p>
+          <label for="city">City:</label>
+          <input type="text" name="city">
+        </p>
 
-      <p>
-        <label for="city">City:</label>
-        <input type="text" name="city">
-      </p>
+        <p>
+          <label for="countryId">Country:</label>
+          <select name="countryId">
+          {{#each countries}}
+            <option value="{{this.value}}">{{this.label}}</option>
+          {{/each}}
+          </select>
+        </p>
+         
+        <p>
+          <button class="submit-client submit-job" type="submit">Submit</button>
+        </p>
+      </div>
+    </form>
 
-      <p>
-        <label for="countryId">Country:</label>
-        <select name="countryId">
-        {{#each countries}}
-          <option value="{{this.value}}">{{this.label}}</option>
-        {{/each}}
-        </select>
-      </p>
-       
-      <p>
-        <button type="submit">Submit</button>
-      </p>
-    </div>
-  </form>
+  </div>
 
 </div>

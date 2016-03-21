@@ -820,8 +820,16 @@ circle {
 .job-right {
   margin-right: 20%;
 }
+
 .job-image {
   width: 300px;
+}
+
+.submit-job {
+  text-align: center;
+  margin: auto;
+  padding: 10px 60px;
+  margin-top: 20px;
 }
 
 /*==============================
@@ -1007,7 +1015,7 @@ Analytics
 Vacancy
 ================================*/
 .vacancy-wrapper {
-  /*background-color: red;*/
+  margin-bottom: 50px;
 }
 
 .vacancy-wrapper form > div {
