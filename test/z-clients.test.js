@@ -49,7 +49,7 @@ describe('Attempt to get /clients/list with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var clients = $('.client-left ul');       
+          var clients = $('.client-left ul');
           expect(clients.length).to.equal(2);
           server.stop(done);
         });
@@ -122,6 +122,30 @@ describe('Return the first client: /clients/0', function () {
   });
 });
 
+describe('Return the form of a client: /clients/edit/1', function () {
+
+  it('checks status code 200 of /clients/edit/1', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "GET",
+      url: "/clients/edit/1",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true}
+    };
+
+    Server.init(0, function (err, server) {
+
+      server.inject(options, function(res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+    });
+  });
+});
+
 describe('Attempt to save/update a client: /clients/0 without authorization', function () {
 
   it('checks status code 302 of /clients/0', function (done) {
@@ -148,14 +172,14 @@ describe('save/update a client: /clients/save with authorization', function () {
 
   it('redirect to clients/list after updating client', function (done) {
 
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
     var options = {
       method: "POST",
       url: "/clients/save",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: { 
+      payload: {
         name: 'FAC',
         possibleNames: 'Founders And Coders, Founders & Coders',
         accountManager: 2,
@@ -165,7 +189,7 @@ describe('save/update a client: /clients/save with authorization', function () {
         contactPhone: '000001',
         createdAt: '1457704721910',
         active: 'off',
-        id: '0' 
+        id: '0'
       }
     };
 
@@ -175,7 +199,7 @@ describe('save/update a client: /clients/save with authorization', function () {
         expect(err).to.not.exist();
         expect(res.statusCode).to.equal(302);
         server.stop(done);
-      });     
+      });
     });
   });
 });
@@ -184,14 +208,14 @@ describe('create a client: /clients/save with authorization', function () {
 
   it('redirect to clients/list after creating client', function (done) {
 
-    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);  
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
 
     var options = {
       method: "POST",
       url: "/clients/save",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true},
-      payload: { 
+      payload: {
         name: 'FAC',
         possibleNames: 'Founders And Coders, Founders & Coders',
         accountManager: 2,
@@ -209,7 +233,7 @@ describe('create a client: /clients/save with authorization', function () {
         expect(err).to.not.exist();
         expect(res.statusCode).to.equal(302);
         server.stop(done);
-      });     
+      });
     });
   });
 });
