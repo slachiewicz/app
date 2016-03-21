@@ -85,7 +85,7 @@ header {
   width: 180px;
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user,.search-form > a > i.fa-suitcase {
+.search-form > a > i.fa-star, .search-form > a > i.fa-user {
   margin-top: 0px !important;
 }
 
@@ -224,7 +224,7 @@ header {
   float: right;
 }
 
-i.fa-star, i.fa-user, i.fa-suitcase {
+i.fa-star, i.fa-user {
   color: #E4AD28;
   border: none;
   float: right;
