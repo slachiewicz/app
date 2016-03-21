@@ -24,6 +24,10 @@
   height: 90%;
 }
 
+.client-wrapper {
+  width: 60%;
+}
+
 .title-wrapper {
   text-align: center;
 }

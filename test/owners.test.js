@@ -25,7 +25,7 @@ describe('/owners/list json format', function () {
 
       server.inject(options, function (res) {
         var owners = JSON.parse(res.payload)
-        expect(owners.length).to.equal(1);
+        expect(owners.length).to.equal(2);
         expect(owners[0].firstName).to.equal('Mario');
         expect(owners[0].lastName).to.equal('Bros');
         expect(owners[0].name).to.equal('Mario Bros');

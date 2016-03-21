@@ -85,7 +85,7 @@ header {
   width: 180px;
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user {
+.search-form > a > i.fa-star, .search-form > a > i.fa-user,.search-form > a > i.fa-suitcase {
   margin-top: 0px !important;
 }
 
@@ -210,8 +210,8 @@ header {
 }
 
 .headline span {
-  /*float: left;*/
-  color: grey;
+  /*color: grey;*/
+  color: #575454;
 }
 
 .headline .initials {
@@ -222,10 +222,9 @@ header {
   letter-spacing: 1px;
   font-size: 0.6em;
   float: right;
-
 }
 
-i.fa-star, i.fa-user {
+i.fa-star, i.fa-user, i.fa-suitcase {
   color: #E4AD28;
   border: none;
   float: right;
@@ -714,6 +713,95 @@ circle {
 
 /*==============================
  End Dashboard
+================================*/
+
+/*==============================
+ Client
+================================*/
+.clients-wrapper {
+  margin-top: 80px;
+}
+
+.client-right {
+  float: right;
+  margin-right: 5%;
+}
+
+.client-right h4 {
+  padding-bottom: 5px;
+}
+
+.create-right {
+  float: right;
+}
+
+.client-left {
+  float: left;
+}
+
+#client-create {
+  background-color: #424A5D;
+  padding: 10px;
+  color: #E4AD28; 
+  position: fixed;
+  right: 5%;
+  top: 80px;
+}
+
+#client-create:hover, .edit-client:hover, .submit-client:hover {
+  background-color: #E4AD28;
+  color: #424A5D;
+}
+
+.edit-client {
+  background-color: #424A5D;
+  padding: 10px;
+  color: #E4AD28;
+}
+
+.submit-client {
+  border: 1px solid #efefef;
+  background-color: #424A5D;
+  padding: 10px 30px;
+  margin-top: 10px;
+  color: #E4AD28;
+}
+.client-details {
+  margin: 20px auto;
+  width: 60%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
+}
+
+.client-info {
+  flex: 6 2;
+}
+
+.client-info-create > input[type=hidden], input[type=text], select, label, option{
+  width: 100%;
+  margin: 5px;
+}
+
+.client-info-create > select {
+  margin: 5px;
+}
+
+.client-info-create {
+  float: left;
+  width: 65%;
+}
+
+.client-key-contact-create > input[type=text]  {
+  width: 100%;
+}
+
+.client-key-contact-create {
+  float: right;
+  width: 30%;
+}
+/*==============================
+ End Client
 ================================*/
 
 /*==============================
