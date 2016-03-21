@@ -49,7 +49,7 @@ describe('Attempt to get /clients/edit/1 with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var clientInputs = $('.create-left input');
+          var clientInputs = $('.client-info-create input');
           expect(clientInputs['0'].attribs.value).to.equal('1');
           
           server.stop(done);
