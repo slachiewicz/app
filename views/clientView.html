@@ -1,35 +1,54 @@
+{{>navigation_on_client}}
+
+<div class="clients-wrapper">
+  <div class="client-details">
+    <div class="client-info">
+      <p>Client name: {{client.name}}</p>
+      <p>Client since: {{client.createdAt}}</p>
+      {{#if client.possibleNames}}
+        <p>Alternative names: {{client.possibleNames}}</p>
+      {{/if}}
+      <p>Active Roles: {{client.jobs.length}}</p>
+      
+      <p>Account Manager:  
+      {{#each owners}}
+        {{this.name}}
+      {{/each}}
+      </p>
+
+      <p>Terms: {{client.terms}}</p>
+
+      {{#if client.active}}
+        <p>Active </p>
+      {{else}}
+        <p>Inactive </p>
+      {{/if}}
 
 
-  <p>{{client.id}}</p>
-  <p>{{client.createdAt}}</p>
-  <p>{{client.name}}</p>
-  <p>{{client.possibleNames}}</p>
-  
-  <p>Account Manager</p>
-  
-  {{#each owners}}
-    <p>{{this.name}}</p>
+      <br/>
+      <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
+    </div>
+
+    <div class="client-key-contact">
+      <p>Key Contact: {{client.contactName}}</p>
+      <p>Email: {{client.contactEmail}}</p>
+      <p>Phone: {{client.contactPhone}}</p>
+    </div>
+
+  </div>
+
+
+  {{#each client.jobs}}
+    {{>job}} 
   {{/each}}
+  
+
+</div>
+
+ 
 
 
-  <p>{{client.terms}}</p>
 
 
 
-  <p>{{client.contactName}}</p>
-  <p>{{client.contactEmail}}</p>
-  <p>{{client.contactPhone}}</p>
 
-
-{{#if client.active}}
-  <p>Active </p>
-{{else}}
-  <p>Inactive </p>
-{{/if}}
-
-{{#each client.jobs}}
-  <a href="/jobs/{{id}}">{{title}}</a>
-{{/each}}
-
-<br/>
-<a href="/clients/edit/{{client.id}}">Edit</a>

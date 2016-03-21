@@ -718,7 +718,9 @@ circle {
 /*==============================
  Client
 ================================*/
-
+.clients-wrapper {
+  margin-top: 80px;
+}
 
 .client-right {
   float: right;
@@ -742,27 +744,33 @@ circle {
   padding: 10px;
   color: #E4AD28; 
   position: fixed;
-  left: 5%;
-  top: 10px;
+  right: 5%;
+  top: 80px;
 }
 
-#client-create:hover {
+#client-create:hover, .edit-client:hover {
   background-color: #E4AD28;
   color: #424A5D;
 }
 
-.create-left > *,.create-right > *{
-  width: 100%;
+.edit-client {
+  background-color: #424A5D;
+  padding: 10px;
+  color: #E4AD28;
 }
 
-.create-left {
-  width: 50%;
+.client-details {
+
+  margin: 20px auto;
+  width: 60%;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: row;
 }
 
-.create-right {
-  width: 50%;
+.client-info {
+  flex: 6 2;
 }
-
 
 /*==============================
  End Client

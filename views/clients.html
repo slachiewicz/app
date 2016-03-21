@@ -1,7 +1,12 @@
-<a id="client-create" href="/clients/create"><i class="fa fa-plus"> Create</i></a>
+{{>navigation_on_client}}
 
-{{#each clients}}
-  {{>client}}
-{{/each}}
+<div class="clients-wrapper">
+  <a id="client-create" href="/clients/create"><i class="fa fa-plus"> New Client</i></a>
+
+  {{#each clients}}
+    {{>client}}
+  {{/each}}
+
+</div>
   
 
