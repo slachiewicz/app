@@ -9,13 +9,11 @@
         <p>Alternative names: {{client.possibleNames}}</p>
       {{/if}}
       <p>Active Roles: {{client.jobs.length}}</p>
-      
-      <p>Account Manager:  
+         
       {{#each owners}}
-        {{this.name}}
+        <p>Account Manager: {{this.name}}</p>
       {{/each}}
-      </p>
-
+    
       <p>Terms: {{client.terms}}</p>
 
       {{#if client.active}}
@@ -24,8 +22,8 @@
         <p>Inactive </p>
       {{/if}}
 
-
       <br/>
+
       <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
     </div>
 
@@ -37,12 +35,10 @@
 
   </div>
 
-
   {{#each client.jobs}}
     {{>job}} 
   {{/each}}
   
-
 </div>
 
  
