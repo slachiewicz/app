@@ -1,9 +1,10 @@
-<aside>
-  <a href="/jobs/create">Create</a>
-</aside>
+{{>navigation}}
 
-<h1>List of all the jobs</h1>
+<div class="clients-job-wrapper">
+  <a id="create-icon" href="/jobs/create"><i class="fa fa-plus"> New Job</i></a>
 
-{{#each result}}
-<p>{{title}}</p>
-{{/each}}
+  {{#each result}}
+    {{>job}}
+  {{/each}}
+
+</div>

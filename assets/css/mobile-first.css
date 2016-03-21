@@ -85,7 +85,7 @@ header {
   width: 180px;
 }
 
-.search-form > a > i.fa-star, .search-form > a > i.fa-user,.search-form > a > i.fa-suitcase {
+.search-form > a > i.fa-star, .search-form > a > i.fa-user {
   margin-top: 0px !important;
 }
 
@@ -224,7 +224,7 @@ header {
   float: right;
 }
 
-i.fa-star, i.fa-user, i.fa-suitcase {
+i.fa-star, i.fa-user {
   color: #E4AD28;
   border: none;
   float: right;
@@ -718,16 +718,16 @@ circle {
 /*==============================
  Client
 ================================*/
-.clients-wrapper {
+.clients-job-wrapper {
   margin-top: 80px;
 }
 
-.client-right {
+.client-job-right {
   float: right;
   margin-right: 5%;
 }
 
-.client-right h4 {
+.client-job-right h4 {
   padding-bottom: 5px;
 }
 
@@ -735,11 +735,11 @@ circle {
   float: right;
 }
 
-.client-left {
+.client-job-left {
   float: left;
 }
 
-#client-create {
+#create-icon {
   background-color: #424A5D;
   padding: 10px;
   color: #E4AD28; 
@@ -748,7 +748,7 @@ circle {
   top: 80px;
 }
 
-#client-create:hover, .edit-client:hover, .submit-client:hover {
+#create-icon:hover, .edit-client:hover, .submit-client:hover {
   background-color: #E4AD28;
   color: #424A5D;
 }
@@ -766,7 +766,7 @@ circle {
   margin-top: 10px;
   color: #E4AD28;
 }
-.client-details {
+.client-job-details {
   margin: 20px auto;
   width: 60%;
   display: -webkit-flex;
@@ -774,7 +774,7 @@ circle {
   flex-direction: row;
 }
 
-.client-info {
+.client-job-info {
   flex: 6 2;
 }
 
@@ -802,6 +802,30 @@ circle {
 }
 /*==============================
  End Client
+================================*/
+
+/*==============================
+ Jobs
+================================*/
+
+#corner-initials {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 3px 6px;
+  color: #fff;
+  background-color: #424A5D;
+}
+
+.job-right {
+  margin-right: 20%;
+}
+.job-image {
+  width: 300px;
+}
+
+/*==============================
+ End Jobs
 ================================*/
 
 /*==============================

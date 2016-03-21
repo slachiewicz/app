@@ -1,3 +1,27 @@
-<div class="job-detail">
-  <p class="job-title">{{job.title}}</p>
+{{>navigation}}
+
+<div class="clients-job-wrapper">
+
+   <div class="client-job-details">
+    <div class="client-job-info">
+      <p class="job-title">Job Title: {{job.title}}</p>
+      <p>Job Sub Title: {{job.title}}</p>
+      <p>Job Description: {{job.description}}</p>
+      <p>City: {{job.address.city}}</p>
+      <p>Custom Text1: {{job.customText1}}</p>
+      <p>Custom Block Text: {{job.customTextBlock1}}</p>
+      <p>Custom Block Text: {{job.customTextBlock2}}</p>
+      <p>Image1:<img class="job-image" src="{{job.customText6}}"></p>
+      <p>Image2:<img class="job-image" src="{{job.customText8}}"></p>
+      <p>Image3:<img class="job-image" src="{{job.customText11}}"></p>
+      
+    </div>
+
+    <div class="client-key-contact">
+      <p>Contract: {{job.employmentType}}</p>
+      <p>Salary: {{job.salary}}</p>
+      <p>Pay Rate: {{job.payRate}}</p>
+    </div>
+  </div>
+
 </div>

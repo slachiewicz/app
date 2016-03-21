@@ -1,11 +1,24 @@
-<div class="list-wrapper client-wrapper">
+<div class="list-wrapper client-job-wrapper">
   <article class="main">
     <div class="candidate-box">
       <div class="headline">
         <a href="/jobs/{{id}}">
-        <ul>
-          <li>{{title}}</li>
-        </ul>
+        <div class="client-job-left">
+          <ul> 
+            <li><span>Job title:</span> {{title}}</li>
+            <li><span>Country:</span> United Kingdom</li>
+            <li><span>City:</span> {{address.city}}</li>
+            <li><span>Required Skills:</span> {{skillList}}</li>
+          </ul>
+        </div>
+        <div class="client-job-right job-right">
+          <ul>
+            <li><span>Contract:</span> {{employmentType}}</li>
+            <li><span>Salary:</span> {{salary}} </li>
+            <li><span>Pay rate:</span> {{payRate}} </li>              
+          </ul>
+          </div>
+          <span id="corner-initials">{{owner.firstName}}</span>  
         </a>
       </div>
     </div>
