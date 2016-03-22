@@ -753,6 +753,18 @@ circle {
   width: 60%;
 }
 
+.job-clear span {
+  color: black;
+}
+
+.job-clear ul {
+  list-style-type: square;
+}
+
+.job-clear h2 {
+  font-weight: bold;
+}
+
 #create-icon {
   background-color: #424A5D;
   padding: 10px;
