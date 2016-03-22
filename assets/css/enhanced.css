@@ -276,6 +276,10 @@ span.close > i.fa-times {
     margin-left: 74px;
   }
 
+  .vacancy-wrapper form > div {
+    width: 80%;
+  }
+
 }
 
 @media (max-width: 1225px) {
