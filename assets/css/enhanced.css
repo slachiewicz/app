@@ -280,6 +280,14 @@ span.close > i.fa-times {
     width: 80%;
   }
 
+  .client-job-wrapper {
+    width: 80%;
+  }
+
+  .job-right {
+    margin-right: 10%;
+  }
+
 }
 
 @media (max-width: 1225px) {
