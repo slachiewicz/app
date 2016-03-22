@@ -4,16 +4,10 @@
   <div class="client-job-details">
     <div class="client-job-info">
       <p>Client name: {{client.name}}</p>
+      <p>Possible names: {{client.possibleNames}}</p>
       <p>Client since: {{client.startFrom}}</p>
-      {{#if client.possibleNames}}
-        <p>Alternative names: {{client.possibleNames}}</p>
-      {{/if}}
       <p>Active Roles: {{client.jobs.length}}</p>
-         
-      {{#each owners}}
-        <p>Account Manager: {{this.name}}</p>
-      {{/each}}
-    
+      <p>Account Manager: {{client.accountManagerName}}</p>
       <p>Terms: {{client.terms}}</p>
 
       {{#if client.active}}
@@ -36,7 +30,7 @@
   </div>
 
   {{#each client.jobs}}
-    {{>job}} 
+    {{>job}}
   {{/each}}
   
 </div>

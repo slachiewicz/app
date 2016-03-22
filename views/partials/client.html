@@ -3,17 +3,18 @@
     <div class="candidate-box">
       <div class="headline">
         <a href="/clients/{{this.id}}">
-        <div class="client-job-left">
-          <ul> 
+        <div class="client-left">
+          <ul>
             <li><span>Company name:</span> {{this.name}}</li>
             <li><span>Possible Names:</span> {{this.possibleNames}}</li>
-            <li><span>Terms: </span>{{this.terms}} %</li>
-            <li><span>Account Manager: </span>{{this.accountManagerName}}</li>
             <li><span>Client since: </span>{{this.startFrom}}</li>
+            <li><span>Active Roles: {{this.jobs.length}}</li>
+            <li><span>Account Manager: </span>{{this.accountManagerName}}</li>
+            <li><span>Terms: </span>{{this.terms}}</li>
             <li><span>Active:</span> {{this.active}}</li>
           </ul>
         </div>
-        <div class="client-job-right">
+        <div class="client-right">
           <ul>
             <h4>Key contact</h4>
             <li><span>Name: </span>{{this.contactName}}</li>
