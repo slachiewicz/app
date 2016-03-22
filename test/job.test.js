@@ -9,27 +9,6 @@ var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
 
-
-describe('attempt to access /jobs/list without authorization', function () {
-
-  it('redirects to the login page', function (done) {
-
-    Server.init(0, function (err, server) {
-   
-      var options = {
-        method: "GET",
-        url: "/jobs/list"
-      };
-
-      server.inject(options, function (res) {
-        expect(err).to.not.exist();
-        expect(res.statusCode).to.equal(302)
-        server.stop(done);
-      });
-    });
-  });
-});
-
 describe('Attempt to get /jobs/list when authenticated with header accepts text/html', function () {
 
   it('return list of jobs with status code 200', function (done) {
@@ -45,12 +24,12 @@ describe('Attempt to get /jobs/list when authenticated with header accepts text/
         headers: { cookie: "token=" + token, accept: 'text/html'},
         credentials: { id: "12", "name": "Simon", valid: true}
       };
-     
+
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(200);
         server.stop(done);
       });
-    
+
     });
   });
 });
@@ -70,14 +49,14 @@ describe('Attempt to get /jobs/list when authenticated and header accepts applic
         headers: { cookie: "token=" + token, accept: 'application/json'},
         credentials: { id: "12", "name": "Simon", valid: true}
       };
- 
+
       server.inject(options, function (res) {
         var payload = JSON.parse(res.payload);
         expect(payload.length).to.equal(1);
         expect(payload[0].title).to.equal('Node.js Developer');
         server.stop(done);
       });
-    
+
     });
   });
 });
@@ -87,7 +66,7 @@ describe('attempt to access /jobs/create without authorization', function () {
   it('redirects to the login page', function (done) {
 
     Server.init(0, function (err, server) {
-   
+
       var options = {
         method: "GET",
         url: "/jobs/create"
@@ -117,12 +96,12 @@ describe('Attempt to get /jobs/create when authenticated', function () {
         headers: { cookie: "token=" + token},
         credentials: { id: "12", "name": "Simon", valid: true}
       };
-     
+
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(200);
         server.stop(done);
       });
-    
+
     });
   });
 });
@@ -132,7 +111,7 @@ describe('attempt to create a job without authorization', function () {
   it('redirects to the login page', function (done) {
 
     Server.init(0, function (err, server) {
-   
+
       var options = {
         method: "POST",
         url: "/jobs/create"
@@ -170,12 +149,12 @@ describe('Attempt to create a job /jobs/create when authenticated with wrong val
         payload: job
 
       };
-     
+
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(302);
         server.stop(done);
       });
-    
+
     });
   });
 });
@@ -194,7 +173,7 @@ describe('Attempt to create a job /jobs/create when authenticated with wrong val
 //         employmentType: 'Permanent',
 //         owner: 'Mario Bros',
 //         client: 'Something',
-//         customText1: 'Junior',     
+//         customText1: 'Junior',
 //         customText2: 'REquired',
 //         customText3: 'Required',
 //         customTextBlock1: '',
@@ -223,7 +202,7 @@ describe('Attempt to create a job /jobs/create when authenticated with wrong val
 
 //       server.inject(options, function (res) {
 //        console.log(res.payload);
-       
+
 //         // expect(res.statusCode).to.equal(200);
 //         // expect(res.payload.title).to.equal('Node.js Developer');
 //         // expect(res.payload.employmentType).to.equal('Permanent');
