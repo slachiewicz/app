@@ -792,6 +792,17 @@ circle {
   width: 65%;
 }
 
+.job-create-right {
+  float: right;
+  width: 45%;
+  margin-top: -4px;
+}
+
+.job-create-left {
+  float: left;
+  width: 50%;
+}
+
 .client-key-contact-create > input[type=text]  {
   width: 100%;
 }
@@ -800,6 +811,31 @@ circle {
   float: right;
   width: 30%;
 }
+
+.job-create-clear {
+  clear:both;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.job-create-clear textarea {
+  width: 100%;
+}
+
+.job-create-clear input {
+  width: 100% !important;
+}
+
+.vacancy-wrapper hr {
+  margin-top: 20px;
+}
+
+.vacancy-wrapper .description {
+  color: #818182;
+  font-weight: bold;
+  padding: 5px 0 10px 0;
+}
+
 /*==============================
  End Client
 ================================*/
@@ -818,7 +854,7 @@ circle {
 }
 
 .job-right {
-  margin-right: 20%;
+  margin-right: 10%;
 }
 
 .job-image {
@@ -1027,6 +1063,7 @@ Vacancy
 
 .vacancy-wrapper form div > p {
   display: flex;
+  display: -ms-flexbox;
 }
 
 .vacancy-wrapper form input, .vacancy-wrapper form select {
