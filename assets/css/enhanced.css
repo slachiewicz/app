@@ -281,11 +281,15 @@ span.close > i.fa-times {
   }
 
   .client-job-wrapper {
-    width: 80%;
+    width: 78%;
   }
 
   .job-right {
     margin-right: 10%;
+  }
+
+  #create-icon {
+    right: 1%;
   }
 
 }

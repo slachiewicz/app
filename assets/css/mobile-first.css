@@ -731,12 +731,26 @@ circle {
   padding-bottom: 5px;
 }
 
-.create-right {
+.create-right, .job-contact {
   float: right;
 }
 
-.client-job-left {
+.client-job-left, .job-info {
   float: left;
+}
+
+.job-info {
+  width: 75%;
+  margin-right: 30px;
+}
+
+.job-contact {
+  width: 20%;
+}
+
+.job-clear {
+  margin: 0 auto;
+  width: 60%;
 }
 
 #create-icon {
@@ -830,7 +844,7 @@ circle {
   margin-top: 20px;
 }
 
-.vacancy-wrapper .description {
+.vacancy-wrapper .description, .client-job-details .description, .job-clear .description{
   color: #818182;
   font-weight: bold;
   padding: 5px 0 10px 0;
@@ -859,6 +873,11 @@ circle {
 
 .job-image {
   width: 300px;
+  height: 200px;
+}
+
+.job-img {
+  display:inline;
 }
 
 .submit-job {
