@@ -3,25 +3,73 @@
 <div class="clients-job-wrapper">
 
    <div class="client-job-details">
-    <div class="client-job-info">
+    <div class="job-info">
       <p class="job-title">Job Title: {{job.title}}</p>
       <p>Job Sub Title: {{job.title}}</p>
-      <p>Job Description: {{job.description}}</p>
+
+      <hr/>
+      <p class="description">Job Location</p>
       <p>City: {{job.address.city}}</p>
-      <p>Custom Text1: {{job.customText1}}</p>
-      <p>Custom Block Text: {{job.customTextBlock1}}</p>
+      <p>Country: United Kingdom</p>
+      <p>Region: Add region</p>
+
+      <hr/>
+      <p class="description">Category</p>
+
+      <p>Add category</p>
+
+      <hr/>
+      <p class="description">Skills/ Experience</p>
+
+      <p>Required skills: {{job.skillList}}</p>
+      <p>Seniority: {{job.customText1}}</p>
+      <p>Sector: {{job.customText1}}</p>
+    
+      <hr/>
+      <p class="description">Extra information: </p>
+    
       <p>Custom Block Text: {{job.customTextBlock2}}</p>
-      <p>Image1:<img class="job-image" src="{{job.customText6}}"></p>
-      <p>Image2:<img class="job-image" src="{{job.customText8}}"></p>
-      <p>Image3:<img class="job-image" src="{{job.customText11}}"></p>
-      
+      <p>Custom Text 3: {{job.customText3}}</p>
+          
     </div>
 
-    <div class="client-key-contact">
+    <div class="job-contact">
+      <p>Client name: </p>
+      <p>Owner: {{job.owner.firstName}}</p>
       <p>Contract: {{job.employmentType}}</p>
+
+      <hr/>
+      <p class="description">Salary: </p>
+
       <p>Salary: {{job.salary}}</p>
       <p>Pay Rate: {{job.payRate}}</p>
+      <p>Currency: {{job.customText12}}</p>
+
+      <hr/>
+      <p class="description">Dates: </p>
+
+      <p>Start Date: {{job.startDate}}</p>
+  
     </div>
+    
+  </div>
+
+  <div class="job-clear">
+
+    <hr/>
+    <div>
+      <p class="description">Images: </p>
+
+      <p class="job-img">Image1:<img class="job-image" src="{{job.customText6}}"></p>
+      <p class="job-img">Image2:<img class="job-image" src="{{job.customText8}}"></p>
+      <p class="job-img">Image3:<img class="job-image" src="{{job.customText11}}"></p> 
+    </div>
+    <hr />
+      <p class="description">Job description: </p>
+
+      <p>Job Intro: {{job.customTextBlock1}}</p>
+      <br/>
+      <p>Job Description: {{job.description}}</p>
   </div>
 
 </div>
