@@ -281,7 +281,7 @@ span.close > i.fa-times {
   }
 
   .client-job-wrapper {
-    width: 78%;
+    width: 75%;
   }
 
   .job-right {
@@ -290,6 +290,10 @@ span.close > i.fa-times {
 
   #create-icon {
     right: 1%;
+  }
+
+  .client-job-details, .job-clear {
+    width: 80%;
   }
 
 }
