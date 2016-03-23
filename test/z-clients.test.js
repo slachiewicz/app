@@ -202,10 +202,11 @@ describe('save/update a client: /clients/save with authorization and possibleNam
         expect(res.statusCode).to.equal(302);
 
         //wait for ES to index the new value
-        setInterval(function() {
-        //check that the possibleNames is still an empty array
+        setTimeout(function() {
+
           getClient(0,function(err, client) {
 
+            //check that the possibleNames is still an empty array
             expect(client.possibleNames.length).to.equal(0);
             server.stop(done);
           })
