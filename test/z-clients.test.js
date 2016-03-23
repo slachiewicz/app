@@ -49,8 +49,11 @@ describe('Attempt to get /clients/list with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var clients = $('.client-left ul');
+          var clients = $('.client-job-left ul');
           expect(clients.length).to.equal(2);
+          var images = $('img');
+          expect(images.length).to.equal(2);
+          expect(images[0].attribs.src).to.equal('/assets/img/website-candidate.png');
           server.stop(done);
         });
       });
@@ -181,6 +184,7 @@ describe('save/update a client: /clients/save with authorization', function () {
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {
         name: 'FAC',
+        logoUrl: '/assets/img/website-candidate.png',
         possibleNames: 'Founders And Coders, Founders & Coders',
         accountManager: 2,
         terms: 18,
@@ -217,6 +221,7 @@ describe('create a client: /clients/save with authorization', function () {
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {
         name: 'FAC',
+        logoUrl: '/assets/img/website-candidate.png',
         possibleNames: 'Founders And Coders, Founders & Coders',
         accountManager: 2,
         terms: 18,

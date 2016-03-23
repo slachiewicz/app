@@ -779,6 +779,42 @@ circle {
   font-weight: bold;
 }
 
+.client-job-left {
+  width: 60%;
+}
+
+.client-job-info > img, .client-job-left > ul >img {
+  float: left;
+  width: 140px;
+  margin-right: 10px;
+}
+
+.job-info {
+  width: 75%;
+  margin-right: 30px;
+}
+
+.job-contact {
+  width: 20%;
+}
+
+.job-clear {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.job-clear span {
+  color: black;
+}
+
+.job-clear ul {
+  list-style-type: square;
+}
+
+.job-clear h2 {
+  font-weight: bold;
+}
+
 #create-icon {
   background-color: #424A5D;
   padding: 10px;
@@ -887,6 +923,10 @@ circle {
   color: #fff !important;
   padding: 2px 10px;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> client-logo
 /*==============================
  End Client
 ================================*/
