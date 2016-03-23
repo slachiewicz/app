@@ -49,7 +49,7 @@ describe('Attempt to get /clients/list with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var clients = $('.client-left ul');
+          var clients = $('.client-job-left ul');
           expect(clients.length).to.equal(2);
           var images = $('img');
           expect(images.length).to.equal(2);
