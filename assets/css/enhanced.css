@@ -293,9 +293,12 @@ span.close > i.fa-times {
   }
 
   .client-job-details, .job-clear {
-    width: 80%;
+    width: 75%;
   }
 
+  .client-job-info > img, .client-job-left > ul >img {
+    width: 145px;
+  }
 }
 
 @media (max-width: 1225px) {
