@@ -718,28 +718,68 @@ circle {
 /*==============================
  Client
 ================================*/
-.clients-wrapper {
+.clients-job-wrapper {
   margin-top: 80px;
 }
 
-.client-right {
+.clients-job-wrapper span {
+  color: #4E4D4A;
+}
+
+.client-job-contact-content {
   float: right;
   margin-right: 5%;
 }
 
-.client-right h4 {
+.client-job-contact-content h4 {
   padding-bottom: 5px;
 }
 
-.create-right {
+.create-right, .job-contact {
   float: right;
 }
 
-.client-left {
+.client-job-main-content, .job-info {
   float: left;
 }
 
-#client-create {
+.client-job-main-content {
+  width: 60%;
+}
+
+.client-job-info > img, .client-job-main-content > ul >img {
+  float: left;
+  width: 140px;
+  margin-right: 10px;
+}
+
+.job-info {
+  width: 75%;
+  margin-right: 30px;
+}
+
+.job-contact {
+  width: 20%;
+}
+
+.job-clear {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.job-clear span {
+  color: black;
+}
+
+.job-clear ul {
+  list-style-type: square;
+}
+
+.job-clear h2 {
+  font-weight: bold;
+}
+
+.create-icon {
   background-color: #424A5D;
   padding: 10px;
   color: #E4AD28; 
@@ -748,14 +788,14 @@ circle {
   top: 80px;
 }
 
-#client-create:hover, .edit-client:hover, .submit-client:hover {
+.create-icon:hover, .edit-client:hover, .submit-client:hover {
   background-color: #E4AD28;
   color: #424A5D;
 }
 
 .edit-client {
   background-color: #424A5D;
-  padding: 10px;
+  padding: 10px 70px;
   color: #E4AD28;
 }
 
@@ -766,7 +806,7 @@ circle {
   margin-top: 10px;
   color: #E4AD28;
 }
-.client-details {
+.client-job-details {
   margin: 20px auto;
   width: 60%;
   display: -webkit-flex;
@@ -774,7 +814,7 @@ circle {
   flex-direction: row;
 }
 
-.client-info {
+.client-job-info {
   flex: 6 2;
 }
 
@@ -792,6 +832,17 @@ circle {
   width: 65%;
 }
 
+.job-create-right {
+  float: right;
+  width: 45%;
+  margin-top: -4px;
+}
+
+.job-create-left {
+  float: left;
+  width: 50%;
+}
+
 .client-key-contact-create > input[type=text]  {
   width: 100%;
 }
@@ -800,6 +851,43 @@ circle {
   float: right;
   width: 30%;
 }
+
+.job-create-clear {
+  clear:both;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.job-create-clear textarea {
+  width: 100%;
+}
+
+.job-create-clear input {
+  width: 100% !important;
+}
+
+.vacancy-wrapper hr {
+  margin-top: 20px;
+}
+
+.vacancy-wrapper .description, .client-job-details .description, .job-clear .description{
+  color: #818182;
+  font-weight: bold;
+  padding: 5px 0 10px 0;
+}
+
+.active-span {
+  background-color: #B2C462;
+  color: #fff !important;
+  padding: 2px 10px;
+}
+
+.inactive-span {
+  background-color: #C77E7E;
+  color: #fff !important;
+  padding: 2px 10px;
+}
+
 /*==============================
  End Client
 ================================*/
