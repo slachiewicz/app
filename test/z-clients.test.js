@@ -3,6 +3,7 @@ var JWT = require('jsonwebtoken');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
+var getClient = require('../lib/database-helpers/elasticsearch/get_clients');
 
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
@@ -163,6 +164,52 @@ describe('Attempt to save/update a client: /clients/0 without authorization', fu
         expect(res.statusCode).to.equal(302);
 
         server.stop(done);
+      });
+    });
+  });
+});
+
+
+describe('save/update a client: /clients/save with authorization and possibleNames empty', function () {
+
+  it('redirect to clients/list after updating client', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "POST",
+      url: "/clients/save",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {
+        name: 'FAC',
+        possibleNames: '',
+        accountManager: 2,
+        terms: 18,
+        contactName: 'Bob',
+        contactEmail: 'bob@gmail.com',
+        contactPhone: '000001',
+        createdAt: '1457704721910',
+        active: 'off',
+        id: '0'
+      }
+    };
+
+    Server.init(0, function (err, server) {
+
+      server.inject(options , function (res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(302);
+
+        //wait for ES to index the new value
+        setInterval(function() {
+        //check that the possibleNames is still an empty array
+          getClient(0,function(err, client) {
+
+            expect(client.possibleNames.length).to.equal(0);
+            server.stop(done);
+          })
+        }, 2000);
       });
     });
   });
