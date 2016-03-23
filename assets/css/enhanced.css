@@ -263,14 +263,9 @@ span.close > i.fa-times {
     width: 200px;
   }
 
-
 }
 
 @media (max-width: 1440px) {
-
-  /*.pie {
-    margin: -100px 0px 0px 110px;
-  }*/
 
   .curly-left {
     margin-left: 74px;
@@ -280,7 +275,7 @@ span.close > i.fa-times {
     width: 75%;
   }
 
-  #create-icon {
+  .create-icon {
     right: 1%;
   }
 
@@ -288,7 +283,7 @@ span.close > i.fa-times {
     width: 75%;
   }
 
-  .client-job-info > img, .client-job-left > ul >img {
+  .client-job-info > img, .client-job-main-content > ul >img {
     width: 145px;
   }
 
