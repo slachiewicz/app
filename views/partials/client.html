@@ -1,0 +1,29 @@
+<div class="list-wrapper client-wrapper">
+  <article class="main">
+    <div class="candidate-box">
+      <div class="headline">
+        <a href="/clients/{{this.id}}">
+        <div class="client-left">
+          <ul>
+            <li><span>Company name:</span> {{this.name}}</li>
+            <li><span>Possible Names:</span> {{this.possibleNames}}</li>
+            <li><span>Client since: </span>{{this.startFrom}}</li>
+            <li><span>Active Roles: {{this.jobs.length}}</li>
+            <li><span>Account Manager: </span>{{this.accountManagerName}}</li>
+            <li><span>Terms: </span>{{this.terms}}</li>
+            <li><span>Active:</span> {{this.active}}</li>
+          </ul>
+        </div>
+        <div class="client-right">
+          <ul>
+            <h4>Key contact</h4>
+            <li><span>Name: </span>{{this.contactName}}</li>
+            <li><span>Email: </span>{{this.contactEmail}}</li>
+            <li><span>Phone: </span>{{this.contactPhone}}</li>
+            </ul>
+          </div>
+        </a>
+      </div>
+    </div>
+  </article>
+</div>

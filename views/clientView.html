@@ -1,0 +1,36 @@
+{{>navigation}}
+
+<div class="clients-wrapper">
+  <div class="client-details">
+    <div class="client-info">
+      <p>Client name: {{client.name}}</p>
+      <p>Possible names: {{client.possibleNames}}</p>
+      <p>Client since: {{client.startFrom}}</p>
+      <p>Active Roles: {{client.jobs.length}}</p>
+      <p>Account Manager: {{client.accountManagerName}}</p>
+      <p>Terms: {{client.terms}}</p>
+
+      {{#if client.active}}
+        <p>Active </p>
+      {{else}}
+        <p>Inactive </p>
+      {{/if}}
+
+      <br/>
+
+      <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
+    </div>
+
+    <div class="client-key-contact">
+      <p>Key Contact: {{client.contactName}}</p>
+      <p>Email: {{client.contactEmail}}</p>
+      <p>Phone: {{client.contactPhone}}</p>
+    </div>
+
+  </div>
+
+  {{#each client.jobs}}
+    {{>job}}
+  {{/each}}
+
+</div>
