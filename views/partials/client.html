@@ -1,12 +1,16 @@
-<div class="list-wrapper client-wrapper">
+<div class="list-wrapper client-job-wrapper">
   <article class="main">
     <div class="candidate-box">
       <div class="headline">
         <a href="/clients/{{this.id}}">
-        <div class="client-left">
+        <div class="client-job-left">
           <ul>
+            {{#if this.logoUrl}}
+              <img src="{{this.logoUrl}}" alt="logo image" />
+            {{else}}
+              <img src="/assets/img/website-candidate.png"/>
+            {{/if}}
             <li><span>Company name:</span> {{this.name}}</li>
-            <li><img src="{{this.logoUrl}}" alt="logo image" /></li>
             <li><span>Possible Names:</span> {{this.possibleNames}}</li>
             <li><span>Client since: </span>{{this.startFrom}}</li>
             <li><span>Active Roles: {{this.jobs.length}}</li>
@@ -15,7 +19,7 @@
             <li><span>Active:</span> {{this.active}}</li>
           </ul>
         </div>
-        <div class="client-right">
+        <div class="client-job-right">
           <ul>
             <h4>Key contact</h4>
             <li><span>Name: </span>{{this.contactName}}</li>

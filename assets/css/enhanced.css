@@ -24,7 +24,7 @@
   height: 90%;
 }
 
-.client-wrapper {
+.client-job-wrapper {
   width: 60%;
 }
 
@@ -274,6 +274,22 @@ span.close > i.fa-times {
 
   .curly-left {
     margin-left: 74px;
+  }
+
+  .client-job-wrapper {
+    width: 75%;
+  }
+
+  #create-icon {
+    right: 1%;
+  }
+
+  .client-job-details, .job-clear {
+    width: 75%;
+  }
+
+  .client-job-info > img, .client-job-left > ul >img {
+    width: 145px;
   }
 
 }

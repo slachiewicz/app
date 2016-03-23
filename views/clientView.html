@@ -1,31 +1,39 @@
 {{>navigation}}
 
-<div class="clients-wrapper">
-  <div class="client-details">
-    <div class="client-info">
-      <p>Client name: {{client.name}}</p>
-      <img src="{{client.logoUrl}}" alt="logo image" />
-      <p>Possible names: {{client.possibleNames}}</p>
-      <p>Client since: {{client.startFrom}}</p>
-      <p>Active Roles: {{client.jobs.length}}</p>
-      <p>Account Manager: {{client.accountManagerName}}</p>
-      <p>Terms: {{client.terms}}</p>
+<div class="clients-job-wrapper">
+  <div class="client-job-details">
+    <div class="client-job-info">
+
+      {{#if client.logoUrl}}
+        <img src="{{client.logoUrl}}" alt="logo image"/>
+      {{else}}
+        <img src="/assets/img/website-candidate.png"/>
+      {{/if}}
+
+      <p><span>Client name:</span> {{client.name}}</p>
+      <p><span>Possible names:</span> {{client.possibleNames}}</p>
+      <p><span>Client since:</span> {{client.startFrom}}</p>
+      <p><span>Active Roles:</span> {{client.jobs.length}}</p>
+      <p><span>Account Manager:</span> {{client.accountManagerName}}</p>
+      <p><span>Terms:</span> {{client.terms}} %</p>
 
       {{#if client.active}}
-        <p>Active </p>
+        <p><span class="active-span">Active</span></p>
       {{else}}
-        <p>Inactive </p>
+        <p><span class="inactive-span">Inactive</span></p>
       {{/if}}
 
       <br/>
 
-      <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
     </div>
 
     <div class="client-key-contact">
-      <p>Key Contact: {{client.contactName}}</p>
-      <p>Email: {{client.contactEmail}}</p>
-      <p>Phone: {{client.contactPhone}}</p>
+      <p><span>Key Contact:</span> {{client.contactName}}</p>
+      <p><span>Email:</span> {{client.contactEmail}}</p>
+      <p><span>Phone:</span> {{client.contactPhone}}</p>
+      <br/>
+      <br/>
+      <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
     </div>
 
   </div>
