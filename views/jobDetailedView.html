@@ -18,7 +18,11 @@
       <hr/>
       <p class="description">Category</p>
 
-      <p>Add category</p>
+      {{#each job.categories}}
+        <p>
+          {{this.name}}
+        </p>
+      {{/each}}
 
       <hr/>
       <p class="description">Skills/ Experience</p>
@@ -33,13 +37,13 @@
 
       <hr/>
       <p class="description">Extra information: </p>
-      
+
       <p>Image Text1: {{job.customText5}}</p>
 
       <p>Image Text 2: {{job.customText7}}</p>
 
       <p>Image Text3: {{job.customTextBlock2}}</p>
-    
+
     </div>
 
     <div class="job-contact">
