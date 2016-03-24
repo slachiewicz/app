@@ -5,57 +5,58 @@
   <div class="candidatesApplication">
   </div>
    <div class="client-job-details">
-    <div class="job-info">
-      <p class="job-title">Job Title: {{job.title}}</p>
-      <p>Job Sub Title: {{job.customText3}}</p>
-      <p>Contract: {{job.employmentType}}</p>
-      <hr/>
-      <p class="description">Job Location</p>
-      <p>City: {{job.address.city}}</p>
-      <p>Country: {{job.countryLabel}}</p>
-      <p>Region: {{job.customText2}}</p>
 
-      <hr/>
-      <p class="description">Category</p>
+    <div class="job-info">
+      <p class="job-title"><span>Job Title:</span> <strong>{{job.title}}</strong></p>
+      <p><span>Job Sub Title:</span> {{job.customText3}}</p>
+      <p><span>Contract:</span> {{job.employmentType}}</p>
 
       {{#each job.categories}}
         <p>
-          {{this.name}}
+          <span>Category:</span> {{this.name}}
         </p>
       {{/each}}
 
-      <hr/>
+     <br/>
       <p class="description">Skills/ Experience</p>
 
-      <p>Required skills: {{job.skillList}}</p>
-      <p>Seniority: {{job.customText1}}</p>
+      <p><span>Seniority:</span> {{job.customText1}}</p>
 
       {{#each job.sectors}}
-        <p>Sector: {{this.name}}</p>
+        <p><span>Sector: </span>{{this.name}}</p>
       {{/each}}
 
-      <hr/>
+       <p><span>Required skills:</span> {{skillsJobHelper job.skillList}}</p>
+
+     <br/>
       <p class="description">Extra information: </p>
 
-      <p>Image Text1: {{job.customText5}}</p>
+      <p><span>Image Text1: </span>{{job.customText5}}</p>
 
-      <p>Image Text 2: {{job.customText7}}</p>
+      <p><span>Image Text 2:</span> {{job.customText7}}</p>
 
-      <p>Image Text3: {{job.customTextBlock2}}</p>
+      <p><span>Image Text3:</span> {{job.customTextBlock2}}</p>
 
     </div>
 
     <div class="job-contact">
-      <p>Client name: {{job.client.name}}</p>
-      <p>Owner: {{job.owner.firstName}}</p>
 
+      <p class="description">Key contact: </p>
+      <p><span>Client name:</span> <strong>{{job.client.name}}</strong></p>
+      <p><span>Owner:</span> <strong>{{job.owner.firstName}}</strong></p>
 
-      <hr/>
+      <br/>
       <p class="description">Salary: </p>
 
-      <p>Salary: {{job.salary}}</p>
-      <p>Pay Rate: {{job.payRate}}</p>
-      <p>Currency: {{job.customText12}}</p>
+      <p><span>Salary:</span> {{job.salary}}</p>
+      <p><span>Pay Rate: </span>{{job.payRate}}</p>
+      <p><span>Currency: </span>{{job.customText12}}</p>
+
+    <br/>
+      <p class="description">Job Location</p>
+      <p><span>City: </span>{{job.address.city}}</p>
+      <p><span>Country:</span> {{job.countryLabel}}</p>
+      <p><span>Region:</span> {{job.customText2}}</p>
 
       <a class="create-icon edit" href="/jobs/edit/{{job.id}}">Edit</a>
 
@@ -65,7 +66,7 @@
 
   <div class="job-clear">
 
-    <hr/>
+ <!--    <hr/> -->
     <div>
       <p class="description">Images: </p>
 
@@ -77,16 +78,18 @@
 
     </div>
 
-    <hr />
+ <!--    <hr /> -->
+    <br/>
       <p class="description">Job details: </p>
 
-      <p>Job Intro: {{job.customTextBlock1}}</p>
-      <br/>
-      <p>Job Description:</p>
+      <p><span>Job Intro: </span>{{job.customTextBlock1}}</p>
+     
+      <p><span>Job Description:</span></p>
       {{{job.description}}}
 
     <div>
-    <hr/>
+  <!--   <hr/> -->
+  <br/>
     <p class="description">Candidates: </p>
   
      {{#each job.candidates}}

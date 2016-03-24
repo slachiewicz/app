@@ -722,7 +722,7 @@ circle {
   margin-top: 80px;
 }
 
-.clients-job-wrapper span {
+.clients-job-wrapper span , .job-clear span{
   color: #4E4D4A;
 }
 
@@ -741,6 +741,10 @@ circle {
 
 .client-job-main-content, .job-info {
   float: left;
+}
+
+.client-job-main-content ul > li {
+  color: #000;
 }
 
 .client-job-main-content ul > li, .client-job-contact-content ul > li{
@@ -775,9 +779,6 @@ circle {
   width: 60%;
 }
 
-.job-clear span {
-  color: black;
-}
 
 .job-clear ul {
   list-style-type: square;
@@ -836,6 +837,10 @@ circle {
 
 .client-job-details input{
   padding: 7px;
+}
+
+.client-job-details p, .job-clear p {
+  padding: 2px;
 }
 
 .client-job-info {
@@ -898,6 +903,10 @@ circle {
   color: #818182;
   font-weight: bold;
   padding: 5px 0 10px 0;
+}
+
+.job-info .description, .job-contact .description, .job-clear .description {
+  text-decoration: underline;
 }
 
 .active-span {
