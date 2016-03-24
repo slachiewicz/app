@@ -2,6 +2,14 @@
 
 <div class="clients-job-wrapper">
 
+  <div class="candidatesApplication">
+    {{#each job.candidates}}
+      <!-- can access the jobApplication, fullname and picture properties of the candidates object -->
+      <p>Name:{{this.fullname}}</p>
+      <a href="/candidate/{{id}}">link to the candidate: /candidate/{{id}}</a>
+    {{/each}}
+  </div>
+
    <div class="client-job-details">
     <div class="job-info">
       <p class="job-title">Job Title: {{job.title}}</p>
