@@ -3,6 +3,7 @@ var JWT = require('jsonwebtoken');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
+var getClient = require('../lib/database-helpers/elasticsearch/get_clients');
 
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
@@ -49,11 +50,11 @@ describe('Attempt to get /clients/list with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var clients = $('.client-job-left ul');
+          var clients = $('.client-job-main-content ul');
           expect(clients.length).to.equal(2);
           var images = $('img');
           expect(images.length).to.equal(2);
-          expect(images[0].attribs.src).to.equal('/assets/img/website-candidate.png');
+          expect(images[0].attribs.src).to.equal('/assets/img/square-global-m-logo.png');
           server.stop(done);
         });
       });
@@ -171,6 +172,53 @@ describe('Attempt to save/update a client: /clients/0 without authorization', fu
   });
 });
 
+
+describe('save/update a client: /clients/save with authorization and possibleNames empty', function () {
+
+  it('redirect to clients/list after updating client', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "POST",
+      url: "/clients/save",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true},
+      payload: {
+        name: 'FAC',
+        possibleNames: '',
+        accountManager: 2,
+        terms: 18,
+        contactName: 'Bob',
+        contactEmail: 'bob@gmail.com',
+        contactPhone: '000001',
+        createdAt: '1457704721910',
+        active: 'off',
+        id: '0'
+      }
+    };
+
+    Server.init(0, function (err, server) {
+
+      server.inject(options , function (res) {
+        expect(err).to.not.exist();
+        expect(res.statusCode).to.equal(302);
+
+        //wait for ES to index the new value
+        setTimeout(function() {
+
+          getClient(0,function(err, client) {
+
+            //check that the possibleNames is still an empty array
+            expect(client.possibleNames.length).to.equal(0);
+            server.stop(done);
+          })
+        }, 2000);
+      });
+    });
+  });
+});
+
 describe('save/update a client: /clients/save with authorization', function () {
 
   it('redirect to clients/list after updating client', function (done) {
@@ -184,7 +232,7 @@ describe('save/update a client: /clients/save with authorization', function () {
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {
         name: 'FAC',
-        logoUrl: '/assets/img/website-candidate.png',
+        logoUrl: '/assets/img/square-global-m-logo.png',
         possibleNames: 'Founders And Coders, Founders & Coders',
         accountManager: 2,
         terms: 18,
@@ -221,7 +269,7 @@ describe('create a client: /clients/save with authorization', function () {
       credentials: { id: "12", "name": "Simon", valid: true},
       payload: {
         name: 'FAC',
-        logoUrl: '/assets/img/website-candidate.png',
+        logoUrl: '/assets/img/square-global-m-logo.png',
         possibleNames: 'Founders And Coders, Founders & Coders',
         accountManager: 2,
         terms: 18,
