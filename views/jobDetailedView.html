@@ -29,7 +29,7 @@
        <p><span>Required skills:</span> {{skillsJobHelper job.skillList}}</p>
 
      <br/>
-      <p class="description">Extra information: </p>
+      <p class="description">Extra information </p>
 
       <p><span>Image Text1: </span>{{job.customText5}}</p>
 
@@ -41,12 +41,12 @@
 
     <div class="job-contact">
 
-      <p class="description">Key contact: </p>
+      <p class="description">Key contact </p>
       <p><span>Client name:</span> <strong>{{job.client.name}}</strong></p>
       <p><span>Owner:</span> <strong>{{job.owner.firstName}}</strong></p>
 
       <br/>
-      <p class="description">Salary: </p>
+      <p class="description">Salary </p>
 
       <p><span>Salary:</span> {{job.salary}}</p>
       <p><span>Pay Rate: </span>{{job.payRate}}</p>
@@ -66,9 +66,8 @@
 
   <div class="job-clear">
 
- <!--    <hr/> -->
     <div>
-      <p class="description">Images: </p>
+      <p class="description">Images </p>
 
       <img class="job-img job-image" src="{{job.customText6}}">
 
@@ -77,20 +76,17 @@
       <img class="job-img job-image" src="{{job.customText11}}">
 
     </div>
-
- <!--    <hr /> -->
     <br/>
-      <p class="description">Job details: </p>
+      <p class="description">Job details </p>
 
-      <p><span>Job Intro: </span>{{job.customTextBlock1}}</p>
+      <p><span>Job Intro </span>{{job.customTextBlock1}}</p>
      
-      <p><span>Job Description:</span></p>
+      <p><span>Job Description</span></p>
       {{{job.description}}}
 
     <div>
-  <!--   <hr/> -->
-  <br/>
-    <p class="description">Candidates: </p>
+    <br/>
+    <p class="description">Candidates </p>
   
      {{#each job.candidates}}
       <div class="candidate-list">

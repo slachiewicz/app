@@ -743,7 +743,7 @@ circle {
   float: left;
 }
 
-.client-job-main-content ul > li {
+.client-job-main-content ul > li, .client-job-contact-content ul > li {
   color: #000;
 }
 
