@@ -3,13 +3,7 @@
 <div class="clients-job-wrapper">
 
   <div class="candidatesApplication">
-    {{#each job.candidates}}
-      <!-- can access the jobApplication, fullname and picture properties of the candidates object -->
-      <p>Name:{{this.fullname}}</p>
-      <a href="/candidate/{{id}}">link to the candidate: /candidate/{{id}}</a>
-    {{/each}}
   </div>
-
    <div class="client-job-details">
     <div class="job-info">
       <p class="job-title">Job Title: {{job.title}}</p>
@@ -70,13 +64,14 @@
     <div>
       <p class="description">Images: </p>
 
-
       <img class="job-img job-image" src="{{job.customText6}}">
 
-     <img class="job-img job-image" src="{{job.customText8}}">
+      <img class="job-img job-image" src="{{job.customText8}}">
 
       <img class="job-img job-image" src="{{job.customText11}}">
+
     </div>
+
     <hr />
       <p class="description">Job details: </p>
 
@@ -84,6 +79,19 @@
       <br/>
       <p>Job Description:</p>
       {{{job.description}}}
+
+    <div>
+    <hr/>
+    <p class="description">Candidates: </p>
+  
+     {{#each job.candidates}}
+      <div class="candidate-list">
+        <a href="/candidate/{{id}}"><img src='{{this.picture}}'></a>
+        <p><a href="/candidate/{{id}}">{{this.fullname}}</a></p>
+      </div>
+    {{/each}}
+
+    </div>
   </div>
 
 </div>
