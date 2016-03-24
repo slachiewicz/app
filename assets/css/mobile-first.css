@@ -796,6 +796,10 @@ circle {
   top: 80px;
 }
 
+.edit {
+  padding: 10px 30px;
+}
+
 .open-roles {
   text-align: center;
   font-weight: bold;
@@ -828,6 +832,10 @@ circle {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
+}
+
+.client-job-details input{
+  padding: 7px;
 }
 
 .client-job-info {
