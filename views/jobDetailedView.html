@@ -23,8 +23,12 @@
 
       <p>Required skills: {{job.skillList}}</p>
       <p>Seniority: {{job.customText1}}</p>
-      <p>Sector: {{job.customText1}}</p>
-    
+      <p>Sector:</p>
+
+      {{#each job.sectors}}
+        <p>{{this.name}}</p>
+      {{/each}}
+
       <hr/>
       <p class="description">Extra information: </p>
       
@@ -39,7 +43,7 @@
     <div class="job-contact">
       <p>Client name: {{job.client.name}}</p>
       <p>Owner: {{job.owner.firstName}}</p>
-      
+
 
       <hr/>
       <p class="description">Salary: </p>
@@ -47,9 +51,9 @@
       <p>Salary: {{job.salary}}</p>
       <p>Pay Rate: {{job.payRate}}</p>
       <p>Currency: {{job.customText12}}</p>
-  
+
     </div>
-    
+
   </div>
 
   <div class="job-clear">
@@ -57,20 +61,20 @@
     <hr/>
     <div>
       <p class="description">Images: </p>
-      
-      
+
+
       <img class="job-img job-image" src="{{job.customText6}}">
-      
+
      <img class="job-img job-image" src="{{job.customText8}}">
-     
-      <img class="job-img job-image" src="{{job.customText11}}"> 
+
+      <img class="job-img job-image" src="{{job.customText11}}">
     </div>
     <hr />
       <p class="description">Job details: </p>
 
       <p>Job Intro: {{job.customTextBlock1}}</p>
       <br/>
-      <p>Job Description:</p> 
+      <p>Job Description:</p>
       {{{job.description}}}
   </div>
 
