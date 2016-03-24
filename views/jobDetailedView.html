@@ -29,10 +29,9 @@
 
       <p>Required skills: {{job.skillList}}</p>
       <p>Seniority: {{job.customText1}}</p>
-      <p>Sector:</p>
 
       {{#each job.sectors}}
-        <p>{{this.name}}</p>
+        <p>Sector: {{this.name}}</p>
       {{/each}}
 
       <hr/>

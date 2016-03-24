@@ -748,13 +748,17 @@ circle {
 }
 
 .client-job-main-content {
-  width: 60%;
+  width: 70%;
 }
 
 .client-job-info > img, .client-job-main-content > ul >img {
   float: left;
   width: 140px;
   margin-right: 10px;
+}
+
+.client-job-info p {
+  padding: 2px;
 }
 
 .job-info {
@@ -790,6 +794,14 @@ circle {
   position: fixed;
   right: 5%;
   top: 80px;
+}
+
+.open-roles {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-decoration: underline;
+  padding: 5px;
 }
 
 .create-icon:hover, .edit-client:hover, .submit-client:hover {

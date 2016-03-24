@@ -13,7 +13,6 @@
       <p><span>Client name:</span> {{client.name}}</p>
       <p><span>Possible names:</span> {{client.possibleNames}}</p>
       <p><span>Client since:</span> {{client.startFrom}}</p>
-      <p><span>Active Roles:</span> {{client.jobs.length}}</p>
       <p><span>Account Manager:</span> {{client.accountManagerName}}</p>
       <p><span>Terms:</span> {{client.terms}}</p>
 
@@ -28,16 +27,17 @@
     </div>
 
     <div class="client-key-contact">
+      <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
+      <br/>
+      <br/>
       <p><span>Key Contact:</span> {{client.contactName}}</p>
       <p><span>Email:</span> {{client.contactEmail}}</p>
-      <p><span>Phone:</span> {{client.contactPhone}}</p>
-      <br/>
-      <br/>
-      <a class="edit-client" href="/clients/edit/{{client.id}}">Edit</a>
+      <p><span>Phone:</span> {{client.contactPhone}}</p>  
     </div>
 
   </div>
-
+  <h2 class="open-roles">Open Roles: {{client.jobs.length}} </h2>
+  
   {{#each client.jobs}}
     {{>job}}
   {{/each}}
