@@ -8,6 +8,7 @@ var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
 var expect = Code.expect;
 var it = lab.test;
+var cheerio = require('cheerio');
 
 describe('Attempt to return the first candidate: /candidate/1 without authorization', function () {
 
@@ -70,6 +71,9 @@ describe('Return the first candidate: /candidate/1', function () {
         server.inject(options, function(res) {
           expect(err).to.not.exist();
           expect(res.statusCode).to.equal(200);
+          var $ = cheerio.load(res.payload);
+          var jobApplications = $('.job-application');
+          expect(jobApplications.length).to.equal(2);
           server.stop(done);
         });
       });
