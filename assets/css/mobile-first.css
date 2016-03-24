@@ -925,6 +925,20 @@ circle {
   margin-top: 20px;
 }
 
+.candidate-list img {
+  text-decoration: none;
+  width: 120px;
+  border-radius: 50%;
+  float: left;
+}
+
+.candidate-list {
+  text-align: center;
+  margin-top: 20px;
+  max-width: 120px;
+  padding-bottom: 0.8em;
+}
+
 /*==============================
  End Jobs
 ================================*/
