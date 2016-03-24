@@ -743,6 +743,10 @@ circle {
   float: left;
 }
 
+.client-job-main-content ul > li, .client-job-contact-content ul > li{
+  padding: 2px;
+}
+
 .client-job-main-content {
   width: 60%;
 }
@@ -903,6 +907,14 @@ circle {
   padding: 3px 6px;
   color: #fff;
   background-color: #424A5D;
+}
+
+.skill-job {
+  color: #fff !important;
+  padding: 3px 8px;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: #b2c462;
 }
 
 .job-right {
