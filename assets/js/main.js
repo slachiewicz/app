@@ -65,4 +65,8 @@
     }
   }, false);
 
+   tinymce.init({
+    selector: '#tiny'
+  });
+
 }());
