@@ -10,7 +10,7 @@
         <img src="/assets/img/square-global-m-logo.png"/>
       {{/if}}
 
-      <p><span>Client name:</span> {{client.name}}</p>
+      <p><span>Client name:</span><strong> {{client.name}}</strong></p>
       <p><span>Possible names:</span> {{client.possibleNames}}</p>
       <p><span>Client since:</span> {{client.startFrom}}</p>
       <p><span>Account Manager:</span> {{client.accountManagerName}}</p>
@@ -29,7 +29,7 @@
     <div class="client-key-contact">
       <a class="create-icon edit" href="/clients/edit/{{client.id}}">Edit</a>
       
-      <p><span>Key Contact:</span> {{client.contactName}}</p>
+      <p><span>Key Contact:</span> <strong>{{client.contactName}}</strong></p>
       <p><span>Email:</span> {{client.contactEmail}}</p>
       <p><span>Phone:</span> {{client.contactPhone}}</p>  
     </div>

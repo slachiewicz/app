@@ -10,7 +10,7 @@
             {{else}}
               <img src="/assets/img/square-global-m-logo.png"/>
             {{/if}}
-            <li><span><strong>Company name:</strong></span> {{this.name}}</li>
+            <li><span><strong>Company name:</span> {{this.name}}</strong></li>
             <li><span>Possible Names:</span> {{this.possibleNames}}</li>
             <li><span>Client since: </span>{{this.startFrom}}</li>
             <li><span>Active Roles: {{this.jobs.length}}</li>
@@ -21,7 +21,7 @@
         <div class="client-job-contact-content">
           <ul>
             <h4><strong>Key contact:</strong></h4>
-            <li><span>Name: </span>{{this.contactName}}</li>
+            <li><span>Name: </span><strong>{{this.contactName}}</strong></li>
             <li><span>Email: </span>{{this.contactEmail}}</li>
             <li><span>Phone: </span>{{this.contactPhone}}</li>
             </ul>
