@@ -60,7 +60,7 @@
 
           <p>
             <label for="payRate">Pay Rate:</label>
-            <input type="number" name="payRate" value="{{job.payRate}}">
+            <input type="text" name="payRate" value="{{job.payRate}}">
           </p>
 
           <p>
@@ -83,7 +83,7 @@
            <p>
             <label for="skillList"> Required Skills:</label>
               <select name="skillList" multiple>
-              {{listSkillsHelper job.skillList}}
+                {{listSkillsHelper job.skillList}}
              </select>
           </p>
 
@@ -91,7 +91,7 @@
             <label for="businessSectors">Business Sector:</label>
             <select name="businessSectors" multiple>
             {{#each sectors}}
-              <option value="{{this.id}}">{{this.name}}</option>
+              {{optionsSectors this ../job.businessSectors.data}}
             {{/each}}
             </select>
           </p>
@@ -102,6 +102,8 @@
            <p>
             <label for="categories">Category:</label>
             <select name="categories" multiple>
+              {{optionsCategories job.categories.data}}
+              <!--
               <option value="958406">Android Development</option>
               <option value="1210106">Backend Development</option>
               <option value="1034734">Client Services</option>
@@ -112,7 +114,7 @@
               <option value="1046587">Marketing</option>
               <option value="1209450">Sales</option>
               <option value="1209449">Testing</option>
-              <option value="1034733">UX & Design</option>
+              <option value="1034733">UX & Design</option> -->
             </select>
           </p>
 
