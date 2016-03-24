@@ -1,7 +1,10 @@
 var Handlebars = require('handlebars');
 
-module.exports = function () {
-  var list = [ 
+module.exports = function (skillValues) {
+
+  var skills = skillValues.split(',').filter(Boolean);
+  
+  var list = [
   'Android',
   'SDK',
   'C',
@@ -48,13 +51,20 @@ module.exports = function () {
   'UI',
   'UX',
   'UI/UX',
-  'Wireframes' 
+  'Wireframes'
 ];
 
   var result = '';
   list.forEach(function (item) {
 
-    result +=  "<option value='" + item +"'>" + item + "</option>";
+    if(skills.indexOf(item) > -1) {
+
+      result +=  "<option value='" + item +"' selected >" + item + "</option>";
+
+    } else {
+
+      result +=  "<option value='" + item +"'>" + item + "</option>";
+    }
   })
   return new Handlebars.SafeString(result);
 };

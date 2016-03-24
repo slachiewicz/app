@@ -8,83 +8,65 @@
         <div class="job-create-left">
           <p>
             <label for="title">Job Title:</label>
-            <input type="text" name="title" required>
+            <input type="text" name="title" required value="{{job.title}}">
             <input type="hidden" name="id" value="{{job.id}}">
           </p>
 
            <p>
             <label for="customText3">Job Sub Title:</label>
-            <input type="text" name="customText3" required>
-          </p>  
-          
+            <input type="text" name="customText3" required value="{{job.customText3}}">
+          </p>
+
           <hr/>
 
           <p class="description">Job Location</p>
 
           <p>
             <label for="city">City:</label>
-            <input type="text" name="city">
+            <input type="text" name="city" value="{{job.address.city}}">
           </p>
 
           <p>
             <label for="countryId">Country:</label>
             <select name="countryId">
+
             {{#each countries}}
-              <option value="{{this.value}}">{{this.label}}</option>
+              {{optionsCountries this ../job.address.countryID}}
             {{/each}}
             </select>
           </p>
 
           <p>
             <label for="customText2">Region:</label>
-            <select name="customText2" required>  
-              <option value="UK & Ireland">UK & Ireland</option>
-              <option value="Scandinavia">Scandinavia</option>
-              <option value="Eastern Europe">Eastern Europe</option>
-              <option value="Western Europe">Western Europe</option>
-              <option value="Southern Europe">Southern Europe</option>
-              <option value="Asia Pacific">Asia Pacific</option>
-              <option value="North America">North America</option>
-              <option value="South America">South America</option>
-              <option value="Central America">Central America</option>
-              <option value="Africa">Africa</option>
-              <option value="Middle East">Middle East</option>
-              <option value="North Africa">North Africa</option>
-              <option value="Sub Saharan Africa">Sub Saharan Africa</option>
+            <select name="customText2" required>
+              {{optionsRegions job.customText2}}
             </select>
           </p>
-          
+
           <hr/>
           <p class="description">Job Salary</p>
 
           <p>
             <label for="employmentType">Employment Type:</label>
             <select name="employmentType" required>
-              <option value=""></option>
-              <option value="Permanent">Permanent</option>
-              <option value="Contract">Contract</option>
-              <option value="Temporary">Temporary</option>
-              <option value="Temp to Perm">Temp to Perm</option>
-              <option value="Fixed Contract">Fixed Contract</option> 
+              {{optionsEmploymentType job.employmentType}}
           </select>
           </p>
 
            <p>
             <label for="salary">Minimum Salary:</label>
-            <input type="number" name="salary">
+            <input type="text" name="salary" value="{{job.salary}}">
           </p>
 
           <p>
             <label for="payRate">Pay Rate:</label>
-            <input type="number" name="payRate">
+            <input type="number" name="payRate" value="{{job.payRate}}">
           </p>
 
           <p>
             <label for="customText12">Currency:</label>
             <select name="customText12" required>
-              <option value="GBP">GBP</option>
-              <option value="EUR">EUR</option>
-              <option value="USD">USD</option>
+              {{optionsCurrency job.customText12}}
             </select>
           </p>
 
@@ -93,18 +75,15 @@
 
            <p>
             <label for="customText1">Seniority:</label>
-            <select name="customText1" required>  
-              <option value="Junior">Junior</option>
-              <option value="Mid-level">Mid-level</option>
-              <option value="Senior">Senior</option>
-              <option value="Director">Director</option>
+            <select name="customText1" required >
+              {{optionsSeniority job.customText1}}
             </select>
-          </p> 
+          </p>
 
            <p>
             <label for="skillList"> Required Skills:</label>
               <select name="skillList" multiple>
-              {{listSkillsHelper}}
+              {{listSkillsHelper job.skillList}}
              </select>
           </p>
 
@@ -145,7 +124,7 @@
             <label for="customText5">Image Text 1:</label>
             <input type="text" name="customText5">
           </p>
-          
+
           <p>
             <label for="customText6">Image 1: </label>
             <input type="text" name="customText6">
@@ -160,7 +139,7 @@
             <label for="customText8">Image 2:</label>
             <input type="text" name="customText8">
           </p>
-          
+
           <p>
             <label for="customTextBlock2">Image Text 3:</label>
             <input type="text" name="customTextBlock2">
@@ -170,7 +149,7 @@
             <label for="customText11">Image 3:</label>
             <input type="text" name="customText11">
           </p>
-          
+
         </div>
 
         <div class="job-create-right">
@@ -205,11 +184,11 @@
             <label for="dateEnd">Scheduled End Date:</label>
             <input type="date" name="dateEnd" placeholder="DD-MM-YYYY">
           </p>
-       
+
         </div>
 
         <div class="job-create-clear">
-          
+
           <hr />
 
           <p class="description">Job Description: </p>
@@ -217,7 +196,7 @@
           <p>
             <label for="customTextBlock1">Job Intro:</label>
             <input type="text" name="customTextBlock1">
-          </p>  
+          </p>
 
            <p>
             <label for="description">Job Description:</label>
@@ -229,7 +208,7 @@
           </p>
 
         </div>
-       
+
       </div>
     </form>
 
