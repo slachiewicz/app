@@ -1,9 +1,13 @@
-<ul>
+<ul class= 'job-application'>
   <li>Date: {{date}}</li>
   <li>Comments: {{comments}}</li>
-  <li>Skill Set: {{skillset}}</li>
-  {{#if jobTitle}}
-    <li>Job: {{jobTitle}}</li>
+
+  {{#if skillset}}
+   <li>Skill Set: {{skillset}}</li>
+  {{/if}}
+
+  {{#if job.title}}
+    <li>Job: <a href="/jobs/{{job.id}}">{{job.title}}</a></li>
   {{/if}}
 </ul>
 <hr/>
