@@ -4,7 +4,6 @@ const Handlebars = require('handlebars');
 
 module.exports = function (categoriesData) {
 
-  console.log('categoriesDAtea' , categoriesData);
 
   let categories = [
     {id: "958406", name: "Android Development" },
