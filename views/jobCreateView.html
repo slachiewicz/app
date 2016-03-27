@@ -102,19 +102,9 @@
            <p>
             <label for="categories">Category:</label>
             <select name="categories" multiple>
-              {{optionsCategories job.categories.data}}
-              <!--
-              <option value="958406">Android Development</option>
-              <option value="1210106">Backend Development</option>
-              <option value="1034734">Client Services</option>
-              <option value="1046586">Development</option>
-              <option value="1210105">Frontend Development</option>
-              <option value="958407">iOS Development</option>
-              <option value="1034735">Management</option>
-              <option value="1046587">Marketing</option>
-              <option value="1209450">Sales</option>
-              <option value="1209449">Testing</option>
-              <option value="1034733">UX & Design</option> -->
+              {{#each categories}}
+                {{optionsCategories this ../job.categories.data}}
+              {{/each}}
             </select>
           </p>
 
@@ -124,32 +114,32 @@
 
            <p>
             <label for="customText5">Image Text 1:</label>
-            <input type="text" name="customText5">
+            <input type="text" name="customText5" value="{{job.customText5}}">
           </p>
 
           <p>
             <label for="customText6">Image 1: </label>
-            <input type="text" name="customText6">
+            <input type="text" name="customText6" value="{{job.customText6}}">
           </p>
 
           <p>
             <label for="customText7">Image Text 2:</label>
-            <input type="text" name="customText7">
+            <input type="text" name="customText7" value="{{job.customText7}}">
           </p>
 
           <p>
             <label for="customText8">Image 2:</label>
-            <input type="text" name="customText8">
+            <input type="text" name="customText8" value="{{job.customText8}}">
           </p>
 
           <p>
             <label for="customTextBlock2">Image Text 3:</label>
-            <input type="text" name="customTextBlock2">
+            <input type="text" name="customTextBlock2" value="{{job.customTextBlock2}}">
           </p>
 
           <p>
             <label for="customText11">Image 3:</label>
-            <input type="text" name="customText11">
+            <input type="text" name="customText11" value="{{job.customText11}}">
           </p>
 
         </div>
@@ -160,7 +150,7 @@
             <label>Client name:</label>
             <select name="client" required>
             {{#each clients}}
-               <option value="{{this.id}}">{{this.name}}</option>
+              {{optionsClients this ../job.client}}
             {{/each}}
             </select>
           </p>
@@ -169,23 +159,12 @@
             <label>Owner:</label>
             <select name="owner" required>
             {{#each owners}}
-               <option value="{{this.id}}">{{this.name}}</option>
+              {{optionsOwners this ../job.owner.id}}
             {{/each}}
             </select>
           </p>
 
           <hr/>
-          <p class="description">Job Dates</p>
-
-           <p>
-            <label for="startDate">Start date:</label>
-            <input type="date" name="startDate" placeholder="DD-MM-YYYY">
-          </p>
-
-          <p>
-            <label for="dateEnd">Scheduled End Date:</label>
-            <input type="date" name="dateEnd" placeholder="DD-MM-YYYY">
-          </p>
 
         </div>
 
@@ -197,12 +176,12 @@
 
           <p>
             <label for="customTextBlock1">Job Intro:</label>
-            <input type="text" name="customTextBlock1">
+            <input type="text" name="customTextBlock1" value="{{job.customTextBlock1}}">
           </p>
 
            <p>
             <label for="description">Job Description:</label>
-            <textarea id="tiny" rows="10" cols="50" type="text" name="description" required></textarea>
+            <textarea id="tiny" rows="10" cols="50" type="text" name="description" required>{{{job.description}}}</textarea>
           </p>
 
           <p>

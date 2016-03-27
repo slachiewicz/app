@@ -80,14 +80,14 @@
       <p class="description">Job details </p>
 
       <p><span>Job Intro </span>{{job.customTextBlock1}}</p>
-     
+
       <p><span>Job Description</span></p>
       {{{job.description}}}
 
     <div>
     <br/>
     <p class="description">Candidates </p>
-  
+
      {{#each job.candidates}}
       <div class="candidate-list">
         <a href="/candidate/{{id}}"><img src='{{this.picture}}'></a>
