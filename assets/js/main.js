@@ -3,7 +3,7 @@
     tinymce.init({
     selector: '#tiny',
     theme: 'modern',
-    width: '100%',
+    width: '80%',
     height: 300,
     plugins: [
       'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',

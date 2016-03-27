@@ -5,7 +5,7 @@
   <div class="vacancy-wrapper">
     <form id="create-vacancy" action="/jobs/create" method="POST">
       <div>
-        <div class="job-create-left">
+       <p class="description">Job Titles</p>
           <p>
             <label for="title">Job Title:</label>
             <input type="text" name="title" required value="{{job.title}}">
@@ -15,6 +15,28 @@
            <p>
             <label for="customText3">Job Sub Title:</label>
             <input type="text" name="customText3" required value="{{job.customText3}}">
+          </p>
+
+          <hr/>
+
+          <p class="description">Key contact</p>
+
+          <p>
+            <label>Client name:</label>
+            <select name="client" required>
+            {{#each clients}}
+              {{optionsClients this ../job.client}}
+            {{/each}}
+            </select>
+          </p>
+
+           <p>
+            <label>Owner:</label>
+            <select name="owner" required>
+            {{#each owners}}
+              {{optionsOwners this ../job.owner.id}}
+            {{/each}}
+            </select>
           </p>
 
           <hr/>
@@ -141,40 +163,10 @@
             <label for="customText11">Image 3:</label>
             <input type="text" name="customText11" value="{{job.customText11}}">
           </p>
-
-        </div>
-
-        <div class="job-create-right">
-
-          <p>
-            <label>Client name:</label>
-            <select name="client" required>
-            {{#each clients}}
-              {{optionsClients this ../job.client}}
-            {{/each}}
-            </select>
-          </p>
-
-           <p>
-            <label>Owner:</label>
-            <select name="owner" required>
-            {{#each owners}}
-              {{optionsOwners this ../job.owner.id}}
-            {{/each}}
-            </select>
-          </p>
-
           <hr/>
-
-        </div>
-
-        <div class="job-create-clear">
-
-          <hr />
-
           <p class="description">Job Description </p>
 
-          <p>
+           <p>
             <label for="customTextBlock1">Job Intro:</label>
             <input type="text" name="customTextBlock1" value="{{job.customTextBlock1}}">
           </p>
@@ -187,9 +179,7 @@
           <p>
             <button class="submit-client submit-job" type="submit">Submit</button>
           </p>
-
-        </div>
-
+       
       </div>
     </form>
 

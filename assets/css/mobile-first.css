@@ -860,17 +860,6 @@ circle {
   width: 65%;
 }
 
-.job-create-right {
-  float: right;
-  width: 45%;
-  margin-top: -4px;
-}
-
-.job-create-left {
-  float: left;
-  width: 50%;
-}
-
 .client-key-contact-create > input[type=text]  {
   width: 100%;
 }
@@ -878,20 +867,6 @@ circle {
 .client-key-contact-create {
   float: right;
   width: 30%;
-}
-
-.job-create-clear {
-  clear:both;
-  width: 100%;
-  padding-top: 10px;
-}
-
-.job-create-clear textarea {
-  width: 100%;
-}
-
-.job-create-clear input {
-  width: 100% !important;
 }
 
 .vacancy-wrapper hr {
@@ -977,6 +952,11 @@ circle {
   margin-top: 20px;
   max-width: 120px;
   padding-bottom: 0.8em;
+}
+
+/*id name comes from tinymoce editor*/
+#mceu_21 {
+  margin-top: 5px;
 }
 
 /*==============================
