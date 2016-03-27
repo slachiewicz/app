@@ -5,6 +5,13 @@ const Handlebars = require('handlebars');
 module.exports = function (category, categoryData) {
 
   let result = '';
+
+  if(!categoryData) {
+
+    result = "<option value=\"" + category.id + "\">" + category.name + "</option>";
+    return new Handlebars.SafeString(result);
+  }
+
   let idsCategories = categoryData.map(category => category.id);
 
   if( idsCategories.indexOf(category.id) > -1)  {
