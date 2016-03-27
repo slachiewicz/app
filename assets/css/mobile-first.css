@@ -1179,6 +1179,15 @@ Vacancy
   box-sizing: border-box;
 }
 
+#create-vacancy select[multiple]{
+  height: 100px;
+}
+
+#create-vacancy select[multiple] > option{
+  border-bottom: 1px solid #F2F2F2;
+  
+}
+
 /*==============================
  End Vacancy
 ================================*/
