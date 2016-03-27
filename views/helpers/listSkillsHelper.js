@@ -2,8 +2,8 @@ var Handlebars = require('handlebars');
 
 module.exports = function (skillValues) {
 
-  var skills = skillValues.split(',').filter(Boolean);
-  
+  var skills = skillValues? skillValues.split(',').filter(Boolean) : [];
+
   var list = [
   'Android',
   'SDK',

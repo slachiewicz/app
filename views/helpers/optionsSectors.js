@@ -5,7 +5,8 @@ const Handlebars = require('handlebars');
 module.exports = function (sector, sectorsData) {
 
   let result = '';
-  let idsSector = sectorsData.map(sector => sector.id);
+
+  let idsSector = sectorsData ? sectorsData.map(sector => sector.id) : [];
 
   if( idsSector.indexOf(sector.id) > -1)  {
 
