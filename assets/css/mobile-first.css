@@ -722,7 +722,7 @@ circle {
   margin-top: 80px;
 }
 
-.clients-job-wrapper span , .job-clear span{
+.clients-job-wrapper span , .job-clear span {
   color: #4E4D4A;
 }
 
@@ -791,7 +791,7 @@ circle {
 .create-icon {
   background-color: #424A5D;
   padding: 10px;
-  color: #E4AD28; 
+  color: #E4AD28;
   position: fixed;
   right: 5%;
   top: 80px;
@@ -1185,7 +1185,7 @@ Vacancy
 
 #create-vacancy select[multiple] > option{
   border-bottom: 1px solid #F2F2F2;
-  
+
 }
 
 /*==============================
