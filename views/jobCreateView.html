@@ -25,9 +25,10 @@
             <label>Client name:</label>
             <select name="client" required>
             {{#each clients}}
-              {{optionsClients this ../job.client}}
+              {{optionsClients this ../job.client.id}}
             {{/each}}
             </select>
+            <input type="hidden" name="previousClient" value="{{job.client.id}}">
           </p>
 
            <p>

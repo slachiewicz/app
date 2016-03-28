@@ -7,7 +7,7 @@ module.exports = function (client, clientId) {
   let result = '';
 
   if(!clientId) {
-    
+
     result = "<option value=\"" + client.id + "\">" + client.name + "</option>";
     return new Handlebars.SafeString(result);
   }
