@@ -8,7 +8,7 @@
      "headline": "JS dev",
      "location": "London, United Kingdom",
      "favourite": [12],
-     "jobApplications": [{"jobID": 1, "timestamp": 1458213700542, "comments": "some comment", "skillset": "Css"}],
+     "jobApplications": [{"jobID": "1", "timestamp": 1458213700542, "comments": "some comment", "skillset": "Css"}],
      "current": "The best company ever",
      "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
      "contacts": {

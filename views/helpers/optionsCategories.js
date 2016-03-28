@@ -14,7 +14,7 @@ module.exports = function (category, categoryData) {
 
   let idsCategories = categoryData.map(category => category.id);
 
-  if( idsCategories.indexOf(category.id) > -1)  {
+  if( idsCategories.indexOf(category.id.toString()) > -1)  {
 
     result = "<option value=\"" + category.id + "\" selected >" + category.name + "</option>";
 

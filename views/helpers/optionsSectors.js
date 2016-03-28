@@ -8,7 +8,7 @@ module.exports = function (sector, sectorsData) {
 
   let idsSector = sectorsData ? sectorsData.map(sector => sector.id) : [];
 
-  if( idsSector.indexOf(sector.id) > -1)  {
+  if( idsSector.indexOf(sector.id.toString()) > -1)  {
 
     result = "<option value=\"" + sector.id + "\" selected >" + sector.name + "</option>";
 
