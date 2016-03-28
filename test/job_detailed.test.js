@@ -49,9 +49,8 @@ describe('Attempt to get /jobs/1 with authorization', function () {
         server.inject(options, function (res) {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
-          var job = $('.job-title');  
-            
-          expect(job['0'].children[0].data).to.equal('Job Title: Node.js Developer');
+          var job = $('.job-title strong');
+          expect(job['0'].children[0].data).to.equal('Node.js Developer');
           server.stop(done);
         });
       });
