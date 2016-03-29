@@ -722,7 +722,7 @@ circle {
   margin-top: 80px;
 }
 
-.clients-job-wrapper span {
+.clients-job-wrapper span , .job-clear span {
   color: #4E4D4A;
 }
 
@@ -743,14 +743,26 @@ circle {
   float: left;
 }
 
+.client-job-main-content ul > li, .client-job-contact-content ul > li {
+  color: #000;
+}
+
+.client-job-main-content ul > li, .client-job-contact-content ul > li{
+  padding: 2px;
+}
+
 .client-job-main-content {
-  width: 60%;
+  width: 70%;
 }
 
 .client-job-info > img, .client-job-main-content > ul >img {
   float: left;
   width: 140px;
   margin-right: 10px;
+}
+
+.client-job-info p {
+  padding: 2px;
 }
 
 .job-info {
@@ -767,9 +779,6 @@ circle {
   width: 60%;
 }
 
-.job-clear span {
-  color: black;
-}
 
 .job-clear ul {
   list-style-type: square;
@@ -782,10 +791,21 @@ circle {
 .create-icon {
   background-color: #424A5D;
   padding: 10px;
-  color: #E4AD28; 
+  color: #E4AD28;
   position: fixed;
   right: 5%;
   top: 80px;
+}
+
+.edit {
+  padding: 10px 30px;
+}
+
+.open-roles {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  padding: 5px;
 }
 
 .create-icon:hover, .edit-client:hover, .submit-client:hover {
@@ -814,6 +834,14 @@ circle {
   flex-direction: row;
 }
 
+.client-job-details input{
+  padding: 7px;
+}
+
+.client-job-details p, .job-clear p {
+  padding: 2px;
+}
+
 .client-job-info {
   flex: 6 2;
 }
@@ -832,17 +860,6 @@ circle {
   width: 65%;
 }
 
-.job-create-right {
-  float: right;
-  width: 45%;
-  margin-top: -4px;
-}
-
-.job-create-left {
-  float: left;
-  width: 50%;
-}
-
 .client-key-contact-create > input[type=text]  {
   width: 100%;
 }
@@ -850,20 +867,6 @@ circle {
 .client-key-contact-create {
   float: right;
   width: 30%;
-}
-
-.job-create-clear {
-  clear:both;
-  width: 100%;
-  padding-top: 10px;
-}
-
-.job-create-clear textarea {
-  width: 100%;
-}
-
-.job-create-clear input {
-  width: 100% !important;
 }
 
 .vacancy-wrapper hr {
@@ -874,6 +877,10 @@ circle {
   color: #818182;
   font-weight: bold;
   padding: 5px 0 10px 0;
+}
+
+.job-info .description, .job-contact .description, .job-clear .description {
+  text-decoration: underline;
 }
 
 .active-span {
@@ -890,6 +897,70 @@ circle {
 
 /*==============================
  End Client
+================================*/
+
+/*==============================
+ Jobs
+================================*/
+
+#corner-initials {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 3px 6px;
+  color: #fff;
+  background-color: #424A5D;
+}
+
+.skill-job {
+  color: #fff !important;
+  padding: 3px 8px;
+  margin: 1px;
+  border-radius: 2px;
+  background-color: #b2c462;
+}
+
+.job-right {
+  margin-right: 10%;
+}
+
+.job-image {
+  width: 300px;
+  height: 200px;
+}
+
+.job-img {
+  display:inline;
+}
+
+.submit-job {
+  text-align: center;
+  margin: auto;
+  padding: 10px 60px;
+  margin-top: 20px;
+}
+
+.candidate-list img {
+  text-decoration: none;
+  width: 120px;
+  border-radius: 50%;
+  float: left;
+}
+
+.candidate-list {
+  text-align: center;
+  margin-top: 20px;
+  max-width: 120px;
+  padding-bottom: 0.8em;
+}
+
+/*id name comes from tinymoce editor*/
+#mceu_21 {
+  margin-top: 5px;
+}
+
+/*==============================
+ End Jobs
 ================================*/
 
 /*==============================
@@ -1070,30 +1141,51 @@ Analytics
 /*==============================
 Vacancy
 ================================*/
+.vacancy-wrapper {
+  margin-bottom: 50px;
+}
 
-#create-vacancy > input[type=text],#create-vacancy > select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
+.vacancy-wrapper form > div {
+  background-color: transparent;
+  margin: 0 auto;
+  width: 60%;
+  justify-content: center;
+}
+
+.vacancy-wrapper form div > p {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.vacancy-wrapper form input, .vacancy-wrapper form select {
+  width: 80%;
+}
+
+.vacancy-wrapper form label {
+  width: 10em;
+  margin: 0.5em;
+  text-align: right;
+}
+
+#create-vacancy input[type=text],
+#create-vacancy select,
+#create-vacancy input[type=number],
+#create-vacancy input[type=date],
+#create-vacancy textarea {
+  padding: 6px 8px;
+  margin: 4px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
 }
 
-#create-vacancy > input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+#create-vacancy select[multiple]{
+  height: 100px;
 }
 
-#create-vacancy > input[type=submit]:hover {
-  background-color: #45a049;
+#create-vacancy select[multiple] > option{
+  border-bottom: 1px solid #F2F2F2;
+
 }
 
 /*==============================

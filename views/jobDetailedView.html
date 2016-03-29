@@ -1,3 +1,101 @@
-<div class="job-detail">
-  <p class="job-title">{{job.title}}</p>
+{{>navigation}}
+
+<div class="clients-job-wrapper">
+
+  <div class="candidatesApplication">
+  </div>
+   <div class="client-job-details">
+
+    <div class="job-info">
+      <p class="job-title"><span>Job Title:</span> <strong>{{job.title}}</strong></p>
+      <p><span>Job Sub Title:</span> {{job.customText3}}</p>
+      <p><span>Contract:</span> {{job.employmentType}}</p>
+
+      {{#each job.categories}}
+        <p>
+          <span>Category:</span> {{this.name}}
+        </p>
+      {{/each}}
+
+     <br/>
+      <p class="description">Skills/ Experience</p>
+
+      <p><span>Seniority:</span> {{job.customText1}}</p>
+
+      {{#each job.sectors}}
+        <p><span>Sector: </span>{{this.name}}</p>
+      {{/each}}
+
+       <p><span>Required skills:</span> {{skillsJobHelper job.skillList}}</p>
+
+     <br/>
+      <p class="description">Extra information </p>
+
+      <p><span>Image Text1: </span>{{job.customText5}}</p>
+
+      <p><span>Image Text 2:</span> {{job.customText7}}</p>
+
+      <p><span>Image Text3:</span> {{job.customTextBlock2}}</p>
+
+    </div>
+
+    <div class="job-contact">
+
+      <p class="description">Key contact </p>
+      <p><span>Client name:</span> <strong>{{job.client.name}}</strong></p>
+      <p><span>Owner:</span> <strong>{{job.owner.firstName}}</strong></p>
+
+      <br/>
+      <p class="description">Salary </p>
+
+      <p><span>Salary:</span> {{job.salary}}</p>
+      <p><span>Pay Rate: </span>{{job.payRate}}</p>
+      <p><span>Currency: </span>{{job.customText12}}</p>
+
+    <br/>
+      <p class="description">Job Location</p>
+      <p><span>City: </span>{{job.address.city}}</p>
+      <p><span>Country:</span> {{job.countryLabel}}</p>
+      <p><span>Region:</span> {{job.customText2}}</p>
+
+      <a class="create-icon edit" href="/jobs/edit/{{job.id}}">Edit</a>
+
+    </div>
+
+  </div>
+
+  <div class="job-clear">
+
+    <div>
+      <p class="description">Images</p>
+
+      <img class="job-img job-image" src="{{job.customText6}}">
+
+      <img class="job-img job-image" src="{{job.customText8}}">
+
+      <img class="job-img job-image" src="{{job.customText11}}">
+
+    </div>
+    <br/>
+      <p class="description">Job details </p>
+
+      <p><span>Job Intro </span>{{job.customTextBlock1}}</p>
+
+      <p><span>Job Description</span></p>
+      {{{job.description}}}
+
+    <div>
+    <br/>
+    <p class="description">Candidates </p>
+
+     {{#each job.candidates}}
+      <div class="candidate-list">
+        <a href="/candidate/{{id}}"><img src='{{this.picture}}'></a>
+        <p><a href="/candidate/{{id}}">{{this.fullname}}</a></p>
+      </div>
+    {{/each}}
+
+    </div>
+  </div>
+
 </div>

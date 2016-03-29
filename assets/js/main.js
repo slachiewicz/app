@@ -1,5 +1,24 @@
 (function () {
 
+    tinymce.init({
+    selector: '#tiny',
+    theme: 'modern',
+    width: '80%',
+    height: 300,
+    plugins: [
+      'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+      'save table contextmenu directionality emoticons template paste textcolor'
+    ],
+    content_css:[
+    '//fast.fonts.net/cssapi/e6dc9b99-64fe-4292-ad98-6974f93cd2a2.css',
+    '//www.tinymce.com/css/codepen.min.css'
+  ],
+    toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
+  });
+
+
+
   var filterFunc = function(k) {
     return k !== '';
   }
@@ -64,5 +83,7 @@
       checkboxes[i].checked = this.checked;
     }
   }, false);
+
+ 
 
 }());

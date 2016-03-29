@@ -3,9 +3,22 @@
     <div class="candidate-box">
       <div class="headline">
         <a href="/jobs/{{id}}">
-        <ul>
-          <li>{{title}}</li>
-        </ul>
+        <div class="client-job-main-content">
+          <ul>
+            <li><span>Job title:</span><strong> {{title}}</strong></li>
+            <li><span>Country:</span> {{countryLabel}} </li>
+            <li><span>City:</span> {{address.city}}</li>
+            <li><span>Required Skills:</span> {{skillsJobHelper skillList}}</li>
+          </ul>
+        </div>
+        <div class="client-job-contact-content job-right">
+          <ul>
+            <li><span>Contract:</span> {{employmentType}}</li>
+            <li><span>Salary:</span> {{salary}} </li>
+            <li><span>Pay rate:</span> {{payRate}} </li>
+          </ul>
+          </div>
+          <span id="corner-initials">{{owner.initials}}</span>
         </a>
       </div>
     </div>

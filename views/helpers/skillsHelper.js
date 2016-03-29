@@ -1,5 +1,7 @@
 var Handlebars = require('handlebars');
+
 module.exports = function (skill) {
+
     skill.skill = Handlebars.Utils.escapeExpression(skill.skill);
     skill.level = Handlebars.Utils.escapeExpression(skill.level);
     var result = "";

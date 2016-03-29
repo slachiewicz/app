@@ -271,9 +271,17 @@ span.close > i.fa-times {
     margin-left: 74px;
   }
 
+  .vacancy-wrapper form > div {
+    width: 80%;
+  }
+
   .client-job-wrapper {
     width: 75%;
   }
+
+/*  .job-right {
+    margin-right: 10%;
+  }*/
 
   .create-icon {
     right: 1%;
