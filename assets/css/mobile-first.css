@@ -779,7 +779,6 @@ circle {
   width: 60%;
 }
 
-
 .job-clear ul {
   list-style-type: square;
 }
@@ -952,6 +951,11 @@ circle {
   margin-top: 20px;
   max-width: 120px;
   padding-bottom: 0.8em;
+}
+
+.job-application a {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 /*id name comes from tinymoce editor*/
