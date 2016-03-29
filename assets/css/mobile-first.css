@@ -946,9 +946,10 @@ circle {
 }
 
 .candidate-list {
-   display: inline-flex;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
   flex-flow: row wrap;
-  flex: 2 1 80%;
   margin: 10px 0;
   color: #202022;
   min-height: 150px;
