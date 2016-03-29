@@ -3,6 +3,7 @@
     "connectedTo": ["The User"],
     "notes": [],
     "fullname": "Manuel",
+    "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "favourite":[],
     "location": "Barcelona, Spain",
     "current": "Fawlty Hotel",

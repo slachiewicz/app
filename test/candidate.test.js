@@ -73,7 +73,7 @@ describe('Return the first candidate: /candidate/1', function () {
           expect(res.statusCode).to.equal(200);
           var $ = cheerio.load(res.payload);
           var jobApplications = $('.job-application');
-          expect(jobApplications.length).to.equal(2);
+          expect(jobApplications.length).to.equal(1);
           server.stop(done);
         });
       });
@@ -90,6 +90,34 @@ describe('Return the first candidate: /candidate/1/London and highlight London' 
     var options = {
       method: "GET",
       url: "/candidate/1/London",
+      headers: { cookie: "token=" + token },
+      credentials: { id: "12", "name": "Simon", valid: true}
+    };
+
+    Server.init(0, function (err, server) {
+
+      var redisClient = require('redis-connection')();
+
+      redisClient.set(12, JSON.stringify({ id: 12, "name": "Simon", valid: true}), function (err, res) {
+        server.inject(options, function(res) {
+          expect(err).to.not.exist();
+          expect(res.statusCode).to.equal(200);
+          server.stop(done);
+        });
+      });
+    });
+  });
+});
+
+describe('Return the second candidate: /candidate/2 ' , function () {
+
+  it('checks status code 200 of /candidate/2 ', function (done) {
+
+    var token =  JWT.sign({ id: 12, "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+    var options = {
+      method: "GET",
+      url: "/candidate/3",
       headers: { cookie: "token=" + token },
       credentials: { id: "12", "name": "Simon", valid: true}
     };

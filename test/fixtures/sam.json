@@ -3,6 +3,7 @@
     "fullname": "Sam",
     "notes": [],
     "location": "Porto",
+    "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "favourite":[],
     "current": "relax",
     "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
