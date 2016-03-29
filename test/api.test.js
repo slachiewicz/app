@@ -13,6 +13,48 @@ var it = lab.test;
 
 describe('api /profile', function () {
 
+  it('updates a fake profile', function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/fake-update.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+    };
+
+      server.inject(options, function (res) {
+
+        expect(res.statusCode).to.equal(200);
+
+        var tokenSimon =  JWT.sign({ id: '13', "name": "Simon", valid: true}, process.env.JWT_SECRET);
+
+        var optionsCandidate = {
+          method: "GET",
+          url: "/candidate/" + res.payload,
+          headers: { cookie: "token=" + tokenSimon }
+        };
+
+        var redisClient = require('redis-connection')();
+        redisClient.set(13, JSON.stringify({ id: 13, "name": "Simon", valid: true}), function (err, res) {
+          setTimeout(server.inject(optionsCandidate , function (res) {
+
+          expect(res.statusCode).to.equal(200);
+          server.stop(done);
+
+        }), 2000);
+
+        });
+      });
+    });
+  });
+
+
+
   it('updates profile david', function (done) {
 
     Server.init(0, function (err, server) {

@@ -3,6 +3,7 @@
     "connections": 142,
     "connectedTo": ["Bob Boby"],
     "notes": [],
+    "contacts": {"email": "", "phone": "", "im": [], "address": ""},
     "fullname": "Sam",
     "favourite":[],
     "location": "Porto",
