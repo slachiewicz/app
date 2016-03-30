@@ -2,7 +2,10 @@ require('env2')('.env');
 var Code = require('code');
 var Lab = require('lab');
 var Server = require('../lib/index.js');
-var sendEmail = require('../lib/helpers/sendemail_gmail.js');
+var sendEmail = require('../lib/helpers/email/send_email.js');
+var google       = require('googleapis');
+var OAuth2       = google.auth.OAuth2;
+var oauth2Client = new OAuth2(process.env.GOOGLE_CLIENT_ID, process.env.GOOGLE_CLIENT_SECRET);
 
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
@@ -21,7 +24,7 @@ describe('Attempt to sendEmail with the expired token', function () {
     var obj = {email: 'dolores.maria9810@gmail.com', id: '6767', firstName: 'maria'};
 
     var tokens = PROFILE;
-
+    oauth2Client.setCredentials(tokens.tokens);
     var options = {
       name: 'anita',
       senderEmail: 'czaplaanita@gmail.com',
@@ -35,7 +38,8 @@ describe('Attempt to sendEmail with the expired token', function () {
     user.mobile = '1111';
     user.linkedin = 'li/anita';
 
-    sendEmail(obj, options, tokens, user, function (err, response) {
+    sendEmail(obj, options, oauth2Client, user, function (err, response) {
+      console.log(err, response);
       expect(err['code']).to.equal(400);
       done();
     });

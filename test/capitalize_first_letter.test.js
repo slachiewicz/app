@@ -1,4 +1,4 @@
-var capitalizeFirstLetter = require('../lib/helpers/capitalize_first_letter.js');
+var capitalizeFirstLetter = require('../lib/helpers/email/capitalize_first_letter.js');
 var Code = require('code');
 var Lab = require('lab');
 var lab = exports.lab = Lab.script();
