@@ -943,14 +943,20 @@ circle {
   text-decoration: none;
   width: 120px;
   border-radius: 50%;
-  float: left;
 }
 
 .candidate-list {
+  display: -webkit-inline-flex;
+  display: -ms-inline-flex;
+  display: inline-flex;
+  flex-flow: row wrap;
+  margin: 10px 0;
+  color: #202022;
+  min-height: 150px;
+}
+
+.candidate-list > .contact {
   text-align: center;
-  margin-top: 20px;
-  max-width: 120px;
-  padding-bottom: 0.8em;
 }
 
 .job-application a {

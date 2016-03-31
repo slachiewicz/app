@@ -87,13 +87,15 @@
     <div>
     <br/>
     <p class="description">Candidates </p>
-
-     {{#each job.candidates}}
+      
       <div class="candidate-list">
+      {{#each job.candidates}}
+        <div class="contact">
         <a href="/candidate/{{id}}"><img src='{{this.picture}}'></a>
         <p><a href="/candidate/{{id}}">{{this.fullname}}</a></p>
-      </div>
-    {{/each}}
+        </div>
+      {{/each}}
+      </div> 
 
     </div>
   </div>
