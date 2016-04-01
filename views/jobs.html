@@ -3,8 +3,13 @@
 <div class="clients-job-wrapper">
   <a class="create-icon" href="/jobs/create"><i class="fa fa-plus"> New Job</i></a>
 
-  {{#each result}}
+  <h2>Active Jobs</h2>
+  {{#each activeJobs}}
     {{>job}}
   {{/each}}
 
+  <h2>Inactive Jobs</h2>
+  {{#each inactiveJobs}}
+    {{>job}}
+  {{/each}}
 </div>
