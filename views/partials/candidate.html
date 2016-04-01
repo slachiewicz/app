@@ -69,9 +69,9 @@
         </ul>
         {{/each}}
 
-
-      <p>ViewedBy {{viewedBy.length}}</p>
-
+      {{#if viewedBy.length}}
+        <p>ViewedBy {{viewedBy.length}}</p>
+      {{/if}}
 
       </div>
     </div>
