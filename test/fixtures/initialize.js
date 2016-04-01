@@ -14,6 +14,12 @@ var client = new ElasticSearch.Client({
               }
             }
           }
+        },
+        "viewedBy": {
+          "properties": {
+            "id": {"type": "string"},
+            "fullname": {"type": "string"}
+          }
         }
     };
 
