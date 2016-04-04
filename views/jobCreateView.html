@@ -15,8 +15,11 @@
            <p>
             <label for="customText3">Job Sub Title:</label>
             <input type="text" name="customText3" required value="{{job.customText3}}">
+          </p>
 
-            {{activeCheckbox job.active}}
+          <p class="active-inactive">
+           <label for="activeJobs"></label>
+           {{activeCheckbox job.active}}
           </p>
 
           <hr/>
