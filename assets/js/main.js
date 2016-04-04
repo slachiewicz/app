@@ -17,7 +17,41 @@
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
   });
 
+  //tabs
+  //set current tab
+  var currentTab = document.querySelector('.tabs ul li');
+  // store which tab are we on by storing number of tabHeader
+  var tabOn = currentTab.id.split('_')[1];
+  //set data-current attr = 1 or 2 depends which tab are on
+  currentTab.parentNode.setAttribute('data-current',tabOn);
+  //add class active tab to be able to style it
+  currentTab.setAttribute('class', 'tabActiveHeader');
 
+  //hide non active jobs tab
+    var pages = document.querySelectorAll(".tabPage");
+    for (var i = 1; i < pages.length; i++) {
+      pages[i].style.display="none";
+    }
+
+    //this adds click event to tabs
+    var tabs = document.querySelectorAll(".tabs ul li");
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', displayPage, false);
+    }
+
+  function displayPage() {
+    var current = this.parentNode.getAttribute("data-current");
+    //remove class of activetabheader and hide old contents
+    document.getElementById("tabHeader_" + current).removeAttribute("class");
+    document.getElementById("tabpage_" + current).style.display="none";
+
+    var tabOn = this.id.split("_")[1];
+    //add class of activetabheader to new active tab and show contents
+    this.setAttribute("class","tabActiveHeader");
+    document.getElementById("tabpage_" + tabOn).style.display="block";
+    this.parentNode.setAttribute("data-current",tabOn);
+  }
+  //end tabs
 
   var filterFunc = function(k) {
     return k !== '';
@@ -51,7 +85,7 @@
     context = context || document;
     var elements = context.querySelectorAll(selector);
     return Array.prototype.slice.call(elements);
-  } 
+  }
   //create pie chart on a fly
    arr('.pie').forEach(function(pie) {
     var p = parseFloat(pie.textContent);
@@ -60,12 +94,12 @@
     var circle = document.createElementNS(NS, "circle");
     //added title for accessibility, so that screen reader users can also know what percentage is displayed
     var title = document.createElementNS(NS, "title");
-    
+
     circle.setAttribute("r", 16);
     circle.setAttribute("cx", 16);
     circle.setAttribute("cy", 16);
     circle.setAttribute("stroke-dasharray", p + " 100");
-    
+
     svg.setAttribute("viewBox", "0 0 32 32");
     title.textContent = pie.textContent;
     pie.textContent = '';
@@ -84,6 +118,6 @@
     }
   }, false);
 
- 
+
 
 }());
