@@ -728,6 +728,7 @@ circle {
 
 .client-job-contact-content {
   float: right;
+  width: 25%;
 }
 
 .client-job-contact-content h4 {
@@ -744,10 +745,8 @@ circle {
 
 .client-job-main-content ul > li, .client-job-contact-content ul > li {
   color: #000;
-}
-
-.client-job-main-content ul > li, .client-job-contact-content ul > li{
   padding: 2px;
+  word-wrap: break-word;
 }
 
 .client-job-main-content {
