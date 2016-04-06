@@ -288,6 +288,14 @@ span {
   color: red;
 }
 
+.viewedBy {
+  border: 1px solid black;
+  text-align: center;
+  float: right;
+  margin: 0 10px 0 0 !important;
+  padding: 5px !important;
+}
+
 /*==============================
  Home view
 ================================*/
