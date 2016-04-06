@@ -3,8 +3,27 @@
 <div class="clients-job-wrapper">
   <a class="create-icon" href="/jobs/create"><i class="fa fa-plus"> New Job</i></a>
 
-  {{#each result}}
-    {{>job}}
-  {{/each}}
+  <div class="tabs">
+    <ul>
+      <li id="tabHeader_1">Active Jobs</li>
+      <li id="tabHeader_2">Inactive Jobs</li>
+    </ul>
+  </div>
+  <div class="tabsContent">
+
+    <div class="tabPage" id="tabpage_1">
+      {{#each activeJobs}}
+        {{>job}}
+      {{/each}}
+    </div>
+
+    <div class="tabPage" id="tabpage_2">
+      {{#each inactiveJobs}}
+        {{>job}}
+      {{/each}}
+    </div>
+  </div>
 
 </div>
+
+<script src="/assets/js/activity-tabs.js"></script>

@@ -189,7 +189,9 @@ var newJob = { title: 'Test job',
   customTextBlock2: '',
   customText11: '',
   customTextBlock1: 'This is the job intro',
-  description: '<p>Great job</p>' };
+  description: '<p>Great job</p>',
+  active: 'on'
+  };
 
   var jobCatAndSector = { title: 'Test job 2',
   id: '',
@@ -241,7 +243,9 @@ var newJob = { title: 'Test job',
   customTextBlock2: '',
   customText11: '',
   customTextBlock1: '',
-  description: '<p>test description</p>' }
+  description: '<p>test description</p>',
+  active: 'off'
+};
 
   var jobUniqueCatSector = { title: 'Test job 2',
   id: '1',
@@ -267,7 +271,9 @@ var newJob = { title: 'Test job',
   customTextBlock2: '',
   customText11: '',
   customTextBlock1: '',
-  description: '<p>test description</p>' }
+  description: '<p>test description</p>',
+  active: 'off'
+};
 
   var jobClientEmpty = { title: 'Test job 2',
   id: '1',
@@ -293,4 +299,6 @@ var newJob = { title: 'Test job',
   customTextBlock2: '',
   customText11: '',
   customTextBlock1: '',
-  description: '<p>test description</p>' }
+  description: '<p>test description</p>',
+  active: 'off'
+};

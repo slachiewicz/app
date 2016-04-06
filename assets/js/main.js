@@ -17,8 +17,6 @@
     toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons'
   });
 
-
-
   var filterFunc = function(k) {
     return k !== '';
   }
@@ -51,7 +49,7 @@
     context = context || document;
     var elements = context.querySelectorAll(selector);
     return Array.prototype.slice.call(elements);
-  } 
+  }
   //create pie chart on a fly
    arr('.pie').forEach(function(pie) {
     var p = parseFloat(pie.textContent);
@@ -60,12 +58,12 @@
     var circle = document.createElementNS(NS, "circle");
     //added title for accessibility, so that screen reader users can also know what percentage is displayed
     var title = document.createElementNS(NS, "title");
-    
+
     circle.setAttribute("r", 16);
     circle.setAttribute("cx", 16);
     circle.setAttribute("cy", 16);
     circle.setAttribute("stroke-dasharray", p + " 100");
-    
+
     svg.setAttribute("viewBox", "0 0 32 32");
     title.textContent = pie.textContent;
     pie.textContent = '';
@@ -83,7 +81,5 @@
       checkboxes[i].checked = this.checked;
     }
   }, false);
-
- 
 
 }());
