@@ -140,10 +140,16 @@
     </div>
     </aside>
     <div class="details">
-      {{#each viewedBy}}
 
-      <h1>{{this.initials}} {{this.timestamp.length}}</h1>
+    {{#if viewedBy}}
+      <h1><i class="fa fa-linkedin"></i> VIEWED BY</h1>
+      {{#each viewedBy}}
+      <ul class="viewedBy-inline">
+        {{viewedByHelper this}}
+      </ul>
       {{/each}}
+    {{/if}}
+
     <h1><i class="fa fa-file-text-o"></i> SUMMARY</h1>
       <p><span class="check-highlight">{{summary}}</span></p>
     <h1><i class="fa fa-trophy"></i> SKILLS</h1>

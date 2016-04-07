@@ -289,11 +289,13 @@ span {
 }
 
 .viewedBy {
-  border: 1px solid black;
   text-align: center;
   float: right;
   margin: 0 10px 0 0 !important;
-  padding: 5px !important;
+  padding: 2px 5px !important;
+  background-color: #b2c462;
+  color: #fff !important;
+  font-weight: 600;
 }
 
 /*==============================
@@ -417,15 +419,34 @@ input[type='checkbox'] {
 /*==============================
   Skills inline
 ================================*/
+.viewedBy-initials {
+  color: #fff !important;
+}
 
-ul.skills-inline {
+ul.skills-inline, ul.viewedBy-inline {
   display: inline-block;
-  padding: 2px 10px 2px 2px;
-  margin-top: 5px;
   background-color: #b2c462;
 }
-ul.skills-inline li {
+
+ul.skills-inline {
+  padding: 2px 10px 2px 2px;
+}
+
+ul.viewedBy-inline {
+  padding: 2px 1px 2px 8px;
+}
+
+ul.skills-inline li, ul.viewedBy-inline li {
   color: #fff;
+}
+
+.viewedBy-number {
+  background-color: #FFF;
+  margin: 0 6px 0 5px;
+  color: #606C2B !important;
+  text-align: center;
+  font-weight: 600;
+  padding: 0 3px;
 }
 
 .skill-level {
@@ -468,7 +489,7 @@ ul.lang li span {
   padding: 20px 0 20px;
 }
 
-.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe,i.fa-file, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil, #sidebar > h1 > i.fa-comments {
+.details h1 > i.fa-file-text-o, i.fa-trophy, i.fa-cubes, i.fa-globe, i.fa-file, i.fa-linkedin, #sidebar > h1 > i.fa-envelope, #sidebar > h1 > i.fa-pencil, #sidebar > h1 > i.fa-comments {
   font-size: 25px;
   padding-left: 0;
   padding-right: 20px;
@@ -495,8 +516,11 @@ ul.lang li span {
 /*==============================
  Skills
 ================================*/
+.details > li{
+  list-style-type: none;
+}
 
-.each {
+.each, .viewed-each {
   float: left;
   background-color: #B6C4F3;
   color: #fff;
