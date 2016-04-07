@@ -3,6 +3,7 @@
 { "url": "https://www.linkedin.com/in/fakeprofile100",
     "connections": 500,
     "connectedTo": [],
+    "viewedBy": [],
     "notes":[{"createdAt":"02.02.2016", "author": "Simon", "id": 12, "notes":"", "status": "phone-screen", "company": "FAC"}],
      "fullname": "faKE",
      "headline": "faKE",
