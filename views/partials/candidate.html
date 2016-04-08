@@ -74,9 +74,11 @@
 
   <aside class="aside aside-1">
   {{#if email}}
-    {{#unless status}}
-      {{#unless clientProfile}}
-      <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}", "fn":"{{this.firstName}}"}'>
+    {{#unless emailsLast30}}
+      {{#unless status}}
+        {{#unless clientProfile}}
+        <input type="checkbox" name="email" value='{"email": "{{this.email}}", "id":"{{this.id}}", "fn":"{{this.firstName}}"}'>
+        {{/unless}}
       {{/unless}}
     {{/unless}}
   {{/if}}
