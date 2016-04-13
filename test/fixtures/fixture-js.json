@@ -153,7 +153,7 @@
       "fullname": "Nick",
       "headline": "JS dev",
       "notes":[],
-      "viewedBy": [{"id": 12, "timestamp": [1460110589455,1460110385421], "intials": "S", "fullname": "Simon"}],
+      "viewedBy": [{"id": "12", "timestamp": [1460110589455,1460110385421], "intials": "S", "fullname": "Simon"}],
       "connectedTo": ["Sam", "bob"],
       "favourite":[],
        "jobApplications": [],
