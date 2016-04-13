@@ -29,10 +29,7 @@ client.search({
   })
 
   clientLocal.bulk({ body: bulk}, function (err, resp) {
-    console.log(bulk);
-    if(err) {
-      console.log('bulk err',err);
-    }
+
     if (response.hits.total !== count) {
     // now we can call scroll over and over
       client.scroll({
