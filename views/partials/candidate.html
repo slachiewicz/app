@@ -39,6 +39,7 @@
           </ul>
         {{/each}}
 
+
         {{#if status}}
           <p><span class='status'>{{status}}</span></p>
         {{/if}}
@@ -67,6 +68,10 @@
           {{/if}}
         </ul>
         {{/each}}
+
+      {{#if viewedBy.length}}
+        <p class="viewedBy">{{viewedBy.length}}</p>
+      {{/if}}
 
       </div>
     </div>
