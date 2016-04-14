@@ -1,6 +1,7 @@
 { "url": "https://uk.linkedin.com/in/fakeprofile2",
     "connections": 142,
     "connectedTo": ["The User"],
+    "viewedBy": "Mario Bros",
     "notes": [],
     "fullname": "Manuel",
     "contacts": {"email": "", "phone": "", "im": [], "address": ""},

@@ -1,0 +1,20 @@
+{ "url": "https://www.linkedin.com/in/fakeprofileInitials",
+  "connections": 142,
+  "fullname": "Initials Test",
+  "headline": "Test for the initials",
+  "notes":[],
+  "viewedBy": "Mario Bros",
+  "location": "Whereever",
+  "favourite": [],
+  "connectedTo": [],
+  "jobApplications": [],
+  "current": "Initilas LTD",
+  "contacts": {"email": "", "phone": "", "im": [], "address": "" },
+  "picture":"https://static.licdn.com/scds/common/u/images/themes/katy/ghosts/person/ghost_person_150x150_v1.png",
+  "summary": "This is the summary for the initials",
+  "skills":[{ "level": 8, "skill": "Initials" }],
+  "languages":[],
+  "experience":{
+      "current": [],
+      "past":[]}
+}

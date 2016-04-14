@@ -337,4 +337,39 @@ describe('api /profile', function () {
 
     });
   });
+
+  it("Update initials profile", function (done) {
+
+    Server.init(0, function (err, server) {
+
+      expect(err).to.not.exist();
+
+      var profile = require('./fixtures/initialsProfile.json');
+
+      var options = {
+        method: 'POST',
+        url: '/profile',
+        payload: profile
+      };
+
+      server.inject(options, function (res) {
+        expect(res.statusCode).to.equal(200);
+        server.stop(done);
+      });
+
+    });
+  });
+
+  it("Check that the initilasProfile has been viewed once", function (done) {
+    es.get({
+      index: process.env.ES_INDEX,
+      type: process.env.ES_TYPE,
+      id: "33" //id of the initialsProfile in the fixtures
+    }, function (error, response) {
+      expect(response._source.viewedBy.length).to.equal(1);
+      done();
+    });
+  });
+
+
 });
