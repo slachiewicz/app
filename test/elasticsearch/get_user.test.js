@@ -1,6 +1,6 @@
 var Code = require('code');
 var Lab = require('lab');
-var getUser = require('../lib/database-helpers/elasticsearch/get_user');
+var getUser = require('../../lib/database-helpers/elasticsearch/get_user');
 
 var lab = exports.lab = Lab.script();
 var describe = lab.experiment;
