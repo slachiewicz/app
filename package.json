@@ -5,7 +5,7 @@
   "main": "lib/start.js",
   "scripts": {
     "resetdb": "node test/fixtures/initialize.js",
-    "test": "node test/fixtures/initialize.js && node test/fixtures/copy-data.js && ./node_modules/lab/bin/lab ./test/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
+    "test": "node test/fixtures/initialize.js && node test/fixtures/copy-data.js && ./node_modules/lab/bin/lab ./test/*.test.js ./test/*/*.test.js -m 0 -c -a code -r lcov -o lcov.info -r console -o stdout",
     "testJob": "node test/fixtures/initialize.js && ./node_modules/lab/bin/lab ./test/job.test.js",
     "coverage": "./node_modules/lab/bin/lab -r html -o ./test/coverage.html",
     "start": "node lib/start.js",
@@ -24,10 +24,10 @@
   "homepage": "https://github.com/FAC-GM/app#readme",
   "dependencies": {
     "btoa": "^1.1.2",
-    "elasticsearch": "^10.0.0",
+    "elasticsearch": "^11.0.1",
     "env2": "^2.0.4",
     "esta": "^4.2.0",
-    "googleapis": "^3.1.0",
+    "googleapis": "^5.0.0",
     "handlebars": "^4.0.4",
     "hapi": "^13.0.0",
     "hapi-auth-google": "^3.1.0",
@@ -41,12 +41,12 @@
     "vision": "^4.0.0"
   },
   "devDependencies": {
-    "cheerio": "^0.19.0",
+    "cheerio": "^0.20.0",
     "code": "^2.0.1",
-    "codeclimate-test-reporter": "^0.1.1",
+    "codeclimate-test-reporter": "^0.3.1",
     "istanbul": "^0.4.0",
-    "lab": "^7.2.0",
-    "nock": "^3.1.0",
+    "lab": "^10.3.1",
+    "nock": "^8.0.0",
     "nodemon": "^1.8.1",
     "tape": "^4.2.2"
   }

@@ -86,36 +86,6 @@ describe('Access the email when authenticated', function () {
   });
 })
 
-describe('Access /sendmail with invalid JWT Cookie', function () {
-
-  it('Auth blocked by bad Cookie JWT and redirect to login page', function (done) {
-
-    var token = JWT.sign({ id: 321, "name": "Charlie" }, process.env.JWT_SECRET);
-
-    var options = {
-      method: "POST",
-      url: "/sendemail",
-      headers: { cookie: "token=" + token },
-      payload: {
-        "to" : "contact.nelsonic@gmail.com",
-        "message" : "this will not get sent...",
-        "subject" : "Mock Test "
-      }
-  };
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-
-      server.inject(options, function (res) {
-
-        //redirection 
-        expect(res.statusCode).to.equal(302);
-        server.stop(done);
-      });
-    });
-  });
-});
-
 describe('Trying to redirect to /email page without submitting emails', function () {
 
   it('redirects to the home page', function (done) {
@@ -136,28 +106,6 @@ describe('Trying to redirect to /email page without submitting emails', function
 
       server.inject(options, function (res) {
         expect(res.statusCode).to.equal(302);
-        server.stop(done);
-      });
-    });
-  });
-});
-
-describe('Attempt to access /sendemail page without authorization', function () {
-
-  it('checks status code to be 302 redirection', function (done) {
-
-    var options = {
-      method: "POST",
-      url: "/sendemail"
-    };
-
-    Server.init(0, function (err, server) {
-
-      expect(err).to.not.exist();
-      server.inject(options , function (res) {
-
-        expect(res.statusCode).to.equal(302);
-
         server.stop(done);
       });
     });

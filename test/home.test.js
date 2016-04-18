@@ -123,7 +123,6 @@ describe('/', function () {
       server.inject(options, function(res) {
         expect(res.statusCode).to.equal(302);
         server.stop(done);
-        //get the current redis connection and close it
 
       });
     });
